@@ -13,11 +13,13 @@ export const trampoFacil = {
     { title: 'Social Tech Design', desc: 'UI inspirada em redes de alta performance com Glassmorphism e micro-interações de elite.' }
   ],
   results: 'Consolidação de um ecossistema B2B/B2C escalável com Boost de Visibilidade via Stripe e análise preditiva de benchmark salarial.',
+    thumbnail: '/src/assets/trampo-facil/logo.png',
     images: [
-      { src: '/src/assets/trampo-facil/hero.jpg', alt: 'Command Hub - Interface Principal', title: 'Command Hub' },
-      { src: '/src/assets/trampo-facil/dashboard.png', alt: 'Logo e Identidade Visual do Projeto', title: 'Job Board (Logo)' },
-      { src: '/src/assets/trampo-facil/detail.png', alt: 'Detalhes da Vaga', title: 'Smart Details' },
-      { src: '/src/assets/trampo-facil/list.png', alt: 'Home com foco em Stories de Vagas e Barra de pesquisa', title: 'Institucional & IA' }
+      { src: '/src/assets/trampo-facil/logo.png', alt: 'Logo e Identidade Visual do Projeto', title: 'Brand Identity' },
+      { src: '/src/assets/trampo-facil/trampoAI.jpg', alt: 'Motor Trampo IA e Command Hub', title: 'Trampo IA Core' },
+      { src: '/src/assets/trampo-facil/SortiesEBarradePesquisa.png', alt: 'Home com Stories de Vagas e Busca Inteligente', title: 'Home & Engagement' },
+      { src: '/src/assets/trampo-facil/carddeVagas.png', alt: 'Visualização de Cards de Vagas Premium', title: 'Job Cards UI' },
+      { src: '/src/assets/trampo-facil/SmartDetailsdasVagas.png', alt: 'Detalhes Inteligentes da Vaga', title: 'Smart Details' }
     ],
   roadmap: ['Match Preditivo', 'Auto-Otimização de Descrições', 'Expansão Global']
 };
