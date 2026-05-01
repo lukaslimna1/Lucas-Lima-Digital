@@ -45,12 +45,6 @@ const Projects = () => {
             {/* Efeito de brilho acionado por hover no CSS */}
             <div className="card-glow"></div>
             
-            {project.thumbnail && (
-              <div className="project-thumbnail">
-                <img src={project.thumbnail} alt={project.title} />
-              </div>
-            )}
-            
             <div className="project-category">{project.category}</div>
             <h3 className="project-title">{project.title}</h3>
             <p className="project-desc">{project.short}</p>
