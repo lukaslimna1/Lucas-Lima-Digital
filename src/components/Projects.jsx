@@ -7,8 +7,12 @@ const Projects = () => {
   // Gerencia qual projeto está ativo no Modal de Detalhes
   const [activeProject, setActiveProject] = useState(null);
 
+  // Estado para controlar se mostra todos os projetos ou apenas os de destaque
+  const [showAll, setShowAll] = useState(false);
+
   // Os dados agora são importados do src/data.js para facilitar a edição e escalar o projeto
   const projects = projectsData;
+  const featuredProjects = showAll ? projects : projects.slice(0, 3);
 
   return (
     <motion.section 
@@ -31,7 +35,7 @@ const Projects = () => {
 
       {/* Grid de Cards de Projeto */}
       <div className="projects-grid">
-        {projects.map((project) => (
+        {featuredProjects.map((project) => (
           <motion.div 
             key={project.id}
             whileHover={{ y: -10 }}
@@ -59,6 +63,18 @@ const Projects = () => {
           </motion.div>
         ))}
       </div>
+
+      {/* Botão Ver Mais (Só aparece se houver mais de 3 projetos) */}
+      {projects.length > 3 && (
+        <div className="view-more-container">
+          <button 
+            className="btn-secondary"
+            onClick={() => setShowAll(!showAll)}
+          >
+            {showAll ? 'Ver Menos' : 'Ver Todos os Projetos'}
+          </button>
+        </div>
+      )}
 
       {/* Modal de Case de Sucesso (Abre ao clicar no projeto) */}
       {activeProject && (

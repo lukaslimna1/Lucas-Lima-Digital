@@ -703,6 +703,12 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateX(4px);
 }
 
+.view-more-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 64px;
+}
+
 /* Modal */
 .modal-backdrop {
   position: fixed;
