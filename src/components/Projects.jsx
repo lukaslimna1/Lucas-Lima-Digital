@@ -38,27 +38,48 @@ const Projects = () => {
         {featuredProjects.map((project) => (
           <motion.div 
             key={project.id}
-            whileHover={{ y: -10 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            whileHover={{ y: -12 }}
             onClick={() => setActiveProject(project)}
-            className="glass-panel project-card"
+            className="hitech-card-wrapper"
           >
-            {/* Efeito de brilho acionado por hover no CSS */}
-            <div className="card-glow"></div>
-            
-            <div className="project-category">{project.category}</div>
-            <h3 className="project-title">{project.title}</h3>
-            <p className="project-desc">{project.short}</p>
-            
-            <div className="tech-tags">
-              {project.tech.slice(0,3).map(t => (
-                <span key={t} className="tech-tag">
-                  {t}
-                </span>
-              ))}
-            </div>
+            <div className="hitech-card glass-panel">
+              {/* Efeito de Scanline/Grade Hitech */}
+              <div className="hitech-grid-overlay"></div>
+              
+              {/* Moldura de Brilho Dinâmico */}
+              <div className="hitech-border-glow"></div>
 
-            <div className="project-link">
-              Ver detalhes <ChevronRight size={16} />
+              <div className="card-content">
+                <div className="project-category">
+                  <span className="category-dot"></span>
+                  {project.category}
+                </div>
+                
+                <h3 className="project-title">{project.title}</h3>
+                <p className="project-desc">{project.short}</p>
+                
+                <div className="tech-tags">
+                  {project.tech.slice(0,3).map(t => (
+                    <span key={t} className="tech-tag hitech">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="project-link hitech">
+                  <span className="link-text">Explorar Case</span>
+                  <div className="link-arrow">
+                    <ChevronRight size={16} />
+                  </div>
+                </div>
+              </div>
+
+              {/* Elementos Decorativos de Canto (Hitech Style) */}
+              <div className="corner-decor top-right"></div>
+              <div className="corner-decor bottom-left"></div>
             </div>
           </motion.div>
         ))}

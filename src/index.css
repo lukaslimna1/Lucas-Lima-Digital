@@ -574,87 +574,146 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-.project-card {
-  padding: 32px;
+/* Hi-Tech Cards UI */
+.hitech-card-wrapper {
+  position: relative;
   cursor: pointer;
+  height: 100%;
+}
+
+.hitech-card {
+  padding: 40px;
+  height: 100%;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  background: rgba(255, 255, 255, 0.015);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  background: rgba(10, 10, 18, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.project-card::before {
-  content: '';
+.hitech-grid-overlay {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  border-radius: 20px;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.01));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
+  inset: 0;
+  background-image: linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
   pointer-events: none;
-  transition: opacity 0.4s;
-  opacity: 0.5;
-}
-
-.card-glow {
-  position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 150px;
-  height: 150px;
-  background-color: var(--accent-blue);
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  pointer-events: none;
-}
-
-.project-card:hover .card-glow {
   opacity: 0.3;
 }
 
-.project-card:hover {
-  transform: translateY(-8px);
-  background: rgba(255, 255, 255, 0.04);
-  box-shadow: 
-    0 20px 40px rgba(0, 0, 0, 0.6),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+.hitech-border-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, transparent, rgba(59, 130, 246, 0.2), transparent, rgba(139, 92, 246, 0.2), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.5;
+  transition: opacity 0.5s ease;
 }
 
-.project-card:hover::before {
+.hitech-card:hover .hitech-border-glow {
   opacity: 1;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.8), transparent);
+  background: linear-gradient(135deg, var(--accent-blue), transparent, var(--accent-purple));
+  animation: rotate-gradient 3s linear infinite;
 }
 
-.project-thumbnail {
-  width: 100%;
-  height: 200px;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 24px;
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid var(--border-color);
+@keyframes rotate-gradient {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.category-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-blue);
+  box-shadow: 0 0 10px var(--accent-blue);
+  margin-right: 10px;
+}
+
+.tech-tag.hitech {
+  background: rgba(59, 130, 246, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  color: #94a3b8;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.project-link.hitech {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--accent-blue);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.link-arrow {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(59, 130, 246, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
 }
 
-.project-thumbnail img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+.hitech-card:hover .link-arrow {
+  background: var(--accent-blue);
+  color: white;
+  transform: translateX(5px);
+  box-shadow: 0 0 15px var(--accent-blue-glow);
 }
 
-.project-card:hover .project-thumbnail img {
-  transform: scale(1.1);
+.corner-decor {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-color: rgba(59, 130, 246, 0.3);
+  border-style: solid;
+  pointer-events: none;
+  transition: all 0.5s ease;
 }
+
+.top-right {
+  top: 15px;
+  right: 15px;
+  border-width: 2px 2px 0 0;
+}
+
+.bottom-left {
+  bottom: 15px;
+  left: 15px;
+  border-width: 0 0 2px 2px;
+}
+
+.hitech-card:hover .corner-decor {
+  border-color: var(--accent-blue);
+  width: 25px;
+  height: 25px;
+  box-shadow: 0 0 10px var(--accent-blue-glow);
+}
+
+/* Old project-card styles kept for reference or removed if not needed */
 
 .project-category {
   font-size: 0.8rem;
