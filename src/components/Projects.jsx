@@ -85,6 +85,12 @@ const Projects = () => {
                 </span>
               ))}
             </div>
+            
+            {activeProject.manifesto && (
+              <div className="modal-manifesto glass-panel mb-large">
+                <p>"{activeProject.manifesto}"</p>
+              </div>
+            )},
 
             {/* Estruturação Narrativa do Case */}
             <div className="modal-sections">
@@ -110,7 +116,38 @@ const Projects = () => {
                   <p>{activeProject.results}</p>
                 </div>
               </div>
+
+              {activeProject.pillars && (
+                <div className="modal-section">
+                  <h4 className="modal-section-title">
+                    <span className="bullet blue"></span> Pilares Tecnológicos
+                  </h4>
+                  <div className="pillars-grid">
+                    {activeProject.pillars.map((pillar, idx) => (
+                      <div key={idx} className="pillar-item">
+                        <div className="pillar-title">{pillar.title}</div>
+                        <div className="pillar-desc">{pillar.desc}</div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
+
+            {activeProject.roadmap && (
+              <div className="modal-section mb-large">
+                <h4 className="modal-section-title">
+                  <span className="bullet purple"></span> Roadmap de Laboratório (P&D)
+                </h4>
+                <div className="roadmap-tags">
+                  {activeProject.roadmap.map(item => (
+                    <span key={item} className="tech-tag roadmap">
+                      🧪 {item}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Galeria de Imagens do Projeto */}
             {activeProject.images && activeProject.images.length > 0 && (
