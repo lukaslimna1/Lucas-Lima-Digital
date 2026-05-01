@@ -1,6 +1,6 @@
-import { trampoFacil } from './data/projects/trampoFacil';
-import { dashboardSaaS } from './data/projects/dashboardSaaS';
-import { headlessEcommerce } from './data/projects/headlessEcommerce';
+import { trampoFacil } from './projects/trampoFacil';
+import { dashboardSaaS } from './projects/dashboardSaaS';
+import { headlessEcommerce } from './projects/headlessEcommerce';
 
 export const projectsData = [
   trampoFacil,
