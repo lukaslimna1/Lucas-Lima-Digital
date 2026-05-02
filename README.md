@@ -1,117 +1,88 @@
-# Lucas Lima | Digital Builder 🚀
+![Lucas Lima Portfolio Banner](public/assets/banner.png)
 
-> **Um portfólio que não é apenas uma vitrine, mas um produto digital por si só.**
+# LUCAS LIMA | DIGITAL SYSTEMS ENGINEER 🚀
 
-Este repositório contém o código-fonte do meu portfólio pessoal. Projetado do zero para transmitir profissionalismo, domínio técnico e uma experiência de usuário (UX) premium. O foco central não é apenas exibir trabalhos passados, mas demonstrar capacidade de arquitetura de software, design system estruturado e atenção extrema aos detalhes.
+> **"Construir sem entender é só execução. Construir com visão é o que transforma produto em resultado."**
+
+Este repositório é um ecossistema de engenharia digital projetado para demonstrar a fusão entre **Arquitetura de Software**, **UX Estratégica** e **Visual Design de Alta Fidelidade**.
 
 ---
 
-## 🎯 O Conceito
+## 🏛️ ARQUITETURA VISUAL DO SISTEMA
 
-A maioria dos portfólios são páginas estáticas genéricas. O objetivo aqui foi construir um **Dashboard Interativo** que reflete minha forma de pensar e atuar:
-- **Como Desenvolvedor**: Código limpo, componentizado, performático e independente de frameworks pesados de CSS (sim, foi feito em **Vanilla CSS**).
-- **Como UX/UI Designer**: Foco em *Glassmorphism*, paleta de cores harmoniosa, contraste profundo (Dark Mode nativo) e hierarquia de informação clara.
-- **Como Solucionador de Problemas**: Implementação do **Modo Recrutador**, uma feature focada puramente em acessibilidade e leitura rápida de informações para quem não tem tempo a perder.
+Abaixo, a representação da estrutura modular que sustenta o portfólio, garantindo escalabilidade e performance:
 
-## 🛠️ Stack Tecnológica
-
-Optou-se por uma stack enxuta e poderosa para garantir alta performance e manutenibilidade:
-
-- **Core**: React 19 + Vite (Rápido, moderno e confiável).
-- **Styling**: **Vanilla CSS**. Nenhuma dependência externa de estilos (como Tailwind ou Bootstrap). Toda a fundação de design tokens, animações avançadas e responsividade foi construída na mão para demonstrar controle total sobre o CSS.
-- **Animações**: Framer Motion (Transições de página, *scroll reveals* e *micro-interactions*).
-- **Ícones**: Lucide React.
-
-## ✨ Features de Destaque
-
-- **Glow & Glassmorphism**: Painéis translúcidos e efeitos luminosos que reagem ao contexto da página, criando uma sensação de profundidade e produto "AAA".
-- **Modo Recrutador**: Um toggle no menu que simplifica a interface instantaneamente. Remove gradientes, desativa sombras complexas e foca 100% no conteúdo textual para uma leitura direta.
-- **Painel de Projetos Detalhado**: Em vez de links externos simples, os projetos abrem em modais imersivos que detalham o "Problema", a "Solução" e o "Resultado".
-- **Design Responsivo Fluido**: Adaptação perfeita desde monitores ultrawide até telas de dispositivos móveis.
-
-## 🚀 Como Rodar Localmente
-
-Certifique-se de ter o Node.js (versão 20+) instalado na sua máquina.
-
-```bash
-# 1. Clone o repositório
-git clone https://github.com/seu-usuario/lucas-lima-digital.git
-
-# 2. Acesse o diretório do projeto
-cd lucas-lima-digital
-
-# 3. Instale as dependências
-npm install
-
-# 4. Inicie o servidor de desenvolvimento
-npm run dev
+```mermaid
+graph TD
+    A[CORE APP - React 19] --> B[SYSTEM MODULES]
+    A --> C[DATA ARCHITECTURE]
+    
+    subgraph B [Visual Modules]
+        B1[CREATION - Mindset & Capabilities]
+        B2[FRAMEWORK - Professional Workflow]
+        B3[LAB - R&D Command Center]
+        B4[PROJECTS - Case Study Modals]
+    end
+    
+    subgraph C [Data Layer]
+        C1[Project Success Cases]
+        C2[R&D Experiments]
+        C3[Professional Experience]
+    end
+    
+    B --> D[DESIGN SYSTEM - Vanilla CSS]
+    D --> D1[Glassmorphism]
+    D --> D2[Asymmetric Glow]
+    D --> D3[Uppercase Authority]
 ```
 
 ---
 
-## 📈 Histórico de Versões (Changelog)
+## 🛠️ O QUE ESTAMOS USANDO (TECH STACK COMPLETA)
 
-Este portfólio é um organismo vivo e continuará sendo aprimorado. 
+| Categoria | Tecnologias & Ferramentas | Propósito |
+| :--- | :--- | :--- |
+| **Engine** | React 19 + Vite | Performance de renderização e build ultra-rápido. |
+| **Animation** | Framer Motion | Orquestração de micro-interações e transições fluídas. |
+| **Design** | Vanilla CSS + CSS Modules | Controle total sobre UI sem dependências externas. |
+| **Data & Cloud** | Supabase Storage | Entrega de ativos (imagens/vídeos) via CDN. |
+| **Icons** | Lucide React | Iconografia técnica de alta legibilidade. |
+| **IA Engine** | Gemini 1.5 Flash | Suporte inteligente para geração e análise de conteúdo. |
 
-### v1.0.0 - *The Foundation*
-- Setup inicial da arquitetura React + Vite.
-- Implementação do Design System proprietário em CSS Puro (Variáveis, Glow Effects, Glassmorphism).
-- Estrutura completa das seções e lançamento do **Modo Recrutador**.
-- Sistema de modais para exibição de *Cases de Sucesso*.
+---
 
-### v1.1.0 - *Premium Copy & Modular Architecture*
-- **Modularização de Código**: Separação do `App.jsx` monolítico em componentes modulares dentro da pasta `/src/components`.
-- **Visual "Tech Premium"**: Refinamento do *Hero Section*, encapsulando o subtítulo em um bloco estilo Terminal de sistema.
-- **Copywriting**: Atualização massiva de textos com foco em diferenciação, performance e conversão de negócios.
-- **Nova Seção**: Criação do componente `Diferencial` ("O que me diferencia").
+## 🎨 DESIGN SYSTEM: HI-TECH AUTHORITY
 
-### v1.2.0 - *Ultimate Premium Aesthetic & Full Modularity*
-- **Desacoplamento de Dados**: Criação do arquivo `src/data.js` para gerenciar conteúdo dinâmico (projetos, metodologia), separando completamente a lógica de UI dos dados textuais.
-- **Micro-Interações**: Implementação de animação flutuante sutil no Terminal do Hero utilizando `framer-motion`.
-- **Refinamento Estético Premium**: Melhorias no `.glass-panel` com sombras internas (inset shadows).
-- **Tipografia e Background**: Adição da propriedade `text-rendering: optimizeLegibility` e background orgânico (noise filter) direto no CSS.
+O projeto é guiado por um **Design System proprietário** focado em autoridade visual:
 
-### v2.0.0 - *The "SaaS Product" Redesign & Real Cases*
-- **Transformação Visual**: Migração do conceito de "Landing Page" para "Produto SaaS Interativo". Substituição de seções estáticas por blocos de alta performance visual.
-- **Cases Reais (Trampo Fácil & IA)**: Inclusão do ecossistema "Trampo Fácil", detalhando a aplicação do motor de IA e o modelo de segurança "Accountless".
-- **Processo Interativo**: Conversão da timeline clássica em um *Stepper Horizontal* animado com `framer-motion`.
-- **Contato Dinâmico**: Remodelagem completa da seção de contato para atuar como um painel de disponibilidade em tempo real.
+- **[ 🔷 ] Glassmorphism**: Camadas translúcidas que criam profundidade.
+- **[ ⚡ ] Asymmetric Aura**: Iluminação perimétrica que guia a atenção do usuário.
+- **[ 🏛️ ] Uppercase Standard**: Tipografia em maiúsculas para um tom sério e industrial.
+- **[ 🛰️ ] Telemetry UI**: Elementos decorativos que simulam interfaces de comando.
 
-### v2.1.0 - *Visual Showcase & Deep IA Integration*
-- **Vitrine Visual Imersiva**: Implementação de uma galeria de alta fidelidade dentro dos modais de projeto.
-- **Consolidação de Assets**: Organização estruturada de mídias para os cases de sucesso.
-- **Storytelling Visual**: Cada case agora conta com suporte a imagens reais que validam a complexidade técnica das soluções.
+---
 
-### v2.2.0 - *Cloud Infrastructure & Large Screen Optimization*
-- **Cloud Media Infrastructure**: Migração estratégica de ativos pesados para o **Supabase Storage**.
-- **Otimização para Grandes Formatos (TV 37")**: Refatoração da hierarquia tipográfica para legibilidade cristalina em telas de alta polegada.
-- **Arquitetura de Informação Industrial**: Introdução de tópicos numerados `[XX]` e tags de roadmap com estilo de documentação técnica.
+## 📈 EVOLUÇÃO E ROADMAP (V2.6.2)
 
-### v2.3.0 - *Standardization & GitHub Integration*
-- **Repository Professionalization**: Implementação do `CONTRIBUTING.md` estabelecendo diretrizes claras de engenharia.
-- **Code Standards**: Padronização de documentação interna via comentários técnicos para manutenibilidade.
-- **Clean Architecture**: Remoção de dependências de terceiros não essenciais e otimização do fluxo de trabalho.
+O portfólio evoluiu de uma landing page simples para um **Dashboard de Engenharia**:
 
-### v2.4.0 - *Artistic Hi-Tech Framework Standardization*
-- **Visual Unification**: Padronização absoluta entre as seções de "Criação" e "Framework".
-- **Artistic Fusion Texture System**: Camada tripla de profundidade (Topografia, Digital Mist e Scanlines).
-- **Living Gradient & Asymmetric Aura**: Refatoração do sistema de bordas e iluminação pulsante.
+- **Fase 01 (Foundation)**: Estrutura React básica e CSS modularizado.
+- **Fase 02 (Premium Overhaul)**: Implementação de efeitos visuais avançados e "Modo Recrutador".
+- **Fase 03 (System Thinking)**: Criação das seções `Creation` e `Framework`, focando em metodologia.
+- **Fase 04 (Authority Standardization)**: Padronização total em maiúsculas e refatoração semântica completa.
 
-### v2.4.1 - *R&D Command Center: Systems & AI Lab Overhaul*
-- **Reconstrução Total do Lab**: Transformação da seção em interface de comando técnica (`SECTOR_0X`).
-- **Telemetry Card System**: Metadados técnicos fictícios e IDs de rastreio para cada pesquisa.
+---
 
-### v2.4.2 - *Interactive Research Sync: Total Visual Parity*
-- **Click-to-Advance Logic**: Interação manual via clique nos cards com reset automático.
-- **Extended Research Cycle**: Aumento do intervalo de transição para 15 segundos.
-- **Visual Parity (#Criação)**: Sincronização total de design tokens (paddings, fundos, hovers).
+## 🚀 COMO EXECUTAR O SISTEMA
 
-### v2.4.3 (Atual) - *Enterprise R&D Command Center: Systems & AI Lab*
-- **Layout Triptych Industrial**: 3 carrosséis independentes (EXPERIMENTOS, APRENDIZADO, EVOLUÇÃO) paralelos.
-- **Localização PT-BR**: Tradução completa da interface técnica (`ÁREA_0X`, `CLIQUE PARA SINCRONIZAR`).
-- **Sistema de Labels Vivas**: Etiquetas de status com emojis (`[ 🔬 PESQUISA ]`, `[ 🎓 MBA ]`).
-- **Telemetria de Conclusão**: Status integrado nos metadados (`SITUAÇÃO: CONCLUÍDO // PROGRESSO: 100%`).
-- **Enterprise Performance**: Remoção de efeitos de piscar para máxima estabilidade visual.
+```bash
+# Clone e instalação
+git clone https://github.com/seu-usuario/lucas-lima-digital.git
+npm install
+
+# Execução (Modo Dev)
+npm run dev
+```
 
 ---
 

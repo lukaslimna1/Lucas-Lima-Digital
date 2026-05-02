@@ -1,13 +1,13 @@
 export const divinoSapore = {
   id: 3,
-  title: 'Divino Sapore — Experiência Gastronômica',
-  category: 'UX/UI & Frontend',
-  short: 'Interface premium para delivery de alta gastronomia.',
-  tech: ['React', 'Framer Motion', 'Vanilla CSS', 'Lucide'],
+  title: 'Divino Sapore — Presença & Comunicação Visual',
+  category: 'UX/UI & Experiência Digital',
+  short: 'Reestruturação completa da identidade visual e comunicação digital do negócio.',
+  tech: ['Identity Design', 'Social Strategy', 'Visual Arts', 'Digital Presence'],
   manifesto: 'A gastronomia divina merece uma interface à altura. Redefinimos a jornada do paladar, do primeiro clique à entrega final.',
-  problem: 'Experiências de delivery convencionais não transmitem o valor de uma marca premium, perdendo a conexão sensorial no digital.',
-  solution: 'Criação de uma jornada de compra visualmente imersiva, com micro-interações elegantes e foco total na fotografia do produto.',
-  results: 'Aumento na percepção de valor da marca e uma taxa de conversão superior em pedidos de ticket médio elevado.',
+  problem: 'A marca precisava transpor a qualidade artesanal do produto para o ambiente digital, criando uma conexão visual imediata e profissional.',
+  solution: 'Do redesign da marca à criação de conteúdos e experiências visuais aplicadas no dia a dia real.',
+  results: 'Uma presença digital consolidada, com identidade visual coerente e comunicação assertiva em todos os pontos de contato.',
   thumbnail: 'divino-sapore/thumbnail.jpg', // Caminho no seu bucket Supabase
   images: [
     { src: 'divino-sapore/home.jpg', alt: 'Interface Principal', title: 'Imersão Visual' },

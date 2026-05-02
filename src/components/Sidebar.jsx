@@ -3,15 +3,15 @@ import styles from './Sidebar.module.css';
 
 const Sidebar = ({ isMobileOpen, setIsMobileOpen, recruiterMode, setRecruiterMode }) => {
   const menuItems = [
-    { name: 'Início', icon: <Hexagon size={18} />, href: '#home' },
-    { name: 'Projetos', icon: <Briefcase size={18} />, href: '#projects' },
-    { name: 'Criação', icon: <Brain size={18} />, href: '#criacao' },
-    { name: 'Framework', icon: <Lightbulb size={18} />, href: '#framework' },
-    { name: 'Lab', icon: <Code size={18} />, href: '#lab' },
-    { name: 'Sobre', icon: <User size={18} />, href: '#about' },
-    { name: 'Experiência', icon: <Award size={18} />, href: '#experience' },
-    { name: 'Diferencial', icon: <Sparkles size={18} />, href: '#diferencial' },
-    { name: 'Contato', icon: <Mail size={18} />, href: '#contact' },
+    { name: 'INÍCIO', icon: <Hexagon size={18} />, href: '#home' },
+    { name: 'PROJETOS', icon: <Briefcase size={18} />, href: '#projects' },
+    { name: 'CRIAÇÃO', icon: <Brain size={18} />, href: '#criacao' },
+    { name: 'FRAMEWORK', icon: <Lightbulb size={18} />, href: '#framework' },
+    { name: 'LAB', icon: <Code size={18} />, href: '#lab' },
+    { name: 'SOBRE', icon: <User size={18} />, href: '#about' },
+    { name: 'EXPERIÊNCIA', icon: <Award size={18} />, href: '#experience' },
+    { name: 'DIFERENCIAL', icon: <Sparkles size={18} />, href: '#diferencial' },
+    { name: 'CONTATO', icon: <Mail size={18} />, href: '#contact' },
   ];
 
   return (

@@ -339,6 +339,71 @@
 .modalContent::-webkit-scrollbar {
   width: 6px;
 }
+.modalClosure {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.modalFooterNote {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  font-family: var(--font-mono);
+  opacity: 0.7;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding-bottom: 3rem;
+  width: 100%;
+}
+
+.centeredContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.infoBox {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: rgba(59, 130, 246, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  margin: 1rem 0 3rem 0;
+  max-width: 650px;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  text-align: left; /* O texto dentro do box continua legível à esquerda */
+}
+
+.infoIcon {
+  color: var(--accent-blue);
+  flex-shrink: 0;
+}
+
+.actionBtn {
+  min-width: 220px;
+  text-decoration: none;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+  filter: grayscale(1);
+}
 
 .modalContent::-webkit-scrollbar-thumb {
   background: var(--accent-cyan);
@@ -495,18 +560,6 @@
   line-height: 1.8;
 }
 
-.resultBox::before {
-  content: "DATA / PERFORMANCE";
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: var(--accent-green);
-  color: #000;
-  font-size: 0.6rem;
-  font-weight: 800;
-  padding: 4px 12px;
-  border-bottom-left-radius: 8px;
-}
 
 .pillarsGrid {
   display: grid;
@@ -585,14 +638,31 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 12px;
-  background: rgba(0, 0, 0, 0.8);
-  font-size: 0.75rem;
+  padding: 1.25rem;
+  background: linear-gradient(to top, rgba(5, 5, 10, 0.95), rgba(5, 5, 10, 0.8));
+  backdrop-filter: blur(8px);
   color: white;
-  text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: left;
+  border-top: 1px solid rgba(34, 211, 238, 0.3);
   transform: translateY(100%);
-  transition: transform 0.3s ease;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.galleryCaption strong {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  margin-bottom: 6px;
+}
+
+.galleryCaption p {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+  margin: 0;
 }
 
 .galleryItem:hover .galleryCaption {

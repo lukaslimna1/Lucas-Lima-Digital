@@ -148,7 +148,7 @@ const Lab = () => {
       <div className="hitech-grid-overlay"></div>
       
       <div className="section-header">
-        <h2 className="section-title">Laboratório de Sistemas e IA</h2>
+        <h2 className="section-title">LABORATÓRIO DE SISTEMAS E IA</h2>
         <p className="section-subtitle">
           P&D: Pesquisa, desenvolvimento e exploração de novas fronteiras em produtos digitais.
         </p>

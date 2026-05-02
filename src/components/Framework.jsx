@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { Settings, Compass, Layout, Code, RefreshCw, Cpu, BarChart3 } from 'lucide-react';
-import styles from './Process.module.css';
+import styles from './Framework.module.css';
 
-const Process = () => {
+const Framework = () => {
   const steps = [
     { 
       title: 'Imersão & Contexto', 
@@ -49,7 +49,7 @@ const Process = () => {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.6 }}
-      className={`section ${styles.processSection}`}
+      className={`section ${styles.frameworkSection}`}
     >
       {/* Cabeçalho Operacional */}
       <div className="section-header">
@@ -58,15 +58,15 @@ const Process = () => {
           whileHover={{ x: 10 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-          Framework de <span className="text-gradient">Construção</span>
+          FRAMEWORK DE <span className="text-gradient">CONSTRUÇÃO</span>
         </motion.h2>
-        <p className={`section-subtitle ${styles.processSubtitle}`}>
+        <p className={`section-subtitle ${styles.frameworkSubtitle}`}>
           Metodologia prática para transformar problemas em produtos funcionais, combinando product sense, design e engenharia.
         </p>
       </div>
 
       {/* Grid Hi-Tech intercalado em 2 linhas de 3 */}
-      <div className={styles.processGrid}>
+      <div className={styles.frameworkGrid}>
         {steps.map((step, i) => {
           const isBlue = i % 2 === 0;
           const bg = isBlue ? 'rgba(59, 130, 246, 0.1)' : 'rgba(168, 85, 247, 0.1)';
@@ -126,4 +126,4 @@ const Process = () => {
   );
 };
 
-export default Process;
+export default Framework;

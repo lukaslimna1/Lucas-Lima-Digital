@@ -23,13 +23,13 @@ const Hero = () => {
 
           {/* Título de impacto */}
           <h1 className={styles.heroTitle}>
-            Engenharia & UX <br />
-            <span className={styles.heroTitleSub}>para <span className="text-gradient">Produtos Premium</span></span>
+            Construção de <span className="text-gradient">Sistemas Digitais</span> <br />
+            <span className={styles.heroTitleSub}>com foco em impacto real</span>
           </h1>
           
           {/* Posicionamento profissional */}
           <p className={styles.heroSubtitle}>
-            Eu não crio apenas telas. Arquitetura escalável, design imersivo e performance real para produtos digitais de alto nível.
+            Eu não apenas desenvolvo interfaces. Eu entendo o problema, aprendo o que for necessário e construo soluções completas — da ideia à execução.
           </p>
 
           {/* Caixa de terminal destacando o objetivo */}
@@ -50,8 +50,8 @@ const Hero = () => {
                 {">"} ./exec_lucas_lima.sh
               </div>
               <p className={styles.terminalText}>
-                <span className={styles.terminalSuccess}>SUCCESS:</span> Multidisciplinary system loaded. <br />
-                <span style={{ opacity: 0.9 }}>Transformando processos complexos em produtos digitais eficientes, com foco em usabilidade, performance e resultado.</span>
+                <span className={styles.terminalSuccess}>SUCCESS:</span> Adaptive builder loaded. <br />
+                <span style={{ opacity: 0.9 }}>Transformando complexidade em produtos funcionais, com foco em usabilidade, performance e resultado.</span>
               </p>
             </div>
           </motion.div>
@@ -61,10 +61,10 @@ const Hero = () => {
           {/* Métricas Reais em Mini Cards Hi-Tech - Agora com Assimetria Visual */}
           <div className={styles.heroStatsGrid}>
             {[
-              { label: 'Experiência', value: 'Desde 2014', span: 'square' },
-              { label: 'Expertise Lab', value: '+10 Projetos', span: 'tall' },
-              { label: 'Pipeline Ativo', value: '2 Projetos', span: 'tall' },
-              { label: 'Produção Real', value: '1 App Ativo', span: 'square' },
+              { label: 'Experiência', value: '+5 anos criando', span: 'square' },
+              { label: 'Projetos & Estudos', value: '+10 construções experimentais', span: 'tall' },
+              { label: 'Pipeline Atual', value: '2 projetos em desenvolvimento', span: 'tall' },
+              { label: 'Aplicação Real', value: '1 sistema em uso', span: 'square' },
             ].map((stat, i) => {
               const isBlue = i % 2 === 0;
               const color = isBlue ? 'var(--hitech-blue)' : 'var(--accent-green)';
@@ -102,11 +102,11 @@ const Hero = () => {
           {/* Botões de Call to Action - Padronizados com estilo Explorar Case */}
           <div className={styles.heroActions}>
             <a href="#projects" className="btn-primary">
-              VER PROJETOS
+              Explorar Projetos
               <Briefcase size={18} />
             </a>
             <a href="#contact" className="btn-outline">
-              ENTRAR EM CONTATO
+              Iniciar Projeto
               <Mail size={18} />
             </a>
           </div>

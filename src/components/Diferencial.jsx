@@ -18,7 +18,7 @@ const Diferencial = () => {
           whileHover={{ x: 10 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-          O que me <span className="text-gradient">diferencia</span>
+          O QUE ME <span className="text-gradient">DIFERENCIA</span>
         </motion.h2>
       </div>
 

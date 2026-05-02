@@ -31,7 +31,7 @@ const Experience = () => {
     <section id="experience" className={`section ${styles.experienceSection}`}>
       <div className="section-header">
         <h2 className="section-title">
-          <Briefcase className="title-icon blue" /> Experiência Profissional
+          <Briefcase className="title-icon blue" /> EXPERIÊNCIA PROFISSIONAL
         </h2>
         <p className="section-subtitle">
           Uma trajetória que une a técnica da engenharia com a realidade prática do mercado.

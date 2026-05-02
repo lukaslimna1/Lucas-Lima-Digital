@@ -9,8 +9,8 @@ import Projects from './components/Projects';
 
 // --- COMPONENTES NÃO-CRÍTICOS (Lazy Loading para Otimização) ---
 const About = lazy(() => import('./components/About'));
-const Process = lazy(() => import('./components/Process'));
-const Solutions = lazy(() => import('./components/Solutions'));
+const Creation = lazy(() => import('./components/Creation'));
+const Framework = lazy(() => import('./components/Framework'));
 const Experience = lazy(() => import('./components/Experience'));
 const Lab = lazy(() => import('./components/Lab'));
 const Contact = lazy(() => import('./components/Contact'));
@@ -65,8 +65,8 @@ function App() {
         <Projects />
         
         <Suspense fallback={<SectionLoader />}>
-          <Solutions />
-          <Process />
+          <Creation />
+          <Framework />
           <Lab />
           <About />
           <Experience />

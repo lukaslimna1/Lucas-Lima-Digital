@@ -1,46 +1,70 @@
-/**
- * @typedef {Object} RoadmapItem
- * @property {string} week - A semana ou etapa do desenvolvimento (ex: 'Semana 1').
- * @property {string} task - A descrição da tarefa realizada.
- */
-
-/**
- * @typedef {Object} Projeto
- * @property {string} id - Identificador único do projeto.
- * @property {string} title - Título exibido do projeto.
- * @property {string} description - Descrição detalhada do projeto.
- * @property {string} category - Categoria (ex: 'Fullstack', 'IA').
- * @property {string[]} tech - Array de strings com as tecnologias utilizadas.
- * @property {string} thumbnail - Caminho da imagem de capa (local ou Supabase).
- * @property {string[]} gallery - Array de caminhos para as imagens da galeria.
- * @property {string} repo - Link para o repositório no GitHub.
- * @property {string} demo - Link para a versão ao vivo.
- * @property {RoadmapItem[]} roadmap - Histórico de desenvolvimento.
- */
-
-/** @type {Projeto} */
 export const trampoFacil = {
   id: 1,
-  title: 'Trampo Fácil — Descoberta Inteligente',
-  category: 'Fullstack & AI Engineering',
-  short: 'Revolução do recrutamento com arquitetura ZAX, motor Gemini 1.5 e integração Stripe.',
-  tech: ['React 19', 'Supabase Realtime', 'Gemini 1.5 Flash', 'Stripe SDK'],
-  manifesto: 'O Trampo Fácil não é apenas uma lista de vagas. É um ecossistema inteligente que analisa, conecta e humaniza cada interação entre talentos e empresas.',
-  problem: 'Plataformas tradicionais sofrem com alto atrito (cadastros longos), falta de feedback inteligente e UX fria. O resultado é tempo perdido e decisões de contratação ruins.',
-  solution: 'Criação de uma plataforma baseada na arquitetura Zero-Account Experience (ZAX) e no motor Trampo IA. Implementação de Score de Performance em tempo real e Interface Humana Dinâmica.',
+  title: 'Trampo Fácil — Plataforma de Recrutamento Inteligente',
+  category: 'Produto Digital & Plataforma de Recrutamento',
+  short: 'Projeto próprio focado em reduzir fricção no processo de contratação, com uso de automação e IA para melhorar a experiência de candidatos e empresas.',
+  tech: ['React 19', 'Supabase', 'Gemini AI', 'Stripe', 'Vite'],
+  
+  manifesto: 'O objetivo do Trampo Fácil é ir além de listas de vagas. A proposta é criar um sistema mais simples, direto e inteligente, onde a tecnologia ajuda na tomada de decisão — em vez de dificultar o processo.',
+  
+  problem: 'Projeto próprio em desenvolvimento, com MVP praticamente concluído. Focado em simplificar o processo de contratação, reduzir fricção e criar uma experiência mais clara e eficiente para candidatos e empresas.',
+  
+  solution: 'O projeto utiliza inteligência artificial como suporte à experiência: Análise de perfil e conteúdo, sugestões de melhoria em tempo real e apoio consultivo na tomada de decisão.',
+  
   pillars: [
-    { title: 'ZAX Architecture', desc: 'Redução de 95% no atrito operacional através de acesso sem contas e Link-Tokens de segurança.' },
-    { title: 'Session Intelligence', desc: 'IA contextual que aprende com a sessão do usuário para oferecer soluções proativas via Gemini.' },
-    { title: 'Social Tech Design', desc: 'UI inspirada em redes de alta performance com Glassmorphism e micro-interações de elite.' }
+    { title: 'Decisão Apoiada', desc: 'Sistema de avaliação de perfil e vaga para suporte real na escolha de candidatos e oportunidades.' },
+    { title: 'Performance & Visibilidade', desc: 'Sugestões automatizadas para melhorar o desempenho do perfil e aumentar a visibilidade no ecossistema.' },
+    { title: 'UX de Baixo Atrito', desc: 'Interface pensada para reduzir etapas desnecessárias e focar no que realmente importa: a conexão.' },
+    { title: 'AI-Native Structure', desc: 'Estrutura preparada desde o dia zero para o uso de IA generativa no apoio constante ao usuário.' }
   ],
-  results: 'Consolidação de um ecossistema B2B/B2C escalável com Boost de Visibilidade via Stripe e análise preditiva de benchmark salarial.',
+
+  architecture: [
+    { title: 'Frontend Stack', desc: 'Interface moderna e ultra-rápida construída com React 19 e Vite.' },
+    { title: 'BaaS & Realtime', desc: 'Backend as a Service e persistência de dados utilizando Supabase.' },
+    { title: 'AI Integration', desc: 'Camada de inteligência conectada ao Google Gemini 1.5 Flash.' },
+    { title: 'Fintech Ready', desc: 'Estrutura preparada para monetização e pagamentos via Stripe.' }
+  ],
+
+  results: 'MVP entre 90% e 99% concluído. Projeto totalmente funcional em ambiente local, em fase de preparação para publicação e validação real (sujeito a custos de infraestrutura).',
+  
+  roadmap: ['Publicação do MVP', 'Testes com usuários reais', 'Evolução da experiência', 'Expansão de funcionalidades baseadas em uso'],
+  
+  footerNote: '*Projeto desenvolvido de forma independente, desde conceito até implementação.*',
+  
   thumbnail: 'logo.png',
+  repo: 'https://github.com/lukaslimna1/TrampoFacil',
+  demo: '#', // Em breve
+  
   images: [
-    { src: 'logo.png', alt: 'Logo e Identidade Visual do Projeto', title: 'Brand Identity' },
-    { src: 'trampoAI.jpg', alt: 'Motor Trampo IA e Command Hub', title: 'Trampo IA Core' },
-    { src: 'SortiesEBarradePesquisa.png', alt: 'Home com Stories de Vagas e Busca Inteligente', title: 'Home & Engagement' },
-    { src: 'carddeVagas.png', alt: 'Visualização de Cards de Vagas Premium', title: 'Job Cards UI' },
-    { src: 'SmartDetailsdasVagas.png', alt: 'Detalhes Inteligentes da Vaga', title: 'Smart Details' }
-  ],
-  roadmap: ['Match Preditivo', 'Auto-Otimização de Descrições', 'Expansão Global']
+    { 
+      src: 'logo.png', 
+      alt: 'Identidade e Branding do Trampo Fácil', 
+      title: 'Identidade & Conceito', 
+      desc: 'Branding minimalista focado em clareza e eficiência, refletindo a essência de um recrutamento sem ruído.' 
+    },
+    { 
+      src: 'trampoAI.jpg', 
+      alt: 'Interface do Motor Trampo IA', 
+      title: 'Inteligência Assistiva', 
+      desc: 'O sistema identifica pontos de melhoria no perfil e sugere otimizações em tempo real para aumentar as chances do candidato.' 
+    },
+    { 
+      src: 'SortiesEBarradePesquisa.png', 
+      alt: 'Home com Busca Inteligente e Stories', 
+      title: 'Hub de Descoberta', 
+      desc: 'Fluxo de navegação simplificado com busca inteligente e stories de vagas, reduzindo drasticamente a fricção no processo.' 
+    },
+    { 
+      src: 'carddeVagas.png', 
+      alt: 'Design de Cards de Vagas Premium', 
+      title: 'Arquitetura de Cards', 
+      desc: 'Cards de vagas projetados com hierarquia visual clara, facilitando a leitura rápida dos requisitos essenciais.' 
+    },
+    { 
+      src: 'SmartDetailsdasVagas.png', 
+      alt: 'Visualização Lateral InfoJob', 
+      title: 'InfoJob & Fluxo Contínuo', 
+      desc: 'Experiência sem interrupções: detalhes da vaga abrem lateralmente mantendo a lista visível. Organização clara entre Informações, Benefícios e Sobre a Empresa.' 
+    }
+  ]
 };

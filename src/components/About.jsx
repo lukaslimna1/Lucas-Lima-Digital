@@ -5,17 +5,17 @@ import styles from './About.module.css';
 const About = () => {
   const qualities = [
     {
-      title: 'Visão de Produto',
+      title: 'VISÃO DE PRODUTO',
       desc: 'Pensamento focado na jornada do usuário e no valor de negócio, indo além de simples telas.',
       icon: <Target className={styles.qualityIcon} size={24} />
     },
     {
-      title: 'Execução Técnica',
+      title: 'EXECUÇÃO TÉCNICA',
       desc: 'Domínio de tecnologias modernas para construir sistemas robustos, performantes e escaláveis.',
       icon: <Zap className={styles.qualityIcon} size={24} />
     },
     {
-      title: 'Mentalidade Estratégica',
+      title: 'MENTALIDADE ESTRATÉGICA',
       desc: 'Baseada em experiências reais na operação de empresas, antecipando gargalos e otimizando processos.',
       icon: <TrendingUp className={styles.qualityIcon} size={24} />
     }
@@ -31,7 +31,7 @@ const About = () => {
           whileHover={{ x: 10 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-          Sobre <span className="text-gradient">Lucas Lima</span>
+          SOBRE <span className="text-gradient">LUCAS LIMA</span>
         </motion.h2>
       </div>
 

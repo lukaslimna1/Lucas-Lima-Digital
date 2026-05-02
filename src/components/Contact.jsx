@@ -26,7 +26,7 @@ const Contact = () => {
                 <span className={styles.statusText}>DISPONÍVEL PARA NOVOS PROJETOS</span>
               </div>
 
-              <h2 className={styles.contactTitle}>Pronto para <span className="text-gradient">inovar?</span></h2>
+              <h2 className={styles.contactTitle}>PRONTO PARA <span className="text-gradient">INOVAR?</span></h2>
               <p className={styles.contactSubtitle}>
                 Transforme sua visão em um produto digital escalável, rápido e com experiência premium. Vamos conversar sobre o seu próximo desafio.
               </p>

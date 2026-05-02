@@ -59,7 +59,7 @@
   width: 100%;
   max-width: 800px; 
   text-align: left;
-  margin-top: 5rem; /* Alinhado com a altura dos cards/botões */
+  margin-top: 4rem; /* Resetado para um equilíbrio melhor */
   padding: 1.5rem 2rem;
   background: rgba(5, 5, 10, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -104,7 +104,7 @@
   gap: 12px;
   width: 100%; 
   justify-content: flex-start;
-  margin-top: auto;
+  margin-top: 80px; /* Aumentado para baixar os botões e alinhar com o terminal */
 }
 
 .heroStatsWrapper {
