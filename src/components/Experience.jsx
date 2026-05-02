@@ -12,17 +12,17 @@ const Experience = () => {
   const experiences = [
     {
       id: "divino",
+      number: "01",
       context: "OPERAÇÃO REAL",
       envType: "NEGÓCIO FÍSICO",
       envName: "DIVINO SAPORE",
       impacts: [
-        "• ORGANIZAÇÃO OPERACIONAL",
-        "• CONTROLE FINANCEIRO",
-        "• EFICIÊNCIA NO DIA A DIA"
+        "ORGANIZAÇÃO OPERACIONAL",
+        "CONTROLE FINANCEIRO",
+        "EFICIÊNCIA NO DIA A DIA"
       ],
       insight: "Sistemas não começam no código. Começam no entendimento do negócio.",
       color: "#3B82F6",
-      
       modalHeadline: "OPERAÇÃO REAL NA PRÁTICA",
       modalSubHeadline: "Como caos operacional virou estrutura e controle",
       modalLocation: "Divino Sapore",
@@ -37,17 +37,17 @@ const Experience = () => {
     },
     {
       id: "pereirao",
+      number: "02",
       context: "TECNOLOGIA NA PRÁTICA",
       envType: "VAREJO & LOGÍSTICA",
       envName: "LOJÃO DO PEREIRÃO",
       impacts: [
-        "• ESTABILIDADE OPERACIONAL",
-        "• INFRAESTRUTURA ORGANIZADA",
-        "• SUPORTE TÉCNICO ÁGIL"
+        "ESTABILIDADE OPERACIONAL",
+        "INFRAESTRUTURA ORGANIZADA",
+        "SUPORTE TÉCNICO ÁGIL"
       ],
       insight: "Tecnologia invisível é a que sustenta tudo sem ninguém perceber.",
       color: "#22D3EE",
-      
       modalHeadline: "TECNOLOGIA NA PRÁTICA",
       modalSubHeadline: "Infraestrutura técnica como base de sustentação",
       modalLocation: "Lojão do Pereirão",
@@ -62,17 +62,17 @@ const Experience = () => {
     },
     {
       id: "varejo",
+      number: "03",
       context: "BASE COMERCIAL & HUMANA",
       envType: "ATENDIMENTO & VENDAS",
       envName: "FRONT-END REAL",
       impacts: [
-        "• EMPATIA REAL COM O USUÁRIO",
-        "• RESOLUÇÃO DE PROBLEMAS",
-        "• VISÃO COMERCIAL"
+        "EMPATIA REAL COM O USUÁRIO",
+        "RESOLUÇÃO DE PROBLEMAS",
+        "VISÃO COMERCIAL"
       ],
       insight: "Se você não entende quem usa, você não deveria construir nada.",
       color: "#10B981",
-      
       modalHeadline: "BASE COMERCIAL & HUMANA",
       modalSubHeadline: "A experiência do usuário começa no balcão",
       modalLocation: "Front-end Real",
@@ -87,17 +87,17 @@ const Experience = () => {
     },
     {
       id: "origem",
+      number: "04",
       context: "ORIGEM",
       envType: "FORMAÇÃO",
       envName: "SISTEMAS DE INFORMAÇÃO",
       impacts: [
-        "• LÓGICA DE PROGRAMAÇÃO",
-        "• BANCO DE DADOS",
-        "• ENGENHARIA DE SOFTWARE"
+        "LÓGICA DE PROGRAMAÇÃO",
+        "BANCO DE DADOS",
+        "ENGENHARIA DE SOFTWARE"
       ],
       insight: "O código é apenas a ferramenta. A solução é o pensamento.",
       color: "#8B5CF6",
-      
       modalHeadline: "ORIGEM ACADÊMICA",
       modalSubHeadline: "Onde o pensamento lógico foi forjado",
       modalLocation: "Universidade",
@@ -140,38 +140,59 @@ const Experience = () => {
               onClick={() => setSelectedExp(exp)}
             >
               <div 
-                className={styles.cardWrapper}
-                style={{ "--accent-color": exp.color }}
+                className={`hitech-card ${styles.expCardWrapper}`}
+                style={{ "--step-color": exp.color }}
               >
-                <div className={styles.cardHeader}>
-                  <div className={styles.number}>/{exp.number || (index + 1).toString().padStart(2, '0')}</div>
-                  <div className={styles.context}>{exp.context}</div>
-                </div>
+                <div className={styles.cardContent2x2}>
+                  <div className={styles.cardBgNumber}>{exp.number}</div>
+                  
+                  {/* Linha 01: Contexto e Ambiente */}
+                  <div className={styles.gridRow}>
+                    <div className={styles.gridCell}>
+                      <span className={styles.cellLabel}>
+                        <span className={styles.labelDot}></span> CONTEXTO
+                      </span>
+                      <h3 className={styles.cellValue}>{exp.context}</h3>
+                    </div>
+                    <div className={styles.gridCell}>
+                      <span className={styles.cellLabel}>
+                        <span className={styles.labelDot}></span> AMBIENTE
+                      </span>
+                      <div className={styles.envContainer}>
+                        <span className={styles.envType}>{exp.envType}</span>
+                        <span className={styles.envName}>{exp.envName}</span>
+                      </div>
+                    </div>
+                  </div>
 
-                <div className={styles.envInfo}>
-                  <div className={styles.envType}>{exp.envType}</div>
-                  <div className={styles.envName}>{exp.envName}</div>
-                </div>
+                  <div className={styles.gridDivider}></div>
 
-                <div className={styles.impactList}>
-                  <div className={styles.impactLabel}>IMPACTO GERADO</div>
-                  <ul className={styles.impacts}>
-                    {exp.impacts.map((impact, i) => (
-                      <li key={i}>{impact}</li>
-                    ))}
-                  </ul>
-                </div>
+                  {/* Linha 02: Impactos e Insight */}
+                  <div className={styles.gridRow}>
+                    <div className={styles.gridCell}>
+                      <span className={styles.cellLabel}>
+                        <span className={styles.labelDot}></span> IMPACTO GERADO
+                      </span>
+                      <div className={styles.impactList}>
+                        {exp.impacts.map((impact, i) => (
+                          <p key={i} className={styles.impactItem}>• {impact}</p>
+                        ))}
+                      </div>
+                    </div>
+                    <div className={styles.gridCell}>
+                      <span className={styles.cellLabel}>
+                        <span className={styles.labelDot}></span> O QUE ISSO ME ENSINOU
+                      </span>
+                      <p className={styles.cellValueInsight}>"{exp.insight}"</p>
+                    </div>
+                  </div>
 
-                <div className={styles.insightBox}>
-                  <div className={styles.insightLabel}>O QUE ISSO ME ENSINOU</div>
-                  <p className={styles.insightText}>"{exp.insight}"</p>
-                </div>
-
-                <div className={styles.cardFooter}>
-                  <div className={styles.projectLink}>
-                    <span className={styles.linkText}>VER JORNADA COMPLETA</span>
-                    <div className={styles.linkArrow}>
-                      <ChevronRight size={16} />
+                  <div className={styles.cardFooter}>
+                    <div className={styles.projectLink}>
+                      <span className={styles.linkText}>VER JORNADA COMPLETA</span>
+                      <div className={styles.linkArrow}>
+                        <ChevronRight size={16} />
+                      </div>
                     </div>
                   </div>
                 </div>
