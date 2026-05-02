@@ -54,7 +54,7 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.15em;
-  color: var(--accent-blue);
+  color: var(--step-color);
   margin-bottom: 20px;
   display: flex;
   align-items: center;
@@ -65,9 +65,9 @@
 .categoryDot {
   width: 5px;
   height: 5px;
-  background: var(--accent-blue);
+  background: var(--step-color);
   border-radius: 50%;
-  box-shadow: 0 0 8px var(--accent-blue);
+  box-shadow: 0 0 8px var(--step-color);
 }
 
 .iconTitleRow {
@@ -85,12 +85,12 @@
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 8px;
-  color: var(--accent-blue);
+  color: var(--step-color);
   transition: all 0.4s ease;
 }
 
 .hitech-card-wrapper:hover .capIcon {
-  background: var(--accent-blue);
+  background: var(--step-color);
   color: #000;
   transform: rotate(-5deg) scale(1.05);
 }
@@ -166,6 +166,8 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 12px;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .stepItem:hover {
@@ -178,12 +180,12 @@
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  background: rgba(34, 211, 238, 0.08);
+  background: rgba(59, 130, 246, 0.08);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent-blue);
-  border: 1px solid rgba(34, 211, 238, 0.2);
+  color: #3B82F6;
+  border: 1px solid rgba(59, 130, 246, 0.2);
   flex-shrink: 0;
 }
 

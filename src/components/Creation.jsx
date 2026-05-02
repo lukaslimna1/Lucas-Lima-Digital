@@ -25,37 +25,43 @@ const Creation = () => {
       id: 'PROD',
       icon: <Cpu size={24} />, 
       title: 'PRODUTOS DIGITAIS', 
-      desc: 'Construção de sistemas e plataformas com foco em funcionamento real, escalabilidade e experiência de uso.' 
+      desc: 'Construção de sistemas e plataformas com foco em funcionamento real, escalabilidade e experiência de uso.',
+      color: '#22D3EE' // Ciano
     },
     { 
       id: 'DESIGN',
       icon: <Palette size={24} />, 
       title: 'UX, UI & EXPERIÊNCIA', 
-      desc: 'Design guiado por comportamento, clareza e redução de fricção na jornada do usuário.' 
+      desc: 'Design guiado por comportamento, clareza e redução de fricção na jornada do usuário.',
+      color: '#22D3EE' // Ciano
     },
     { 
       id: 'GROWTH',
       icon: <BarChart3 size={24} />, 
       title: 'GROWTH & ESTRATÉGIA', 
-      desc: 'Decisões baseadas em dados, percepção de valor e comportamento real de mercado.' 
+      desc: 'Decisões baseadas em dados, percepção de valor e comportamento real de mercado.',
+      color: '#3B82F6' // Azul
     },
     { 
       id: 'OPS',
       icon: <Settings size={24} />, 
       title: 'OPERAÇÕES & PROCESSOS', 
-      desc: 'Organização de fluxos, automação e estrutura para execução eficiente no dia a dia.' 
+      desc: 'Organização de fluxos, automação e estrutura para execução eficiente no dia a dia.',
+      color: '#3B82F6' // Azul
     },
     { 
       id: 'BRAND',
       icon: <Users size={24} />, 
       title: 'MARCAS & COMUNIDADES', 
-      desc: 'Construção de identidade, conexão com pessoas e experiências que vão além do digital.' 
+      desc: 'Construção de identidade, conexão com pessoas e experiências que vão além do digital.',
+      color: '#34D399' // Verde
     },
     { 
       id: 'DATA',
       icon: <FlaskConical size={24} />, 
       title: 'DADOS & EXPERIMENTAÇÃO', 
-      desc: 'Uso de dados, IA e testes para evoluir produtos e explorar novas possibilidades.' 
+      desc: 'Uso de dados, IA e testes para evoluir produtos e explorar novas possibilidades.',
+      color: '#34D399' // Verde
     }
   ];
 
@@ -104,6 +110,11 @@ const Creation = () => {
               transition={{ duration: 0.5, delay: i * 0.1 }}
               onMouseMove={handleMouseMove}
               className="hitech-card-wrapper"
+              style={{ 
+                '--step-color': cap.color,
+                '--step-shadow': `${cap.color}15`,
+                '--step-border': `${cap.color}30`
+              }}
             >
               <div className={`hitech-card glass-panel ${styles.capCard}`}>
                 <div className="hitech-asymmetric-aura"></div>

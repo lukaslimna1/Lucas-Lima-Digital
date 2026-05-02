@@ -5,40 +5,60 @@ import styles from './Framework.module.css';
 const Framework = () => {
   const steps = [
     { 
-      title: 'Imersão & Contexto', 
-      icon: <Compass size={28} />,
-      desc: 'Entendimento profundo do problema, usuário e objetivos do negócio.',
-      color: 'var(--hitech-blue)'
+      label: '[IMERSÃO]',
+      title: 'Imersão Real', 
+      icon: <Compass size={28} color="currentColor" />,
+      desc: 'Eu não começo pelo “o que fazer”. Eu começo entendendo o problema de verdade — negócio, operação, usuário e onde isso quebra na prática.',
+      color: '#3B82F6' // Azul
     },
     { 
-      title: 'Definição do Sistema', 
-      icon: <Cpu size={28} />,
-      desc: 'Estruturação do produto, lógica e fluxos principais.',
-      color: 'var(--accent-purple)'
+      label: '[SISTEMA]',
+      title: 'Leitura do Sistema', 
+      icon: <Settings size={28} color="currentColor" />,
+      desc: 'Conecto todas as partes, identifico gargalos e entendo o que realmente impacta resultado.',
+      color: '#3B82F6' // Azul
     },
     { 
-      title: 'Experiência & Interface', 
-      icon: <Layout size={28} />,
-      desc: 'Criação da jornada e interfaces focadas em clareza e usabilidade.',
-      color: 'var(--hitech-blue)'
+      label: '[ARQUITETURA]',
+      title: 'Arquitetura do Produto', 
+      icon: <Cpu size={28} color="currentColor" />,
+      desc: 'Definição da base: estrutura, fluxos e lógica para o sistema funcionar sem depender de improviso.',
+      color: '#22D3EE' // Ciano
     },
     { 
-      title: 'Engenharia & Implementação', 
-      icon: <Code size={28} />,
-      desc: 'Construção técnica com foco em performance e escalabilidade.',
-      color: 'var(--accent-purple)'
+      label: '[UX]',
+      title: 'UX Estratégica', 
+      icon: <Layout size={28} color="currentColor" />,
+      desc: 'Transformo estrutura em algo utilizável — fluxos claros, interfaces intuitivas e decisões guiadas por comportamento real.',
+      color: '#22D3EE' // Ciano
     },
     { 
-      title: 'Validação & Métricas', 
-      icon: <BarChart3 size={28} />,
-      desc: 'Análise de comportamento real e uso do produto.',
-      color: 'var(--hitech-blue)'
+      label: '[BUILD]',
+      title: 'Build Técnico', 
+      icon: <Code size={28} color="currentColor" />,
+      desc: 'Aqui vira produto: código, integrações e automações funcionando de forma escalável e organizada.',
+      color: '#22D3EE' // Ciano
     },
     { 
-      title: 'Evolução Contínua', 
-      icon: <RefreshCw size={28} />,
-      desc: 'Iteração constante baseada em dados e feedback real.',
-      color: 'var(--accent-purple)'
+      label: '[VALIDAÇÃO]',
+      title: 'Validação Real', 
+      icon: <BarChart3 size={28} color="currentColor" />,
+      desc: 'Análise de uso, comportamento e fricções para ajustar o que realmente importa.',
+      color: '#34D399' // Verde
+    },
+    { 
+      label: '[EVOLUÇÃO]',
+      title: 'Evolução de Produto', 
+      icon: <RefreshCw size={28} color="currentColor" />,
+      desc: 'O sistema evolui conforme o uso, o mercado e novas oportunidades aparecem.',
+      color: '#34D399' // Verde
+    },
+    { 
+      label: '[EXPANSÃO]',
+      title: 'Escala & Expansão', 
+      icon: <Cpu size={28} color="currentColor" />,
+      desc: 'Depois que o núcleo funciona, é onde escala: novas features, automações e crescimento estruturado.',
+      color: '#34D399' // Verde
     }
   ];
 
@@ -61,16 +81,15 @@ const Framework = () => {
           FRAMEWORK DE <span className="text-gradient">CONSTRUÇÃO</span>
         </motion.h2>
         <p className={`section-subtitle ${styles.frameworkSubtitle}`}>
-          Metodologia prática para transformar problemas em produtos funcionais, combinando product sense, design e engenharia.
+          Não é um checklist. É um sistema de execução para transformar ideias confusas em produtos funcionais, estruturados e prontos para evoluir.
         </p>
       </div>
 
       {/* Grid Hi-Tech intercalado em 2 linhas de 3 */}
       <div className={styles.frameworkGrid}>
         {steps.map((step, i) => {
-          const isBlue = i % 2 === 0;
-          const bg = isBlue ? 'rgba(59, 130, 246, 0.1)' : 'rgba(168, 85, 247, 0.1)';
-          const shadow = `${step.color}15`; // hex + opacity simplificado
+          const bg = `${step.color}10`; // Opacidade suave baseada na cor do módulo
+          const shadow = `${step.color}15`; 
           const border = `${step.color}30`;
           
           return (
@@ -102,8 +121,16 @@ const Framework = () => {
                 
                 <div className={styles.cardHeader}>
                   <div className={styles.capCategory}>
-                    <span className={styles.categoryDot}></span>
-                    MÓDULO_0{i+1}
+                    <div className={styles.telemetryRow}>
+                      <span className={styles.categoryDot}></span>
+                      <span className={styles.telemetryLabel}>SYSTEM_PHASE:</span>
+                      <span className={styles.telemetryValue}>{step.label.replace('[', '').replace(']', '')}</span>
+                    </div>
+                    <div className={styles.telemetryRow}>
+                      <span className={`${styles.categoryDot} ${styles.activeDot}`}></span>
+                      <span className={styles.telemetryLabel}>STATUS:</span>
+                      <span className={styles.telemetryValue}>ACTIVE</span>
+                    </div>
                   </div>
                   
                   <div className={styles.iconTitleRow}>
