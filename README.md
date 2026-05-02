@@ -102,11 +102,11 @@ Este portfólio é um organismo vivo e continuará sendo aprimorado.
 - **Reconstrução Total do Lab**: Transformação da seção de experimentos em uma interface de comando técnica com navegação por setores (`SECTOR_0X`).
 - **Telemetry Card System**: Implementação de metadados técnicos fictícios e IDs de rastreio para cada item de pesquisa.
 
-### v2.6.0 (Atual) - *Horizontal R&D Sync: Triptych Carousel System*
-- **Layout Triptych**: Evolução para um layout de 3 colunas horizontais, permitindo a visualização simultânea de todos os setores de pesquisa (Experimentos, Aprendizado, Evolução).
-- **Auto-Carousel Engine**: Implementação de carrosséis autônomos por setor com ciclo de transição de 5 segundos, otimizando o espaço vertical sem perda de conteúdo.
-- **Synchronized Indicators**: Adição de indicadores de progresso (Telemetric Dots) que rastreiam o estado ativo de cada carrossel em tempo real.
-- **Premium Command Button**: Estilização final do botão `EXPAND_FULL_RESEARCH` seguindo o padrão de design industrial de alta fidelidade.
+### v2.6.1 (Atual) - *R&D Rhythm & Parity: Industrial Standardization*
+- **Ajuste de Cadência**: Ciclo do carrossel desacelerado para 8 segundos, otimizando o tempo de retenção e legibilidade.
+- **Unificação de Design System**: Refatoração completa da estrutura interna dos cards do Lab para espelhar as seções de Criação e Framework.
+- **Industrial Badges**: Implementação do sistema de IDs `EXP_ID_00X` com indicadores pulsantes sincronizados com o branding global.
+- **Layout Parity**: Alinhamento de ícones, títulos e metadados seguindo o padrão de "Boutique Hi-Tech" de alta fidelidade.
 
 ---
 

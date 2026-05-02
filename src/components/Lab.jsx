@@ -12,7 +12,7 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
     if (experiments.length <= 1) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % experiments.length);
-    }, 5000);
+    }, 8000); // 8 segundos para uma leitura confortável
     return () => clearInterval(interval);
   }, [experiments.length]);
 
@@ -43,9 +43,9 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.6 }}
           >
-            <div className={`hitech-card glass-panel ${styles.labCard}`}>
+            <div className={`hitech-card glass-panel ${styles.capCard}`}>
               <div className="hitech-asymmetric-aura"></div>
               <div className="hitech-artistic-fusion"></div>
               <div className="hitech-artistic-grain"></div>
@@ -56,16 +56,17 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
               <div className="corner-decor bottom-left"></div>
               <div className="corner-decor bottom-right"></div>
 
-              <div className={styles.cardInternal}>
-                <div className={styles.cardHeader}>
-                  <div className={styles.expId}>EXP_ID_00{exp.id}</div>
-                  <div className={`${styles.statusBadge} ${styles[exp.status?.toLowerCase()]}`}>
-                    {exp.statusLabel}
-                  </div>
+              <div className={styles.cardHeader}>
+                <div className={styles.capCategory}>
+                  <span className={styles.categoryDot}></span>
+                  EXP_ID_00{exp.id} 
+                  <span className={`${styles.statusLabel} ${styles[exp.status?.toLowerCase()]}`}>
+                    [{exp.statusLabel}]
+                  </span>
                 </div>
-
-                <div className={styles.titleRow}>
-                  <div className={styles.iconBox}>
+                
+                <div className={styles.iconTitleRow}>
+                  <div className={styles.capIcon}>
                     {exp.icon && iconMap[exp.icon] ? (
                       (() => {
                         const IconComponent = iconMap[exp.icon];
@@ -75,10 +76,12 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
                       <FlaskConical size={20} />
                     )}
                   </div>
-                  <h3 className={styles.labTitle}>{exp.title}</h3>
+                  <h3 className={styles.capTitle}>{exp.title}</h3>
                 </div>
-
-                <p className={styles.labDesc}>{exp.description}</p>
+                
+                <div className={styles.cardMain}>
+                  <p className={styles.capDesc}>{exp.description}</p>
+                </div>
 
                 <div className={styles.cardFooter}>
                   <div className={styles.techTelemetry}>
