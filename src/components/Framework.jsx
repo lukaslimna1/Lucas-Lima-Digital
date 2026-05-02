@@ -24,7 +24,7 @@ const Framework = () => {
       label: '[DIREÇÃO]',
       title: 'Direção Estratégica', 
       icon: <Compass size={28} color="currentColor" />,
-      desc: 'Definição clara do que deve ser feito, o que não deve e onde está o maior impacto antes de começar a construir.',
+      desc: 'Definição clara do que deve ser feito, do que não deve e onde está o maior impacto antes de construir.',
       color: '#3B82F6', // Azul
       status: 'ACTIVE'
     },
@@ -38,7 +38,7 @@ const Framework = () => {
     },
     { 
       label: '[UX]',
-      title: 'UX Estratégica', 
+      title: 'Experiência do Usuário', 
       icon: <Layout size={28} color="currentColor" />,
       desc: 'Transformo estrutura em algo utilizável — fluxos claros, interfaces intuitivas e decisões guiadas por comportamento real.',
       color: '#22D3EE', // Ciano
@@ -46,7 +46,7 @@ const Framework = () => {
     },
     { 
       label: '[BUILD]',
-      title: 'Build Técnico', 
+      title: 'Construção & Engenharia', 
       icon: <Code size={28} color="currentColor" />,
       desc: 'Aqui vira produto: código, integrações e automações funcionando de forma escalável e organizada.',
       color: '#22D3EE', // Ciano
@@ -56,7 +56,7 @@ const Framework = () => {
       label: '[VALIDAÇÃO]',
       title: 'Validação Real', 
       icon: <BarChart3 size={28} color="currentColor" />,
-      desc: 'Análise de uso, comportamento e fricções para ajustar o que realmente importa.',
+      desc: 'Análise de uso, comportamento e fricções para ajustar o que realmente gera resultado.',
       color: '#34D399', // Verde
       status: 'ACTIVE'
     },
@@ -64,17 +64,18 @@ const Framework = () => {
       label: '[EVOLUÇÃO]',
       title: 'Evolução de Produto', 
       icon: <RefreshCw size={28} color="currentColor" />,
-      desc: 'O sistema evolui conforme o uso, o mercado e novas oportunidades aparecem.',
+      desc: 'O sistema evolui conforme o uso, o mercado e novas oportunidades surgem.',
       color: '#34D399', // Verde
       status: 'ACTIVE'
     },
     { 
       label: '[EXPANSÃO]',
-      title: 'Expansão', 
+      title: 'Expansão & Escala', 
       icon: <Cpu size={28} color="currentColor" />,
       desc: 'Depois que o núcleo funciona, é onde escala: novas features, automações e crescimento estruturado.',
       color: '#34D399', // Verde
-      status: 'FULL CYCLE ACTIVE'
+      status: 'ACTIVE',
+      state: 'FULL CYCLE'
     }
   ];
 
@@ -147,6 +148,13 @@ const Framework = () => {
                       <span className={styles.telemetryLabel}>STATUS:</span>
                       <span className={styles.telemetryValue}>{step.status}</span>
                     </div>
+                    {step.state && (
+                      <div className={styles.telemetryRow}>
+                        <span className={styles.categoryDot}></span>
+                        <span className={styles.telemetryLabel}>SYSTEM_STATE:</span>
+                        <span className={styles.telemetryValue}>{step.state}</span>
+                      </div>
+                    )}
                   </div>
                   
                   <div className={styles.iconTitleRow}>

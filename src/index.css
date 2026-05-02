@@ -280,6 +280,9 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-mask: 
     linear-gradient(#fff 0 0) content-box, 
     linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0;
@@ -325,7 +328,7 @@ h1, h2, h3, h4, h5, h6 {
   100% { background-position: -100% -100%; }
 }
 
-/* HUD Corner Accents */
+/* HUD Corner Accents (Quadradinhos) */
 .corner-decor {
   position: absolute;
   width: 10px;
@@ -334,10 +337,10 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.2;
   transition: all 0.4s;
 }
-.top-left { top: 16px; left: 16px; border-right: 0; border-bottom: 0; }
-.top-right { top: 16px; right: 16px; border-left: 0; border-bottom: 0; }
-.bottom-left { bottom: 16px; left: 16px; border-right: 0; border-top: 0; }
-.bottom-right { bottom: 16px; right: 16px; border-left: 0; border-top: 0; }
+.top-left { top: 16px; left: 16px; }
+.top-right { top: 16px; right: 16px; }
+.bottom-left { bottom: 16px; left: 16px; }
+.bottom-right { bottom: 16px; right: 16px; }
 
 .hitech-card-wrapper:hover .corner-decor {
   opacity: 0.9;
@@ -478,9 +481,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 section {
-  padding: 100px 0;
+  padding: 40px 0 80px;
   content-visibility: auto;
   contain-intrinsic-size: 1px 600px;
+  scroll-margin-top: 20px;
 }
 
 /* Section Titles */

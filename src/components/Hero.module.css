@@ -1,11 +1,10 @@
 .heroSection {
-  min-height: 95vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
-  margin-bottom: 100px;
-  padding-top: 120px;
+  padding-top: 40px;
   padding-bottom: 80px;
   text-align: left;
   overflow: hidden;

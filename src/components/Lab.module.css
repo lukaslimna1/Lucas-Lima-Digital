@@ -1,13 +1,24 @@
 .labSection {
   position: relative;
   overflow: hidden;
-  padding: 100px 0;
 }
 
 /* Temas de Cores Dinâmicas Oficiais */
-.colorCyan { --sector-color: #22D3EE; }
-.colorGreen { --sector-color: #34D399; }
-.colorBlue { --sector-color: #3B82F6; }
+.colorBlue { 
+  --sector-color: #3b82f6; 
+  --sector-color-rgb: 59, 130, 246;
+  --hover-gradient: linear-gradient(135deg, #3b82f6, #22d3ee, #3b82f6);
+}
+.colorCyan { 
+  --sector-color: #22d3ee; 
+  --sector-color-rgb: 34, 211, 238;
+  --hover-gradient: linear-gradient(135deg, #22d3ee, #e0f2fe, #22d3ee);
+}
+.colorGreen { 
+  --sector-color: #34d399; 
+  --sector-color-rgb: 52, 211, 153;
+  --hover-gradient: linear-gradient(135deg, #34d399, #3b82f6, #34d399);
+}
 
 .labHorizontalLayout {
   display: flex;
@@ -106,42 +117,40 @@
 /* CARD OTIMIZADO */
 .hitechCardWrapper {
   position: relative;
+  width: 100%;
   height: 100%;
-  background: rgba(10, 10, 15, 0.9);
-  border: 2px solid var(--sector-color);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
-  border-radius: 24px 4px 24px 4px;
-  overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.hitechCardWrapper:hover {
-  box-shadow: 0 0 35px rgba(var(--sector-color), 0.4);
-  transform: translateY(-6px);
-}
-
-.cardCornerDecor {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  border: 2px solid var(--sector-color);
-  opacity: 0.8;
-  z-index: 10;
-}
-
-.tl { top: 12px; left: 12px; border-right: none; border-bottom: none; }
-.tr { top: 12px; right: 12px; border-left: none; border-bottom: none; }
-.bl { bottom: 12px; left: 12px; border-right: none; border-top: none; }
-.br { bottom: 12px; right: 12px; border-left: none; border-top: none; }
-
-.hitechCardContent {
-  position: relative;
-  z-index: 5;
-  padding: 40px; /* Padding aumentado para mais luxo */
-  height: 100%;
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Ajuste fino para cards concluídos no Lab */
+.hitechCardWrapper.isCompleted :global(.hitech-card) {
+  background: rgba(var(--sector-color-rgb), 0.1) !important;
+}
+
+/* Sincroniza o brilho da borda com a cor do setor, mantendo a animação global */
+.hitechCardWrapper :global(.hitech-border-glow) {
+  background: linear-gradient(90deg, 
+    var(--sector-color), 
+    #fff, 
+    var(--sector-color),
+    #fff
+  ) !important;
+  background-size: 200% 100% !important;
+}
+
+.hitechCardContent {
+  padding: 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: rgba(10, 10, 15, 0.6) !important;
+  border: none !important;
+  position: relative;
+  z-index: 5;
 }
 
 .capCategory {
@@ -172,12 +181,12 @@
   font-weight: 900;
   letter-spacing: 0.05em;
   color: var(--sector-color);
-  background: rgba(var(--sector-color), 0.08);
+  background: rgba(var(--sector-color-rgb), 0.08);
   padding: 6px 16px;
   border-radius: 8px;
-  border: 1px solid rgba(var(--sector-color), 0.3);
+  border: 1px solid rgba(var(--sector-color-rgb), 0.3);
   white-space: nowrap;
-  text-shadow: 0 0 10px rgba(var(--sector-color), 0.4);
+  text-shadow: 0 0 10px rgba(var(--sector-color-rgb), 0.4);
 }
 
 .cardBody {
@@ -211,7 +220,13 @@
 .hitechCardWrapper:hover .capIcon {
   background: var(--sector-color);
   color: #000;
-  transform: rotate(-10deg) scale(1.1);
+  transform: rotate(-5deg) scale(1.05);
+  box-shadow: 0 0 20px rgba(var(--sector-color-rgb), 0.4);
+}
+
+.hitechCardWrapper.isCompleted .capIcon {
+  background: rgba(var(--sector-color-rgb), 0.1);
+  color: var(--sector-color);
 }
 
 .capTitle {
@@ -264,33 +279,27 @@
 
 .techTelemetry span {
   font-family: var(--font-mono);
-  font-size: 0.65rem;
-  color: var(--text-secondary);
-  opacity: 0.4;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.08em;
   font-weight: 600;
+  text-transform: uppercase;
 }
 
-/* DESTAQUES DE SUCESSO (TELEMETRIA) */
-.statusSuccess {
-  color: #34D399 !important;
-  opacity: 1 !important;
-  text-shadow: 0 0 8px rgba(52, 211, 153, 0.4);
+.isCompleted .techTelemetry span {
+  color: rgba(255, 255, 255, 0.8);
 }
 
-/* Ajuste no Card Concluído */
+/* ESTADOS DINÂMICOS */
 .hitechCardWrapper.isCompleted {
-  border-color: rgba(52, 211, 153, 0.4);
-  background: rgba(10, 20, 15, 0.95);
-}
-
-.hitechCardWrapper.isCompleted .capIcon {
-  color: #34D399;
+  border-color: rgba(var(--sector-color-rgb), 0.4);
+  background: rgba(var(--sector-color-rgb), 0.1);
 }
 
 .hitechCardWrapper.isCompleted .statusLabel {
-  color: #34D399;
-  border-color: rgba(52, 211, 153, 0.5);
-  background: rgba(52, 211, 153, 0.1);
+  color: var(--sector-color);
+  border-color: rgba(var(--sector-color-rgb), 0.5);
+  background: rgba(var(--sector-color-rgb), 0.1);
 }
 
 /* Responsividade */

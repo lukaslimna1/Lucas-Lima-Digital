@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
-import { 
-  Brain, 
-  Cpu, 
-  Palette, 
-  BarChart3, 
-  Settings, 
-  Users, 
+import {
+  Brain,
+  Cpu,
+  Palette,
+  BarChart3,
+  Settings,
+  Users,
   FlaskConical,
   Target,
   Search,
@@ -19,49 +19,49 @@ import { useMousePosition } from '../utils/useMousePosition';
 
 const Creation = () => {
   const { handleMouseMove } = useMousePosition();
-  
+
   const capabilities = [
-    { 
+    {
       id: 'PROD',
-      icon: <Cpu size={24} />, 
-      title: 'PRODUTOS DIGITAIS', 
+      icon: <Cpu size={24} />,
+      title: 'PRODUTOS DIGITAIS',
       desc: 'Construção de sistemas e plataformas com foco em funcionamento real, escalabilidade e experiência de uso.',
-      color: '#22D3EE' // Ciano
+      color: '#22D3EE'
     },
-    { 
+    {
       id: 'DESIGN',
-      icon: <Palette size={24} />, 
-      title: 'UX, UI & EXPERIÊNCIA', 
+      icon: <Palette size={24} />,
+      title: 'UX, UI & EXPERIÊNCIA',
       desc: 'Design guiado por comportamento, clareza e redução de fricção na jornada do usuário.',
-      color: '#22D3EE' // Ciano
+      color: '#22D3EE'
     },
-    { 
+    {
       id: 'GROWTH',
-      icon: <BarChart3 size={24} />, 
-      title: 'GROWTH & ESTRATÉGIA', 
+      icon: <BarChart3 size={24} />,
+      title: 'GROWTH & ESTRATÉGIA',
       desc: 'Decisões baseadas em dados, percepção de valor e comportamento real de mercado.',
-      color: '#3B82F6' // Azul
+      color: '#3B82F6'
     },
-    { 
+    {
       id: 'OPS',
-      icon: <Settings size={24} />, 
-      title: 'OPERAÇÕES & PROCESSOS', 
+      icon: <Settings size={24} />,
+      title: 'OPERAÇÕES & PROCESSOS',
       desc: 'Organização de fluxos, automação e estrutura para execução eficiente no dia a dia.',
-      color: '#3B82F6' // Azul
+      color: '#22D3EE'
     },
-    { 
+    {
       id: 'BRAND',
-      icon: <Users size={24} />, 
-      title: 'MARCAS & COMUNIDADES', 
+      icon: <Users size={24} />,
+      title: 'MARCAS & COMUNIDADES',
       desc: 'Construção de identidade, conexão com pessoas e experiências que vão além do digital.',
-      color: '#34D399' // Verde
+      color: '#34D399'
     },
-    { 
+    {
       id: 'DATA',
-      icon: <FlaskConical size={24} />, 
-      title: 'DADOS & EXPERIMENTAÇÃO', 
+      icon: <FlaskConical size={24} />,
+      title: 'DADOS & EXPERIMENTAÇÃO',
       desc: 'Uso de dados, IA e testes para evoluir produtos e explorar novas possibilidades.',
-      color: '#34D399' // Verde
+      color: '#22D3EE'
     }
   ];
 
@@ -75,7 +75,7 @@ const Creation = () => {
   ];
 
   return (
-    <motion.section 
+    <motion.section
       id="criacao"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
@@ -85,7 +85,7 @@ const Creation = () => {
     >
       {/* Cabeçalho Principal */}
       <div className={`section-header ${styles.sectionHeader}`}>
-        <motion.h2 
+        <motion.h2
           className="section-title"
           whileHover={{ x: 10 }}
           transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -98,19 +98,19 @@ const Creation = () => {
       </div>
 
       <div className={styles.creationContainer}>
-        
+
         {/* Capacidades (Grid) */}
         <div className={styles.capabilitiesGrid}>
           {capabilities.map((cap, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               onMouseMove={handleMouseMove}
-              className="hitech-card-wrapper"
-              style={{ 
+              className={`hitech-card-wrapper ${styles.capCardWrapper}`}
+              style={{
                 '--step-color': cap.color,
                 '--step-shadow': `${cap.color}15`,
                 '--step-border': `${cap.color}30`
@@ -121,17 +121,17 @@ const Creation = () => {
                 <div className="hitech-artistic-fusion"></div>
                 <div className="hitech-artistic-grain"></div>
                 <div className="hitech-border-glow"></div>
-                
+
                 {/* Bordas em L */}
                 <div className="corner-decor top-left"></div>
                 <div className="corner-decor top-right"></div>
                 <div className="corner-decor bottom-left"></div>
                 <div className="corner-decor bottom-right"></div>
-                
+
                 <div className={styles.cardHeader}>
                   <div className={styles.capCategory}>
                     <span className={styles.categoryDot}></span>
-                    MODULE_{cap.id}
+                    {cap.id}
                   </div>
                   <div className={styles.titleWrapper}>
                     <div className={styles.iconTitleRow}>
@@ -152,7 +152,7 @@ const Creation = () => {
         </div>
 
         {/* Mindset de Produto */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -165,27 +165,27 @@ const Creation = () => {
               <div className="hitech-artistic-fusion"></div>
               <div className="hitech-artistic-grain"></div>
               <div className="hitech-border-glow"></div>
-              
+
               {/* Bordas em L */}
               <div className="corner-decor top-left"></div>
               <div className="corner-decor top-right"></div>
               <div className="corner-decor bottom-left"></div>
               <div className="corner-decor bottom-right"></div>
-              
+
               <div className={styles.cardContent}>
                 <div className={styles.mindsetHeader}>
                   <Brain color="var(--accent-blue)" size={32} />
                   <h3 className={styles.mindsetTitle}>MINDSET DE PRODUTO</h3>
                 </div>
-                
+
                 <p className={styles.mindsetDesc}>
                   Antes de construir qualquer solução, eu busco entender o sistema como um todo.
                 </p>
 
                 <div className={styles.stepList}>
                   {philosophySteps.map((step, idx) => (
-                    <motion.div 
-                      key={idx} 
+                    <motion.div
+                      key={idx}
                       whileHover={{ scale: 1.02, backgroundColor: 'rgba(255, 255, 255, 0.05)' }}
                       className={styles.stepItem}
                     >
@@ -208,19 +208,29 @@ const Creation = () => {
           </div>
         </motion.div>
 
-        {/* Fechamento da Seção - Card Full Width */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
           className={styles.creationFooter}
         >
-          <div className="hitech-card-wrapper" style={{ width: '100%' }}>
+          <div className={`hitech-card-wrapper ${styles.footerCardWrapper}`}
+            style={{
+              width: '100%',
+              '--step-color': '#22D3EE',
+              '--step-shadow': 'rgba(34, 211, 238, 0.15)',
+              '--step-border': 'rgba(34, 211, 238, 0.3)'
+            }}
+            onMouseMove={handleMouseMove}
+          >
             <div className={`hitech-card glass-panel ${styles.footerCard}`}>
+              <div className="hitech-asymmetric-aura"></div>
+              <div className="hitech-artistic-fusion"></div>
+              <div className="hitech-artistic-grain"></div>
               <div className="hitech-grid-overlay"></div>
               <div className="hitech-border-glow"></div>
-              
+
               <div className={styles.cardContent}>
                 <p className={styles.footerQuote}>
                   Construir sem entender é só <span className={styles.dimText}>execução.</span><br />
@@ -228,8 +238,10 @@ const Creation = () => {
                 </p>
               </div>
 
-              {/* Detalhes de Decoração */}
+              {/* Detalhes de Decoração - Todos os 4 cantos */}
               <div className="corner-decor top-left"></div>
+              <div className="corner-decor top-right"></div>
+              <div className="corner-decor bottom-left"></div>
               <div className="corner-decor bottom-right"></div>
             </div>
           </div>

@@ -1,90 +1,221 @@
 .experienceSection {
-  margin-top: 0;
+  padding: 100px 0; /* Sincronizado com o padrão de respiro das outras seções */
+  position: relative;
+  /* Removido o fundo customizado para usar o global do body/app-container */
 }
 
-.experienceTimeline {
-  position: relative;
-  margin-top: 48px;
-  /* padding-left: 20px se houver sidebar, como não há, podemos remover ou manter 0 */
+.experienceGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px; /* Gap padrão de grid hitech */
+  width: 100%;
+  padding: 0; /* Removido padding extra pois o main-content já tem 60px */
 }
 
 .experienceItem {
+  cursor: pointer;
+  height: 100%;
+}
+
+.expCardWrapper {
+  height: 100%;
+}
+
+.cardContent2x2 {
+  padding: 40px; /* Padding interno do card restaurado para equilíbrio */
+  height: 100%;
   display: flex;
-  gap: 32px;
-  margin-bottom: 40px;
+  flex-direction: column;
   position: relative;
   z-index: 2;
 }
 
-.experienceHeader {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-  gap: 16px;
+.cardBgNumber {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  font-size: 8rem;
+  font-weight: 950;
+  color: var(--step-color);
+  opacity: 0.03;
+  font-family: 'JetBrains Mono', monospace;
+  pointer-events: none;
+  line-height: 1;
 }
 
-.experienceMainInfo {
+.gridRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.gridCell {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
 }
 
-.experienceRole {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: white;
-  margin-bottom: 4px;
-}
-
-.experienceCompanyInfo, 
-.experiencePeriod {
+.cellLabel {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 800;
+  color: var(--text-secondary);
+  letter-spacing: 0.15em;
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.85rem;
-  color: var(--text-secondary);
+  opacity: 0.6;
 }
 
-.iconSub {
-  color: var(--accent-blue);
-  opacity: 0.8;
+.labelDot {
+  width: 4px;
+  height: 4px;
+  background: var(--step-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--step-color);
 }
 
-.experienceDesc {
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--text-secondary);
-  margin-bottom: 20px;
+.cellValue {
+  font-size: 1.4rem;
+  font-weight: 900;
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  text-transform: uppercase;
 }
 
-.experienceHighlight {
+.envContainer {
   display: flex;
-  gap: 10px;
-  align-items: center;
-  padding: 12px 20px;
-  background: rgba(59, 130, 246, 0.05);
-  border: 1px solid rgba(59, 130, 246, 0.1);
-  border-radius: 12px;
+  flex-direction: column;
 }
 
-.highlightLabel {
+.envType {
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+.envName {
+  font-size: 1rem;
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.gridDivider {
+  height: 1px;
+  background: linear-gradient(90deg, 
+    rgba(255, 255, 255, 0.08) 0%, 
+    rgba(255, 255, 255, 0.01) 100%
+  );
+  margin: 30px 0;
+  width: 100%;
+}
+
+.impactList {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.impactItem {
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: #fff;
+  font-weight: 600;
+  margin: 0;
+}
+
+.cellValueInsight {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: italic;
+  font-weight: 500;
+  margin: 0;
+  border-left: 2px solid var(--step-color);
+  padding-left: 15px;
+}
+
+.cardFooter {
+  margin-top: auto;
+  padding-top: 30px;
+}
+
+.projectLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: white;
   font-size: 0.75rem;
   font-weight: 800;
   text-transform: uppercase;
-  color: var(--accent-blue);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: all 0.4s ease;
 }
 
-.highlightText {
-  font-size: 0.9rem;
-  color: white;
-  font-weight: 500;
+.projectLink:hover {
+  background: rgba(34, 211, 238, 0.1);
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.1);
+}
+
+.linkText {
+  transition: all 0.3s ease;
+}
+
+.projectLink:hover .linkText {
+  color: var(--accent-blue);
+}
+
+.linkArrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.projectLink:hover .linkArrow {
+  background: var(--accent-blue);
+  color: #000;
+  transform: translateX(4px) rotate(-45deg);
+}
+
+@media (max-width: 1024px) {
+  .cardContent2x2 {
+    padding: 30px;
+  }
+  .gridRow {
+    gap: 20px;
+  }
+  .cellValue {
+    font-size: 1.2rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .experienceHeader {
-    flex-direction: column;
+  .experienceGrid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    gap: 20px;
+  }
+  .experienceSection {
+    padding: 80px 0;
+  }
+  .gridRow {
+    grid-template-columns: 1fr;
+    gap: 25px;
   }
 }

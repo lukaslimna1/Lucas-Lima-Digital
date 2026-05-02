@@ -40,6 +40,25 @@
   }
 }
 
+.capCardWrapper {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.capCardWrapper :global(.hitech-border-glow) {
+  background: linear-gradient(90deg, 
+    var(--step-color), 
+    #fff, 
+    var(--step-color),
+    #fff
+  ) !important;
+  opacity: 0.15;
+}
+
+.capCardWrapper:hover :global(.hitech-border-glow) {
+  opacity: 0.8;
+  animation-duration: 1.5s;
+}
+
 /* Card Style - Cloning Projects Card */
 .capCard {
   border-radius: var(--radius-hitech-card) !important;
@@ -241,6 +260,25 @@
   width: 100%;
 }
 
+.footerCardWrapper {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footerCardWrapper :global(.hitech-border-glow) {
+  background: linear-gradient(90deg, 
+    var(--step-color), 
+    #fff, 
+    var(--step-color),
+    #fff
+  ) !important;
+  opacity: 0.15;
+}
+
+.footerCardWrapper:hover :global(.hitech-border-glow) {
+  opacity: 0.8;
+  animation-duration: 1.5s;
+}
+
 .footerCard {
   padding: 3rem;
   display: flex;
@@ -248,7 +286,7 @@
   align-items: center;
   min-height: 200px;
   overflow: hidden;
-  border-radius: 24px;
+  border-radius: var(--radius-hitech-card) !important;
 }
 
 .cardContent {

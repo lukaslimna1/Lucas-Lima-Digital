@@ -62,7 +62,7 @@ O projeto é guiado por um **Design System proprietário** focado em autoridade 
 
 ---
 
-## 📈 EVOLUÇÃO E ROADMAP (V2.6.5)
+## 📈 EVOLUÇÃO E ROADMAP (V2.6.8)
 
 O portfólio evoluiu de uma landing page simples para um **Dashboard de Engenharia**:
 
@@ -70,8 +70,9 @@ O portfólio evoluiu de uma landing page simples para um **Dashboard de Engenhar
 - **Fase 02 (Premium Overhaul)**: Implementação de efeitos visuais avançados e "Modo Recrutador".
 - **Fase 03 (System Thinking)**: Criação das seções `Creation` e `Framework`, focando em metodologia.
 - **Fase 04 (Authority Standardization)**: Padronização total em maiúsculas e refatoração semântica completa.
-- **Sincronização Cromática Estratégica**: Sistema de cores unificado (Azul/Ciano/Verde).
-- **Refinamento de Telemetria**: Implementação de status dinâmicos por módulo, com destaque para o **FULL CYCLE ACTIVE** na fase de **Expansão**, sinalizando a maturidade máxima do sistema.
+- **Sincronização Cromática Estratégica**: Sistema de cores unificado no Framework (Azul/Ciano/Verde).
+- **Refinamento Semântico**: Evolução dos termos técnicos para alta autoridade.
+- **Integridade Visual**: Reversão da sincronização cromática na seção de Criação para preservar sua identidade original e foco em capacidades transversais.
 
 ---
 
