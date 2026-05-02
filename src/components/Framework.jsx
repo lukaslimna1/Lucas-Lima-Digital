@@ -9,63 +9,72 @@ const Framework = () => {
       title: 'Imersão Real', 
       icon: <Compass size={28} color="currentColor" />,
       desc: 'Eu não começo pelo “o que fazer”. Eu começo entendendo o problema de verdade — negócio, operação, usuário e onde isso quebra na prática.',
-      color: '#3B82F6' // Azul
+      color: '#3B82F6', // Azul
+      status: 'ACTIVE'
     },
     { 
       label: '[SISTEMA]',
       title: 'Leitura do Sistema', 
       icon: <Settings size={28} color="currentColor" />,
       desc: 'Conecto todas as partes, identifico gargalos e entendo o que realmente impacta resultado.',
-      color: '#3B82F6' // Azul
+      color: '#3B82F6', // Azul
+      status: 'ACTIVE'
     },
     { 
       label: '[DIREÇÃO]',
       title: 'Direção Estratégica', 
-      icon: <Compass size={28} color="currentColor" />, // Usando Compass para Direção
+      icon: <Compass size={28} color="currentColor" />,
       desc: 'Definição clara do que deve ser feito, o que não deve e onde está o maior impacto antes de começar a construir.',
-      color: '#3B82F6' // Azul
+      color: '#3B82F6', // Azul
+      status: 'ACTIVE'
     },
     { 
       label: '[ARQUITETURA]',
       title: 'Arquitetura do Produto', 
       icon: <Cpu size={28} color="currentColor" />,
       desc: 'Definição da base: estrutura, fluxos e lógica para o sistema funcionar sem depender de improviso.',
-      color: '#22D3EE' // Ciano
+      color: '#22D3EE', // Ciano
+      status: 'ACTIVE'
     },
     { 
       label: '[UX]',
       title: 'UX Estratégica', 
       icon: <Layout size={28} color="currentColor" />,
       desc: 'Transformo estrutura em algo utilizável — fluxos claros, interfaces intuitivas e decisões guiadas por comportamento real.',
-      color: '#22D3EE' // Ciano
+      color: '#22D3EE', // Ciano
+      status: 'ACTIVE'
     },
     { 
       label: '[BUILD]',
       title: 'Build Técnico', 
       icon: <Code size={28} color="currentColor" />,
       desc: 'Aqui vira produto: código, integrações e automações funcionando de forma escalável e organizada.',
-      color: '#22D3EE' // Ciano
+      color: '#22D3EE', // Ciano
+      status: 'ACTIVE'
     },
     { 
       label: '[VALIDAÇÃO]',
       title: 'Validação Real', 
       icon: <BarChart3 size={28} color="currentColor" />,
       desc: 'Análise de uso, comportamento e fricções para ajustar o que realmente importa.',
-      color: '#34D399' // Verde
+      color: '#34D399', // Verde
+      status: 'ACTIVE'
     },
     { 
       label: '[EVOLUÇÃO]',
       title: 'Evolução de Produto', 
       icon: <RefreshCw size={28} color="currentColor" />,
       desc: 'O sistema evolui conforme o uso, o mercado e novas oportunidades aparecem.',
-      color: '#34D399' // Verde
+      color: '#34D399', // Verde
+      status: 'ACTIVE'
     },
     { 
       label: '[EXPANSÃO]',
-      title: 'Escala & Expansão', 
+      title: 'Expansão', 
       icon: <Cpu size={28} color="currentColor" />,
       desc: 'Depois que o núcleo funciona, é onde escala: novas features, automações e crescimento estruturado.',
-      color: '#34D399' // Verde
+      color: '#34D399', // Verde
+      status: 'FULL CYCLE ACTIVE'
     }
   ];
 
@@ -136,7 +145,7 @@ const Framework = () => {
                     <div className={styles.telemetryRow}>
                       <span className={`${styles.categoryDot} ${styles.activeDot}`}></span>
                       <span className={styles.telemetryLabel}>STATUS:</span>
-                      <span className={styles.telemetryValue}>ACTIVE</span>
+                      <span className={styles.telemetryValue}>{step.status}</span>
                     </div>
                   </div>
                   
