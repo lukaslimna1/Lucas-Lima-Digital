@@ -12,17 +12,6 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
   const sectorColors = [styles.colorCyan, styles.colorGreen, styles.colorBlue];
   const activeColorClass = sectorColors[catIdx];
 
-  // Mapeamento de Emojis para Status
-  const statusEmojiMap = {
-    'pesquisa': '🧪',
-    'design': '🎨',
-    'estratégia': '📚',
-    'desenvolvimento': '⚙️',
-    'ativo': '✅',
-    'construção': '🏗️',
-    'experimento': '🔬'
-  };
-
   const nextSlide = useCallback(() => {
     setDirection(1);
     setCurrentIndex((prev) => (prev + 1) % experiments.length);
@@ -46,8 +35,6 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
   };
 
   const exp = experiments[currentIndex];
-  const statusLower = exp.statusLabel.toLowerCase();
-  const emoji = statusEmojiMap[statusLower] || '📡';
 
   const slideVariants = {
     enter: (direction) => ({ x: direction > 0 ? 30 : -30, opacity: 0 }),
@@ -96,7 +83,7 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
                   <span className={styles.categoryDot}></span>
                   EXP_ID_00{exp.id} 
                   <span className={`${styles.statusLabel} ${styles[exp.status?.toLowerCase()]}`}>
-                    [ {emoji} {exp.statusLabel.toUpperCase()} ]
+                    [ {exp.statusLabel.toUpperCase()} ]
                   </span>
                 </div>
                 

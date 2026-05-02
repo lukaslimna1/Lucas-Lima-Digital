@@ -165,18 +165,19 @@
   box-shadow: 0 0 12px var(--sector-color);
 }
 
-/* LABELS VIVAS COM EMOJIS */
+/* LABELS VIVAS E IMPACTANTES */
 .statusLabel {
   margin-left: auto;
-  font-size: 0.75rem;
+  font-size: 0.85rem; /* Aumentado para melhor leitura */
   font-weight: 900;
   letter-spacing: 0.05em;
   color: var(--sector-color);
-  background: rgba(var(--sector-color), 0.05);
-  padding: 4px 12px;
-  border-radius: 6px;
-  border: 1px solid rgba(var(--sector-color), 0.2);
+  background: rgba(var(--sector-color), 0.08);
+  padding: 6px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(var(--sector-color), 0.3);
   white-space: nowrap;
+  text-shadow: 0 0 10px rgba(var(--sector-color), 0.4);
 }
 
 .cardBody {
