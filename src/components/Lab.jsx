@@ -1,13 +1,17 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FlaskConical, BrainCircuit, Sparkles, MousePointer2, Cpu, ArrowUpRight, TrendingUp, Layout, Zap, ChevronRight } from 'lucide-react';
+import { FlaskConical, BrainCircuit, Sparkles, MousePointer2, Cpu, ArrowUpRight, TrendingUp, Layout, Zap } from 'lucide-react';
 import { labExperiments } from '../data/labExperiments';
 import styles from './Lab.module.css';
 
 const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(1); // 1 para direita, -1 para esquerda
+  const [direction, setDirection] = useState(1);
   const intervalRef = useRef(null);
+
+  // Cores oficiais por setor: Cyan, Green, Blue
+  const sectorColors = [styles.colorCyan, styles.colorGreen, styles.colorBlue];
+  const activeColorClass = sectorColors[catIdx];
 
   const nextSlide = useCallback(() => {
     setDirection(1);
@@ -16,7 +20,7 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
 
   const startTimer = useCallback(() => {
     if (intervalRef.current) clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(nextSlide, 20000); // 20 segundos
+    intervalRef.current = setInterval(nextSlide, 20000);
   }, [nextSlide]);
 
   useEffect(() => {
@@ -33,10 +37,9 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
 
   const exp = experiments[currentIndex];
 
-  // Variantes para o efeito de deslize lateral
   const slideVariants = {
     enter: (direction) => ({
-      x: direction > 0 ? 50 : -50,
+      x: direction > 0 ? 30 : -30,
       opacity: 0
     }),
     center: {
@@ -44,16 +47,17 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
       opacity: 1
     },
     exit: (direction) => ({
-      x: direction < 0 ? 50 : -50,
+      x: direction < 0 ? 30 : -30,
       opacity: 0
     })
   };
 
   return (
-    <div className={styles.labSector}>
+    <div className={`${styles.labSector} ${activeColorClass}`}>
       <div className={styles.sectorHeader}>
-        <div className={styles.sectorTag}>
-          SECTOR_0{catIdx + 1} // {category}
+        <div className={styles.sectorMainTitle}>
+          <div className={styles.sectorId}>SECTOR_0{catIdx + 1}</div>
+          <div className={styles.sectorName}>// {category}</div>
         </div>
         <div className={styles.sectorIndicator}>
           {experiments.map((_, i) => (
@@ -89,7 +93,7 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
                   <span className={styles.categoryDot}></span>
                   EXP_ID_00{exp.id} 
                   <span className={`${styles.statusLabel} ${styles[exp.status?.toLowerCase()]}`}>
-                    [{exp.statusLabel}]
+                    [ {exp.statusLabel.toUpperCase()} ]
                   </span>
                 </div>
                 
@@ -98,10 +102,10 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
                     {exp.icon && iconMap[exp.icon] ? (
                       (() => {
                         const IconComponent = iconMap[exp.icon];
-                        return <IconComponent size={22} />;
+                        return <IconComponent size={24} />;
                       })()
                     ) : (
-                      <FlaskConical size={22} />
+                      <FlaskConical size={24} />
                     )}
                   </div>
                   <h3 className={styles.capTitle}>{exp.title}</h3>
@@ -114,11 +118,11 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
                 <div className={styles.cardFooter}>
                   <div className={styles.clickHint}>
                     <MousePointer2 size={10} />
-                    CLICK_TO_SYNC
+                    CLIQUE PARA SINCRONIZAR
                   </div>
                   <div className={styles.techTelemetry}>
-                    <span>DATA_STREAM: ACTIVE</span>
-                    <span>LOAD: {Math.floor(Math.random() * 20) + 5}%</span>
+                    <span>FLUXO_DADOS: ATIVO</span>
+                    <span>CARGA_CPU: {Math.floor(Math.random() * 20) + 10}%</span>
                   </div>
                 </div>
               </div>
