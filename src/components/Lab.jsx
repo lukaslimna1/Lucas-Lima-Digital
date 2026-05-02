@@ -1,20 +1,22 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FlaskConical, BrainCircuit, Sparkles, MousePointer2, Cpu, ArrowUpRight, TrendingUp, Layout, Zap } from 'lucide-react';
+import { FlaskConical, BrainCircuit, Sparkles, MousePointer2, Cpu, ArrowUpRight, TrendingUp, Layout, Zap, ChevronRight } from 'lucide-react';
 import { labExperiments } from '../data/labExperiments';
 import styles from './Lab.module.css';
 
 const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(1); // 1 para direita, -1 para esquerda
   const intervalRef = useRef(null);
 
   const nextSlide = useCallback(() => {
+    setDirection(1);
     setCurrentIndex((prev) => (prev + 1) % experiments.length);
   }, [experiments.length]);
 
   const startTimer = useCallback(() => {
     if (intervalRef.current) clearInterval(intervalRef.current);
-    intervalRef.current = setInterval(nextSlide, 15000); // 15 segundos: Padrão Research
+    intervalRef.current = setInterval(nextSlide, 20000); // 20 segundos
   }, [nextSlide]);
 
   useEffect(() => {
@@ -26,16 +28,31 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
   const handleCardClick = () => {
     if (experiments.length <= 1) return;
     nextSlide();
-    startTimer(); // Reinicia o timer após o clique manual
+    startTimer();
   };
 
   const exp = experiments[currentIndex];
+
+  // Variantes para o efeito de deslize lateral
+  const slideVariants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 50 : -50,
+      opacity: 0
+    }),
+    center: {
+      x: 0,
+      opacity: 1
+    },
+    exit: (direction) => ({
+      x: direction < 0 ? 50 : -50,
+      opacity: 0
+    })
+  };
 
   return (
     <div className={styles.labSector}>
       <div className={styles.sectorHeader}>
         <div className={styles.sectorTag}>
-          <span className={styles.sectorPulse}></span>
           SECTOR_0{catIdx + 1} // {category}
         </div>
         <div className={styles.sectorIndicator}>
@@ -49,66 +66,61 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
       </div>
 
       <div className={styles.carouselContainer}>
-        <AnimatePresence mode="wait">
+        <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={exp.id}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ x: { type: "spring", stiffness: 300, damping: 30 }, opacity: { duration: 0.3 } }}
             className={styles.carouselSlide}
-            initial={{ opacity: 0, x: 10 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -10 }}
-            transition={{ duration: 0.4 }}
+            onClick={handleCardClick}
           >
-            <div 
-              className={`hitech-card glass-panel ${styles.capCard}`}
-              onClick={handleCardClick}
-              style={{ cursor: 'pointer' }}
-            >
-              <div className="hitech-asymmetric-aura"></div>
-              <div className="hitech-artistic-fusion"></div>
-              <div className="hitech-artistic-grain"></div>
-              <div className="hitech-border-glow"></div>
+            <div className={styles.hitechCardWrapper}>
+              <div className={styles.cardCornerDecor + ' ' + styles.tl}></div>
+              <div className={styles.cardCornerDecor + ' ' + styles.tr}></div>
+              <div className={styles.cardCornerDecor + ' ' + styles.bl}></div>
+              <div className={styles.cardCornerDecor + ' ' + styles.br}></div>
               
-              <div className="corner-decor top-left"></div>
-              <div className="corner-decor top-right"></div>
-              <div className="corner-decor bottom-left"></div>
-              <div className="corner-decor bottom-right"></div>
-
-              <div className={styles.capCategory}>
-                <span className={styles.categoryDot}></span>
-                EXP_ID_00{exp.id} 
-                <span className={`${styles.statusLabel} ${styles[exp.status?.toLowerCase()]}`}>
-                  [{exp.statusLabel}]
-                </span>
-              </div>
-              
-              <div className={styles.iconTitleRow}>
-                <div className={styles.capIcon}>
-                  {exp.icon && iconMap[exp.icon] ? (
-                    (() => {
-                      const IconComponent = iconMap[exp.icon];
-                      return <IconComponent size={20} />;
-                    })()
-                  ) : (
-                    <FlaskConical size={20} />
-                  )}
+              <div className={styles.hitechCardContent}>
+                <div className={styles.capCategory}>
+                  <span className={styles.categoryDot}></span>
+                  EXP_ID_00{exp.id} 
+                  <span className={`${styles.statusLabel} ${styles[exp.status?.toLowerCase()]}`}>
+                    [{exp.statusLabel}]
+                  </span>
                 </div>
-                <h3 className={styles.capTitle}>{exp.title}</h3>
-              </div>
-              
-              <div className={styles.cardMain}>
-                <p className={styles.capDesc}>{exp.description}</p>
-              </div>
-
-              <div className={styles.cardFooter}>
-                <div className={styles.techTelemetry}>
-                  <span>BIT_RATE: 2.4ghz</span>
-                  <span>CPU_LOAD: 12%</span>
+                
+                <div className={styles.iconTitleRow}>
+                  <div className={styles.capIcon}>
+                    {exp.icon && iconMap[exp.icon] ? (
+                      (() => {
+                        const IconComponent = iconMap[exp.icon];
+                        return <IconComponent size={22} />;
+                      })()
+                    ) : (
+                      <FlaskConical size={22} />
+                    )}
+                  </div>
+                  <h3 className={styles.capTitle}>{exp.title}</h3>
                 </div>
-                {exp.link && (
-                  <a href={exp.link} className={styles.exploreLink} onClick={(e) => e.stopPropagation()}>
-                    <ArrowUpRight size={16} />
-                  </a>
-                )}
+                
+                <div className={styles.cardMain}>
+                  <p className={styles.capDesc}>{exp.description}</p>
+                </div>
+
+                <div className={styles.cardFooter}>
+                  <div className={styles.clickHint}>
+                    <MousePointer2 size={10} />
+                    CLICK_TO_SYNC
+                  </div>
+                  <div className={styles.techTelemetry}>
+                    <span>DATA_STREAM: ACTIVE</span>
+                    <span>LOAD: {Math.floor(Math.random() * 20) + 5}%</span>
+                  </div>
+                </div>
               </div>
             </div>
           </motion.div>
@@ -119,8 +131,6 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
 };
 
 const Lab = () => {
-  const [showAll, setShowAll] = useState(false);
-  
   const iconMap = {
     BrainCircuit, Sparkles, MousePointer2, Cpu, TrendingUp, Layout, Zap
   };
@@ -148,18 +158,6 @@ const Lab = () => {
             iconMap={iconMap}
           />
         ))}
-      </div>
-
-      <div className={styles.viewMoreContainer}>
-        <button 
-          className={`btn-secondary hitech ${styles.labActionBtn}`}
-          onClick={() => setShowAll(!showAll)}
-        >
-          <div className="hitech-border-glow"></div>
-          <span style={{ position: 'relative', zIndex: 1 }}>
-            {showAll ? 'CLOSE_LAB_DATABASE' : 'EXPAND_FULL_RESEARCH'}
-          </span>
-        </button>
       </div>
     </section>
   );
