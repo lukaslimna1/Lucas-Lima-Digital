@@ -49,7 +49,7 @@ const ExperienceModal = ({ experience, onClose }) => {
             {experience.modalLocation} • {experience.modalPeriod}
           </p>
           
-          {/* Manifesto / Insight - Agora no topo para dar o tom */}
+          {/* Manifesto / Insight - Opcional se for redundante com o passo 05, mas mantido para impacto */}
           {experience.insight && (
             <div className={styles.modalManifesto}>
               <p>"{experience.insight}"</p>
@@ -57,47 +57,35 @@ const ExperienceModal = ({ experience, onClose }) => {
           )}
 
           <div className={styles.modalSections}>
-            {/* [01] O Problema */}
-            {problemStep && (
-              <div className={styles.modalSection}>
-                <h4 className={styles.modalSectionTitle}>
-                  <span className={`${styles.bullet} ${styles.blue}`}></span> 
-                  <span className={styles.sectionIndex}>[01]</span> ANÁLISE DO CENÁRIO
-                </h4>
-                <p className={styles.modalSectionDesc}>{problemStep.content}</p>
-              </div>
-            )}
-            
-            {/* [02] A Execução */}
-            {actionStep && (
-              <div className={styles.modalSection}>
-                <h4 className={styles.modalSectionTitle}>
-                  <span className={`${styles.bullet} ${styles.cyan}`}></span> 
-                  <span className={styles.sectionIndex}>[02]</span> EXECUÇÃO E ESTRATÉGIA
-                </h4>
-                <p className={styles.modalSectionDesc}>{actionStep.content}</p>
-              </div>
-            )}
+            {experience.modalSteps.map((step, idx) => {
+              // Cores cíclicas para os bullets
+              const bulletColors = [styles.blue, styles.cyan, styles.green];
+              const currentColor = bulletColors[idx % bulletColors.length];
 
-            {/* [03] O Impacto */}
-            {impactStep && (
-              <div className={styles.modalSection}>
-                <h4 className={styles.modalSectionTitle}>
-                  <span className={`${styles.bullet} ${styles.green}`}></span> 
-                  <span className={styles.sectionIndex}>[03]</span> IMPACTO E RESULTADOS
-                </h4>
-                <div className={styles.resultBox}>
-                  <ul className={styles.bulletList}>
-                    {impactStep.content.map((item, i) => (
-                      <li key={i} className={styles.bulletItem}>
-                        <div className={styles.bulletDot}></div>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+              return (
+                <div className={styles.modalSection} key={idx}>
+                  <h4 className={styles.modalSectionTitle}>
+                    <span className={`${styles.bullet} ${currentColor}`}></span> 
+                    <span className={styles.sectionIndex}>[{step.label || (idx + 1).toString().padStart(2, '0')}]</span> {step.title}
+                  </h4>
+                  
+                  {Array.isArray(step.content) ? (
+                    <div className={styles.resultBox}>
+                      <ul className={styles.bulletList}>
+                        {step.content.map((item, i) => (
+                          <li key={i} className={styles.bulletItem}>
+                            <div className={styles.bulletDot}></div>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : (
+                    <p className={styles.modalSectionDesc}>{step.content}</p>
+                  )}
                 </div>
-              </div>
-            )}
+              );
+            })}
           </div>
 
           {/* Fechamento */}

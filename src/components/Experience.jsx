@@ -20,19 +20,19 @@ const Experience = () => {
         "• CONTROLE FINANCEIRO",
         "• EFICIÊNCIA NO DIA A DIA"
       ],
-      insight: "Sistemas não começam no código.\nComeçam no entendimento do negócio.",
+      insight: "Sistemas não começam no código. Começam no entendimento do negócio.",
       color: "#3B82F6",
       
       modalHeadline: "OPERAÇÃO REAL NA PRÁTICA",
-      modalSubHeadline: "Como eu saí do caos operacional para estrutura e controle",
+      modalSubHeadline: "Como caos operacional virou estrutura e controle",
       modalLocation: "Divino Sapore",
       modalPeriod: "2024 — 2026",
       modalSteps: [
-        { label: "01", title: "CONTEXTO", content: "Entrei para apoiar a operação e rapidamente passei a atuar em todas as áreas críticas: financeiro, atendimento, marketing, sistemas e processos.", type: "context" },
-        { label: "02", title: "O PROBLEMA REAL", content: "⚠️ Caixa desorganizado, falhas de comunicação, processos manuais e decisões sem base de dados reais.", type: "problem" },
-        { label: "03", title: "AÇÃO", content: "Estruturei processos, organizei o fluxo financeiro, padronizei rotinas operacionais e comecei a transformar atividades manuais em fluxos lógicos.", type: "action" },
-        { label: "04", title: "IMPACTO", isList: true, content: ["Controle financeiro rigoroso", "Operação previsível e escalável", "Redução drástica de erros manuais", "Base sólida para expansão do negócio"], type: "impact" },
-        { label: "05", title: "INSIGHT", content: "💡 \"Sistemas não começam no código. Começam no entendimento do negócio.\"", type: "insight" }
+        { label: "01", title: "CONTEXTO", content: "Atuação direta na operação do negócio, passando por financeiro, atendimento, marketing, sistemas e processos.", type: "context" },
+        { label: "02", title: "O PROBLEMA REAL", content: "⚠️ Caixa desorganizado, falhas de comunicação, processos manuais e decisões sem base.", type: "problem" },
+        { label: "03", title: "AÇÃO", content: "Estruturei rotinas, organizei o fluxo financeiro, padronizei processos e reduzi dependência de tarefas manuais.", type: "action" },
+        { label: "04", title: "IMPACTO", content: ["Mais controle financeiro", "Operação mais previsível", "Redução de retrabalho", "Base estruturada para crescimento"], type: "impact" },
+        { label: "05", title: "INSIGHT", content: "💡 Sistemas não começam no código. Começam no entendimento do negócio.", type: "insight" }
       ]
     },
     {
@@ -45,7 +45,7 @@ const Experience = () => {
         "• INFRAESTRUTURA ORGANIZADA",
         "• SUPORTE TÉCNICO ÁGIL"
       ],
-      insight: "Tecnologia invisível é a que sustenta\ntudo sem ninguém perceber.",
+      insight: "Tecnologia invisível é a que sustenta tudo sem ninguém perceber.",
       color: "#22D3EE",
       
       modalHeadline: "TECNOLOGIA NA PRÁTICA",
@@ -56,8 +56,8 @@ const Experience = () => {
         { label: "01", title: "CONTEXTO", content: "Atuação no coração técnico de uma grande operação de varejo e logística, garantindo que o motor não parasse.", type: "context" },
         { label: "02", title: "O PROBLEMA REAL", content: "⚠️ Infraestrutura vulnerável, interrupções frequentes e falta de processos claros de manutenção preventiva.", type: "problem" },
         { label: "03", title: "AÇÃO", content: "Organizei a infraestrutura de TI, padronizei o suporte técnico e implementei rotinas de estabilidade operacional.", type: "action" },
-        { label: "04", title: "IMPACTO", isList: true, content: ["Disponibilidade contínua dos sistemas", "Redução do tempo de downtime", "Suporte técnico profissionalizado", "Equipamentos e redes documentados"], type: "impact" },
-        { label: "05", title: "INSIGHT", content: "💡 \"Tecnologia invisível é a que sustenta tudo sem ninguém perceber.\"", type: "insight" }
+        { label: "04", title: "IMPACTO", content: ["Disponibilidade contínua dos sistemas", "Redução do tempo de downtime", "Suporte técnico profissionalizado", "Equipamentos e redes documentados"], type: "impact" },
+        { label: "05", title: "INSIGHT", content: "💡 Tecnologia invisível é a que sustenta tudo sem ninguém perceber.", type: "insight" }
       ]
     },
     {
@@ -70,135 +70,115 @@ const Experience = () => {
         "• RESOLUÇÃO DE PROBLEMAS",
         "• VISÃO COMERCIAL"
       ],
-      insight: "Se você não entende quem usa,\nvocê não deveria construir nada.",
-      color: "#34D399",
+      insight: "Se você não entende quem usa, você não deveria construir nada.",
+      color: "#10B981",
       
       modalHeadline: "BASE COMERCIAL & HUMANA",
-      modalSubHeadline: "Entendendo a jornada do usuário no front-end real",
-      modalLocation: "Atendimento & Vendas",
-      modalPeriod: "2018 — 2024",
+      modalSubHeadline: "A experiência do usuário começa no balcão",
+      modalLocation: "Front-end Real",
+      modalPeriod: "2020 — 2023",
       modalSteps: [
-        { label: "01", title: "CONTEXTO", content: "Anos no 'front-end real' (vendas e atendimento), aprendendo como as pessoas tomam decisões e o que as frustra.", type: "context" },
-        { label: "02", title: "O PROBLEMA REAL", content: "⚠️ Distância entre o que o sistema oferece e o que o cliente realmente precisa para resolver seu problema.", type: "problem" },
-        { label: "03", title: "AÇÃO", content: "Utilizei empatia e visão comercial para mediar conflitos e encontrar soluções práticas que o software muitas vezes ignora.", type: "action" },
-        { label: "04", title: "IMPACTO", isList: true, content: ["Fidelização de clientes reais", "Resolução assertiva de problemas", "Visão crítica de UX baseada em pessoas", "Habilidades de negociação e comunicação"], type: "impact" },
-        { label: "05", title: "INSIGHT", content: "💡 \"Se você não entende quem usa, você não deveria construir nada.\"", type: "insight" }
+        { label: "01", title: "CONTEXTO", content: "Anos de experiência no 'front-end real': o atendimento direto ao cliente e a linha de frente comercial.", type: "context" },
+        { label: "02", title: "O DESAFIO HUMANO", content: "⚠️ Entender necessidades reais por trás de pedidos vagos e gerenciar expectativas em tempo real.", type: "problem" },
+        { label: "03", title: "AÇÃO", content: "Desenvolvi escuta ativa, técnicas de negociação e resolução ágil de conflitos focada na satisfação do usuário.", type: "action" },
+        { label: "04", title: "IMPACTO", content: ["Fidelização de clientes", "Aumento na conversão de vendas", "Domínio da psicologia do usuário", "Comunicação clara e assertiva"], type: "impact" },
+        { label: "05", title: "INSIGHT", content: "💡 Se você não entende quem usa, você não deveria construir nada.", type: "insight" }
       ]
     },
     {
-      id: "projetos",
-      context: "ORIGEM DA CONSTRUÇÃO",
-      envType: "COMUNIDADE & CULTURA",
-      envName: "EVENTOS INDEPENDENTES",
+      id: "origem",
+      context: "ORIGEM",
+      envType: "FORMAÇÃO",
+      envName: "SISTEMAS DE INFORMAÇÃO",
       impacts: [
-        "• LIDERANÇA NA PRÁTICA",
-        "• EXECUÇÃO DO ZERO",
-        "• CRIAÇÃO DE EXPERIÊNCIAS"
+        "• LÓGICA DE PROGRAMAÇÃO",
+        "• BANCO DE DADOS",
+        "• ENGENHARIA DE SOFTWARE"
       ],
-      insight: "Criar sem recurso ensina mais\ndo que qualquer teoria.",
-      color: "#A855F7",
+      insight: "O código é apenas a ferramenta. A solução é o pensamento.",
+      color: "#8B5CF6",
       
-      modalHeadline: "ORIGEM DA CONSTRUÇÃO",
-      modalSubHeadline: "Liderança e execução quando não existia nada pronto",
-      modalLocation: "Eventos Independentes",
-      modalPeriod: "2011 — 2015",
+      modalHeadline: "ORIGEM ACADÊMICA",
+      modalSubHeadline: "Onde o pensamento lógico foi forjado",
+      modalLocation: "Universidade",
+      modalPeriod: "Formação",
       modalSteps: [
-        { label: "01", title: "CONTEXTO", content: "O início de tudo: organizando comunidades e eventos quando os recursos eram escassos e a vontade era a única ferramenta.", type: "context" },
-        { label: "02", title: "O PROBLEMA REAL", content: "⚠️ Falta de estrutura, orçamento inexistente e a necessidade de criar algo do absoluto zero.", type: "problem" },
-        { label: "03", title: "AÇÃO", content: "Assumi a liderança, coordenei pessoas, gerenciei orçamentos mínimos e executei projetos que impactaram centenas de pessoas.", type: "action" },
-        { label: "04", title: "IMPACTO", isList: true, content: ["Nascimento da mentalidade de construtor", "Experiência precoce em liderança", "Capacidade de execução independente", "Resiliência perante o caos"], type: "impact" },
-        { label: "05", title: "INSIGHT", content: "💡 \"Criar sem recurso ensina mais do que qualquer teoria.\"", type: "insight" }
+        { label: "01", title: "FUNDAMENTOS", content: "Imersão profunda em algoritmos, estruturas de dados e a base teórica que sustenta qualquer tecnologia moderna.", type: "context" },
+        { label: "02", title: "MODELAGEM", content: "Aprendi que um banco de dados bem modelado vale mais que mil linhas de código improvisado.", type: "problem" },
+        { label: "03", title: "FILOSOFIA", content: "A faculdade me ensinou a aprender. Em um mundo onde linguagens morrem, a lógica é eterna.", type: "action" },
+        { label: "04", title: "IMPACTO", content: ["Raciocínio analítico apurado", "Base técnica para full-stack", "Capacidade de abstração", "Metodologia científica"], type: "impact" },
+        { label: "05", title: "INSIGHT", content: "💡 O código é apenas a ferramenta. A solução é o pensamento.", type: "insight" }
       ]
     }
   ];
 
   return (
-    <section id="experience" className={`section ${styles.experienceSection}`}>
-      <div className="section-header">
-        <h2 className="section-title">
-          EXPERIÊNCIA REAL DE <span className="text-gradient">CONSTRUÇÃO</span>
-        </h2>
-      </div>
+    <section className={styles.experienceSection} onMouseMove={handleMouseMove}>
+      <div className={styles.container}>
+        <motion.div 
+          className={styles.header}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <span className={styles.sectionTag}>Trajetória Profissional</span>
+          <h2 className={styles.sectionTitle}>Experiência</h2>
+          <p className={styles.sectionSubtitle}>
+            A construção de uma visão sistêmica através da prática real.
+          </p>
+        </motion.div>
 
-      <div className={styles.experienceGrid}>
-        {experiences.map((exp, index) => (
-          <motion.div
-            key={exp.id}
-            className={styles.experienceItem}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: index * 0.1 }}
-            onClick={() => setSelectedExp(exp)}
-          >
-            <div className={`hitech-card-wrapper ${styles.expCardWrapper}`}
-                 onMouseMove={handleMouseMove}
-                 style={{ 
-                   '--step-color': exp.color,
-                   '--step-shadow': `${exp.color}15`,
-                   '--step-border': `${exp.color}44`
-                 }}
+        <div className={styles.experienceGrid}>
+          {experiences.map((exp, index) => (
+            <motion.div
+              key={exp.id}
+              className={styles.experienceItem}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              onClick={() => setSelectedExp(exp)}
             >
-              <div className="hitech-card glass-panel">
-                <div className="hitech-asymmetric-aura"></div>
-                <div className="hitech-artistic-fusion"></div>
-                <div className="hitech-artistic-grain"></div>
-                <div className="hitech-border-glow"></div>
-                
-                <div className={styles.cardContent2x2}>
-                  <div className={styles.cardBgNumber}>0{index + 1}</div>
-                  <div className={styles.cardGridPattern}></div>
+              <div 
+                className={styles.cardWrapper}
+                style={{ "--accent-color": exp.color }}
+              >
+                <div className={styles.cardHeader}>
+                  <div className={styles.number}>/{exp.number || (index + 1).toString().padStart(2, '0')}</div>
+                  <div className={styles.context}>{exp.context}</div>
+                </div>
 
-                  <div className={styles.gridRow}>
-                    <div className={styles.gridCell}>
-                      <div className={styles.cellLabel}>
-                        <span className={styles.labelDot}></span>
-                        CONTEXTO
-                      </div>
-                      <h4 className={styles.cellValue} style={{ color: exp.color }}>{exp.context}</h4>
-                    </div>
-                    <div className={styles.gridCell}>
-                      <div className={styles.cellLabel}>AMBIENTE</div>
-                      <div className={styles.envContainer}>
-                        <span className={styles.envType}>{exp.envType}</span>
-                        <span className={styles.envName}>{exp.envName}</span>
-                      </div>
-                    </div>
-                  </div>
+                <div className={styles.envInfo}>
+                  <div className={styles.envType}>{exp.envType}</div>
+                  <div className={styles.envName}>{exp.envName}</div>
+                </div>
 
-                  <div className={styles.gridDivider}></div>
+                <div className={styles.impactList}>
+                  <div className={styles.impactLabel}>IMPACTO GERADO</div>
+                  <ul className={styles.impacts}>
+                    {exp.impacts.map((impact, i) => (
+                      <li key={i}>{impact}</li>
+                    ))}
+                  </ul>
+                </div>
 
-                  <div className={styles.gridRow}>
-                    <div className={styles.gridCell}>
-                      <div className={styles.cellLabel}>IMPACTO GERADO</div>
-                      <div className={styles.impactList}>
-                        {exp.impacts.map((impact, i) => (
-                          <p key={i} className={styles.impactItem}>{impact}</p>
-                        ))}
-                      </div>
-                    </div>
-                    <div className={styles.gridCell}>
-                      <div className={styles.cellLabel}>O QUE ISSO ME ENSINOU</div>
-                      <p className={styles.cellValueInsight}>{exp.insight}</p>
-                    </div>
-                  </div>
+                <div className={styles.insightBox}>
+                  <div className={styles.insightLabel}>O QUE ISSO ME ENSINOU</div>
+                  <p className={styles.insightText}>"{exp.insight}"</p>
+                </div>
 
-                  <div className={styles.cardFooter}>
-                    <div className={styles.projectLink}>
-                      <span className={styles.linkText}>VER JORNADA COMPLETA</span>
-                      <div className={styles.linkArrow}>
-                        <ChevronRight size={16} />
-                      </div>
+                <div className={styles.cardFooter}>
+                  <div className={styles.projectLink}>
+                    <span className={styles.linkText}>VER JORNADA COMPLETA</span>
+                    <div className={styles.linkArrow}>
+                      <ChevronRight size={16} />
                     </div>
                   </div>
                 </div>
-
-                <div className="corner-decor top-left"></div>
-                <div className="corner-decor bottom-right"></div>
               </div>
-            </div>
-          </motion.div>
-        ))}
+            </motion.div>
+          ))}
+        </div>
       </div>
 
       <AnimatePresence>

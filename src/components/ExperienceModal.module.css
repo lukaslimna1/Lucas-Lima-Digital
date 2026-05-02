@@ -69,7 +69,7 @@
 }
 
 .modalBodyContent {
-  padding: 5rem 4rem;
+  padding: 7rem 4rem 5rem 4rem;
   position: relative;
   z-index: 1;
   display: flex;
@@ -100,14 +100,14 @@
 
 .modalTitle {
   font-size: 5.5rem;
-  margin: 0.5rem 0;
-  color: #F0F9FF;
+  margin: 1.5rem 0;
+  color: #FFFFFF;
   background: linear-gradient(135deg, #FFFFFF, var(--accent-cyan));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  font-weight: 900;
-  line-height: 1;
+  font-weight: 950;
+  line-height: 1.1;
   text-align: center;
   letter-spacing: -0.04em;
 }
@@ -187,9 +187,10 @@
 .bullet.green { background: #10b981; box-shadow: 0 0 10px rgba(16, 185, 129, 0.5); }
 
 .modalSectionDesc {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   line-height: 1.8;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.95); /* Legibilidade máxima */
+  font-weight: 400;
 }
 
 .resultBox {
@@ -218,8 +219,8 @@
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  font-size: 1.1rem;
-  color: var(--text-secondary);
+  font-size: 1.15rem;
+  color: #FFFFFF; /* Branco puro para os impactos */
   line-height: 1.6;
 }
 
