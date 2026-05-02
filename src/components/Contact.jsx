@@ -1,61 +1,107 @@
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Share2, Code } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import styles from './Contact.module.css';
 
 const Contact = () => {
-  return (
-    <motion.section 
-      id="contact"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.6 }}
-      className="section contact-section"
-    >
-      {/* Área centralizada de contato no estilo Mini Dashboard */}
-      <div className={styles.contactContainer}>
-        
-        <div className="hitech-card-wrapper" style={{ width: '100%' }}>
-          <div className={`hitech-card glass-panel ${styles.contactCard}`}>
-            <div className="hitech-grid-overlay"></div>
-            <div className="hitech-border-glow"></div>
-            
-            <div className={styles.cardContent}>
-              <div className={styles.statusBadge}>
-                <span className={`dot-pulse ${styles.pulseDot}`}></span>
-                <span className={styles.statusText}>DISPONÍVEL PARA NOVOS PROJETOS</span>
-              </div>
+  const contactChannels = [
+    { id: 'whatsapp', name: 'WhatsApp', desc: 'Respostas rápidas via chat.', icon: faWhatsapp, link: 'https://wa.me/5514988025296', className: styles.whatsapp },
+    { id: 'linkedin', name: 'LinkedIn', desc: 'Conexão profissional.', icon: faLinkedin, link: 'https://linkedin.com/in/lucaslimna/', className: styles.linkedin },
+    { id: 'github', name: 'GitHub', desc: 'Arquiteturas e repositórios.', icon: faGithub, link: 'https://github.com/lukaslimna1', className: styles.github },
+    { id: 'email', name: 'Email', desc: 'Parcerias e propostas.', icon: null, link: 'mailto:lucasmslima1@gmail.com', className: styles.email }
+  ];
 
-              <h2 className={styles.contactTitle}>PRONTO PARA <span className="text-gradient">INOVAR?</span></h2>
-              <p className={styles.contactSubtitle}>
-                Transforme sua visão em um produto digital escalável, rápido e com experiência premium. Vamos conversar sobre o seu próximo desafio.
-              </p>
-              
-              <div className={styles.actionsContainer}>
-                <a href="mailto:lucas@example.com" className={`btn-primary ${styles.emailBtn}`}>
-                  <Mail size={28} />
-                  <div className={styles.emailTextWrapper}>
-                    <div className={styles.emailLabel}>Inicie uma conversa</div>
-                    <div className={styles.emailAddress}>lucas@example.com</div>
-                  </div>
-                </a>
-                
-                <div className={styles.socialWrapper}>
-                  <a href="#" className={`btn-outline ${styles.socialBtn}`}>
-                    <Share2 size={24} color="var(--accent-blue)" />
-                    <span className={styles.socialLabel}>LinkedIn</span>
-                  </a>
-                  <a href="#" className={`btn-outline ${styles.socialBtn}`}>
-                    <Code size={24} color="var(--accent-purple)" />
-                    <span className={styles.socialLabel}>GitHub</span>
-                  </a>
-                </div>
-              </div>
+  return (
+    <section id="contact" className="section">
+      <div className={styles.contactContainer}>
+        <div className={styles.contactLayout}>
+          
+          {/* LADO ESQUERDO: TÍTULO EM 3 LINHAS + SUBTÍTULO ABAIXO */}
+          <motion.div 
+            className={styles.leftCol}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className={styles.badge}>
+              <span className={styles.badgeDot}></span>
+              SYSTEM_ACCESS // CONTACT_LAYER
             </div>
-          </div>
+
+            <h2 className={styles.title}>
+              PRONTO PARA <br />
+              CONSTRUIR <br />
+              <span className="text-gradient">ALGO REAL?</span>
+            </h2>
+
+            <p className={styles.subtitle}>
+              Eu atuo do entendimento do problema até a execução do produto — conectando estratégia, design e engenharia para criar soluções que funcionam no mundo real.
+            </p>
+          </motion.div>
+
+          {/* LADO DIREITO: CARDS ALINHADOS À ESQUERDA */}
+          <motion.div 
+            className={styles.rightCol}
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2 }}
+            viewport={{ once: true }}
+          >
+            <h3 className={styles.interfaceTitle}>INTERFACE DE CONEXÃO</h3>
+
+            <div className={styles.statsGrid}>
+              {contactChannels.map((channel) => (
+                <a 
+                  key={channel.id}
+                  href={channel.link}
+                  target={channel.id !== 'email' ? "_blank" : undefined}
+                  rel="noopener noreferrer"
+                  className={`${styles.statCard} ${channel.className}`}
+                >
+                  {/* INDICADORES DE CANTO */}
+                  <div className={`${styles.corner} ${styles.tl}`}></div>
+                  <div className={`${styles.corner} ${styles.tr}`}></div>
+                  <div className={`${styles.corner} ${styles.bl}`}></div>
+                  <div className={`${styles.corner} ${styles.br}`}></div>
+
+                  <div className={styles.cardHeader}>
+                    <div className={styles.iconBox}>
+                      {channel.icon ? (
+                        <FontAwesomeIcon icon={channel.icon} className={styles.cardIcon} />
+                      ) : (
+                        <Mail className={styles.cardIcon} size={22} />
+                      )}
+                    </div>
+                    <span className={styles.cardLabel}>{channel.name}</span>
+                  </div>
+                  
+                  <p className={styles.cardDesc}>{channel.desc}</p>
+                </a>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* BASE: TERMINAL EM LARGURA TOTAL */}
+          <motion.div 
+            className={styles.fullWidthTerminal}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <span className={styles.terminalLabel}>&gt; ./EXEC_LUCAS_LIMA.SH</span>
+            <div className={styles.terminalPhrase}>
+              <span>SUCCESS: Adaptive builder loaded.</span>
+              "Construir sem entender é execução. <br />
+              Construir com visão é o que transforma produto em resultado."
+            </div>
+          </motion.div>
+
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

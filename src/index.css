@@ -40,9 +40,9 @@
 html { scroll-behavior: smooth; overflow-x: hidden; background: var(--bg-deep); }
 
 .app-container {
-  background-color: var(--bg-dark);
+  background-color: var(--bg-deep);
   min-height: 100vh;
-  color: var(--text-primary);
+  color: var(--text-main);
   position: relative;
   overflow-x: hidden;
 }

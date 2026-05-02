@@ -17,31 +17,56 @@
 }
 
 .diferencialTitle {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 800;
   color: white;
   max-width: 800px;
-  margin: 0 auto 1.5rem;
-  line-height: 1.3;
+  margin: 0 auto 2rem;
+  line-height: 1.2;
   letter-spacing: -0.02em;
 }
 
 .strikeText {
-  opacity: 0.5;
+  opacity: 0.4;
   text-decoration: line-through;
+  font-weight: 400;
 }
 
 .diferencialDesc {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   color: var(--text-secondary);
-  max-width: 650px;
+  max-width: 700px;
   margin: 0 auto;
   line-height: 1.7;
+}
+
+.manifestoFooter {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.manifestoFooter p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.5rem;
+}
+
+.manifestoFooter h4 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  margin: 0;
 }
 
 @media (max-width: 768px) {
   .diferencialTitle {
     font-size: 1.8rem;
+  }
+  .manifestoFooter h4 {
+    font-size: 1.5rem;
   }
   .diferencialCard {
     padding: 3rem 1.5rem;

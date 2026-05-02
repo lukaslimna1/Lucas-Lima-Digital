@@ -30,12 +30,18 @@ const Diferencial = () => {
           
           <div className={styles.cardContent}>
             <h3 className={styles.diferencialTitle}>
-              Eu não entrego apenas <span className={styles.strikeText}>código solto</span>. Entrego um <span className="text-gradient">produto digital completo</span>.
+              Eu não começo pelo <span className={styles.strikeText}>código</span>.<br />
+              Começo pelo <span className="text-gradient">problema</span>.
             </h3>
             
             <p className={styles.diferencialDesc}>
-              Minha abordagem une engenharia de software rigorosa, design de interface obsessivo e visão de produto focada em métricas reais. É assim que transformo ideias complexas em experiências fluidas e lucrativas.
+              Enquanto muitos focam na interface, eu mergulho na operação, entendo o que quebra e construo soluções que fazem sentido de ponta a ponta.
             </p>
+
+            <div className={styles.manifestoFooter}>
+              <p>Produto, pra mim, não é entrega.</p>
+              <h4 className="text-gradient">É SISTEMA FUNCIONANDO.</h4>
+            </div>
           </div>
         </div>
       </div>
