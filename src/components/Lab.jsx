@@ -1,20 +1,33 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FlaskConical, BrainCircuit, Sparkles, MousePointer2, Cpu, ArrowUpRight, TrendingUp, Layout, Zap } from 'lucide-react';
 import { labExperiments } from '../data/labExperiments';
 import styles from './Lab.module.css';
 
-// Componente de Carrossel Individual para cada Setor
 const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const intervalRef = useRef(null);
+
+  const nextSlide = useCallback(() => {
+    setCurrentIndex((prev) => (prev + 1) % experiments.length);
+  }, [experiments.length]);
+
+  const startTimer = useCallback(() => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(nextSlide, 15000); // 15 segundos: Padrão Research
+  }, [nextSlide]);
 
   useEffect(() => {
     if (experiments.length <= 1) return;
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % experiments.length);
-    }, 8000); // 8 segundos para uma leitura confortável
-    return () => clearInterval(interval);
-  }, [experiments.length]);
+    startTimer();
+    return () => clearInterval(intervalRef.current);
+  }, [experiments.length, startTimer]);
+
+  const handleCardClick = () => {
+    if (experiments.length <= 1) return;
+    nextSlide();
+    startTimer(); // Reinicia o timer após o clique manual
+  };
 
   const exp = experiments[currentIndex];
 
@@ -40,12 +53,16 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
           <motion.div
             key={exp.id}
             className={styles.carouselSlide}
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 10 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.6 }}
+            exit={{ opacity: 0, x: -10 }}
+            transition={{ duration: 0.4 }}
           >
-            <div className={`hitech-card glass-panel ${styles.capCard}`}>
+            <div 
+              className={`hitech-card glass-panel ${styles.capCard}`}
+              onClick={handleCardClick}
+              style={{ cursor: 'pointer' }}
+            >
               <div className="hitech-asymmetric-aura"></div>
               <div className="hitech-artistic-fusion"></div>
               <div className="hitech-artistic-grain"></div>
@@ -56,44 +73,42 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
               <div className="corner-decor bottom-left"></div>
               <div className="corner-decor bottom-right"></div>
 
-              <div className={styles.cardHeader}>
-                <div className={styles.capCategory}>
-                  <span className={styles.categoryDot}></span>
-                  EXP_ID_00{exp.id} 
-                  <span className={`${styles.statusLabel} ${styles[exp.status?.toLowerCase()]}`}>
-                    [{exp.statusLabel}]
-                  </span>
-                </div>
-                
-                <div className={styles.iconTitleRow}>
-                  <div className={styles.capIcon}>
-                    {exp.icon && iconMap[exp.icon] ? (
-                      (() => {
-                        const IconComponent = iconMap[exp.icon];
-                        return <IconComponent size={20} />;
-                      })()
-                    ) : (
-                      <FlaskConical size={20} />
-                    )}
-                  </div>
-                  <h3 className={styles.capTitle}>{exp.title}</h3>
-                </div>
-                
-                <div className={styles.cardMain}>
-                  <p className={styles.capDesc}>{exp.description}</p>
-                </div>
-
-                <div className={styles.cardFooter}>
-                  <div className={styles.techTelemetry}>
-                    <span>BIT_RATE: 2.4ghz</span>
-                    <span>CPU_LOAD: 12%</span>
-                  </div>
-                  {exp.link && (
-                    <a href={exp.link} className={styles.exploreLink}>
-                      <ArrowUpRight size={16} />
-                    </a>
+              <div className={styles.capCategory}>
+                <span className={styles.categoryDot}></span>
+                EXP_ID_00{exp.id} 
+                <span className={`${styles.statusLabel} ${styles[exp.status?.toLowerCase()]}`}>
+                  [{exp.statusLabel}]
+                </span>
+              </div>
+              
+              <div className={styles.iconTitleRow}>
+                <div className={styles.capIcon}>
+                  {exp.icon && iconMap[exp.icon] ? (
+                    (() => {
+                      const IconComponent = iconMap[exp.icon];
+                      return <IconComponent size={20} />;
+                    })()
+                  ) : (
+                    <FlaskConical size={20} />
                   )}
                 </div>
+                <h3 className={styles.capTitle}>{exp.title}</h3>
+              </div>
+              
+              <div className={styles.cardMain}>
+                <p className={styles.capDesc}>{exp.description}</p>
+              </div>
+
+              <div className={styles.cardFooter}>
+                <div className={styles.techTelemetry}>
+                  <span>BIT_RATE: 2.4ghz</span>
+                  <span>CPU_LOAD: 12%</span>
+                </div>
+                {exp.link && (
+                  <a href={exp.link} className={styles.exploreLink} onClick={(e) => e.stopPropagation()}>
+                    <ArrowUpRight size={16} />
+                  </a>
+                )}
               </div>
             </div>
           </motion.div>

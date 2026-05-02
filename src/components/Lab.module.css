@@ -73,7 +73,7 @@
 /* Container do Carrossel */
 .carouselContainer {
   position: relative;
-  height: 420px;
+  height: 440px; /* Ajustado para acomodar paddings de #Criação */
 }
 
 .carouselSlide {
@@ -84,40 +84,48 @@
   height: 100%;
 }
 
-/* PADRONIZAÇÃO INDUSTRIAL (Mirroring Solutions/Process) */
+/* PARIDADE TOTAL COM #CRIAÇÃO (Solutions.module.css) */
 .capCard {
   height: 100%;
-  padding: 32px !important;
+  padding: 32px !important; /* Exato como em #Criação */
   display: flex;
   flex-direction: column;
-  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  background: rgba(10, 10, 15, 0.6) !important; /* Fundo idêntico */
+  border: none !important;
+  transition: all 0.5s ease;
+  user-select: none; /* Evita seleção de texto ao clicar para trocar */
+}
+
+.capCard:hover {
+  transform: translateY(-5px); /* Mantendo o hover sutil de #Criação */
 }
 
 .capCategory {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   font-family: var(--font-mono);
   font-size: 0.65rem;
   font-weight: 700;
-  color: var(--text-secondary);
-  opacity: 0.8;
+  color: var(--accent-purple); /* Purple para o Lab, Blue para Criação */
+  text-transform: uppercase;
   letter-spacing: 0.15em;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .categoryDot {
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   background: var(--accent-purple);
   border-radius: 50%;
-  box-shadow: 0 0 10px var(--accent-purple);
+  box-shadow: 0 0 8px var(--accent-purple);
 }
 
 .statusLabel {
   margin-left: auto;
   font-size: 0.55rem;
-  opacity: 0.6;
+  opacity: 0.4;
+  font-family: var(--font-mono);
 }
 
 .statusLabel.research { color: #A855F7; }
@@ -129,31 +137,39 @@
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 20px;
 }
 
 .capIcon {
-  width: 44px;
-  height: 44px;
+  width: 42px;
+  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  border-radius: 8px;
   color: var(--accent-purple);
   flex-shrink: 0;
+  transition: all 0.4s ease;
+}
+
+.capCard:hover .capIcon {
+  background: var(--accent-purple);
+  color: #000;
+  transform: rotate(-5deg) scale(1.05);
 }
 
 .capTitle {
-  font-size: 1.25rem;
+  font-size: 1.15rem; /* Exato como em #Criação */
   font-weight: 800;
   color: white;
   margin: 0;
   letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
 .cardMain {
+  margin-top: 24px;
   flex: 1;
 }
 
@@ -164,7 +180,7 @@
   margin: 0;
 }
 
-/* Footer de Telemetria (Exclusivo Lab) */
+/* Footer de Telemetria (Preservado como diferencial técnico) */
 .cardFooter {
   margin-top: 24px;
   padding-top: 20px;
@@ -185,7 +201,6 @@
   font-size: 0.55rem;
   color: var(--text-secondary);
   opacity: 0.4;
-  letter-spacing: 0.05em;
 }
 
 .exploreLink {
@@ -216,9 +231,6 @@
 .labActionBtn {
   min-width: 240px;
   padding: 14px 32px;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
 }
 
 @keyframes pulse {
@@ -235,6 +247,6 @@
   }
   
   .carouselContainer {
-    height: 380px;
+    height: 400px;
   }
 }

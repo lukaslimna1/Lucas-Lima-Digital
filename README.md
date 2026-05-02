@@ -102,11 +102,11 @@ Este portfólio é um organismo vivo e continuará sendo aprimorado.
 - **Reconstrução Total do Lab**: Transformação da seção de experimentos em uma interface de comando técnica com navegação por setores (`SECTOR_0X`).
 - **Telemetry Card System**: Implementação de metadados técnicos fictícios e IDs de rastreio para cada item de pesquisa.
 
-### v2.6.1 (Atual) - *R&D Rhythm & Parity: Industrial Standardization*
-- **Ajuste de Cadência**: Ciclo do carrossel desacelerado para 8 segundos, otimizando o tempo de retenção e legibilidade.
-- **Unificação de Design System**: Refatoração completa da estrutura interna dos cards do Lab para espelhar as seções de Criação e Framework.
-- **Industrial Badges**: Implementação do sistema de IDs `EXP_ID_00X` com indicadores pulsantes sincronizados com o branding global.
-- **Layout Parity**: Alinhamento de ícones, títulos e metadados seguindo o padrão de "Boutique Hi-Tech" de alta fidelidade.
+### v2.7.0 (Atual) - *Interactive Research Sync: Total Visual Parity*
+- **Click-to-Advance Logic**: Implementação de interação manual via clique nos cards, permitindo que o usuário navegue pelos experimentos sob demanda com reset automático de cronômetro.
+- **Extended Research Cycle**: Aumento do intervalo de transição para 15 segundos, reforçando a estética de "Command Center" e monitoramento técnico.
+- **Visual Parity (#Criação)**: Sincronização total de tokens de design (paddings, fundos, hovers e animações de ícone) para garantir que o Lab seja visualmente indistinguível das seções principais.
+- **Interactive Hover State**: Implementação da rotação de ícones e escala dinâmica no hover, unificando a linguagem de micro-interações do portfólio.
 
 ---
 
