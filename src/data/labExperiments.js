@@ -33,28 +33,37 @@ export const labExperiments = [
     id: 4,
     title: 'UX/UI Design (Pós)',
     group: 'APRENDIZADO',
-    status: 'ACTIVE',
-    statusLabel: '📚 Especialização',
-    description: 'Especialização em interfaces focadas em conversão, usabilidade e estética de alto nível.',
+    status: 'COMPLETED',
+    statusLabel: '🎓 Pós-Graduação',
+    description: 'Especialização em interfaces focadas em usabilidade e estética de alto nível.',
     icon: 'MousePointer2'
   },
   {
     id: 5,
     title: 'Design Thinking (MBA)',
     group: 'APRENDIZADO',
-    status: 'ACTIVE',
-    statusLabel: '📚 Estratégia',
-    description: 'Aplicação de metodologias ágeis e resolução de problemas complexos centrados no humano.',
+    status: 'COMPLETED',
+    statusLabel: '🎓 MBA Estratégico',
+    description: 'Metodologias ágeis e resolução de problemas complexos centrados no humano.',
     icon: 'BrainCircuit'
   },
   {
     id: 6,
     title: 'Marketing Digital (Pós)',
     group: 'APRENDIZADO',
-    status: 'ACTIVE',
-    statusLabel: '📚 Estratégia',
+    status: 'COMPLETED',
+    statusLabel: '🎓 Pós-Graduação',
     description: 'Estratégias de growth, branding e conversão aplicadas a produtos digitais.',
     icon: 'TrendingUp'
+  },
+  {
+    id: 10,
+    title: 'Análise e Desenv. de Sistemas',
+    group: 'APRENDIZADO',
+    status: 'COMPLETED',
+    statusLabel: '🎓 Graduação',
+    description: 'Fundamentos de arquitetura de software, lógica e desenvolvimento de sistemas complexos.',
+    icon: 'Cpu'
   },
   {
     id: 7,

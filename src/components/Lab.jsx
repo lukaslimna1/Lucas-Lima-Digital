@@ -72,12 +72,18 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
             className={styles.carouselSlide}
             onClick={handleCardClick}
           >
-            <div className={styles.hitechCardWrapper}>
+            <div className={`${styles.hitechCardWrapper} ${exp.status === 'COMPLETED' ? styles.isCompleted : ''}`}>
               <div className={styles.cardCornerDecor + ' ' + styles.tl}></div>
               <div className={styles.cardCornerDecor + ' ' + styles.tr}></div>
               <div className={styles.cardCornerDecor + ' ' + styles.bl}></div>
               <div className={styles.cardCornerDecor + ' ' + styles.br}></div>
               
+              {exp.status === 'COMPLETED' && (
+                <div className={styles.completedStamp}>
+                  CONCLUÍDO
+                </div>
+              )}
+
               <div className={styles.hitechCardContent}>
                 <div className={styles.capCategory}>
                   <span className={styles.categoryDot}></span>
