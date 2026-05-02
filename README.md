@@ -92,11 +92,21 @@ Este portfólio é um organismo vivo e continuará sendo aprimorado.
 - **Code Standards**: Padronização de documentação interna via comentários técnicos para manutenibilidade.
 - **Clean Architecture**: Remoção de dependências de terceiros não essenciais e otimização do fluxo de trabalho.
 
-### v2.4.0 (Atual) - *Artistic Hi-Tech Framework Standardization*
+### v2.4.0 - *Artistic Hi-Tech Framework Standardization*
 - **Visual Unification**: Padronização absoluta entre as seções de "Criação" e "Framework", utilizando o mesmo sistema de cards industriais e badges técnicos (MOD_0X).
 - **Artistic Fusion Texture System**: Implementação de uma camada tripla de profundidade (Topografia, Digital Mist e Scanlines) para uma estética tátil e não-simétrica.
 - **Living Gradient & Asymmetric Aura**: Refatoração do sistema de bordas e iluminação periférica para criar um efeito de "energia pulsante" orgânica.
 - **Semantic Evolution**: Transição semântica da seção `#process` para `#framework`, alinhando a navegação com a nova proposta industrial e de engenharia.
+
+### v2.5.0 - *R&D Command Center: Systems & AI Lab Overhaul*
+- **Reconstrução Total do Lab**: Transformação da seção de experimentos em uma interface de comando técnica com navegação por setores (`SECTOR_0X`).
+- **Telemetry Card System**: Implementação de metadados técnicos fictícios e IDs de rastreio para cada item de pesquisa.
+
+### v2.6.0 (Atual) - *Horizontal R&D Sync: Triptych Carousel System*
+- **Layout Triptych**: Evolução para um layout de 3 colunas horizontais, permitindo a visualização simultânea de todos os setores de pesquisa (Experimentos, Aprendizado, Evolução).
+- **Auto-Carousel Engine**: Implementação de carrosséis autônomos por setor com ciclo de transição de 5 segundos, otimizando o espaço vertical sem perda de conteúdo.
+- **Synchronized Indicators**: Adição de indicadores de progresso (Telemetric Dots) que rastreiam o estado ativo de cada carrossel em tempo real.
+- **Premium Command Button**: Estilização final do botão `EXPAND_FULL_RESEARCH` seguindo o padrão de design industrial de alta fidelidade.
 
 ---
 

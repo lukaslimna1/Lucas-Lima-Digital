@@ -1,116 +1,239 @@
 .labSection {
   position: relative;
   overflow: hidden;
+  padding: 100px 0;
 }
 
-.labCategoriesWrapper {
+/* Layout Horizontal Principal */
+.labHorizontalLayout {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Setor Individual */
+.labSector {
+  flex: 1;
+  min-width: 0; /* Permite que o flex-item encolha corretamente */
   display: flex;
   flex-direction: column;
-  gap: 32px;
-}
-
-.labGroupTitle {
-  font-size: 0.8rem;
-  font-weight: 800;
-  color: var(--accent-purple);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin-top: 48px;
-  margin-bottom: 24px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.labGroupTitle::after {
-  content: "";
-  flex: 1;
-  height: 1px;
-  background: rgba(168, 85, 247, 0.1);
-}
-
-.experimentsGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 24px;
 }
 
-.labImageContainer {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  margin-bottom: 1.5rem;
+.sectorHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(168, 85, 247, 0.1);
 }
 
-.labImage {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.labCard:hover .labImage {
-  transform: scale(1.05);
-}
-
-.labTag {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background: rgba(34, 211, 238, 0.2);
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.7rem;
-  color: #22D3EE;
-  backdrop-filter: blur(5px);
-  border: 1px solid rgba(34, 211, 238, 0.3);
-}
-
-.labHeader {
+.sectorTag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--accent-purple);
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 12px;
+  gap: 8px;
+  letter-spacing: 0.1em;
 }
 
-.labIcon {
+.sectorPulse {
+  width: 6px;
+  height: 6px;
+  background: var(--accent-purple);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+/* Indicadores do Carrossel */
+.sectorIndicator {
+  display: flex;
+  gap: 4px;
+}
+
+.indicatorDot {
+  width: 12px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.activeDot {
+  background: var(--accent-purple);
+  width: 20px;
+  box-shadow: 0 0 8px var(--accent-purple);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.7); }
+  70% { transform: scale(1.2); opacity: 0.5; box-shadow: 0 0 0 6px rgba(168, 85, 247, 0); }
+  100% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(168, 85, 247, 0); }
+}
+
+/* Container do Carrossel */
+.carouselContainer {
+  position: relative;
+  height: 400px; /* Altura fixa para evitar pulos no layout */
+}
+
+.carouselSlide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Lab Card */
+.labCard {
+  height: 100%;
+  padding: 0 !important;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.labCard:hover {
+  border-color: rgba(168, 85, 247, 0.4) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.cardInternal {
+  position: relative;
+  z-index: 5;
+  padding: 32px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.expId {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  opacity: 0.5;
+  letter-spacing: 0.2em;
+}
+
+.statusBadge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.research { color: #A855F7; border-color: rgba(168, 85, 247, 0.3); }
+.construction { color: #F59E0B; border-color: rgba(245, 158, 11, 0.3); }
+.active { color: #10B981; border-color: rgba(16, 185, 129, 0.3); }
+.experiment { color: #22D3EE; border-color: rgba(34, 211, 238, 0.3); }
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.iconBox {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
   color: var(--accent-purple);
-  filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.4));
 }
 
 .labTitle {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  font-weight: 800;
   color: white;
   margin: 0;
 }
 
 .labDesc {
   color: var(--text-secondary);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  margin: 0;
+  flex: 1;
+}
+
+.cardFooter {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.techTelemetry {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.techTelemetry span {
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  color: var(--text-secondary);
+  opacity: 0.4;
+}
+
+.exploreLink {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: white;
 }
 
 .viewMoreContainer {
   display: flex;
   justify-content: center;
-  margin-top: 48px;
+  margin-top: 60px;
 }
 
-.mtLarge {
-  margin-top: 48px;
+.labActionBtn {
+  min-width: 240px;
+  padding: 14px 32px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
 }
 
-/* HITECH OVERRIDES */
-.footerIcon, .footerText {
-  position: relative;
-  z-index: 1;
-}
-
-.footerIcon {
-  color: var(--hitech-blue);
-}
-
-.mobileOverlay {
-  opacity: 0.05;
+/* Responsividade */
+@media (max-width: 1024px) {
+  .labHorizontalLayout {
+    flex-direction: column;
+    gap: 48px;
+  }
+  
+  .carouselContainer {
+    height: 350px;
+  }
 }
