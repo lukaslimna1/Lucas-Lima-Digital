@@ -19,6 +19,13 @@ const Framework = () => {
       color: '#3B82F6' // Azul
     },
     { 
+      label: '[DIREÇÃO]',
+      title: 'Direção Estratégica', 
+      icon: <Compass size={28} color="currentColor" />, // Usando Compass para Direção
+      desc: 'Definição clara do que deve ser feito, o que não deve e onde está o maior impacto antes de começar a construir.',
+      color: '#3B82F6' // Azul
+    },
+    { 
       label: '[ARQUITETURA]',
       title: 'Arquitetura do Produto', 
       icon: <Cpu size={28} color="currentColor" />,
