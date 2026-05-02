@@ -1,0 +1,120 @@
+.processSection {
+  padding-bottom: 80px;
+}
+
+.processSubtitle {
+  max-width: 800px;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 4rem;
+}
+
+@media (max-width: 1100px) {
+  .processGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .processGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card Style - Mirroring Creation Pattern */
+.capCard {
+  border-radius: var(--radius-hitech-card) !important;
+  padding: 32px !important;
+  transition: all 0.5s ease;
+  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+  background: rgba(10, 10, 15, 0.6) !important;
+  height: 100%;
+}
+
+.capCard:hover {
+  border-color: var(--step-border) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
+              0 0 20px var(--step-shadow);
+}
+
+.cardHeader {
+  position: relative;
+  z-index: 2;
+}
+
+.capCategory {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--step-color);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  opacity: 0.8;
+}
+
+.categoryDot {
+  width: 6px;
+  height: 6px;
+  background: var(--step-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--step-color);
+}
+
+.iconTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.capIcon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  color: var(--step-color);
+  transition: all 0.4s ease;
+  flex-shrink: 0;
+}
+
+.hitech-card-wrapper:hover .capIcon {
+  background: var(--step-color);
+  color: #000;
+  transform: rotate(-5deg) scale(1.1);
+  box-shadow: 0 0 15px var(--step-shadow);
+}
+
+.capTitle {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.cardMain {
+  margin-top: 24px;
+}
+
+.capDesc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0;
+}

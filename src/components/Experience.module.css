@@ -1,0 +1,90 @@
+.experienceSection {
+  margin-top: 0;
+}
+
+.experienceTimeline {
+  position: relative;
+  margin-top: 48px;
+  /* padding-left: 20px se houver sidebar, como não há, podemos remover ou manter 0 */
+}
+
+.experienceItem {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.experienceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.experienceMainInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.experienceRole {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.experienceCompanyInfo, 
+.experiencePeriod {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.iconSub {
+  color: var(--accent-blue);
+  opacity: 0.8;
+}
+
+.experienceDesc {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.experienceHighlight {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 12px 20px;
+  background: rgba(59, 130, 246, 0.05);
+  border: 1px solid rgba(59, 130, 246, 0.1);
+  border-radius: 12px;
+}
+
+.highlightLabel {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+  letter-spacing: 0.05em;
+}
+
+.highlightText {
+  font-size: 0.9rem;
+  color: white;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .experienceHeader {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,74 @@
+.aboutSection {
+  position: relative;
+}
+
+.aboutContentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  margin-top: 32px;
+}
+
+.aboutParagraph {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.aboutParagraph.highlight {
+  font-size: 1.4rem;
+  color: white;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.qualitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.qualityCard {
+  padding: 32px;
+  border-radius: var(--radius-hitech-card);
+  transition: all 0.3s ease;
+}
+
+.qualityCard:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-blue);
+}
+
+.qualityIconWrapper {
+  color: var(--accent-blue);
+  margin-bottom: 20px;
+}
+
+.qualityTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.qualityDesc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* HITECH EXTRA OVERRIDES FOR ABOUT */
+.aboutMainCard {
+  padding: 64px;
+  position: relative;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  overflow: hidden;
+}
+
+.aboutSeparator {
+  width: 60px;
+  height: 2px;
+  background: var(--accent-blue);
+  margin: 32px 0;
+}

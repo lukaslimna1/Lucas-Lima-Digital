@@ -1,93 +1,116 @@
 import { motion } from 'framer-motion';
 import { Briefcase, Mail, Terminal } from 'lucide-react';
+import styles from './Hero.module.css';
+import { useMousePosition } from '../utils/useMousePosition';
 
 const Hero = () => {
+  const { handleMouseMove } = useMousePosition();
   return (
     <motion.section 
       id="home"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="hero-section"
+      className={styles.heroSection}
     >
-      {/* Elementos de background premium: esferas brilhantes */}
-      <div className="glow-orb blue-orb"></div>
-      <div className="glow-orb purple-orb"></div>
-
-      {/* Badge de status no estilo Sistema / Terminal */}
-      <div className="badge" style={{ border: '1px solid rgba(139, 92, 246, 0.3)', background: 'rgba(139, 92, 246, 0.05)', display: 'flex', alignItems: 'center', gap: '10px' }}>
-        <span className="dot-pulse" style={{ backgroundColor: '#8B5CF6', boxShadow: '0 0 10px rgba(139, 92, 246, 0.5)' }}></span>
-        <span style={{ color: '#8B5CF6', fontWeight: '700', letterSpacing: '0.05em' }}>SYSTEM_ONLINE // CORE: ACTIVE</span>
-      </div>
-
-      {/* Título de impacto */}
-      <h1 className="hero-title">
-        Engenharia & UX para <span className="text-gradient">Produtos Premium</span>
-      </h1>
-      
-      {/* Posicionamento profissional */}
-      <p className="hero-subtitle">
-        Eu não crio apenas telas. Arquitetura escalável, design imersivo e performance real para produtos digitais de alto nível.
-      </p>
-
-      {/* Caixa de terminal destacando o objetivo (Premium UX) */}
-      <motion.div 
-        animate={{ y: [0, -5, 0] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="hero-terminal" style={{
-        marginTop: '2rem',
-        marginBottom: '3rem',
-        padding: '1.25rem 1.5rem',
-        background: 'rgba(5, 5, 8, 0.6)',
-        border: '1px solid rgba(255, 255, 255, 0.08)',
-        borderRadius: '12px',
-        display: 'flex',
-        alignItems: 'flex-start',
-        gap: '1rem',
-        maxWidth: '650px',
-        backdropFilter: 'blur(10px)',
-        borderLeft: '3px solid var(--accent-blue)',
-        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4)'
-      }}>
-        <div style={{ marginTop: '2px' }}>
-          <Terminal size={20} color="var(--accent-blue)" />
-        </div>
-        <div>
-          <div style={{ fontSize: '0.75rem', fontFamily: 'monospace', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--text-secondary)', marginBottom: '6px' }}>
-            {">"} ./exec_lucas_lima.sh
+      <div className={styles.heroContentLayout}>
+        <div className={styles.heroLeftCol}>
+          {/* Badge de status no estilo Sistema / Terminal */}
+          <div className={`badge hitech ${styles.heroBadge}`}>
+            <span className="dot-pulse"></span>
+            <span className={styles.badgeText}>SYSTEM_ONLINE // CORE: ACTIVE</span>
           </div>
-          <p style={{ margin: 0, fontSize: '0.95rem', color: 'var(--text-main)', lineHeight: '1.6' }}>
-            <span style={{ fontWeight: '600', color: '#10b981' }}>SUCCESS:</span> Fullstack skills loaded. <br />
-            Transformando complexidade técnica em interfaces invisíveis e conversão real.
+
+          {/* Título de impacto */}
+          <h1 className={styles.heroTitle}>
+            Engenharia & UX <br />
+            <span className={styles.heroTitleSub}>para <span className="text-gradient">Produtos Premium</span></span>
+          </h1>
+          
+          {/* Posicionamento profissional */}
+          <p className={styles.heroSubtitle}>
+            Eu não crio apenas telas. Arquitetura escalável, design imersivo e performance real para produtos digitais de alto nível.
           </p>
-        </div>
-      </motion.div>
 
-      {/* Botões de Call to Action */}
-      <div className="hero-actions">
-        <a href="#projects" className="btn-primary">
-          <Briefcase size={18} />
-          Ver Projetos
-        </a>
-        <a href="#contact" className="btn-outline">
-          <Mail size={18} />
-          Entrar em Contato
-        </a>
-      </div>
-      
-      {/* Métricas rápidas de autoridade */}
-      <div className="hero-stats">
-        {[
-          { label: 'Anos de Exp.', value: '5+' },
-          { label: 'Projetos Entregues', value: '40+' },
-          { label: 'Clientes Satisfeitos', value: '100%' },
-          { label: 'Linhas de Código', value: '1M+' },
-        ].map((stat, i) => (
-          <div key={i} className="stat-item">
-            <div className="stat-value">{stat.value}</div>
-            <div className="stat-label">{stat.label}</div>
+          {/* Caixa de terminal destacando o objetivo */}
+          <motion.div 
+            animate={{ y: [0, -5, 0] }}
+            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className={styles.heroTerminal}
+          >
+            <div className="hitech-asymmetric-aura"></div>
+            <div className="hitech-artistic-fusion" style={{ opacity: 0.3 }}></div>
+            <div className="hitech-artistic-grain"></div>
+            <div className="hitech-border-glow" style={{ opacity: 0.5 }}></div>
+            <div style={{ marginTop: '2px', position: 'relative', zIndex: 1 }}>
+              <Terminal size={20} color="var(--accent-cyan)" />
+            </div>
+            <div style={{ position: 'relative', zIndex: 1 }}>
+              <div className={styles.terminalHeader}>
+                {">"} ./exec_lucas_lima.sh
+              </div>
+              <p className={styles.terminalText}>
+                <span className={styles.terminalSuccess}>SUCCESS:</span> Multidisciplinary system loaded. <br />
+                <span style={{ opacity: 0.9 }}>Transformando processos complexos em produtos digitais eficientes, com foco em usabilidade, performance e resultado.</span>
+              </p>
+            </div>
+          </motion.div>
+        </div>
+
+        <div className={styles.heroRightCol}>
+          {/* Métricas Reais em Mini Cards Hi-Tech - Agora com Assimetria Visual */}
+          <div className={styles.heroStatsGrid}>
+            {[
+              { label: 'Experiência', value: 'Desde 2014', span: 'square' },
+              { label: 'Expertise Lab', value: '+10 Projetos', span: 'tall' },
+              { label: 'Pipeline Ativo', value: '2 Projetos', span: 'tall' },
+              { label: 'Produção Real', value: '1 App Ativo', span: 'square' },
+            ].map((stat, i) => {
+              const isBlue = i % 2 === 0;
+              const color = isBlue ? 'var(--hitech-blue)' : 'var(--accent-green)';
+              
+              return (
+                <motion.div 
+                  key={i} 
+                  className={`hitech-card-wrapper ${styles[stat.span]}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  onMouseMove={handleMouseMove}
+                  transition={{ delay: 0.5 + i * 0.1 }}
+                  style={{
+                    "--step-color": color,
+                    "--step-border": `${color}30`,
+                    "--step-shadow": `${color}15`
+                  }}
+                >
+                  <div className={`hitech-card glass-panel ${styles.miniCard}`}>
+                    <div className="hitech-asymmetric-aura"></div>
+                    <div className="hitech-artistic-fusion"></div>
+                    <div className="hitech-artistic-grain"></div>
+                    <div className="hitech-border-glow"></div>
+                    <div className="corner-decor top-right"></div>
+                    <div className="corner-decor bottom-left"></div>
+                    
+                    <span className={styles.miniCardLabel}>{stat.label}</span>
+                    <span className={styles.miniCardValue}>{stat.value}</span>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
-        ))}
+
+          {/* Botões de Call to Action - Padronizados com estilo Explorar Case */}
+          <div className={styles.heroActions}>
+            <a href="#projects" className="btn-primary">
+              VER PROJETOS
+              <Briefcase size={18} />
+            </a>
+            <a href="#contact" className="btn-outline">
+              ENTRAR EM CONTATO
+              <Mail size={18} />
+            </a>
+          </div>
+        </div>
       </div>
     </motion.section>
   );

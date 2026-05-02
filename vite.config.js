@@ -7,5 +7,20 @@ export default defineConfig({
   server: {
     host: true,
     allowedHosts: true
+  },
+  build: {
+    minify: 'terser',
+    cssMinify: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom'],
+          'framer-motion': ['framer-motion'],
+          'icons': ['lucide-react', '@fortawesome/react-fontawesome', '@fortawesome/free-solid-svg-icons']
+        }
+      }
+    },
+    chunkSizeWarningLimit: 1000
   }
 })
+

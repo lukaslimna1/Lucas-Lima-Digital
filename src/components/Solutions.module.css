@@ -1,0 +1,233 @@
+.solutionsSection {
+  padding-bottom: 80px;
+  position: relative;
+}
+
+.sectionHeader {
+  margin-bottom: 4rem;
+}
+
+.sectionSubtitle {
+  max-width: 850px;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.solutionsContainer {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+@media (max-width: 1200px) {
+  .solutionsContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+.capabilitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .capabilitiesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Card Style - Cloning Projects Card */
+.capCard {
+  border-radius: var(--radius-hitech-card) !important;
+  padding: 32px !important;
+  transition: all 0.5s ease;
+  border: none !important; /* Wrapper handles border */
+  background: rgba(10, 10, 15, 0.6) !important;
+}
+
+.capCategory {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent-blue);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+}
+
+.categoryDot {
+  width: 5px;
+  height: 5px;
+  background: var(--accent-blue);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent-blue);
+}
+
+.iconTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.capIcon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  color: var(--accent-blue);
+  transition: all 0.4s ease;
+}
+
+.hitech-card-wrapper:hover .capIcon {
+  background: var(--accent-blue);
+  color: #000;
+  transform: rotate(-5deg) scale(1.05);
+}
+
+.capTitle {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.cardMain {
+  margin-top: 24px;
+}
+
+.capDesc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Philosophy Panel - Side Card */
+.philosophyPanel {
+  height: 100%;
+}
+
+.mindsetCard {
+  height: 100%;
+  padding: 40px !important;
+  border-radius: var(--radius-hitech-card) !important;
+  border: none !important;
+  background: rgba(10, 10, 15, 0.6) !important;
+}
+
+.mindsetHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 2rem;
+}
+
+.mindsetTitle {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.mindsetDesc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.stepList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.stepItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 14px 20px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.stepItem:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--accent-blue);
+  transform: translateX(8px);
+}
+
+.stepIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(34, 211, 238, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-blue);
+  border: 1px solid rgba(34, 211, 238, 0.2);
+  flex-shrink: 0;
+}
+
+.stepText {
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.impactBox {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  background: linear-gradient(90deg, rgba(34, 211, 238, 0.05), transparent);
+  border-radius: 0 16px 16px 0;
+  border-left: 4px solid var(--accent-blue);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.impactText {
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin: 0;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.zapIcon {
+  color: var(--accent-blue);
+  filter: drop-shadow(0 0 8px var(--accent-blue));
+}
+
+.modLabel {
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--accent-blue);
+  opacity: 0.4;
+  letter-spacing: 0.2em;
+}

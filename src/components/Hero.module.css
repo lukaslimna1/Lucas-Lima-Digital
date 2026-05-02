@@ -1,0 +1,254 @@
+.heroSection {
+  min-height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 100px;
+  padding-top: 120px;
+  padding-bottom: 80px;
+  text-align: left;
+  overflow: hidden;
+}
+
+.heroContentLayout {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: space-between; /* Mantém as colunas nas extremidades do container de 1200px */
+  width: 100%;
+}
+
+.heroLeftCol {
+  flex: 1.2;
+  max-width: 850px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.heroRightCol {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alinha pelo topo */
+  gap: 20px;
+  max-width: 550px;
+  align-items: flex-start;
+  margin-top: 60px; /* Alinha o início dos cards com o subtítulo, abaixo da linha do badge */
+}
+
+.heroTitle {
+  font-size: clamp(2.2rem, 7vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 32px;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  white-space: normal;
+  max-width: 900px;
+}
+
+.heroTitleSub {
+  display: block;
+  white-space: normal;
+  margin-top: 8px;
+}
+
+.heroTerminal {
+  margin: 32px 0;
+  width: 100%;
+  max-width: 800px; 
+  text-align: left;
+  margin-top: 5rem; /* Alinhado com a altura dos cards/botões */
+  padding: 1.5rem 2rem;
+  background: rgba(5, 5, 10, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-hitech-card);
+  display: flex;
+  gap: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.terminalContent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.terminalHeader {
+  font-size: 0.75rem;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--hitech-cyan); /* Corrigido para a nova paleta */
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+.terminalText {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.terminalSuccess {
+  color: var(--accent-green); /* Corrigido para Verde Neon */
+  font-weight: 800;
+}
+
+.heroActions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%; 
+  justify-content: flex-start;
+  margin-top: auto;
+}
+
+.heroStatsWrapper {
+  margin-top: 60px;
+  width: 100%;
+}
+
+.miniCardLabel {
+  font-family: var(--font-mono);
+  font-size: 0.7rem; /* Aumentado de 0.65rem */
+  text-transform: uppercase;
+  color: var(--step-color);
+  letter-spacing: 0.05em; /* Reduzido levemente para caber textos maiores */
+  opacity: 0.9;
+  position: relative;
+  z-index: 2;
+  line-height: 1.4;
+}
+
+.miniCardValue {
+  font-size: 1.25rem; /* Aumentado de 1.1rem */
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 2;
+  font-family: var(--font-heading);
+  margin-top: 2px;
+}
+
+.heroStatsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 65px; /* Equilíbrio: nem tão pequeno, nem tão grande */
+  gap: 12px;
+  width: 100%;
+}
+
+.miniCard {
+  height: 100%;
+  padding: 16px 20px; /* Mais compacto que o card padrão, mas com o mesmo estilo */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.tall {
+  grid-row: span 2;
+}
+
+.square {
+  grid-row: span 1;
+}
+
+@media (min-width: 768px) {
+  .heroStatsGrid {
+    grid-template-columns: repeat(2, 1fr); /* Mantém 2 colunas como solicitado */
+  }
+}
+
+@media (max-width: 1024px) {
+  .heroContentLayout {
+    flex-direction: column;
+    text-align: center;
+    gap: 48px;
+  }
+  .heroLeftCol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    flex: none;
+    text-align: center;
+  }
+  .heroRightCol {
+    max-width: 100%;
+    flex: none;
+  }
+  .heroStatsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  .heroActions {
+    flex-direction: column;
+    align-items: center;
+  }
+  .heroTitle {
+    font-size: 2.8rem;
+    line-height: 1.2;
+  }
+}
+
+.heroSubtitle {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 650px;
+  margin-bottom: 24px;
+}
+
+.wide {
+  grid-row: span 2;
+}
+
+.tall {
+  grid-row: span 3;
+}
+
+.square {
+  grid-row: span 2;
+}
+
+/* Customizando botões da Hero para acompanhar a largura dos cards */
+.heroActions a {
+  padding: 12px 24px !important; /* Retomando o corpo do botão */
+  font-size: 0.85rem !important;
+  width: 100% !important; 
+  justify-content: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.heroBadge {
+  margin-bottom: 1rem;
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  background: rgba(59, 130, 246, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+}
+
+.badgeText {
+  color: var(--hitech-blue);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .heroTitle {
+    font-size: 2.8rem;
+  }
+}
