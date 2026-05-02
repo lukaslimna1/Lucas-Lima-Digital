@@ -9,9 +9,19 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
   const [direction, setDirection] = useState(1);
   const intervalRef = useRef(null);
 
-  // Cores oficiais por setor: Cyan, Green, Blue
   const sectorColors = [styles.colorCyan, styles.colorGreen, styles.colorBlue];
   const activeColorClass = sectorColors[catIdx];
+
+  // Mapeamento de Emojis para Status
+  const statusEmojiMap = {
+    'pesquisa': '🧪',
+    'design': '🎨',
+    'estratégia': '📚',
+    'desenvolvimento': '⚙️',
+    'ativo': '✅',
+    'construção': '🏗️',
+    'experimento': '🔬'
+  };
 
   const nextSlide = useCallback(() => {
     setDirection(1);
@@ -36,27 +46,20 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
   };
 
   const exp = experiments[currentIndex];
+  const statusLower = exp.statusLabel.toLowerCase();
+  const emoji = statusEmojiMap[statusLower] || '📡';
 
   const slideVariants = {
-    enter: (direction) => ({
-      x: direction > 0 ? 30 : -30,
-      opacity: 0
-    }),
-    center: {
-      x: 0,
-      opacity: 1
-    },
-    exit: (direction) => ({
-      x: direction < 0 ? 30 : -30,
-      opacity: 0
-    })
+    enter: (direction) => ({ x: direction > 0 ? 30 : -30, opacity: 0 }),
+    center: { x: 0, opacity: 1 },
+    exit: (direction) => ({ x: direction < 0 ? 30 : -30, opacity: 0 })
   };
 
   return (
     <div className={`${styles.labSector} ${activeColorClass}`}>
       <div className={styles.sectorHeader}>
         <div className={styles.sectorMainTitle}>
-          <div className={styles.sectorId}>SECTOR_0{catIdx + 1}</div>
+          <div className={styles.sectorId}>ÁREA_0{catIdx + 1}</div>
           <div className={styles.sectorName}>// {category}</div>
         </div>
         <div className={styles.sectorIndicator}>
@@ -93,36 +96,38 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
                   <span className={styles.categoryDot}></span>
                   EXP_ID_00{exp.id} 
                   <span className={`${styles.statusLabel} ${styles[exp.status?.toLowerCase()]}`}>
-                    [ {exp.statusLabel.toUpperCase()} ]
+                    [ {emoji} {exp.statusLabel.toUpperCase()} ]
                   </span>
                 </div>
                 
-                <div className={styles.iconTitleRow}>
-                  <div className={styles.capIcon}>
-                    {exp.icon && iconMap[exp.icon] ? (
-                      (() => {
-                        const IconComponent = iconMap[exp.icon];
-                        return <IconComponent size={24} />;
-                      })()
-                    ) : (
-                      <FlaskConical size={24} />
-                    )}
+                <div className={styles.cardBody}>
+                  <div className={styles.iconTitleRow}>
+                    <div className={styles.capIcon}>
+                      {exp.icon && iconMap[exp.icon] ? (
+                        (() => {
+                          const IconComponent = iconMap[exp.icon];
+                          return <IconComponent size={26} />;
+                        })()
+                      ) : (
+                        <FlaskConical size={26} />
+                      )}
+                    </div>
+                    <h3 className={styles.capTitle}>{exp.title}</h3>
                   </div>
-                  <h3 className={styles.capTitle}>{exp.title}</h3>
-                </div>
-                
-                <div className={styles.cardMain}>
-                  <p className={styles.capDesc}>{exp.description}</p>
+                  
+                  <div className={styles.cardMain}>
+                    <p className={styles.capDesc}>{exp.description}</p>
+                  </div>
                 </div>
 
                 <div className={styles.cardFooter}>
                   <div className={styles.clickHint}>
-                    <MousePointer2 size={10} />
+                    <MousePointer2 size={12} />
                     CLIQUE PARA SINCRONIZAR
                   </div>
                   <div className={styles.techTelemetry}>
                     <span>FLUXO_DADOS: ATIVO</span>
-                    <span>CARGA_CPU: {Math.floor(Math.random() * 20) + 10}%</span>
+                    <span>CARGA_CPU: {Math.floor(Math.random() * 20) + 15}%</span>
                   </div>
                 </div>
               </div>
