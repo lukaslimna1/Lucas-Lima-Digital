@@ -93,26 +93,25 @@ Este portfólio é um organismo vivo e continuará sendo aprimorado.
 - **Clean Architecture**: Remoção de dependências de terceiros não essenciais e otimização do fluxo de trabalho.
 
 ### v2.4.0 - *Artistic Hi-Tech Framework Standardization*
-- **Visual Unification**: Padronização absoluta entre as seções de "Criação" e "Framework", utilizando o mesmo sistema de cards industriais e badges técnicos (MOD_0X).
-- **Artistic Fusion Texture System**: Implementação de uma camada tripla de profundidade (Topografia, Digital Mist e Scanlines) para uma estética tátil e não-simétrica.
-- **Living Gradient & Asymmetric Aura**: Refatoração do sistema de bordas e iluminação periférica para criar um efeito de "energia pulsante" orgânica.
-- **Semantic Evolution**: Transição semântica da seção `#process` para `#framework`, alinhando a navegação com a nova proposta industrial e de engenharia.
+- **Visual Unification**: Padronização absoluta entre as seções de "Criação" e "Framework".
+- **Artistic Fusion Texture System**: Camada tripla de profundidade (Topografia, Digital Mist e Scanlines).
+- **Living Gradient & Asymmetric Aura**: Refatoração do sistema de bordas e iluminação pulsante.
 
-### v2.5.0 - *R&D Command Center: Systems & AI Lab Overhaul*
-- **Reconstrução Total do Lab**: Transformação da seção de experimentos em uma interface de comando técnica com navegação por setores (`SECTOR_0X`).
-- **Telemetry Card System**: Implementação de metadados técnicos fictícios e IDs de rastreio para cada item de pesquisa.
+### v2.4.1 - *R&D Command Center: Systems & AI Lab Overhaul*
+- **Reconstrução Total do Lab**: Transformação da seção em interface de comando técnica (`SECTOR_0X`).
+- **Telemetry Card System**: Metadados técnicos fictícios e IDs de rastreio para cada pesquisa.
 
-### v2.7.0 - *Interactive Research Sync: Total Visual Parity*
+### v2.4.2 - *Interactive Research Sync: Total Visual Parity*
 - **Click-to-Advance Logic**: Interação manual via clique nos cards com reset automático.
 - **Extended Research Cycle**: Aumento do intervalo de transição para 15 segundos.
-- **Visual Parity (#Criação)**: Sincronização total de tokens de design (paddings, fundos, hovers).
+- **Visual Parity (#Criação)**: Sincronização total de design tokens (paddings, fundos, hovers).
 
-### v3.4.0 (Atual) - *Enterprise R&D Command Center: Systems & AI Lab*
-- **Layout Triptych Industrial**: Implementação de 3 carrosséis independentes (EXPERIMENTOS, APRENDIZADO, EVOLUÇÃO) rodando em paralelo a cada 20 segundos.
-- **Localização PT-BR**: Tradução completa da interface técnica (`ÁREA_0X`, `CLIQUE PARA SINCRONIZAR`, `SITUAÇÃO`).
-- **Sistema de Labels Vivas**: Etiquetas de status de alto impacto com emojis integrados (`[ 🔬 PESQUISA ]`, `[ 🎓 MBA ]`, etc) e cores saturadas oficiais.
-- **Telemetria de Conclusão**: Integração inteligente do status de conclusão diretamente nos metadados de telemetria (`SITUAÇÃO: CONCLUÍDO // PROGRESSO: 100%`), eliminando ruído visual e mantendo a legibilidade.
-- **Enterprise Performance**: Remoção de efeitos de pulso/piscar (blinking) para garantir uma interface sólida, profissional e de alta precisão técnica.
+### v2.4.3 (Atual) - *Enterprise R&D Command Center: Systems & AI Lab*
+- **Layout Triptych Industrial**: 3 carrosséis independentes (EXPERIMENTOS, APRENDIZADO, EVOLUÇÃO) paralelos.
+- **Localização PT-BR**: Tradução completa da interface técnica (`ÁREA_0X`, `CLIQUE PARA SINCRONIZAR`).
+- **Sistema de Labels Vivas**: Etiquetas de status com emojis (`[ 🔬 PESQUISA ]`, `[ 🎓 MBA ]`).
+- **Telemetria de Conclusão**: Status integrado nos metadados (`SITUAÇÃO: CONCLUÍDO // PROGRESSO: 100%`).
+- **Enterprise Performance**: Remoção de efeitos de piscar para máxima estabilidade visual.
 
 ---
 
