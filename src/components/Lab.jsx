@@ -35,6 +35,7 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
   };
 
   const exp = experiments[currentIndex];
+  const isCompleted = exp.status === 'COMPLETED';
 
   const slideVariants = {
     enter: (direction) => ({ x: direction > 0 ? 30 : -30, opacity: 0 }),
@@ -72,18 +73,12 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
             className={styles.carouselSlide}
             onClick={handleCardClick}
           >
-            <div className={`${styles.hitechCardWrapper} ${exp.status === 'COMPLETED' ? styles.isCompleted : ''}`}>
+            <div className={`${styles.hitechCardWrapper} ${isCompleted ? styles.isCompleted : ''}`}>
               <div className={styles.cardCornerDecor + ' ' + styles.tl}></div>
               <div className={styles.cardCornerDecor + ' ' + styles.tr}></div>
               <div className={styles.cardCornerDecor + ' ' + styles.bl}></div>
               <div className={styles.cardCornerDecor + ' ' + styles.br}></div>
               
-              {exp.status === 'COMPLETED' && (
-                <div className={styles.completedStamp}>
-                  CONCLUÍDO
-                </div>
-              )}
-
               <div className={styles.hitechCardContent}>
                 <div className={styles.capCategory}>
                   <span className={styles.categoryDot}></span>
@@ -119,8 +114,17 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
                     CLIQUE PARA SINCRONIZAR
                   </div>
                   <div className={styles.techTelemetry}>
-                    <span>FLUXO_DADOS: ATIVO</span>
-                    <span>CARGA_CPU: {Math.floor(Math.random() * 20) + 15}%</span>
+                    {isCompleted ? (
+                      <>
+                        <span className={styles.statusSuccess}>SITUAÇÃO: CONCLUÍDO</span>
+                        <span className={styles.statusSuccess}>PROGRESSO: 100%</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>FLUXO_DADOS: ATIVO</span>
+                        <span>CARGA_CPU: {Math.floor(Math.random() * 20) + 15}%</span>
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
