@@ -14,6 +14,7 @@ const Experience = () => {
       id: "divino",
       number: "01",
       title: "OPERAÇÃO REAL NA PRÁTICA",
+      subHeadline: "Como caos operacional virou estrutura e controle",
       context: "OPERAÇÃO REAL",
       envType: "NEGÓCIO FÍSICO",
       envName: "DIVINO SAPORE",
@@ -29,18 +30,19 @@ const Experience = () => {
         { id: "01", label: "CONTEXTO", content: "Atuação direta na operação do negócio, passando por financeiro, atendimento, marketing, sistemas e processos." },
         { id: "02", label: "O PROBLEMA REAL", content: "⚠️ Caixa desorganizado, falhas de comunicação, processos manuais e decisões sem base." },
         { id: "03", label: "AÇÃO", content: "Estruturei rotinas, organizei o fluxo financeiro, padronizei processos e reduzi dependência de tarefas manuais." },
-        { id: "04", label: "IMPACTO", content: "Mais controle financeiro, operação mais previsível e redução de retrabalho. Base estruturada para crescimento." },
-        { id: "05", label: "INSIGHT", content: "💡 Sistemas não começam no código. Começam no entendimento do negócio." }
+        { id: "04", label: "IMPACTO", content: "• Mais controle financeiro\n• Operação mais previsível\n• Redução de retrabalho\n• Base estruturada para crescimento" },
+        { id: "05", label: "INSIGHT", content: "💡 \"Sistemas não começam no código. Começam no entendimento do negócio.\"" }
       ]
     },
     {
       id: "pereirao",
       number: "02",
-      title: "TECNOLOGIA NA PRÁTICA",
+      title: "TECNOLOGIA APLICADA NO MUNDO REAL",
+      subHeadline: "Infraestrutura invisível que sustenta a operação",
       context: "TECNOLOGIA NA PRÁTICA",
       envType: "VAREJO & LOGÍSTICA",
       envName: "LOJÃO DO PEREIRÃO",
-      chronology: "2022 — 2024",
+      chronology: "2024",
       impacts: [
         "ESTABILIDADE OPERACIONAL",
         "INFRAESTRUTURA ORGANIZADA",
@@ -49,21 +51,22 @@ const Experience = () => {
       insight: "Tecnologia invisível é a que sustenta tudo sem ninguém perceber.",
       color: "#00ffaa", // Verde Matrix
       modalSteps: [
-        { id: "01", label: "CONTEXTO", content: "Atuação no coração técnico de uma grande operação de varejo e logística, garantindo a estabilidade dos sistemas críticos." },
-        { id: "02", label: "O PROBLEMA REAL", content: "⚠️ Infraestrutura vulnerável, interrupções frequentes e falta de processos claros de manutenção preventiva." },
-        { id: "03", label: "AÇÃO", content: "Organizei a infraestrutura de TI, padronizei o suporte técnico e implementei rotinas de manutenção preventiva." },
-        { id: "04", label: "IMPACTO", content: "Disponibilidade contínua dos sistemas, redução de downtime e suporte técnico profissionalizado." },
-        { id: "05", label: "INSIGHT", content: "💡 Tecnologia invisível é a que sustenta tudo sem ninguém perceber." }
+        { id: "01", label: "CONTEXTO", content: "Atuação em ambiente de varejo e logística, lidando com suporte técnico, equipamentos e estrutura de TI." },
+        { id: "02", label: "O PROBLEMA REAL", content: "⚠️ Infraestrutura desorganizada, falhas operacionais e dependência constante de suporte reativo." },
+        { id: "03", label: "AÇÃO", content: "Organizei equipamentos, padronizei processos técnicos e estabilizei a base de funcionamento da operação." },
+        { id: "04", label: "IMPACTO", content: "• Mais estabilidade no dia a dia\n• Redução de falhas técnicas\n• Suporte mais ágil\n• Operação menos dependente de urgência" },
+        { id: "05", label: "INSIGHT", content: "💡 \"Tecnologia invisível é a que sustenta tudo sem ninguém perceber.\"" }
       ]
     },
     {
       id: "varejo",
       number: "03",
-      title: "BASE COMERCIAL & HUMANA",
+      title: "COMPORTAMENTO REAL DO USUÁRIO",
+      subHeadline: "Onde produto encontra gente de verdade",
       context: "BASE COMERCIAL & HUMANA",
       envType: "ATENDIMENTO & VENDAS",
       envName: "FRONT-END REAL",
-      chronology: "2020 — 2022",
+      chronology: "2018 — 2024",
       impacts: [
         "EMPATIA REAL COM O USUÁRIO",
         "RESOLUÇÃO DE PROBLEMAS",
@@ -72,34 +75,35 @@ const Experience = () => {
       insight: "Se você não entende quem usa, você não deveria construir nada.",
       color: "#0088ff", // Azul Cobalt
       modalSteps: [
-        { id: "01", label: "CONTEXTO", content: "Experiência no atendimento direto ao cliente, compreendendo as dores reais de quem utiliza serviços e produtos." },
-        { id: "02", label: "O PROBLEMA REAL", content: "⚠️ Atritos na jornada de compra e falhas na comunicação de valor para o cliente final." },
-        { id: "03", label: "AÇÃO", content: "Desenvolvi escuta ativa e técnicas de resolução de problemas focadas na satisfação e retenção do usuário." },
-        { id: "04", label: "IMPACTO", content: "Domínio da psicologia do usuário, comunicação assertiva e visão comercial estratégica." },
-        { id: "05", label: "INSIGHT", content: "💡 Se você não entende quem usa, você não deveria construir nada." }
+        { id: "01", label: "CONTEXTO", content: "Atuação direta com clientes em vendas, atendimento e operação, lidando com comportamento real no dia a dia." },
+        { id: "02", label: "O PROBLEMA REAL", content: "⚠️ Clientes com necessidades diferentes, comunicação falha e experiências inconsistentes." },
+        { id: "03", label: "AÇÃO", content: "Desenvolvi leitura de comportamento, adaptação de abordagem e resolução prática de problemas em tempo real." },
+        { id: "04", label: "IMPACTO", content: "• Melhor comunicação com usuários\n• Resolução mais rápida de problemas\n• Visão comercial mais clara\n• Entendimento real da jornada do cliente" },
+        { id: "05", label: "INSIGHT", content: "💡 \"Se você não entende quem usa, você não deveria construir nada.\"" }
       ]
     },
     {
-      id: "origem",
+      id: "eventos",
       number: "04",
-      title: "ORIGEM DA CONSTRUÇÃO",
+      title: "EXECUÇÃO DO ZERO",
+      subHeadline: "Construir sem recurso, aprendendo na prática",
       context: "ORIGEM DA CONSTRUÇÃO",
-      envType: "COMUNIDADE & CULTURA",
-      envName: "EVENTOS INDEPENDENTES",
-      chronology: "2018 — 2020",
+      envType: "EVENTOS & COMUNIDADE",
+      envName: "BASTIDORES",
+      chronology: "2011 — 2015",
       impacts: [
-        "LIDERANÇA NA PRÁTICA",
-        "EXECUÇÃO DO ZERO",
-        "CRIAÇÃO DE EXPERIÊNCIAS"
+        "LIDERANÇA INDEPENDENTE",
+        "EXECUÇÃO SOB PRESSÃO",
+        "VISÃO DE PROCESSO"
       ],
       insight: "Criar sem recurso ensina mais do que qualquer teoria.",
-      color: "#aa00ff", // Purple Tech
+      color: "#ff3366", // Rosa Choque / Energia
       modalSteps: [
-        { id: "01", label: "CONTEXTO", content: "Organização e execução de projetos independentes, onde a liderança e a execução eram fundamentais para o sucesso." },
-        { id: "02", label: "O PROBLEMA REAL", content: "⚠️ Necessidade de entregar experiências de alto impacto com recursos financeiros e humanos limitados." },
-        { id: "03", label: "AÇÃO", content: "Gerenciei projetos do zero, desde a logística até a coordenação de equipes para entrega final." },
-        { id: "04", label: "IMPACTO", content: "Desenvolvimento de resiliência, liderança prática e capacidade de abstração para resolver problemas complexos." },
-        { id: "05", label: "INSIGHT", content: "💡 Criar sem recurso ensina mais do que qualquer teoria." }
+        { id: "01", label: "CONTEXTO", content: "Organização e produção de eventos independentes, envolvendo planejamento, execução e coordenação de equipe." },
+        { id: "02", label: "O PROBLEMA REAL", content: "⚠️ Falta de recursos, estrutura limitada e necessidade de fazer tudo acontecer com o que existia." },
+        { id: "03", label: "AÇÃO", content: "Organizei eventos, liderei equipes, planejei operações e executei projetos do início ao fim." },
+        { id: "04", label: "IMPACTO", content: "• Desenvolvimento de liderança\n• Capacidade de execução sob pressão\n• Criação de experiências reais\n• Visão de organização prática" },
+        { id: "05", label: "INSIGHT", content: "💡 \"Criar sem recurso ensina mais do que qualquer teoria.\"" }
       ]
     }
   ];

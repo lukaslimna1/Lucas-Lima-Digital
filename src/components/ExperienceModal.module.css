@@ -99,8 +99,8 @@
 }
 
 .modalTitle {
-  font-size: 5.5rem;
-  margin: 1.5rem 0;
+  font-size: 3.5rem; /* Ajustado para equilíbrio com o texto longo */
+  margin: 1rem 0;
   color: #FFFFFF;
   background: linear-gradient(135deg, #FFFFFF, var(--accent-cyan));
   -webkit-background-clip: text;
@@ -110,16 +110,32 @@
   line-height: 1.1;
   text-align: center;
   letter-spacing: -0.04em;
+  text-transform: uppercase;
 }
 
-.modalSubtitle {
-  font-size: 1.15rem;
+.modalSubHeadline {
+  font-size: 1.4rem;
   color: var(--accent-cyan);
-  margin-bottom: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  max-width: 800px;
+  line-height: 1.4;
+}
+
+.modalMeta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-family: var(--font-mono);
-  opacity: 0.9;
-  letter-spacing: 0.3em;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
   text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.metaDivider {
+  opacity: 0.3;
 }
 
 .modalManifesto {
@@ -147,10 +163,15 @@
 .modalSection {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   width: 100%;
   max-width: 850px;
   text-align: left;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.01);
+  transition: all 0.3s ease;
 }
 
 .modalSectionTitle {
@@ -189,21 +210,47 @@
 .modalSectionDesc {
   font-size: 1.15rem;
   line-height: 1.8;
-  color: rgba(255, 255, 255, 0.95); /* Legibilidade máxima */
+  color: rgba(255, 255, 255, 0.95);
   font-weight: 400;
 }
 
-.resultBox {
-  background: rgba(16, 185, 129, 0.05);
+/* CAIXAS ESPECIAIS */
+.problemBox {
+  background: rgba(234, 179, 8, 0.03);
+  border: 1px solid rgba(234, 179, 8, 0.2);
+  border-left: 4px solid #eab308;
+  box-shadow: inset 0 0 20px rgba(234, 179, 8, 0.05);
+}
+
+.problemBox .modalSectionTitle {
+  color: #fbbf24;
+  border-left-color: #fbbf24;
+}
+
+.impactBox {
+  background: rgba(16, 185, 129, 0.03);
   border: 1px solid rgba(16, 185, 129, 0.2);
-  padding: 2.5rem;
-  border-radius: 12px;
-  color: #F0F9FF;
-  font-weight: 500;
-  position: relative;
-  overflow: hidden;
-  font-size: 1.3rem;
-  line-height: 1.8;
+  border-left: 4px solid #10b981;
+  box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.05);
+}
+
+.impactBox .modalSectionTitle {
+  color: #34d399;
+  border-left-color: #34d399;
+}
+
+.insightBox {
+  background: rgba(34, 211, 238, 0.05);
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  border-left: 4px solid var(--accent-cyan);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(34, 211, 238, 0.1);
+}
+
+.insightBox .modalSectionDesc {
+  color: #fff;
+  font-weight: 600;
+  font-style: italic;
 }
 
 .bulletList {

@@ -42,54 +42,62 @@ const ExperienceModal = ({ experience, onClose }) => {
           </div>
           
           {/* Título Massivo */}
-          <h2 className={styles.modalTitle}>{experience.modalHeadline}</h2>
+          <h2 className={styles.modalTitle}>{experience.title}</h2>
           
-          {/* Subtítulo Mono */}
-          <p className={styles.modalSubtitle}>
-            {experience.modalLocation} • {experience.modalPeriod}
-          </p>
+          {/* Subtítulo / Headline de Impacto */}
+          <p className={styles.modalSubHeadline}>{experience.subHeadline}</p>
           
-          {/* Manifesto / Insight - Opcional se for redundante com o passo 05, mas mantido para impacto */}
+          {/* Timeline e Localização */}
+          <div className={styles.modalMeta}>
+            <Calendar size={14} />
+            <span>{experience.chronology}</span>
+            <span className={styles.metaDivider}>•</span>
+            <MapPin size={14} />
+            <span>{experience.envName}</span>
+          </div>
+          
+          {/* Insight de Destaque */}
           {experience.insight && (
             <div className={styles.modalManifesto}>
-              <p>"{experience.insight}"</p>
+              <p>{experience.insight}</p>
             </div>
           )}
 
           <div className={styles.modalSections}>
             {experience.modalSteps.map((step, idx) => {
               // Cores cíclicas para os bullets
-              const bulletColors = [styles.blue, styles.cyan, styles.green];
+              const bulletColors = [styles.cyan, styles.blue, styles.green];
               const currentColor = bulletColors[idx % bulletColors.length];
+              
+              // Lógica de Caixas Especiais (Highlights)
+              const isProblem = step.label.includes("PROBLEMA");
+              const isImpact = step.label.includes("IMPACTO");
+              const isInsight = step.label.includes("INSIGHT");
+
+              const sectionClass = `
+                ${styles.modalSection} 
+                ${isProblem ? styles.problemBox : ""} 
+                ${isImpact ? styles.impactBox : ""} 
+                ${isInsight ? styles.insightBox : ""}
+              `.trim();
 
               return (
-                <div className={styles.modalSection} key={idx}>
+                <div className={sectionClass} key={idx}>
                   <h4 className={styles.modalSectionTitle}>
                     <span className={`${styles.bullet} ${currentColor}`}></span> 
-                    <span className={styles.sectionIndex}>[{step.label || (idx + 1).toString().padStart(2, '0')}]</span> {step.title}
+                    <span className={styles.sectionIndex}>[{step.id || (idx + 1).toString().padStart(2, '0')}]</span> {step.label}
                   </h4>
                   
-                  {Array.isArray(step.content) ? (
-                    <div className={styles.resultBox}>
-                      <ul className={styles.bulletList}>
-                        {step.content.map((item, i) => (
-                          <li key={i} className={styles.bulletItem}>
-                            <div className={styles.bulletDot}></div>
-                            <span>{item}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ) : (
-                    <p className={styles.modalSectionDesc}>{step.content}</p>
-                  )}
+                  <div className={styles.modalSectionDesc} style={{ whiteSpace: 'pre-line' }}>
+                    {step.content}
+                  </div>
                 </div>
               );
             })}
           </div>
 
           {/* Fechamento */}
-          <div className={`${styles.modalSection} ${styles.modalClosure}`}>
+          <div className={styles.modalClosure}>
             <div className={styles.modalFooter}>
               <button className={styles.footerButton} onClick={onClose}>
                 EXPLORAR OUTRAS EXPERIÊNCIAS
