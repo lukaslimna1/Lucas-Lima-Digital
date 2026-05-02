@@ -7,22 +7,20 @@
 .experienceGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px; /* Gap padrão de grid hitech */
+  gap: 24px;
   width: 100%;
-  padding: 0; /* Removido padding extra pois o main-content já tem 60px */
+}
+
+.experienceHeader {
+  margin-bottom: 60px;
 }
 
 .experienceItem {
-  cursor: pointer;
-  height: 100%;
-}
-
-.expCardWrapper {
   height: 100%;
 }
 
 .cardContent2x2 {
-  padding: 40px; /* Padding interno do card restaurado para equilíbrio */
+  padding: 0; 
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -46,26 +44,37 @@
 .gridRow {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 30px;
+  gap: 24px;
   align-items: flex-start;
+  min-height: 85px; /* Primeira linha: Contexto e Ambiente */
+}
+
+/* Nova classe para a segunda linha para garantir simetria nos impactos */
+.gridRowSecondary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: flex-start;
+  min-height: 110px; /* Segunda linha: Impactos e Insight */
 }
 
 .gridCell {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .cellLabel {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.6rem;
+  font-size: 0.55rem;
   font-weight: 800;
   color: var(--text-secondary);
-  letter-spacing: 0.15em;
+  letter-spacing: 0.2em;
   display: flex;
   align-items: center;
   gap: 8px;
-  opacity: 0.6;
+  opacity: 0.5;
+  margin-bottom: 4px;
 }
 
 .labelDot {
@@ -77,40 +86,47 @@
 }
 
 .cellValue {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 900;
   margin: 0;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   line-height: 1.1;
   text-transform: uppercase;
+  color: #fff;
 }
 
 .envContainer {
   display: flex;
   flex-direction: column;
+  gap: 2px;
 }
 
 .envType {
-  font-size: 0.65rem;
-  font-weight: 800;
-  color: var(--text-secondary);
-  opacity: 0.6;
-}
-
-.envName {
-  font-size: 1rem;
+  /* AGORA É O PRINCIPAL: MAIOR E DESTAQUE */
+  font-size: 1.1rem;
   font-weight: 900;
   color: #fff;
   line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.envName {
+  /* AGORA É O SECUNDÁRIO: MENOR E CINZA */
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .gridDivider {
   height: 1px;
   background: linear-gradient(90deg, 
-    rgba(255, 255, 255, 0.08) 0%, 
-    rgba(255, 255, 255, 0.01) 100%
+    rgba(255, 255, 255, 0.12) 0%, 
+    rgba(255, 255, 255, 0.02) 100%
   );
-  margin: 30px 0;
+  margin: 24px 0;
   width: 100%;
 }
 
@@ -121,9 +137,9 @@
 }
 
 .impactItem {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   line-height: 1.4;
-  color: #fff;
+  color: rgba(255, 255, 255, 0.9);
   font-weight: 600;
   margin: 0;
 }
@@ -131,12 +147,13 @@
 .cellValueInsight {
   font-size: 0.85rem;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.7);
-  font-style: italic;
-  font-weight: 500;
+  color: #fff; /* Texto branco para leitura fácil */
+  font-weight: 600; /* Mais peso para impacto */
   margin: 0;
-  border-left: 2px solid var(--step-color);
+  border-left: 3px solid var(--step-color);
   padding-left: 15px;
+  opacity: 0.9;
+  /* Removido o itálico para ar mais limpo */
 }
 
 .cardFooter {
@@ -144,59 +161,7 @@
   padding-top: 30px;
 }
 
-.projectLink {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 14px 20px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  color: white;
-  font-size: 0.75rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.15em;
-  cursor: pointer;
-  transition: all 0.4s ease;
-}
-
-.projectLink:hover {
-  background: rgba(34, 211, 238, 0.1);
-  border-color: var(--accent-blue);
-  box-shadow: 0 0 20px rgba(34, 211, 238, 0.1);
-}
-
-.linkText {
-  transition: all 0.3s ease;
-}
-
-.projectLink:hover .linkText {
-  color: var(--accent-blue);
-}
-
-.linkArrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.05);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.projectLink:hover .linkArrow {
-  background: var(--accent-blue);
-  color: #000;
-  transform: translateX(4px) rotate(-45deg);
-}
-
 @media (max-width: 1024px) {
-  .cardContent2x2 {
-    padding: 30px;
-  }
   .gridRow {
     gap: 20px;
   }
@@ -208,11 +173,7 @@
 @media (max-width: 768px) {
   .experienceGrid {
     grid-template-columns: 1fr;
-    max-width: 500px;
     gap: 20px;
-  }
-  .experienceSection {
-    padding: 80px 0;
   }
   .gridRow {
     grid-template-columns: 1fr;

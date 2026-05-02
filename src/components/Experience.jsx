@@ -13,136 +13,142 @@ const Experience = () => {
     {
       id: "divino",
       number: "01",
+      title: "OPERAÇÃO REAL NA PRÁTICA",
       context: "OPERAÇÃO REAL",
       envType: "NEGÓCIO FÍSICO",
       envName: "DIVINO SAPORE",
+      chronology: "2024 — 2026",
       impacts: [
         "ORGANIZAÇÃO OPERACIONAL",
         "CONTROLE FINANCEIRO",
         "EFICIÊNCIA NO DIA A DIA"
       ],
       insight: "Sistemas não começam no código. Começam no entendimento do negócio.",
-      color: "#3B82F6",
-      modalHeadline: "OPERAÇÃO REAL NA PRÁTICA",
-      modalSubHeadline: "Como caos operacional virou estrutura e controle",
-      modalLocation: "Divino Sapore",
-      modalPeriod: "2024 — 2026",
+      color: "#00f2ff", // Ciano Tech
       modalSteps: [
-        { label: "01", title: "CONTEXTO", content: "Atuação direta na operação do negócio, passando por financeiro, atendimento, marketing, sistemas e processos.", type: "context" },
-        { label: "02", title: "O PROBLEMA REAL", content: "⚠️ Caixa desorganizado, falhas de comunicação, processos manuais e decisões sem base.", type: "problem" },
-        { label: "03", title: "AÇÃO", content: "Estruturei rotinas, organizei o fluxo financeiro, padronizei processos e reduzi dependência de tarefas manuais.", type: "action" },
-        { label: "04", title: "IMPACTO", content: ["Mais controle financeiro", "Operação mais previsível", "Redução de retrabalho", "Base estruturada para crescimento"], type: "impact" },
-        { label: "05", title: "INSIGHT", content: "💡 Sistemas não começam no código. Começam no entendimento do negócio.", type: "insight" }
+        { id: "01", label: "CONTEXTO", content: "Atuação direta na operação do negócio, passando por financeiro, atendimento, marketing, sistemas e processos." },
+        { id: "02", label: "O PROBLEMA REAL", content: "⚠️ Caixa desorganizado, falhas de comunicação, processos manuais e decisões sem base." },
+        { id: "03", label: "AÇÃO", content: "Estruturei rotinas, organizei o fluxo financeiro, padronizei processos e reduzi dependência de tarefas manuais." },
+        { id: "04", label: "IMPACTO", content: "Mais controle financeiro, operação mais previsível e redução de retrabalho. Base estruturada para crescimento." },
+        { id: "05", label: "INSIGHT", content: "💡 Sistemas não começam no código. Começam no entendimento do negócio." }
       ]
     },
     {
       id: "pereirao",
       number: "02",
+      title: "TECNOLOGIA NA PRÁTICA",
       context: "TECNOLOGIA NA PRÁTICA",
       envType: "VAREJO & LOGÍSTICA",
       envName: "LOJÃO DO PEREIRÃO",
+      chronology: "2022 — 2024",
       impacts: [
         "ESTABILIDADE OPERACIONAL",
         "INFRAESTRUTURA ORGANIZADA",
         "SUPORTE TÉCNICO ÁGIL"
       ],
       insight: "Tecnologia invisível é a que sustenta tudo sem ninguém perceber.",
-      color: "#22D3EE",
-      modalHeadline: "TECNOLOGIA NA PRÁTICA",
-      modalSubHeadline: "Infraestrutura técnica como base de sustentação",
-      modalLocation: "Lojão do Pereirão",
-      modalPeriod: "2024",
+      color: "#00ffaa", // Verde Matrix
       modalSteps: [
-        { label: "01", title: "CONTEXTO", content: "Atuação no coração técnico de uma grande operação de varejo e logística, garantindo que o motor não parasse.", type: "context" },
-        { label: "02", title: "O PROBLEMA REAL", content: "⚠️ Infraestrutura vulnerável, interrupções frequentes e falta de processos claros de manutenção preventiva.", type: "problem" },
-        { label: "03", title: "AÇÃO", content: "Organizei a infraestrutura de TI, padronizei o suporte técnico e implementei rotinas de estabilidade operacional.", type: "action" },
-        { label: "04", title: "IMPACTO", content: ["Disponibilidade contínua dos sistemas", "Redução do tempo de downtime", "Suporte técnico profissionalizado", "Equipamentos e redes documentados"], type: "impact" },
-        { label: "05", title: "INSIGHT", content: "💡 Tecnologia invisível é a que sustenta tudo sem ninguém perceber.", type: "insight" }
+        { id: "01", label: "CONTEXTO", content: "Atuação no coração técnico de uma grande operação de varejo e logística, garantindo a estabilidade dos sistemas críticos." },
+        { id: "02", label: "O PROBLEMA REAL", content: "⚠️ Infraestrutura vulnerável, interrupções frequentes e falta de processos claros de manutenção preventiva." },
+        { id: "03", label: "AÇÃO", content: "Organizei a infraestrutura de TI, padronizei o suporte técnico e implementei rotinas de manutenção preventiva." },
+        { id: "04", label: "IMPACTO", content: "Disponibilidade contínua dos sistemas, redução de downtime e suporte técnico profissionalizado." },
+        { id: "05", label: "INSIGHT", content: "💡 Tecnologia invisível é a que sustenta tudo sem ninguém perceber." }
       ]
     },
     {
       id: "varejo",
       number: "03",
+      title: "BASE COMERCIAL & HUMANA",
       context: "BASE COMERCIAL & HUMANA",
       envType: "ATENDIMENTO & VENDAS",
       envName: "FRONT-END REAL",
+      chronology: "2020 — 2022",
       impacts: [
         "EMPATIA REAL COM O USUÁRIO",
         "RESOLUÇÃO DE PROBLEMAS",
         "VISÃO COMERCIAL"
       ],
       insight: "Se você não entende quem usa, você não deveria construir nada.",
-      color: "#10B981",
-      modalHeadline: "BASE COMERCIAL & HUMANA",
-      modalSubHeadline: "A experiência do usuário começa no balcão",
-      modalLocation: "Front-end Real",
-      modalPeriod: "2020 — 2023",
+      color: "#0088ff", // Azul Cobalt
       modalSteps: [
-        { label: "01", title: "CONTEXTO", content: "Anos de experiência no 'front-end real': o atendimento direto ao cliente e a linha de frente comercial.", type: "context" },
-        { label: "02", title: "O DESAFIO HUMANO", content: "⚠️ Entender necessidades reais por trás de pedidos vagos e gerenciar expectativas em tempo real.", type: "problem" },
-        { label: "03", title: "AÇÃO", content: "Desenvolvi escuta ativa, técnicas de negociação e resolução ágil de conflitos focada na satisfação do usuário.", type: "action" },
-        { label: "04", title: "IMPACTO", content: ["Fidelização de clientes", "Aumento na conversão de vendas", "Domínio da psicologia do usuário", "Comunicação clara e assertiva"], type: "impact" },
-        { label: "05", title: "INSIGHT", content: "💡 Se você não entende quem usa, você não deveria construir nada.", type: "insight" }
+        { id: "01", label: "CONTEXTO", content: "Experiência no atendimento direto ao cliente, compreendendo as dores reais de quem utiliza serviços e produtos." },
+        { id: "02", label: "O PROBLEMA REAL", content: "⚠️ Atritos na jornada de compra e falhas na comunicação de valor para o cliente final." },
+        { id: "03", label: "AÇÃO", content: "Desenvolvi escuta ativa e técnicas de resolução de problemas focadas na satisfação e retenção do usuário." },
+        { id: "04", label: "IMPACTO", content: "Domínio da psicologia do usuário, comunicação assertiva e visão comercial estratégica." },
+        { id: "05", label: "INSIGHT", content: "💡 Se você não entende quem usa, você não deveria construir nada." }
       ]
     },
     {
       id: "origem",
       number: "04",
-      context: "ORIGEM",
-      envType: "FORMAÇÃO",
-      envName: "SISTEMAS DE INFORMAÇÃO",
+      title: "ORIGEM DA CONSTRUÇÃO",
+      context: "ORIGEM DA CONSTRUÇÃO",
+      envType: "COMUNIDADE & CULTURA",
+      envName: "EVENTOS INDEPENDENTES",
+      chronology: "2018 — 2020",
       impacts: [
-        "LÓGICA DE PROGRAMAÇÃO",
-        "BANCO DE DADOS",
-        "ENGENHARIA DE SOFTWARE"
+        "LIDERANÇA NA PRÁTICA",
+        "EXECUÇÃO DO ZERO",
+        "CRIAÇÃO DE EXPERIÊNCIAS"
       ],
-      insight: "O código é apenas a ferramenta. A solução é o pensamento.",
-      color: "#8B5CF6",
-      modalHeadline: "ORIGEM ACADÊMICA",
-      modalSubHeadline: "Onde o pensamento lógico foi forjado",
-      modalLocation: "Universidade",
-      modalPeriod: "Formação",
+      insight: "Criar sem recurso ensina mais do que qualquer teoria.",
+      color: "#aa00ff", // Purple Tech
       modalSteps: [
-        { label: "01", title: "FUNDAMENTOS", content: "Imersão profunda em algoritmos, estruturas de dados e a base teórica que sustenta qualquer tecnologia moderna.", type: "context" },
-        { label: "02", title: "MODELAGEM", content: "Aprendi que um banco de dados bem modelado vale mais que mil linhas de código improvisado.", type: "problem" },
-        { label: "03", title: "FILOSOFIA", content: "A faculdade me ensinou a aprender. Em um mundo onde linguagens morrem, a lógica é eterna.", type: "action" },
-        { label: "04", title: "IMPACTO", content: ["Raciocínio analítico apurado", "Base técnica para full-stack", "Capacidade de abstração", "Metodologia científica"], type: "impact" },
-        { label: "05", title: "INSIGHT", content: "💡 O código é apenas a ferramenta. A solução é o pensamento.", type: "insight" }
+        { id: "01", label: "CONTEXTO", content: "Organização e execução de projetos independentes, onde a liderança e a execução eram fundamentais para o sucesso." },
+        { id: "02", label: "O PROBLEMA REAL", content: "⚠️ Necessidade de entregar experiências de alto impacto com recursos financeiros e humanos limitados." },
+        { id: "03", label: "AÇÃO", content: "Gerenciei projetos do zero, desde a logística até a coordenação de equipes para entrega final." },
+        { id: "04", label: "IMPACTO", content: "Desenvolvimento de resiliência, liderança prática e capacidade de abstração para resolver problemas complexos." },
+        { id: "05", label: "INSIGHT", content: "💡 Criar sem recurso ensina mais do que qualquer teoria." }
       ]
     }
   ];
 
   return (
-    <section className={styles.experienceSection} onMouseMove={handleMouseMove}>
-      <div className={styles.container}>
-        <motion.div 
-          className={styles.header}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+    <motion.section 
+      id="experience"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
+      className="section"
+    >
+      <div className={`section-header ${styles.experienceHeader}`}>
+        <motion.h2 
+          className="section-title"
+          whileHover={{ x: 10 }}
+          transition={{ type: "spring", stiffness: 400, damping: 10 }}
         >
-          <span className={styles.sectionTag}>Trajetória Profissional</span>
-          <h2 className={styles.sectionTitle}>Experiência</h2>
-          <p className={styles.sectionSubtitle}>
-            A construção de uma visão sistêmica através da prática real.
-          </p>
-        </motion.div>
+          EXPERIÊNCIA <span className="text-gradient">PROFISSIONAL</span>
+        </motion.h2>
+        <p className="section-subtitle">
+          A construção de uma visão sistêmica através da prática real.
+        </p>
+      </div>
 
-        <div className={styles.experienceGrid}>
-          {experiences.map((exp, index) => (
+      <div className={styles.experienceGrid}>
+        {experiences.map((exp, index) => (
+          <div key={exp.id} className={styles.experienceItem}>
             <motion.div
-              key={exp.id}
-              className={styles.experienceItem}
-              initial={{ opacity: 0, y: 20 }}
+              className="hitech-card-wrapper"
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              whileHover={{ y: -10 }}
+              onMouseMove={handleMouseMove}
               onClick={() => setSelectedExp(exp)}
+              style={{ height: '100%' }}
             >
               <div 
-                className={`hitech-card ${styles.expCardWrapper}`}
+                className="hitech-card glass-panel"
                 style={{ "--step-color": exp.color }}
               >
+                {/* Elementos de Decoração Hi-Tech (Copiados de Projects.jsx) */}
+                <div className="hitech-asymmetric-aura"></div>
+                <div className="hitech-artistic-fusion"></div>
+                <div className="hitech-artistic-grain"></div>
+                <div className="hitech-border-glow"></div>
+
                 <div className={styles.cardContent2x2}>
                   <div className={styles.cardBgNumber}>{exp.number}</div>
                   
@@ -152,7 +158,9 @@ const Experience = () => {
                       <span className={styles.cellLabel}>
                         <span className={styles.labelDot}></span> CONTEXTO
                       </span>
-                      <h3 className={styles.cellValue}>{exp.context}</h3>
+                      <h3 className={styles.cellValue} style={{ color: exp.color, whiteSpace: 'pre-line' }}>
+                        {exp.context.replace(' ', '\n')}
+                      </h3>
                     </div>
                     <div className={styles.gridCell}>
                       <span className={styles.cellLabel}>
@@ -168,7 +176,7 @@ const Experience = () => {
                   <div className={styles.gridDivider}></div>
 
                   {/* Linha 02: Impactos e Insight */}
-                  <div className={styles.gridRow}>
+                  <div className={styles.gridRowSecondary}>
                     <div className={styles.gridCell}>
                       <span className={styles.cellLabel}>
                         <span className={styles.labelDot}></span> IMPACTO GERADO
@@ -181,25 +189,29 @@ const Experience = () => {
                     </div>
                     <div className={styles.gridCell}>
                       <span className={styles.cellLabel}>
-                        <span className={styles.labelDot}></span> O QUE ISSO ME ENSINOU
+                        <span className={styles.labelDot}></span> INSIGHT
                       </span>
                       <p className={styles.cellValueInsight}>"{exp.insight}"</p>
                     </div>
                   </div>
 
                   <div className={styles.cardFooter}>
-                    <div className={styles.projectLink}>
-                      <span className={styles.linkText}>VER JORNADA COMPLETA</span>
-                      <div className={styles.linkArrow}>
-                        <ChevronRight size={16} />
-                      </div>
-                    </div>
+                    <button className="btn-outline" style={{ width: '100%' }}>
+                      <span>VER JORNADA COMPLETA</span>
+                      <ChevronRight size={18} />
+                    </button>
                   </div>
                 </div>
+
+                {/* Cantoneiras Decorativas */}
+                <div className="corner-decor top-left"></div>
+                <div className="corner-decor top-right"></div>
+                <div className="corner-decor bottom-left"></div>
+                <div className="corner-decor bottom-right"></div>
               </div>
             </motion.div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
 
       <AnimatePresence>
@@ -210,7 +222,7 @@ const Experience = () => {
           />
         )}
       </AnimatePresence>
-    </section>
+    </motion.section>
   );
 };
 
