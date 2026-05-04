@@ -1,7 +1,7 @@
 ![Lucas Lima Portfolio Banner](public/assets/banner.png)
 
 # 🏛️ LUCAS LIMA | DIGITAL SYSTEMS & PRODUCTS ENGINEER
-### `INDUSTRIAL STANDARD V6.0.4` • `HYBRID EXPERIENCE ARCHITECTURE`
+### `INDUSTRIAL STANDARD V6.0.5` • `MOBILE ARCHITECTURE OPTIMIZED`
 
 > **"Sistemas não começam no código. Começam no entendimento do negócio."**
 > A engenharia digital de alta performance é a arte de transformar caos operacional em estrutura, controle e resultado mensurável.
@@ -70,7 +70,12 @@ O sistema visual evoluiu para suportar múltiplos contextos de leitura sem perde
 
 ### 📅 CHANGELOG TÉCNICO
 
-*   **v6.0.4 (ATUAL)**:
+*   **v6.0.5 (ATUAL)**:
+    *   `MOBILE_ARCH_OPTIMIZATION`: Re-arquitetura total de grids para mobile (Experience & Lab), garantindo empilhamento vertical perfeito.
+    *   `FLUID_TYPOGRAPHY_STABILIZATION`: Refinamento global de `clamp()` em títulos de seções para evitar cortes em viewports < 390px.
+    *   `UI_OVERFLOW_RESOLUTION`: Supressão absoluta de scroll horizontal via enforcing de `width: 100vw` e `overflow-x: hidden`.
+    *   `BRAND_MOBILE_SYNC`: Otimização do brand header mobile para leitura clara em dispositivos ultra-estreitos.
+*   **v6.0.4**:
     *   `RECRUITER_MODE_LOCKDOWN`: Implementação de estado estático absoluto para a logo (zero animações de desenho, fade ou rotação).
     *   `CAROUSEL_FLOW_ADJUSTMENT`: Transição de movimento contínuo para slides discretos com 8 segundos de "stop-time" para leitura.
     *   `UI_STABILITY_FIXES`: Resolução de artefatos visuais (hamburger icon) no desktop e correção de encodings CSS que afetavam o build.

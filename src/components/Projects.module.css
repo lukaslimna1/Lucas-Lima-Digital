@@ -94,14 +94,14 @@
 }
 
 .projectTitle {
-  font-size: clamp(1.8rem, 4vw, 2.4rem); /* Fluido: mínimo 1.8rem, máximo 2.4rem */
+  font-size: clamp(1.4rem, 6vw, 2.4rem);
   font-weight: 900;
   color: white;
   margin-bottom: 8px;
-  line-height: 1.1; /* Aumentado ligeiramente para evitar corte em descidas de letras */
+  line-height: 1.2;
   letter-spacing: -0.04em;
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-  text-wrap: balance; /* Distribui o texto melhor em múltiplas linhas */
+  text-wrap: balance;
 }
 
 .projectSubtitle {
@@ -771,5 +771,35 @@
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
 }
 
-.mbLarge { margin-bottom: 4rem; }
-.mbMedium { margin-bottom: 2rem; }
+@media (max-width: 768px) {
+  .modalBodyContent {
+    padding: 3rem 1.5rem;
+  }
+  .modalTitle {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+  }
+  .modalSubtitle {
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 2rem;
+  }
+  .modalManifesto {
+    padding: 1.5rem;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+  }
+  .modalSections {
+    gap: 3rem;
+  }
+  .techTags {
+    gap: 6px;
+  }
+  .techTag {
+    padding: 6px 12px;
+    font-size: 0.65rem;
+  }
+  .cardHeader, .cardMain, .cardFooter {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

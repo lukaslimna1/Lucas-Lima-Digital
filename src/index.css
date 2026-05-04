@@ -109,6 +109,7 @@ body {
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  width: 100%;
 }
 
 /* 
@@ -738,18 +739,20 @@ section {
 /* Section Titles */
 .section-header { margin-bottom: 60px; }
 .section-title { 
-  font-size: 3rem; 
+  font-size: clamp(2.2rem, 8vw, 3.5rem);
   font-weight: 800; 
-  margin-bottom: 20px;
+  margin-bottom: 24px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
+  line-height: 1.1;
 }
 .section-subtitle { 
   color: var(--text-secondary); 
-  font-size: 1.25rem; 
+  font-size: clamp(1rem, 4vw, 1.25rem); 
   max-width: 700px;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 /* --- BADGES & STATUS --- */
@@ -846,13 +849,16 @@ section {
     top: 0;
     left: 0;
     right: 0;
-    height: 60px;
+    width: 100vw;
+    height: 70px;
     padding: 0 20px;
-    background: rgba(10, 10, 15, 0.8);
-    backdrop-filter: blur(10px);
+    background: rgba(5, 5, 10, 0.9);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     z-index: 1000;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   }
   
   .mobile-menu-btn {
@@ -1341,22 +1347,37 @@ section {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  min-width: 0;
 }
 
 .mobile-brand-name {
   font-family: var(--font-heading);
   font-weight: 800;
-  font-size: 1rem;
-  letter-spacing: 1px;
+  font-size: clamp(0.9rem, 4vw, 1.1rem);
+  letter-spacing: 2px;
   color: white;
+  background: linear-gradient(90deg, #fff, var(--accent-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
 }
 
 .mobile-brand-status {
   font-family: var(--font-mono);
-  font-size: 0.5rem;
+  font-size: clamp(0.45rem, 2vw, 0.55rem);
   font-weight: 600;
   color: var(--accent-cyan);
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   opacity: 0.8;
+  white-space: nowrap;
+}
+
+@media (max-width: 380px) {
+  .mobile-brand-name {
+    letter-spacing: 1px;
+  }
+  .mobile-brand-status {
+    letter-spacing: 0.5px;
+  }
 }
 

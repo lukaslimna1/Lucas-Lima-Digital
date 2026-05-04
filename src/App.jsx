@@ -61,7 +61,8 @@ function App() {
         
         <div className={`mobile-header ${scrolled ? 'scrolled' : ''}`}>
           <div className="mobile-brand">
-            {/* Logo removida daqui para evitar duplicidade com a Hero/Sidebar */}
+            <span className="mobile-brand-name">LUCAS LIMA</span>
+            <span className="mobile-brand-status">SYSTEMS ENGINEER</span>
           </div>
           <button onClick={() => setIsMobileOpen(true)} className="mobile-menu-btn">
             <Menu size={24} />

@@ -175,8 +175,9 @@
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  .gridRow {
+  .gridRow, .gridRowSecondary {
     grid-template-columns: 1fr;
     gap: 25px;
+    min-height: auto;
   }
 }
