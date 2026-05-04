@@ -7,6 +7,8 @@ import Hero from './components/Hero';
 import Projects from './components/Projects';
 import Logo from './components/Logo';
 import SectionSkeleton from './components/SectionSkeleton';
+import JSONLD from './components/JSONLD';
+import ErrorBoundary from './components/ErrorBoundary';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 
@@ -42,6 +44,7 @@ function App() {
   return (
     <MotionConfig reducedMotion={recruiterMode ? "always" : "user"}>
       <div className={`app-container ${recruiterMode ? 'recruiter-mode' : ''} ${lightMode ? 'light-mode' : ''}`}>
+        <JSONLD />
         <div className="bg-noise" />
         
         <Sidebar 
@@ -56,7 +59,7 @@ function App() {
         <div className={`mobile-header ${scrolled ? 'scrolled' : ''}`}>
           <div className="mobile-brand">
             <span className="mobile-brand-name">LUCAS LIMA</span>
-            <span className="mobile-brand-status">SYSTEMS ENGINEER</span>
+            <span className="mobile-brand-status">DIGITAL PRODUCT BUILDER</span>
           </div>
           <button onClick={() => setIsMobileOpen(true)} className="mobile-menu-btn">
             <Menu size={24} />
@@ -64,18 +67,25 @@ function App() {
         </div>
   
         <main className="main-content">
-          <Hero />
-          <Projects recruiterMode={recruiterMode} lightMode={lightMode} />
+          <ErrorBoundary componentName="HERO_CORE">
+            <Hero />
+          </ErrorBoundary>
+
+          <ErrorBoundary componentName="PROJECT_ENGINE">
+            <Projects recruiterMode={recruiterMode} lightMode={lightMode} />
+          </ErrorBoundary>
           
-          <Suspense fallback={<SectionSkeleton />}>
-            <Creation />
-            <Framework />
-            <Lab recruiterMode={recruiterMode} />
-            <About />
-            <Experience />
-            <Diferencial />
-            <Contact />
-          </Suspense>
+          <ErrorBoundary componentName="LAZY_MODULES">
+            <Suspense fallback={<SectionSkeleton />}>
+              <Creation />
+              <Framework />
+              <Lab recruiterMode={recruiterMode} />
+              <About />
+              <Experience />
+              <Diferencial />
+              <Contact />
+            </Suspense>
+          </ErrorBoundary>
           
           <footer className="footer">
             <div className="footer-content">

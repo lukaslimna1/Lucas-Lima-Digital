@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Briefcase, ChevronRight, ChevronLeft, X, ShieldCheck } from 'lucide-react';
 import { resolveImagePath } from '../lib/supabase';
@@ -9,7 +9,7 @@ import { useMousePosition } from '../utils/useMousePosition';
 import CaseStudyModal from './CaseStudyModal';
 import OpportunityModal from './OpportunityModal';
 
-const Projects = ({ recruiterMode }) => {
+const Projects = memo(({ recruiterMode }) => {
   const { handleMouseMove } = useMousePosition();
   const [activeProject, setActiveProject] = useState(null);
   const [zoomImage, setZoomImage] = useState(null);
@@ -310,6 +310,6 @@ const Projects = ({ recruiterMode }) => {
       </AnimatePresence>
     </motion.section>
   );
-};
+});
 
 export default Projects;

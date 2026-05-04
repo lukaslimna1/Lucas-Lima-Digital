@@ -69,8 +69,15 @@ O sistema visual evoluiu para suportar múltiplos contextos de leitura sem perde
 
 ### 📅 CHANGELOG TÉCNICO
 
-*   **v6.5.0 (UX Progressiva & Performance)**:
-    *   `BLUEPRINT_SKELETONS`: Implementação de loaders estéticos (estilo diagrama técnico) para eliminar saltos de layout durante o Lazy Loading.
+*   **v6.5.2 (Resiliência & Fault Tolerance)**:
+    *   `HITECH_ERROR_BOUNDARIES`: Implementação de sistema de contenção de falhas industriais para isolar erros de renderização em módulos específicos.
+*   **v6.5.1 (Performance & Asset Optimization)**:
+    *   `MEMO_ENGINE`: Memoização estratégica de componentes pesados (`Hero`, `Projects`) para redução de ciclos de renderização.
+    *   `FONT_PRELOADING`: Otimização de LCP via preloading de fontes críticas e carregamento assíncrono de CSS.
+*   **v6.5.0 (UX Progressiva & SEO)**:
+    *   `BLUEPRINT_SKELETONS`: Loaders estéticos (estilo diagrama técnico) para eliminar Layout Shift.
+    *   `JSONLD_SCHEMA`: Integração de dados estruturados para posicionamento como *Digital Product Builder*.
+    *   `PWA_INTEGRATION`: Suporte offline e experiência instalável via `vite-plugin-pwa`.
 *   **v6.4.0 (Filtro Semântico & UX Tooling)**:
     *   `SEMANTIC_FILTERING`: Sistema de categorização de projetos (Software, IA, Branding).
     *   `FLUID_UI_TRANSITIONS`: Uso de `layoutId` e `layout` do Framer Motion para transições de estado sem quebra de fluxo.

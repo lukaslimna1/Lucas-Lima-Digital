@@ -1,9 +1,10 @@
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import { Briefcase, Mail, Terminal } from 'lucide-react';
 import styles from './Hero.module.css';
 import { useMousePosition } from '../utils/useMousePosition';
 
-const Hero = () => {
+const Hero = memo(() => {
   const { handleMouseMove } = useMousePosition();
   return (
     <motion.section 
@@ -115,6 +116,6 @@ const Hero = () => {
       </div>
     </motion.section>
   );
-};
+});
 
 export default Hero;

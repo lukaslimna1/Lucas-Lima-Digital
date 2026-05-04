@@ -1,0 +1,82 @@
+.errorContainer {
+  position: relative;
+  padding: 2rem;
+  background: rgba(20, 20, 25, 0.8);
+  border: 1px solid rgba(255, 77, 77, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 1rem 0;
+  font-family: 'JetBrains Mono', monospace;
+  backdrop-filter: blur(10px);
+}
+
+.errorHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.errorTitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #ff4d4d;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.errorBody {
+  margin-bottom: 2rem;
+}
+
+.errorMessage {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+.retryBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 77, 77, 0.1);
+  border: 1px solid rgba(255, 77, 77, 0.5);
+  color: #ff4d4d;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+}
+
+.retryBtn:hover {
+  background: #ff4d4d;
+  color: white;
+  box-shadow: 0 0 15px rgba(255, 77, 77, 0.4);
+}
+
+.errorCode {
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.3);
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+}
+
+/* Red glow for hitech border */
+:global(.hitech-border-glow) {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 77, 77, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+  animation: pulse-red 4s infinite alternate;
+}
+
+@keyframes pulse-red {
+  from { opacity: 0.3; }
+  to { opacity: 0.7; }
+}
