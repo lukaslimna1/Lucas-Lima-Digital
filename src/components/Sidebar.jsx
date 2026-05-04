@@ -43,6 +43,7 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, recruiterMode, setRecruiterMod
           <button 
             className={styles.mobileClose}
             onClick={() => setIsMobileOpen(false)}
+            aria-label="Fechar menu"
           >
             <X size={24} />
           </button>
@@ -72,6 +73,7 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, recruiterMode, setRecruiterMod
               onClick={() => setRecruiterMode(!recruiterMode)}
               className={`${styles.footerBtn} ${recruiterMode ? styles.active : ''}`}
               title="Modo Recrutador"
+              aria-label="Alternar Modo Recrutador"
             >
               <div className="hitech-border-glow"></div>
               <Terminal size={18} />
@@ -82,6 +84,7 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, recruiterMode, setRecruiterMod
               onClick={() => setLightMode(!lightMode)}
               className={`${styles.footerBtn} ${lightMode ? styles.active : ''}`}
               title="Alternar Tema"
+              aria-label="Alternar Tema Claro/Escuro"
             >
               <div className="hitech-border-glow"></div>
               {lightMode ? <Moon size={18} /> : <Sun size={18} />}

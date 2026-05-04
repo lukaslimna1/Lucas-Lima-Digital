@@ -59,6 +59,7 @@ const Contact = () => {
                   target={channel.id !== 'email' ? "_blank" : undefined}
                   rel="noopener noreferrer"
                   className={`${styles.statCard} ${channel.className}`}
+                  aria-label={`Entrar em contato via ${channel.name}`}
                 >
                   {/* INDICADORES DE CANTO */}
                   <div className={`${styles.corner} ${styles.tl}`}></div>

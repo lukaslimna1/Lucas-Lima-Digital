@@ -199,7 +199,11 @@ const Projects = ({ recruiterMode }) => {
         </div>
 
         <div className={styles.carouselControls}>
-          <button className={`carousel-btn hitech ${styles.carouselBtn}`} onClick={() => prevSlide(true)}>
+          <button 
+            className={`carousel-btn hitech ${styles.carouselBtn}`} 
+            onClick={() => prevSlide(true)}
+            aria-label="Projeto anterior"
+          >
             <div className="hitech-border-glow"></div>
             <ChevronLeft size={24} style={{ position: 'relative', zIndex: 1 }} />
           </button>
@@ -213,7 +217,11 @@ const Projects = ({ recruiterMode }) => {
             ))}
           </div>
 
-          <button className={`carousel-btn hitech ${styles.carouselBtn}`} onClick={() => nextSlide(true)}>
+          <button 
+            className={`carousel-btn hitech ${styles.carouselBtn}`} 
+            onClick={() => nextSlide(true)}
+            aria-label="Próximo projeto"
+          >
             <div className="hitech-border-glow"></div>
             <ChevronRight size={24} style={{ position: 'relative', zIndex: 1 }} />
           </button>
@@ -249,6 +257,7 @@ const Projects = ({ recruiterMode }) => {
             <motion.img 
               src={zoomImage}
               className={styles.zoomedImage}
+              alt="Visualização ampliada do projeto"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
