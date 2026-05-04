@@ -16,7 +16,8 @@ import {
   Cloud,
   Terminal,
   Activity,
-  Wind
+  Wind,
+  Briefcase
 } from 'lucide-react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

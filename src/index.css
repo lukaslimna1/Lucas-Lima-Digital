@@ -858,6 +858,59 @@ section {
   background-clip: text !important;
 }
 
+/* Ajuste de Pills no Modo Claro */
+.light-mode [class*="techTag"] {
+  background: rgba(30, 64, 175, 0.05) !important;
+  border-color: rgba(30, 64, 175, 0.2) !important;
+  color: #1E40AF !important;
+}
+
+.light-mode [class*="techTag"]:hover {
+  background: rgba(30, 64, 175, 0.1) !important;
+  border-color: #1E40AF !important;
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.1) !important;
+}
+
+/* Cards no Modo Claro */
+.light-mode [class*="projectsCardContent"] {
+  background: #FFFFFF !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+.light-mode [class*="projectTitle"] {
+  color: #0F172A !important;
+}
+
+.light-mode [class*="projectDesc"] {
+  color: #475569 !important;
+}
+
+.light-mode [class*="projectLink"] {
+  background: rgba(15, 23, 42, 0.03) !important;
+  border-color: rgba(15, 23, 42, 0.1) !important;
+  color: #0F172A !important;
+}
+
+/* Legibilidade de Legendas em Modo Claro */
+.light-mode [class*="galleryCaption"] {
+  background: linear-gradient(to top, rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.85)) !important;
+  border-top: 1px solid rgba(30, 64, 175, 0.2) !important;
+  backdrop-filter: blur(12px) !important;
+  scrollbar-color: #1E40AF transparent !important;
+}
+
+.light-mode [class*="galleryCaption"]::-webkit-scrollbar-thumb {
+  background: #1E40AF !important;
+}
+
+.light-mode [class*="captionTitle"] {
+  color: #1E40AF !important; /* Azul Marinho para contraste */
+}
+
+.light-mode [class*="captionDesc"] {
+  color: #334155 !important; /* Slate escuro */
+}
+
 .light-mode [class*="modalSubtitle"],
 .light-mode [class*="modalSubHeadline"],
 .light-mode [class*="modalMeta"] {

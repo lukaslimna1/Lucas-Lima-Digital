@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { X, ChevronRight, ShieldCheck, Briefcase } from 'lucide-react';
 import { PillIcon } from '../utils/pillIcons';
+import { resolveImagePath } from '../lib/supabase';
 import styles from './Projects.module.css';
 
 const CaseStudyModal = ({ project, onClose, onZoomImage }) => {
@@ -145,8 +146,8 @@ const CaseStudyModal = ({ project, onClose, onZoomImage }) => {
               </h4>
               <div className={styles.galleryGrid}>
                 {project.images.map((img, idx) => (
-                  <div key={idx} className={styles.galleryItem} onClick={() => onZoomImage(img.url)}>
-                    <img src={img.url} alt={`Preview ${idx}`} className={styles.galleryImg} />
+                  <div key={idx} className={styles.galleryItem} onClick={() => onZoomImage(resolveImagePath(img.src))}>
+                    <img src={resolveImagePath(img.src)} alt={`Preview ${idx}`} className={styles.galleryImg} />
                     {img.title && (
                       <div className={styles.galleryCaption}>
                         <div className={styles.captionTitle}>{img.title}</div>

@@ -1,12 +1,13 @@
-import { trampoFacil } from './projects/trampoFacil';
-import { dashboardSaaS } from './ProjetosDestaque/dashboardSaaS';
-import { headlessEcommerce } from './ProjetosDestaque/headlessEcommerce';
+import { trampoFacil } from './ProjetosDestaque/trampoFacil';
+import { wolfPack } from './ProjetosDestaque/wolfPack';
+import { divinoSapore } from './ProjetosDestaque/divinoSapore';
+import { seuProximoProjeto } from './ProjetosDestaque/futureProject';
 
 export const projectsData = [
   trampoFacil,
-  dashboardSaaS,
-  headlessEcommerce,
-  // Novos projetos podem ser importados e adicionados aqui
+  wolfPack,
+  divinoSapore,
+  seuProximoProjeto
 ];
 
 export const processData = [

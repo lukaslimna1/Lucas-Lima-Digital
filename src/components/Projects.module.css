@@ -94,13 +94,14 @@
 }
 
 .projectTitle {
-  font-size: 2.4rem; /* Maior novamente para o layout de 2 cards */
+  font-size: clamp(1.8rem, 4vw, 2.4rem); /* Fluido: mínimo 1.8rem, máximo 2.4rem */
   font-weight: 900;
   color: white;
   margin-bottom: 8px;
-  line-height: 1;
+  line-height: 1.1; /* Aumentado ligeiramente para evitar corte em descidas de letras */
   letter-spacing: -0.04em;
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  text-wrap: balance; /* Distribui o texto melhor em múltiplas linhas */
 }
 
 .projectSubtitle {
@@ -185,12 +186,14 @@
 }
 
 .techTag span {
-  max-width: 150px; /* Sempre visível */
-  opacity: 1; /* Sempre visível */
+  max-width: 200px; /* Aumentado para suportar nomes mais longos */
+  opacity: 1;
   overflow: hidden;
+  text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
   display: inline-block;
   pointer-events: none;
   margin-left: 2px;
+  vertical-align: middle;
 }
 
 .techTag:hover {
@@ -477,9 +480,9 @@
 }
 
 .modalTitle {
-  font-size: 5.5rem; /* Aumento para 5.5rem conforme solicitado */
+  font-size: clamp(2.5rem, 8vw, 5.5rem); /* Fluido: escala de 2.5rem até 5.5rem */
   margin: 0.5rem 0;
-  color: #F0F9FF; /* Branco Azulado (Ice White) */
+  color: #F0F9FF;
   background: linear-gradient(135deg, #FFFFFF, var(--accent-cyan));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -487,6 +490,8 @@
   font-weight: 900;
   line-height: 1;
   text-align: center;
+  text-wrap: balance;
+  width: 100%;
 }
 
 .modalSubtitle {
@@ -500,7 +505,7 @@
 }
 
 .modalManifesto {
-  font-size: 1.4rem; /* Maior para leitura fácil */
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem); /* Fluido */
   line-height: 1.8;
   color: #F0F9FF;
   padding: 2.5rem;
@@ -577,10 +582,17 @@
   font-weight: 500;
   position: relative;
   overflow: hidden;
-  font-size: 1.3rem;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
   line-height: 1.8;
 }
 
+.resultBox span {
+  display: block;
+  font-size: clamp(1rem, 2vw, 1.3rem); /* Fluido */
+  color: white;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
 
 .pillarsGrid {
   display: grid;
@@ -659,31 +671,52 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 1.25rem;
-  background: linear-gradient(to top, rgba(5, 5, 10, 0.95), rgba(5, 5, 10, 0.8));
-  backdrop-filter: blur(8px);
+  padding: 1.5rem;
+  background: linear-gradient(to top, rgba(5, 5, 10, 0.98), rgba(5, 5, 10, 0.85));
+  backdrop-filter: blur(12px);
   color: white;
   text-align: left;
-  border-top: 1px solid rgba(34, 211, 238, 0.3);
+  border-top: 1px solid rgba(34, 211, 238, 0.4);
   transform: translateY(100%);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 2;
+  max-height: 100%; /* Garante que não ultrapasse a imagem */
+  overflow-y: auto; /* Permite scroll em textos longos */
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-cyan) transparent;
 }
 
-.galleryCaption strong {
+/* Scrollbar Customizado para a Legenda */
+.galleryCaption::-webkit-scrollbar {
+  width: 4px;
+}
+
+.galleryCaption::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.galleryCaption::-webkit-scrollbar-thumb {
+  background: var(--accent-cyan);
+  border-radius: 10px;
+}
+
+.captionTitle {
   display: block;
   font-family: var(--font-mono);
-  font-size: 0.85rem;
-  letter-spacing: 0.1em;
+  font-size: 0.9rem; /* Aumentado de 0.85rem */
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent-cyan);
-  margin-bottom: 6px;
+  font-weight: 700;
+  margin-bottom: 8px;
 }
 
-.galleryCaption p {
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.5;
+.captionDesc {
+  font-size: 0.85rem; /* Aumentado de 0.75rem */
+  color: rgba(255, 255, 255, 0.85); /* Mais claro que 0.7 */
+  line-height: 1.6;
   margin: 0;
+  font-weight: 400;
 }
 
 .galleryItem:hover .galleryCaption {
