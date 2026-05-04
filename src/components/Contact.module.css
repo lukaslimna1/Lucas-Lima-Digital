@@ -35,6 +35,21 @@
   width: fit-content;
 }
 
+.badgeDot {
+  width: 8px;
+  height: 8px;
+  background-color: #ff3232;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 50, 50, 0.8);
+  animation: badgePulse 2s infinite;
+}
+
+@keyframes badgePulse {
+  0% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(255, 50, 50, 0.7); }
+  70% { transform: scale(1.2); opacity: 0.7; box-shadow: 0 0 0 10px rgba(255, 50, 50, 0); }
+  100% { transform: scale(1); opacity: 1; box-shadow: 0 0 0 0 rgba(255, 50, 50, 0); }
+}
+
 .title {
   font-size: 5rem;
   font-weight: 900;

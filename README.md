@@ -1,7 +1,7 @@
 ![Lucas Lima Portfolio Banner](public/assets/banner.png)
 
 # 🏛️ LUCAS LIMA | DIGITAL SYSTEMS ENGINEER
-### `INDUSTRIAL STANDARD V5.3.0` • `HIGH-FIDELITY ARCHITECTURE`
+### `INDUSTRIAL STANDARD V5.3.1` • `HIGH-FIDELITY ARCHITECTURE`
 
 > **"Sistemas não começam no código. Começam no entendimento do negócio."**
 > A engenharia digital de alta performance é a arte de transformar caos operacional em estrutura, controle e resultado mensurável.
@@ -66,17 +66,20 @@ O sistema visual foi construído para transmitir **Autoridade e Estabilidade**. 
 
 ---
 
-## 📈 EVOLUÇÃO E ROADMAP (V5.3 - CONTACT PORTAL RELEASE)
+## 📈 EVOLUÇÃO E ROADMAP (V5.3.1 - POLISH & UI REFINEMENT)
 
-O projeto atingiu sua maturidade visual e funcional com a finalização do portal de acesso:
+O projeto atingiu sua maturidade visual e funcional com a finalização do portal de acesso e refinamentos de interface:
 
 ### 📅 CHANGELOG TÉCNICO
 
-*   **v5.3.0 (ATUAL)**: 
+*   **v5.3.1 (ATUAL)**: 
+    *   `BADGE_PULSE_ANIMATION`: Implementação de indicador pulsante (Red Pulse) no badge de acesso ao sistema, reforçando o status de "Live" da seção de contato.
+    *   `PREMIUM_FOOTER`: Alinhamento centralizado e estilização técnica (font-mono + letter-spacing) da mensagem final de direitos e performance.
+    *   `CSS_OPTIMIZATION`: Limpeza e estruturação de seletores globais para o rodapé no `index.css`.
+*   **v5.3.0**: 
     *   `SYSTEM_ACCESS // CONTACT_PORTAL`: Implementação da interface final com grid 2x2 de cards assimétricos.
-    *   `CREATION_STYLE`: Adaptação dos botões de contato para o design de cards de projeto (corner indicators + brand glow).
-    *   `PANORAMIC_TERMINAL`: Integração do bloco de comando final `EXEC_LUCAS_LIMA.SH` em largura total.
-    *   `PRECISION_ALIGNMENT`: Calibração milimétrica de tipografia e recuos técnicos para máxima legibilidade.
+    *   `CREATION_STYLE`: Adaptação dos botões de contato para o design de cards de projeto.
+    *   `PANORAMIC_TERMINAL`: Integração do bloco de comando final `EXEC_LUCAS_LIMA.SH`.
 *   **v5.2.0**: 
     *   `EXPERIENCE OVERHAUL`: Implementação do grid 2x2 simétrico e modais de alta fidelidade.
     *   `UI HIGHLIGHTS`: Criação das caixas reflexivas `ProblemBox`, `ImpactBox` e `InsightBox`.

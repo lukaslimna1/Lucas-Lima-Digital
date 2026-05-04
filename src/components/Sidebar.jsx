@@ -23,7 +23,7 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, recruiterMode, setRecruiterMod
             <h1 className={styles.logoName}>Lucas Lima</h1>
             <p className={styles.logoSubtitle}>
               <span className="dot-pulse"></span>
-              Construtor Digital
+              Construtor de Sistemas e Produtos Digitais
             </p>
           </div>
           <button 

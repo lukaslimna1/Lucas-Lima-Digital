@@ -54,7 +54,10 @@ function App() {
       />
       
       <div className={`mobile-header ${scrolled ? 'scrolled' : ''}`}>
-        <span className="mobile-logo">LUCAS LIMA</span>
+        <div className="mobile-logo-wrapper">
+          <span className="mobile-logo">LUCAS LIMA</span>
+          <span className="mobile-tagline">Construtor de Sistemas e Produtos Digitais</span>
+        </div>
         <button onClick={() => setIsMobileOpen(true)} className="mobile-menu-btn">
           <Menu size={24} />
         </button>
@@ -75,7 +78,10 @@ function App() {
         </Suspense>
         
         <footer className="footer">
-          <p>© {new Date().getFullYear()} Lucas Lima. Otimizado para alta performance e experiência imersiva.</p>
+          <div className="footer-content">
+            <div className="footer-line"></div>
+            <p>© {new Date().getFullYear()} Lucas Lima. Otimizado para alta performance e experiência imersiva.</p>
+          </div>
         </footer>
       </main>
     </div>
