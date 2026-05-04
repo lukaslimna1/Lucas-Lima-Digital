@@ -1,7 +1,7 @@
 ![Lucas Lima Portfolio Banner](public/assets/banner.png)
 
 # 🏛️ LUCAS LIMA | DIGITAL SYSTEMS & PRODUCTS ENGINEER
-### `INDUSTRIAL STANDARD v6.9.0` • `DYNAMIC CASE ARCHITECTURE`
+### `INDUSTRIAL STANDARD v6.9.5` • `DYNAMIC CASE ARCHITECTURE`
 
 > **"Sistemas não começam no código. Começam no entendimento do negócio."**
 > A engenharia digital de alta performance é a arte de transformar caos operacional em estrutura, controle e resultado mensurável.
@@ -67,10 +67,16 @@ O sistema visual evoluiu para suportar múltiplos contextos de leitura sem perde
 
 ---
 
-## 📈 EVOLUÇÃO E ROADMAP (V6.7.0 - MOBILE UX & RESILIENCE)
+## 📈 EVOLUÇÃO E ROADMAP (V6.9.5 - STABILITY & REFINEMENT)
 
 ### 📅 CHANGELOG TÉCNICO
 
+*   **v6.9.5 (System Stability & Content Refinement)**:
+    *   `MOBILE_NAVBAR_STABILIZATION`: Re-engineered mobile header and sidebar footer to prevent line-wrapping and stabilize brand alignment.
+    *   `WOLF_PACK_CARDS_UI`: Refactored WOLF PACK project data into a modular card-based structure (Pillars/Grid) for enhanced strategic impact.
+    *   `TECH_TAG_SCROLL`: Implemented horizontal scroll for technology tags on mobile to maintain layout density without jagged breaks.
+    *   `UI_NOWRAP_ENFORCEMENT`: Global enforcement of `nowrap` on section titles to preserve "Command Center" rigidity.
+    *   `ABOUT_GRID_OPTIMIZATION`: Refined text grid breakpoints to maximize horizontal space usage on tablets.
 *   **v6.9.0 (Wolf Pack Evolution & Meta-Arch)**:
     *   `WOLF_PACK_REFACTOR`: Case study reconstruído com narrativa de "Sistema de Evolução" e 11 seções de alta densidade.
     *   `META_PORTFOLIO_CASE`: Lançamento do case "The Architecture", documentando a stack técnica do próprio ecossistema.

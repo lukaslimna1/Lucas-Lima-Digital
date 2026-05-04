@@ -95,6 +95,7 @@
 .navText {
   font-size: 0.9rem;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .sidebarFooter {
@@ -105,23 +106,25 @@
 
 .footerControls {
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* Alterado de column para manter lado a lado */
   gap: 8px;
+  width: 100%;
 }
 
 .footerBtn {
-  width: 100% !important;
+  flex: 1; /* Faz os botões dividirem o espaço */
   display: flex !important;
+  flex-direction: column; /* Ícone em cima do texto para economizar espaço horizontal */
   align-items: center;
-  justify-content: flex-start !important;
-  gap: 10px;
-  padding: 10px 16px;
+  justify-content: center !important;
+  gap: 4px;
+  padding: 10px 8px;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 4px 12px 4px 12px;
   color: var(--text-secondary);
   font-weight: 700;
-  font-size: 0.8rem;
+  font-size: 0.7rem; /* Reduzido para caber lado a lado */
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
@@ -149,8 +152,8 @@
 }
 
 .btnLabel {
-  flex: 1;
-  text-align: left;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .recruiterDesc {

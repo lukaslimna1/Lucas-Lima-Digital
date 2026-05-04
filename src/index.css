@@ -789,7 +789,7 @@ section {
   font-weight: 800; 
   margin-bottom: 24px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap; /* Impede que o ícone e o texto quebrem linha */
   align-items: center;
   gap: 16px;
   line-height: 1.1;
@@ -895,16 +895,15 @@ section {
     top: 0;
     left: 0;
     right: 0;
-    width: 100vw;
-    height: 70px;
-    padding: 0 20px;
-    background: rgba(5, 5, 10, 0.9);
+    height: 60px;
+    background: rgba(5, 5, 10, 0.85);
     backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    z-index: 1000;
+    z-index: 900;
+    padding: 0 16px;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(59, 130, 246, 0.15);
+    flex-wrap: nowrap;
   }
   
   .mobile-menu-btn {
@@ -1437,9 +1436,11 @@ section {
 }
 .mobile-brand {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  flex-direction: row; /* Coloca lado a lado como solicitado */
+  align-items: baseline;
+  gap: 12px;
   min-width: 0;
+  flex: 1;
 }
 
 .mobile-brand-name {
@@ -1462,6 +1463,11 @@ section {
   letter-spacing: 1px;
   opacity: 0.8;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  padding-left: 12px;
+  border-left: 1px solid rgba(255, 255, 255, 0.2); /* Divisor visual */
 }
 
 @media (max-width: 380px) {

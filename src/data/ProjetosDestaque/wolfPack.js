@@ -12,21 +12,21 @@ export const wolfPack = {
       index: '01',
       title: 'A ESSÊNCIA',
       type: 'text',
-      content: 'A WOLF PACK nasce de uma falha clara no cenário digital: talento existe, mas acesso e direção são limitados. Não é apenas uma organização. É uma estrutura criada para desenvolver pessoas dentro de um ambiente coletivo.',
+      content: 'A WOLF PACK nasce de uma percepção simples, mas ignorada: talento existe, o que falta é acesso, direção e ambiente. Mais do que uma organização, é uma estrutura de desenvolvimento coletivo criada para conectar pessoas e transformar potencial em trajetória real. Aqui, crescimento não é individual. É construído em matilha.',
       bulletColor: 'blue'
     },
     {
       index: '02',
       title: 'O PROBLEMA',
       type: 'text',
-      content: 'O mercado prioriza resultado imediato, gerando talentos sem espaço, evolução travada e pessoas desistindo antes de chegar. O problema nunca foi habilidade. Foi falta de estrutura.',
+      content: 'O mercado prioriza quem já performa, deixando talentos com potencial sem espaço, direção ou estrutura. O resultado são pessoas desistindo cedo demais e oportunidades concentradas em poucos. O problema nunca foi falta de habilidade. Foi falta de caminho.',
       bulletColor: 'cyan'
     },
     {
       index: '03',
       title: 'A CONSTRUÇÃO',
       type: 'text',
-      content: 'Ao invés de começar pelo visual ou hype, o projeto foi construído pela base: cultura antes de escala, sistema antes de exposição e direção antes de crescimento. Tudo pensado para sustentar evolução real.',
+      content: 'A WOLF PACK não começou pelo hype. Antes da exposição, construímos a base: cultura antes de escala, sistema antes de aparência e direção antes de crescimento. O projeto é desenvolvido de dentro para fora para sustentar pessoas e processos.',
       bulletColor: 'green'
     },
     {
@@ -34,10 +34,10 @@ export const wolfPack = {
       title: 'O SISTEMA',
       type: 'pillars',
       items: [
-        { title: 'Desenvolvimento Real', desc: 'Pessoas sendo acompanhadas e evoluindo na prática.' },
-        { title: 'Mentalidade de Matilha', desc: 'Crescimento coletivo acima do individual.' },
-        { title: 'Estrutura Viva', desc: 'Organização adaptável, em constante construção.' },
-        { title: 'Comunicação Humana', desc: 'Sem formalidade artificial. Direto, próximo e verdadeiro.' }
+        { title: 'Desenvolvimento Real', desc: 'Pessoas acompanhadas, orientadas e desafiadas a evoluir na prática.' },
+        { title: 'Mentalidade de Matilha', desc: 'Crescimento coletivo acima do individualismo. Ninguém evolui isolado.' },
+        { title: 'Estrutura Viva', desc: 'Organização adaptável, construída em movimento e ajustada à realidade.' },
+        { title: 'Comunicação Humana', desc: 'Linguagem direta, próxima e verdadeira — sem discurso artificial.' }
       ],
       bulletColor: 'cyan'
     },
@@ -46,60 +46,73 @@ export const wolfPack = {
       title: 'NA PRÁTICA',
       type: 'grid',
       items: [
-        { title: 'Coaching Ativo', desc: 'Membros evoluindo via sistema de coaches especializados.' },
-        { title: 'Operação Discord', desc: 'Estrutura interna funcional e organizada.' },
-        { title: 'Núcleos Iniciais', desc: 'Formação de bases sólidas para expansão.' },
-        { title: 'Evolução Prática', desc: 'O sistema já funciona e gera crescimento real.' }
+        { title: 'Coaches Ativos', desc: 'Coaches de Valorant acompanhando membros em tempo real.' },
+        { title: 'Evolução Interna', desc: 'Pessoas já sendo orientadas dentro do sistema ativo.' },
+        { title: 'Base Operacional', desc: 'Discord interno funcionando como hub central do sistema.' },
+        { title: 'Núcleos Iniciais', desc: 'Primeiros núcleos da organização já em formação avançada.' }
       ],
       bulletColor: 'blue'
     },
     {
       index: '06',
       title: 'O DIFERENCIAL',
-      type: 'text',
-      content: 'Enquanto a maioria seleciona e busca resultados imediatos, a WOLF PACK desenvolve e constrói base. O foco é a estrutura que sustenta o crescimento, não apenas o crescimento isolado.',
+      type: 'grid',
+      items: [
+        { title: 'O Mercado Seleciona', desc: 'Escolhe quem já está pronto. A WOLF PACK desenvolve quem tem potencial e vontade.' },
+        { title: 'Busca por Resultado Rápido', desc: 'Foca no curto prazo. A WOLF PACK constrói base para crescimento consistente.' },
+        { title: 'Pessoas > Métricas', desc: 'O foco é formar pessoas capazes de crescer dentro e fora do cenário digital.' }
+      ],
       bulletColor: 'green'
     },
     {
       index: '07',
-      title: 'VISÃO DE FUTURO',
-      type: 'roadmap',
-      items: [
-        'Consolidação de núcleos competitivos',
-        'Ativação de criadores de conteúdo estratégicos',
-        'Expansão da comunidade orgânica',
-        'Implementação de operação sustentável'
-      ],
+      title: 'O MOMENTO',
+      type: 'text',
+      content: 'A WOLF PACK ainda não está no topo. E é exatamente por isso que este é o momento mais importante. Existe espaço para quem quer evoluir e participar de algo desde a base. Quem entra agora ajuda a construir.',
       bulletColor: 'blue'
     },
     {
       index: '08',
-      title: 'STATUS DO PROJETO',
-      type: 'results',
-      content: 'Projeto em construção ativa. Base criada. Sistema iniciado. Crescimento acontecendo de forma estratégica e sustentável.',
-      bulletColor: 'green'
-    },
-    {
-      index: '09',
-      title: 'PÚBLICO-ALVO',
+      title: 'VISÃO',
       type: 'grid',
       items: [
-        { title: 'Evolução Real', desc: 'Para quem quer sair da estagnação.' },
-        { title: 'Valor Coletivo', desc: 'Para quem entende a força da matilha.' },
-        { title: 'Perfil Construtor', desc: 'Para quem quer contribuir, não só consumir.' }
+        { title: 'Núcleos Competitivos', desc: 'Estruturas sólidas para alta performance no mercado.' },
+        { title: 'Criadores Ativos', desc: 'Talentos em crescimento com suporte estratégico.' },
+        { title: 'Comunidade Forte', desc: 'Participação ativa e engajamento orgânico real.' },
+        { title: 'Operação Sustentável', desc: 'Modelo de negócio e processos de longo prazo.' }
       ],
       bulletColor: 'cyan'
     },
     {
-      index: '10',
-      title: 'CONEXÃO & ACESSO',
-      type: 'links',
-      footerNote: 'Parte da estrutura ainda não é pública — o foco atual está na construção estratégica e operacional do sistema.',
+      index: '09',
+      title: 'STATUS',
+      type: 'grid',
       items: [
-        { label: 'Entrar em Contato', url: 'https://wa.me/5514988025296' },
-        { label: 'Visualizar Manifesto', url: '#' }
+        { title: 'Base Estratégica', desc: 'Definida e consolidada.' },
+        { title: 'Sistema Interno', desc: 'Iniciado e funcional.' },
+        { title: 'Identidade', desc: 'Em pleno desenvolvimento.' },
+        { title: 'Acompanhamento', desc: 'Ativo para todos os membros.' },
+        { title: 'Crescimento', desc: 'Acontecendo de forma orgânica.' }
       ],
+      bulletColor: 'green'
+    },
+    {
+      index: '10',
+      title: 'PARA QUEM FAZ SENTIDO',
+      type: 'text',
+      content: 'Para quem quer evoluir de verdade e entende o valor do coletivo. Para quem não busca só consumir, mas construir. Para quem sabe que talento sem atitude não sustenta crescimento.',
       bulletColor: 'blue'
+    },
+    {
+      index: '11',
+      title: 'CONEXÃO',
+      type: 'links',
+      footerNote: 'Parte da estrutura ainda não é pública. A prioridade agora não é exposição — é construção.',
+      items: [
+        { label: 'Falar com Lucas', url: 'https://wa.me/5514988025296' },
+        { label: 'Acessar Discord', url: '#' }
+      ],
+      bulletColor: 'cyan'
     }
   ]
 };

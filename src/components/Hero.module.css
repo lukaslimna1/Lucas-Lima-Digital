@@ -193,8 +193,9 @@
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
   .heroActions {
-    flex-direction: column;
+    flex-direction: row; /* Mantém lado a lado em tablets/mobile horizontal */
     align-items: center;
+    gap: 12px;
   }
   .heroTitle {
     font-size: clamp(2rem, 10vw, 2.8rem);
@@ -267,5 +268,7 @@
   }
   .heroActions {
     margin-top: 40px;
+    flex-direction: column; /* Agora sim empilha em celulares pequenos */
+    gap: 16px;
   }
 }

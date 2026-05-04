@@ -206,10 +206,26 @@
 .techTags {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px; /* Aumentado de 8px para respiro premium */
+  gap: 12px;
   justify-content: center;
   width: 100%;
   margin-top: 8px;
+}
+
+@media (max-width: 640px) {
+  .techTags {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 10px 0;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    margin: 0 -20px;
+    padding: 10px 20px;
+  }
+  .techTags::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
 }
 
 .mbMedium {

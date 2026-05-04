@@ -1,6 +1,6 @@
 export const metaPortfolio = {
   id: 0,
-  title: 'Lucas Lima Digital — The Architecture',
+  title: 'LUCAS LIMA DIGITAL — THE ARCHITECTURE',
   category: 'Meta-Portfolio & Digital Architecture',
   filterTags: ['Software', 'Design System', 'IA'],
   short: 'A arquitetura técnica por trás deste ecossistema industrial de alta performance. Uma demonstração prática de engenharia de produto.',
@@ -11,30 +11,30 @@ export const metaPortfolio = {
       index: '01',
       title: 'O CONCEITO',
       type: 'text',
-      content: 'Este portfólio não é apenas uma vitrine, é um produto digital. Ele foi concebido para demonstrar autoridade técnica em engenharia de sistemas, priorizando performance extrema, design industrial e uma experiência de usuário imersiva que remete a um Command Center.',
+      content: 'Este portfólio não é uma vitrine. É um sistema. Foi projetado como um ambiente de demonstração técnica e estratégica, onde cada decisão — de arquitetura, performance e interface — reflete a forma como produtos digitais são construídos na prática. O objetivo não é apenas exibir projetos. É evidenciar capacidade de construção.',
       bulletColor: 'blue'
     },
     {
       index: '02',
-      title: 'A PILHA TECNOLÓGICA (THE STACK)',
-      type: 'architecture',
+      title: 'THE STACK (FUNCIONAL)',
+      type: 'pillars',
       items: [
-        { title: 'Core Engine', desc: 'Desenvolvido com React 19 para aproveitar as últimas otimizações de renderização e hooks nativos.' },
-        { title: 'Visual Motion', desc: 'Framer Motion orquestrando micro-interações e transições de rota fluidas.' },
-        { title: 'Data Layer', desc: 'Supabase atuando como BaaS para persistência de dados e ativos de mídia.' },
-        { title: 'Performance Bundler', desc: 'Vite configurado com code-splitting agressivo para carregamento quase instantâneo.' }
+        { title: 'Rendering Layer', desc: 'React 19 como base para renderização otimizada e controle de estado moderno.' },
+        { title: 'Interaction Engine', desc: 'Framer Motion como motor de microinterações e fluidez de navegação.' },
+        { title: 'Data Infrastructure', desc: 'Supabase estruturando persistência e comunicação com backend.' },
+        { title: 'Build System', desc: 'Vite como pipeline de bundling focado em performance e carregamento imediato.' }
       ],
       bulletColor: 'cyan'
     },
     {
       index: '03',
       title: 'DESIGN SYSTEM & UX',
-      type: 'pillars',
+      type: 'grid',
       items: [
-        { title: 'Glassmorphism 2.0', desc: 'Uso extensivo de backdrops blur e transparências para profundidade visual.' },
-        { title: 'Fluid Typography', desc: 'Escalabilidade harmônica entre dispositivos móveis e desktops de alta resolução.' },
-        { title: 'Mobile First Swipe', desc: 'Navegação por gestos integrada para uma experiência nativa em dispositivos touch.' },
-        { title: 'System Resilience', desc: 'Implementação de Error Boundaries e Preloaders inteligentes para evitar saltos de layout.' }
+        { title: 'Visual Depth System', desc: 'Glassmorphism aplicado para criar hierarquia e leitura em camadas.' },
+        { title: 'Responsive Intelligence', desc: 'Tipografia fluida adaptando densidade de informação por contexto de tela.' },
+        { title: 'Touch Interaction Model', desc: 'Navegação pensada para comportamento nativo mobile, não apenas adaptação.' },
+        { title: 'System Stability Layer', desc: 'Error boundaries e preloaders garantindo consistência de experiência.' }
       ],
       bulletColor: 'green'
     },
@@ -44,31 +44,36 @@ export const metaPortfolio = {
       type: 'images',
       fullWidth: true,
       items: [
-        { src: '/assets/meta-architecture.png', alt: 'Architecture Diagram', title: 'Fluxo de Dados & Componentes', desc: 'Visualização macro da integração entre as camadas de sistema.' }
+        { 
+          src: '/assets/meta-architecture.png', 
+          alt: 'System Overview', 
+          title: 'SYSTEM OVERVIEW', 
+          desc: 'Mapa estrutural da aplicação evidenciando fluxo de dados, renderização e interação entre camadas.' 
+        }
       ],
       bulletColor: 'cyan'
     },
     {
       index: '05',
-      title: 'MÉTRICAS DE SISTEMA (LIVE_METRICS)',
+      title: 'MÉTRICAS (INTENÇÃO)',
       type: 'grid',
       items: [
-        { title: 'Tempo de Resposta', desc: '< 100ms (Otimizado por Vite)' },
-        { title: 'Fidelidade Visual', desc: '100% (Padrão Industrial)' },
-        { title: 'Interatividade', desc: 'Real-time (Framer Motion Engine)' },
-        { title: 'Resiliência', desc: 'Monitoramento por Error Boundaries' }
+        { title: 'Response Time', desc: '< 100ms — priorização de carregamento imediato via bundling otimizado.' },
+        { title: 'Visual Fidelity', desc: '100% — consistência entre design e renderização final.' },
+        { title: 'Interaction Layer', desc: 'Real-time — resposta instantânea a ações do usuário.' },
+        { title: 'System Resilience', desc: 'Gerenciamento de falhas sem impacto na experiência.' }
       ],
       bulletColor: 'green'
     },
     {
       index: '06',
-      title: 'ROADMAP DE EVOLUÇÃO',
+      title: 'EVOLUÇÃO DO SISTEMA',
       type: 'roadmap',
       items: [
-        'Migração total para Next.js 15 (Exploração de Server Components)',
-        'Integração de dashboards de métricas em tempo real (Vercel Analytics)',
-        'Modo "Dark Matter" (Refinamento de contraste em telas OLED)',
-        'Documentação OpenAPI para módulos experimentais do Lab'
+        'Migração estratégica para Next.js 15 (Exploração de Server Components)',
+        'Dashboard de telemetria em tempo real integrado',
+        'Refinamento de contraste absoluto para telas OLED (Mode: Dark Matter)',
+        'Documentação OpenAPI para módulos experimentais'
       ],
       bulletColor: 'blue'
     },
