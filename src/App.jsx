@@ -6,6 +6,8 @@ import Sidebar from './components/Sidebar';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
 import Logo from './components/Logo';
+import CustomCursor from './components/CustomCursor';
+import SectionSkeleton from './components/SectionSkeleton';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 
@@ -18,20 +20,11 @@ const Lab = lazy(() => import('./components/Lab'));
 const Contact = lazy(() => import('./components/Contact'));
 const Diferencial = lazy(() => import('./components/Diferencial'));
 
-// Loader minimalista para Suspense
-const SectionLoader = () => (
-  <div style={{ height: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-secondary)' }}>
-    <div className="dot-pulse"></div>
-  </div>
-);
-
 function App() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [recruiterMode, setRecruiterMode] = useState(false);
   const [lightMode, setLightMode] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,6 +43,7 @@ function App() {
   return (
     <MotionConfig reducedMotion={recruiterMode ? "always" : "user"}>
       <div className={`app-container ${recruiterMode ? 'recruiter-mode' : ''} ${lightMode ? 'light-mode' : ''}`}>
+        <CustomCursor />
         <div className="bg-noise" />
         
         <Sidebar 
@@ -75,7 +69,7 @@ function App() {
           <Hero />
           <Projects recruiterMode={recruiterMode} lightMode={lightMode} />
           
-          <Suspense fallback={<SectionLoader />}>
+          <Suspense fallback={<SectionSkeleton />}>
             <Creation />
             <Framework />
             <Lab recruiterMode={recruiterMode} />
