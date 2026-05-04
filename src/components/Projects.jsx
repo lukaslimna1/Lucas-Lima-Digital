@@ -93,7 +93,7 @@ const Projects = ({ recruiterMode }) => {
     
     const interval = setInterval(() => {
       nextSlide(false);
-    }, 20000); 
+    }, 8000); // 8 segundos parado
 
     return () => clearInterval(interval);
   }, [activeProject, isManual, recruiterMode]);
@@ -127,8 +127,8 @@ const Projects = ({ recruiterMode }) => {
             className={styles.carouselTrack}
             animate={{ x: `-${currentIndex * (100 / itemsPerView)}%` }}
             transition={{ 
-              duration: isResetting || recruiterMode ? 0 : (isManual ? 0.5 : 20), 
-              ease: isResetting || recruiterMode ? "linear" : (isManual ? "easeOut" : "linear")
+              duration: isResetting || recruiterMode ? 0 : (isManual ? 0.6 : 1.5), 
+              ease: isResetting || recruiterMode ? "linear" : "easeInOut"
             }}
           >
             {displayProjects.map((project, idx) => (

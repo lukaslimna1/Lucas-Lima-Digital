@@ -1,23 +1,18 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Hexagon, Briefcase, Lightbulb, Code, Mail, X, Terminal, User, Award, Sparkles, Brain, Sun, Moon } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Sidebar.module.css';
-import { getLogoUrl } from '../lib/supabase';
+import Logo from './Logo';
 
 const Sidebar = ({ isMobileOpen, setIsMobileOpen, recruiterMode, setRecruiterMode, lightMode, setLightMode }) => {
-  const [logoState, setLogoState] = useState('portal'); // portal, monogram, complete
-  const [hasScrolled, setHasScrolled] = useState(false);
-  const [isHeroVisible, setIsHeroVisible] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
 
-  // URLs dos Logos
-  const logoUrls = {
-    monogram: lightMode 
-      ? getLogoUrl('Monograma-Oficial-ColorLigth.svg') 
-      : getLogoUrl('Monograma-Oficial-ColorDark.svg'),
-    complete: lightMode 
-      ? getLogoUrl('Logo-Oficial-ColorLight.svg') 
-      : getLogoUrl('Logo-Oficial-ColorDark.svg')
-  };
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 150);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const menuItems = [
     { name: 'INÍCIO', icon: <Hexagon size={18} />, href: '#home' },
@@ -31,116 +26,20 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, recruiterMode, setRecruiterMod
     { name: 'CONTATO', icon: <Mail size={18} />, href: '#contact' },
   ];
 
-  // Sequência de Evolução Inicial
-  useEffect(() => {
-    const sequence = async () => {
-      setLogoState('portal');
-      await new Promise(r => setTimeout(r, 1000));
-      setLogoState('monogram');
-      await new Promise(r => setTimeout(r, 1000));
-      setLogoState('complete');
-      await new Promise(r => setTimeout(r, 3000));
-      
-      // Só volta para monograma se não estiver no topo/hero
-      if (hasScrolled || !isHeroVisible) {
-        setLogoState('monogram');
-      }
-    };
-    sequence();
-  }, []);
-
-  // Monitorar Scroll e Visibilidade do Hero
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsHeroVisible(entry.isIntersecting);
-        // Só transiciona se a sequência inicial já terminou
-        if (entry.isIntersecting) {
-          setLogoState('complete');
-        } else {
-          setLogoState('monogram');
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    const heroElement = document.querySelector('#home');
-    if (heroElement) observer.observe(heroElement);
-
-    return () => {
-      if (heroElement) observer.unobserve(heroElement);
-    };
-  }, [isHeroVisible, hasScrolled, logoState]);
-
   return (
     <>
-      {/* Sidebar Principal - Contém logotipo e navegação principal */}
       <div className={`${styles.sidebar} ${isMobileOpen ? styles.open : ''}`}>
         <div className={styles.sidebarHeader}>
-          <div className={styles.brandWrapper}>
-            <div 
-              className={`${styles.brandContainer} ${styles['state' + logoState.charAt(0).toUpperCase() + logoState.slice(1)]}`}
-              onClick={() => setLogoState(logoState === 'complete' ? 'monogram' : 'complete')}
-            >
-              <div className={styles.logoPortal}>
-                <div className={`${styles.portalCorner} ${styles.tl}`}></div>
-                <div className={`${styles.portalCorner} ${styles.tr}`}></div>
-                <div className={`${styles.portalCorner} ${styles.bl}`}></div>
-                <div className={`${styles.portalCorner} ${styles.br}`}></div>
-                
-                <AnimatePresence mode="wait">
-                  {(logoState === 'monogram' || logoState === 'portal') ? (
-                    <motion.img 
-                      key="monogram"
-                      src={logoUrls.monogram}
-                      className={styles.monogramImg}
-                      initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
-                      animate={{ opacity: 1, scale: 1, rotate: 0 }}
-                      exit={{ opacity: 0, scale: 0.5, rotate: 10 }}
-                      transition={{ duration: 0.5, ease: "easeOut" }}
-                    />
-                  ) : (
-                    <motion.img 
-                      key="complete"
-                      src={logoUrls.complete}
-                      className={styles.completeLogoImg}
-                      initial={{ opacity: 0, x: -10 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -10 }}
-                      transition={{ duration: 0.5 }}
-                    />
-                  )}
-                </AnimatePresence>
-              </div>
-
-              {logoState === 'monogram' && (
-                <div className={styles.brandText}>
-                  <motion.h1 
-                    className={styles.logoName}
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                  >
-                    Lucas Lima
-                  </motion.h1>
-                </div>
-              )}
-            </div>
-
-            <AnimatePresence>
-              {logoState === 'complete' && (
-                <motion.p 
-                  className={styles.logoSubtitle}
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -10 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                >
-                  <span className="dot-pulse"></span>
-                  Sistemas & Produtos Digitais
-                </motion.p>
-              )}
-            </AnimatePresence>
+          {/* Logo Recriado para Integração Perfeita */}
+          <div className={styles.brandLink}>
+            <Logo 
+              type="complete" 
+              lightMode={lightMode} 
+              recruiterMode={recruiterMode}
+              className={scrolled ? 'scrolled' : ''} 
+            />
           </div>
+          
           <button 
             className={styles.mobileClose}
             onClick={() => setIsMobileOpen(false)}
@@ -149,7 +48,6 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, recruiterMode, setRecruiterMod
           </button>
         </div>
 
-        {/* Links de navegação para as seções da página */}
         <nav className={styles.sidebarNav}>
           <ul>
             {menuItems.map((item) => (
@@ -196,7 +94,6 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, recruiterMode, setRecruiterMod
         </div>
       </div>
       
-      {/* Overlay para escurecer o fundo no mobile quando o menu está aberto */}
       {isMobileOpen && (
         <div 
           className={styles.mobileOverlay}

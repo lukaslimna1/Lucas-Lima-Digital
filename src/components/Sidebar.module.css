@@ -20,113 +20,12 @@
   justify-content: space-between;
   align-items: flex-start;
   margin-bottom: 48px;
-  padding: 0 10px;
 }
 
-.brandWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.brandContainer {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  cursor: pointer;
-}
-
-.logoPortal {
-  position: relative;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.portalCorner {
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  border: var(--portal-border) solid var(--accent-cyan);
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  filter: drop-shadow(0 0 8px var(--accent-cyan-glow));
-}
-
-.tl { top: 0; left: 0; border-right: none; border-bottom: none; }
-.tr { top: 0; right: 0; border-left: none; border-bottom: none; border-color: var(--accent-blue); filter: drop-shadow(0 0 8px var(--accent-blue-glow)); }
-.bl { bottom: 0; left: 0; border-right: none; border-top: none; border-color: var(--accent-blue); filter: drop-shadow(0 0 8px var(--accent-blue-glow)); }
-.br { bottom: 0; right: 0; border-left: none; border-top: none; }
-
-/* Animações de Estado */
-.brandContainer.stateMonogram .portalCorner {
-  width: 14px;
-  height: 14px;
-}
-
-.brandContainer.stateComplete .portalCorner {
-  opacity: 0;
-  transform: scale(1.2);
-}
-
-.brandContainer:hover .portalCorner {
-  border-color: #fff;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-}
-
-.monogramImg {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-  filter: drop-shadow(0 0 8px var(--accent-cyan-glow));
-}
-
-.completeLogoImg {
-  height: 48px;
-  width: auto;
-  max-width: 220px;
-  object-fit: contain;
-  margin-left: -10px; /* Alinhar com a borda */
-}
-
-@keyframes shine {
-  to { background-position: 200% center; }
-}
-
-.brandText {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  overflow: hidden;
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.logoName {
-  font-family: var(--font-logo);
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: white;
-  margin: 0;
-  letter-spacing: -0.5px;
-  line-height: 1;
-  white-space: nowrap;
-}
-
-.logoSubtitle {
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  font-weight: 600;
-  color: var(--text-dim);
-  margin: 0;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  white-space: nowrap;
-  opacity: 0.8;
+.brandLink {
+  text-decoration: none;
+  display: block;
+  width: 100%;
 }
 
 .mobileClose {
@@ -135,6 +34,7 @@
   border: none;
   color: white;
   cursor: pointer;
+  padding: 4px;
 }
 
 .sidebarNav {
@@ -178,7 +78,7 @@
 }
 
 .navItem:hover :global(.hitech-border-glow) {
-  opacity: 0.4; /* Mais sutil que nos cards */
+  opacity: 0.4;
 }
 
 .navIcon {

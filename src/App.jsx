@@ -2,12 +2,10 @@ import { useState, useEffect, lazy, Suspense } from 'react';
 import { Menu } from 'lucide-react';
 import { MotionConfig } from 'framer-motion';
 import './index.css';
-import { getLogoUrl } from './lib/supabase';
-
-// --- COMPONENTES CRÍTICOS (Carregamento Imediato) ---
 import Sidebar from './components/Sidebar';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
+import Logo from './components/Logo';
 
 // --- COMPONENTES NÃO-CRÍTICOS (Lazy Loading para Otimização) ---
 const About = lazy(() => import('./components/About'));
@@ -31,9 +29,7 @@ function App() {
   const [lightMode, setLightMode] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  const mobileLogoUrl = lightMode 
-    ? getLogoUrl('Logo-Oficial-ColorLight.svg') 
-    : getLogoUrl('Logo-Oficial-ColorDark.svg');
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,8 +60,8 @@ function App() {
         />
         
         <div className={`mobile-header ${scrolled ? 'scrolled' : ''}`}>
-          <div className="mobile-logo-wrapper">
-            <img src={mobileLogoUrl} alt="Lucas Lima Logo" className="mobile-logo-img" />
+          <div className="mobile-brand">
+            {/* Logo removida daqui para evitar duplicidade com a Hero/Sidebar */}
           </div>
           <button onClick={() => setIsMobileOpen(true)} className="mobile-menu-btn">
             <Menu size={24} />
