@@ -45,10 +45,22 @@ export const metaPortfolio = {
       fullWidth: true,
       items: [
         { 
-          src: 'LUCASLIMADIGITAL:Arqueitetura.png', 
-          alt: 'System Overview', 
-          title: 'SYSTEM OVERVIEW', 
-          desc: 'Mapa estrutural da aplicação evidenciando fluxo de dados, renderização e interação entre camadas.' 
+          src: 'LUCASLIMADIGITAL:ecossistema.png', 
+          alt: 'Ecossistema Digital', 
+          title: 'ECOSSISTEMA DIGITAL', 
+          desc: 'Visão macro das integrações e do fluxo operacional do sistema.' 
+        },
+        { 
+          src: 'LUCASLIMADIGITAL:showcasetecnico.png', 
+          alt: 'Showcase Técnico', 
+          title: 'DETALHAMENTO TÉCNICO', 
+          desc: 'Exploração profunda da arquitetura de componentes e engine de renderização.' 
+        },
+        { 
+          src: 'LUCASLIMADIGITAL:roadmap.png', 
+          alt: 'Roadmap de Evolução', 
+          title: 'TRAJETÓRIA DE EVOLUÇÃO', 
+          desc: 'Planejamento estratégico de features e expansão da infraestrutura.' 
         }
       ],
       bulletColor: 'cyan'

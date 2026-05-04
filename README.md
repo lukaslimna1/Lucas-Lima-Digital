@@ -1,7 +1,7 @@
 ![Lucas Lima Portfolio Banner](public/assets/banner.png)
 
 # 🏛️ LUCAS LIMA | DIGITAL SYSTEMS & PRODUCTS ENGINEER
-### `INDUSTRIAL STANDARD v6.9.5` • `DYNAMIC CASE ARCHITECTURE`
+### `INDUSTRIAL STANDARD v6.9.6` • `DYNAMIC CASE ARCHITECTURE`
 
 > **"Sistemas não começam no código. Começam no entendimento do negócio."**
 > A engenharia digital de alta performance é a arte de transformar caos operacional em estrutura, controle e resultado mensurável.
@@ -70,6 +70,12 @@ O sistema visual evoluiu para suportar múltiplos contextos de leitura sem perde
 ## 📈 EVOLUÇÃO E ROADMAP (V6.9.5 - STABILITY & REFINEMENT)
 
 ### 📅 CHANGELOG TÉCNICO
+
+*   **v6.9.6 (Asset Refresh & Carousel Stability)**:
+    *   `META_ASSET_REFRESH`: Replaced legacy architecture diagram with a 3-part official showcase (`ecossistema.png`, `roadmap.png`, `showcasetecnico.png`).
+    *   `CAROUSEL_BUFFER_STABILIZATION`: Implemented a 5-set buffer and dynamic multiplier to prevent cards from vanishing on small project counts.
+    *   `CAROUSEL_RESET_FIX`: Optimized the boundary jump timing to align with animation duration, ensuring seamless infinite scrolling.
+    *   `AUTO_PLAY_PRESERVATION`: Fixed bug where auto-play would permanently disable after the first transition.
 
 *   **v6.9.5 (System Stability & Content Refinement)**:
     *   `MOBILE_NAVBAR_STABILIZATION`: Re-engineered mobile header and sidebar footer to prevent line-wrapping and stabilize brand alignment.

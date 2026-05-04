@@ -50,34 +50,49 @@ const Projects = memo(({ recruiterMode }) => {
 
   // Lógica de Carrossel Infinito - Sincronização
   useEffect(() => {
-    const multiplier = filteredProjects.length > 2 ? 3 : 1;
+    const total = filteredProjects.length;
+    if (total === 0) {
+      setDisplayProjects([]);
+      setCurrentIndex(0);
+      return;
+    }
+
+    // Garantir que temos itens suficientes para não mostrar o fundo vazio
+    // Precisamos de pelo menos total * 3, mas para segurança com itemsPerView fracionário, usamos mais
+    const multiplier = Math.max(5, Math.ceil(20 / total));
     const newDisplay = [];
     for(let i = 0; i < multiplier; i++) newDisplay.push(...filteredProjects);
     
     setDisplayProjects(newDisplay);
     
-    if (multiplier > 1) {
-      setCurrentIndex(filteredProjects.length);
-    } else {
-      setCurrentIndex(0);
-    }
+    // Começamos no Set 3 (meio do buffer)
+    setCurrentIndex(total * 2);
+    
     setIsResetting(true);
     const timer = setTimeout(() => setIsResetting(false), 50);
     return () => clearTimeout(timer);
   }, [filteredProjects]);
 
   const nextSlide = (manual = false) => {
+    if (filteredProjects.length === 0) return;
     if (manual) setLastInteraction(Date.now());
     setIsManual(manual);
     setIsResetting(false);
-    setCurrentIndex(prev => prev + 1);
+    
+    // Trava de segurança: não deixa passar do buffer total
+    setCurrentIndex(prev => {
+      const maxIndex = displayProjects.length - Math.ceil(itemsPerView) - 1;
+      return prev < maxIndex ? prev + 1 : prev;
+    });
   };
 
   const prevSlide = (manual = false) => {
+    if (filteredProjects.length === 0) return;
     if (manual) setLastInteraction(Date.now());
     setIsManual(manual);
     setIsResetting(false);
-    setCurrentIndex(prev => prev - 1);
+    
+    setCurrentIndex(prev => prev > 0 ? prev - 1 : 0);
   };
 
   // Reset sutil sem animação brusca
@@ -85,14 +100,20 @@ const Projects = memo(({ recruiterMode }) => {
     const total = filteredProjects.length;
     if (total === 0) return;
     
-    if (currentIndex >= total * 2 || currentIndex <= 0) {
-      const timeout = isManual ? 1200 : 20000; 
+    // Com 5 sets, o "porto seguro" é do index total*2 até total*3
+    if (currentIndex >= total * 4 || currentIndex <= total * 1) {
+      const animationDuration = isManual ? 600 : 2500;
+      const buffer = 50; 
       
       const timer = setTimeout(() => {
         setIsResetting(true); 
-        if (currentIndex >= total * 2) setCurrentIndex(total);
-        else if (currentIndex <= 0) setCurrentIndex(total);
-      }, timeout);
+        // Reposiciona para o Set 3 mantendo o deslocamento relativo
+        if (currentIndex >= total * 4) {
+          setCurrentIndex(prev => prev - (total * 2));
+        } else if (currentIndex <= total * 1) {
+          setCurrentIndex(prev => prev + (total * 2));
+        }
+      }, animationDuration + buffer);
       
       return () => clearTimeout(timer);
     }
