@@ -382,7 +382,8 @@
 .modalActions {
   display: flex;
   justify-content: center;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
   padding-bottom: 3rem;
   width: 100%;
 }
@@ -801,5 +802,14 @@
   .cardHeader, .cardMain, .cardFooter {
     padding-left: 20px;
     padding-right: 20px;
+  }
+  .modalActions {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  .actionBtn {
+    width: 100%;
+    min-width: 0;
   }
 }

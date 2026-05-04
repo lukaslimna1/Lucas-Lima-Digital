@@ -175,26 +175,43 @@ const CaseStudyModal = ({ project, onClose, onZoomImage }) => {
               )}
 
               <div className={styles.modalActions}>
-                <a 
-                  href={project.demo === '#' ? undefined : project.demo} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className={`btn-primary ${styles.actionBtn} ${project.demo === '#' ? styles.disabled : ''}`}
-                >
-                  <ChevronRight size={16} />
-                  <span>{project.demo === '#' ? 'Demo (Em breve)' : 'Visualizar Demo'}</span>
-                </a>
-                
-                {project.repo && (
-                  <a 
-                    href={project.repo} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className={`btn-outline ${styles.actionBtn}`}
-                  >
-                    <Briefcase size={16} />
-                    <span>Ver no GitHub</span>
-                  </a>
+                {project.links ? (
+                  project.links.map((link, idx) => (
+                    <a 
+                      key={idx}
+                      href={link.url === '#' ? undefined : link.url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className={`${idx === 0 ? 'btn-primary' : 'btn-outline'} ${styles.actionBtn} ${link.url === '#' ? styles.disabled : ''}`}
+                    >
+                      <ChevronRight size={16} />
+                      <span>{link.label} {link.url === '#' ? '(Em breve)' : ''}</span>
+                    </a>
+                  ))
+                ) : (
+                  <>
+                    <a 
+                      href={project.demo === '#' ? undefined : project.demo} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className={`btn-primary ${styles.actionBtn} ${project.demo === '#' ? styles.disabled : ''}`}
+                    >
+                      <ChevronRight size={16} />
+                      <span>{project.demo === '#' ? 'Demo (Em breve)' : 'Visualizar Demo'}</span>
+                    </a>
+                    
+                    {project.repo && (
+                      <a 
+                        href={project.repo} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className={`btn-outline ${styles.actionBtn}`}
+                      >
+                        <Briefcase size={16} />
+                        <span>Ver no GitHub</span>
+                      </a>
+                    )}
+                  </>
                 )}
               </div>
             </div>

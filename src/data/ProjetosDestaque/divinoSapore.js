@@ -32,6 +32,10 @@ export const divinoSapore = {
     'Novos Pontos de Contato com Cliente',
     'Crescimento com Identidade Preservada'
   ],
-  demo: '#',
+  links: [
+    { label: 'Ver Brand Book', url: '#' },
+    { label: 'Ver Aplicações Reais', url: '#' },
+    { label: 'Ver Mockups', url: '#' }
+  ],
   footerNote: 'Projeto focado em Branding e Experiência de Marca (Brand Book e Mockups disponíveis).'
 };
