@@ -45,7 +45,7 @@ export const metaPortfolio = {
       fullWidth: true,
       items: [
         { 
-          src: '/assets/meta-architecture.png', 
+          src: 'LUCASLIMADIGITAL:Arqueitetura.png', 
           alt: 'System Overview', 
           title: 'SYSTEM OVERVIEW', 
           desc: 'Mapa estrutural da aplicação evidenciando fluxo de dados, renderização e interação entre camadas.' 

@@ -74,6 +74,7 @@ O sistema visual evoluiu para suportar múltiplos contextos de leitura sem perde
 *   **v6.9.5 (System Stability & Content Refinement)**:
     *   `MOBILE_NAVBAR_STABILIZATION`: Re-engineered mobile header and sidebar footer to prevent line-wrapping and stabilize brand alignment.
     *   `WOLF_PACK_CARDS_UI`: Refactored WOLF PACK project data into a modular card-based structure (Pillars/Grid) for enhanced strategic impact.
+    *   `META_ARCH_CLOUD_ASSET`: Integrated 'Arqueitetura.png' from the LUCASLIMADIGITAL cloud bucket into the Meta-Portfolio showcase.
     *   `TECH_TAG_SCROLL`: Implemented horizontal scroll for technology tags on mobile to maintain layout density without jagged breaks.
     *   `UI_NOWRAP_ENFORCEMENT`: Global enforcement of `nowrap` on section titles to preserve "Command Center" rigidity.
     *   `ABOUT_GRID_OPTIMIZATION`: Refined text grid breakpoints to maximize horizontal space usage on tablets.
