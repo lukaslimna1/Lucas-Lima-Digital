@@ -80,7 +80,7 @@ function App() {
             <Suspense fallback={<SectionSkeleton />}>
               <Creation />
               <Framework />
-              <StackTools />
+              <StackTools lightMode={lightMode} recruiterMode={recruiterMode} />
               <Lab recruiterMode={recruiterMode} />
               <About />
               <Experience />

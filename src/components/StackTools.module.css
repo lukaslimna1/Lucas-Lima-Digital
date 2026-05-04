@@ -135,3 +135,50 @@
     font-size: 2rem;
   }
 }
+
+/* Light Mode Support */
+.light {
+  background: #f8fafc;
+}
+
+.light .title {
+  color: #0f172a;
+}
+
+.light .stackGroup {
+  background: white;
+  border-color: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.light .groupTitle {
+  color: #1e293b;
+}
+
+.light .toolName {
+  color: #334155;
+}
+
+.light .levelText {
+  color: #64748b;
+}
+
+.light .barContainer {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Recruiter Mode Support (Simplified) */
+.recruiter .stackGroup {
+  border-radius: 0;
+  border-left: 3px solid var(--accent);
+}
+
+.recruiter .bar {
+  box-shadow: none;
+}
+
+.recruiter .stackGroup:hover {
+  transform: none;
+  background: rgba(255, 255, 255, 0.02);
+}
+

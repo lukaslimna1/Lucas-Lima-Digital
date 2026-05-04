@@ -4,7 +4,7 @@ import { Cpu, Layout, Database, Wrench, Circle } from 'lucide-react';
 import { stackData } from '../data/stack';
 import styles from './StackTools.module.css';
 
-const StackTools = () => {
+const StackTools = ({ lightMode, recruiterMode }) => {
   const getIcon = (category) => {
     switch (category) {
       case "Frontend Architecture": return <Layout size={20} />;
@@ -16,7 +16,10 @@ const StackTools = () => {
   };
 
   return (
-    <section className={styles.stackSection}>
+    <section 
+      id="stack" 
+      className={`${styles.stackSection} ${lightMode ? styles.light : ''} ${recruiterMode ? styles.recruiter : ''}`}
+    >
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles.headerLine}></div>
