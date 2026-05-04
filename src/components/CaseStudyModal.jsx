@@ -14,7 +14,9 @@ const CaseStudyModal = ({ project, onClose, onZoomImage }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      onClick={onClose}
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
     >
       <motion.div 
         className={styles.modalContent}
@@ -130,6 +132,7 @@ const CaseStudyModal = ({ project, onClose, onZoomImage }) => {
                             target="_blank" 
                             rel="noopener noreferrer"
                             className={`${i === 0 ? 'btn-primary' : 'btn-outline'} ${styles.actionBtn} ${link.url === '#' ? styles.disabled : ''}`}
+                            onClick={(e) => e.stopPropagation()}
                           >
                             <ChevronRight size={16} />
                             <span>{link.label} {link.url === '#' ? '(Em breve)' : ''}</span>
@@ -232,6 +235,7 @@ const CaseStudyModal = ({ project, onClose, onZoomImage }) => {
                       target="_blank" 
                       rel="noopener noreferrer"
                       className={`btn-primary ${styles.actionBtn} ${project.demo === '#' ? styles.disabled : ''}`}
+                      onClick={(e) => e.stopPropagation()}
                     >
                       <ChevronRight size={16} />
                       <span>{project.demo === '#' ? 'Demo (Em breve)' : 'Visualizar Demo'}</span>
@@ -242,6 +246,7 @@ const CaseStudyModal = ({ project, onClose, onZoomImage }) => {
                         target="_blank" 
                         rel="noopener noreferrer"
                         className={`btn-outline ${styles.actionBtn}`}
+                        onClick={(e) => e.stopPropagation()}
                       >
                         <Briefcase size={16} />
                         <span>Ver no GitHub</span>

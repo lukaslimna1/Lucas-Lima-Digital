@@ -1,4 +1,4 @@
-import { useState, useEffect, memo } from 'react';
+import { useState, useEffect, memo, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Briefcase, ChevronRight, ChevronLeft, X, ShieldCheck } from 'lucide-react';
 import { resolveImagePath } from '../lib/supabase';
@@ -9,19 +9,21 @@ import { useMousePosition } from '../utils/useMousePosition';
 import CaseStudyModal from './CaseStudyModal';
 import OpportunityModal from './OpportunityModal';
 
+// Extrair tags únicas fora do componente para evitar re-cálculo
+const ALL_TAGS = ['All', ...new Set(projectsData.flatMap(p => p.filterTags || []))];
+
 const Projects = memo(({ recruiterMode }) => {
   const { handleMouseMove } = useMousePosition();
   const [activeProject, setActiveProject] = useState(null);
   const [zoomImage, setZoomImage] = useState(null);
   const [filter, setFilter] = useState('All');
   
-  // Extrair tags únicas para os filtros
-  const allTags = ['All', ...new Set(projectsData.flatMap(p => p.filterTags || []))];
-  
-  // Filtrar projetos baseados na tag selecionada
-  const filteredProjects = filter === 'All' 
-    ? projectsData 
-    : projectsData.filter(p => p.filterTags?.includes(filter));
+  // Filtrar projetos baseados na tag selecionada usando useMemo
+  const filteredProjects = useMemo(() => {
+    return filter === 'All' 
+      ? projectsData 
+      : projectsData.filter(p => p.filterTags?.includes(filter));
+  }, [filter]);
 
   const [displayProjects, setDisplayProjects] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -30,36 +32,36 @@ const Projects = memo(({ recruiterMode }) => {
   const [isResetting, setIsResetting] = useState(false);
   const [lastInteraction, setLastInteraction] = useState(0);
 
-  // Responsividade do carrossel
+  // Responsividade do carrossel otimizada
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) setItemsPerView(1.2); 
-      else if (window.innerWidth < 1024) setItemsPerView(1.5); 
+      const width = window.innerWidth;
+      if (width < 768) setItemsPerView(1.2); 
+      else if (width < 1024) setItemsPerView(1.5); 
       else setItemsPerView(2); 
     };
     handleResize();
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize, { passive: true });
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   // Lógica de Carrossel Infinito - Sincronização
   useEffect(() => {
-    // Se tivermos poucos itens, não triplicamos para não quebrar a lógica de scroll
     const multiplier = filteredProjects.length > 2 ? 3 : 1;
     const newDisplay = [];
     for(let i = 0; i < multiplier; i++) newDisplay.push(...filteredProjects);
     
     setDisplayProjects(newDisplay);
     
-    // Resetar índice ao trocar filtro
     if (multiplier > 1) {
       setCurrentIndex(filteredProjects.length);
     } else {
       setCurrentIndex(0);
     }
     setIsResetting(true);
-    setTimeout(() => setIsResetting(false), 50);
-  }, [filteredProjects, filter]);
+    const timer = setTimeout(() => setIsResetting(false), 50);
+    return () => clearTimeout(timer);
+  }, [filteredProjects]);
 
   const nextSlide = (manual = false) => {
     if (manual) setLastInteraction(Date.now());
@@ -81,7 +83,6 @@ const Projects = memo(({ recruiterMode }) => {
     if (total === 0) return;
     
     if (currentIndex >= total * 2 || currentIndex <= 0) {
-      // Tempo para a animação atual (lenta ou rápida) terminar
       const timeout = isManual ? 1200 : 20000; 
       
       const timer = setTimeout(() => {
@@ -101,7 +102,7 @@ const Projects = memo(({ recruiterMode }) => {
     const checkInactivity = setInterval(() => {
       if (!isManual || activeProject || recruiterMode) return;
       
-      if (Date.now() - lastInteraction > 10000) { // 10 segundos
+      if (Date.now() - lastInteraction > 10000) {
         setIsManual(false);
       }
     }, 1000);
@@ -115,7 +116,7 @@ const Projects = memo(({ recruiterMode }) => {
     
     const interval = setInterval(() => {
       nextSlide(false);
-    }, 12000); // 12 segundos parado
+    }, 12000);
 
     return () => clearInterval(interval);
   }, [activeProject, isManual, recruiterMode]);
@@ -129,7 +130,6 @@ const Projects = memo(({ recruiterMode }) => {
       transition={{ duration: 0.6 }}
       className="section"
     >
-      {/* Cabeçalho da Seção */}
       <div className={`section-header ${styles.projectsHeader}`}>
         <motion.h2 
           className="section-title"
@@ -142,9 +142,8 @@ const Projects = memo(({ recruiterMode }) => {
           Sistemas, ideias e experiências que estou construindo na prática — conectando tecnologia, design e visão de produto.
         </p>
 
-        {/* Filtro Semântico */}
         <div className={styles.filterContainer}>
-          {allTags.map(tag => (
+          {ALL_TAGS.map(tag => (
             <button
               key={tag}
               onClick={() => setFilter(tag)}
@@ -167,6 +166,18 @@ const Projects = memo(({ recruiterMode }) => {
         <div className={styles.carouselTrackWrapper}>
           <motion.div 
             className={styles.carouselTrack}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.2}
+            dragMomentum={false}
+            onDragEnd={(e, info) => {
+              const swipeThreshold = 50;
+              if (info.offset.x < -swipeThreshold) {
+                nextSlide(true);
+              } else if (info.offset.x > swipeThreshold) {
+                prevSlide(true);
+              }
+            }}
             animate={{ x: `-${currentIndex * (100 / itemsPerView)}%` }}
             transition={{ 
               duration: isResetting || recruiterMode ? 0 : (isManual ? 0.6 : 2.5), 
@@ -255,7 +266,7 @@ const Projects = memo(({ recruiterMode }) => {
             {filteredProjects.map((_, idx) => (
               <div 
                 key={idx} 
-                className={`${styles.indicator} ${(currentIndex % filteredProjects.length) === idx ? styles.active : ''}`}
+                className={`${styles.indicator} ${(currentIndex % (filteredProjects.length || 1)) === idx ? styles.active : ''}`}
               ></div>
             ))}
           </div>
@@ -295,7 +306,9 @@ const Projects = memo(({ recruiterMode }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setZoomImage(null)}
+            onClick={(e) => {
+              if (e.target === e.currentTarget) setZoomImage(null);
+            }}
           >
             <motion.img 
               src={zoomImage}

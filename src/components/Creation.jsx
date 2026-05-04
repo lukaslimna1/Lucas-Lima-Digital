@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import {
   Brain,
@@ -17,62 +18,62 @@ import {
 import styles from './Creation.module.css';
 import { useMousePosition } from '../utils/useMousePosition';
 
-const Creation = () => {
+const CAPABILITIES = [
+  {
+    id: 'PROD',
+    icon: <Cpu size={24} />,
+    title: 'PRODUTOS DIGITAIS',
+    desc: 'Construção de sistemas e plataformas com foco em funcionamento real, escalabilidade e experiência de uso.',
+    color: '#22D3EE'
+  },
+  {
+    id: 'DESIGN',
+    icon: <Palette size={24} />,
+    title: 'UX, UI & EXPERIÊNCIA',
+    desc: 'Design guiado por comportamento, clareza e redução de fricção na jornada do usuário.',
+    color: '#22D3EE'
+  },
+  {
+    id: 'GROWTH',
+    icon: <BarChart3 size={24} />,
+    title: 'GROWTH & ESTRATÉGIA',
+    desc: 'Decisões baseadas em dados, percepção de valor e comportamento real de mercado.',
+    color: '#3B82F6'
+  },
+  {
+    id: 'OPS',
+    icon: <Settings size={24} />,
+    title: 'OPERAÇÕES & PROCESSOS',
+    desc: 'Organização de fluxos, automação e estrutura para execução eficiente no dia a dia.',
+    color: '#22D3EE'
+  },
+  {
+    id: 'BRAND',
+    icon: <Users size={24} />,
+    title: 'MARCAS & COMUNIDADES',
+    desc: 'Construção de identidade, conexão com pessoas e experiências que vão além do digital.',
+    color: '#34D399'
+  },
+  {
+    id: 'DATA',
+    icon: <FlaskConical size={24} />,
+    title: 'DADOS & EXPERIMENTAÇÃO',
+    desc: 'Uso de dados, IA e testes para evoluir produtos e explorar novas possibilidades.',
+    color: '#22D3EE'
+  }
+];
+
+const PHILOSOPHY_STEPS = [
+  { icon: <Target size={20} />, text: 'Qual é o problema real?' },
+  { icon: <Settings size={20} />, text: 'Como funciona na prática?' },
+  { icon: <Search size={20} />, text: 'Quem realmente vai usar?' },
+  { icon: <MessageSquare size={20} />, text: 'O que essas pessoas enfrentam no dia a dia?' },
+  { icon: <TrendingUp size={20} />, text: 'Onde estão os gargalos?' },
+  { icon: <CheckCircle2 size={20} />, text: 'Onde está o impacto de verdade?' }
+];
+
+const Creation = memo(() => {
   const { handleMouseMove } = useMousePosition();
-
-  const capabilities = [
-    {
-      id: 'PROD',
-      icon: <Cpu size={24} />,
-      title: 'PRODUTOS DIGITAIS',
-      desc: 'Construção de sistemas e plataformas com foco em funcionamento real, escalabilidade e experiência de uso.',
-      color: '#22D3EE'
-    },
-    {
-      id: 'DESIGN',
-      icon: <Palette size={24} />,
-      title: 'UX, UI & EXPERIÊNCIA',
-      desc: 'Design guiado por comportamento, clareza e redução de fricção na jornada do usuário.',
-      color: '#22D3EE'
-    },
-    {
-      id: 'GROWTH',
-      icon: <BarChart3 size={24} />,
-      title: 'GROWTH & ESTRATÉGIA',
-      desc: 'Decisões baseadas em dados, percepção de valor e comportamento real de mercado.',
-      color: '#3B82F6'
-    },
-    {
-      id: 'OPS',
-      icon: <Settings size={24} />,
-      title: 'OPERAÇÕES & PROCESSOS',
-      desc: 'Organização de fluxos, automação e estrutura para execução eficiente no dia a dia.',
-      color: '#22D3EE'
-    },
-    {
-      id: 'BRAND',
-      icon: <Users size={24} />,
-      title: 'MARCAS & COMUNIDADES',
-      desc: 'Construção de identidade, conexão com pessoas e experiências que vão além do digital.',
-      color: '#34D399'
-    },
-    {
-      id: 'DATA',
-      icon: <FlaskConical size={24} />,
-      title: 'DADOS & EXPERIMENTAÇÃO',
-      desc: 'Uso de dados, IA e testes para evoluir produtos e explorar novas possibilidades.',
-      color: '#22D3EE'
-    }
-  ];
-
-  const philosophySteps = [
-    { icon: <Target size={20} />, text: 'Qual é o problema real?' },
-    { icon: <Settings size={20} />, text: 'Como funciona na prática?' },
-    { icon: <Search size={20} />, text: 'Quem realmente vai usar?' },
-    { icon: <MessageSquare size={20} />, text: 'O que essas pessoas enfrentam no dia a dia?' },
-    { icon: <TrendingUp size={20} />, text: 'Onde estão os gargalos?' },
-    { icon: <CheckCircle2 size={20} />, text: 'Onde está o impacto de verdade?' }
-  ];
 
   return (
     <motion.section
@@ -101,7 +102,7 @@ const Creation = () => {
 
         {/* Capacidades (Grid) */}
         <div className={styles.capabilitiesGrid}>
-          {capabilities.map((cap, i) => (
+          {CAPABILITIES.map((cap, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
@@ -183,7 +184,7 @@ const Creation = () => {
                 </p>
 
                 <div className={styles.stepList}>
-                  {philosophySteps.map((step, idx) => (
+                  {PHILOSOPHY_STEPS.map((step, idx) => (
                     <motion.div
                       key={idx}
                       whileHover={{ scale: 1.02, backgroundColor: 'rgba(255, 255, 255, 0.05)' }}
@@ -249,6 +250,7 @@ const Creation = () => {
       </div>
     </motion.section>
   );
-};
+});
 
 export default Creation;
+

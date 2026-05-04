@@ -1,11 +1,11 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback, useRef, memo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FlaskConical, BrainCircuit, Sparkles, MousePointer2, Cpu, ArrowUpRight, TrendingUp, Layout, Zap } from 'lucide-react';
 import { labExperiments } from '../data/labExperiments';
 import styles from './Lab.module.css';
 import { useMousePosition } from '../utils/useMousePosition';
 
-const SectorCarousel = ({ experiments, category, catIdx, iconMap, recruiterMode }) => {
+const SectorCarousel = memo(({ experiments, category, catIdx, iconMap, recruiterMode }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const intervalRef = useRef(null);
@@ -151,14 +151,15 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap, recruiterMode 
       </div>
     </div>
   );
+});
+
+const LAB_ICON_MAP = {
+  BrainCircuit, Sparkles, MousePointer2, Cpu, TrendingUp, Layout, Zap
 };
 
-const Lab = ({ recruiterMode }) => {
-  const iconMap = {
-    BrainCircuit, Sparkles, MousePointer2, Cpu, TrendingUp, Layout, Zap
-  };
+const LAB_CATEGORIES = ['EXPERIMENTOS', 'APRENDIZADO', 'EVOLUÇÃO'];
 
-  const categories = ['EXPERIMENTOS', 'APRENDIZADO', 'EVOLUÇÃO'];
+const Lab = memo(({ recruiterMode }) => {
 
   return (
     <section id="lab" className={`section hitech ${styles.labSection}`}>
@@ -178,19 +179,19 @@ const Lab = ({ recruiterMode }) => {
       </div>
 
       <div className={styles.labHorizontalLayout}>
-        {categories.map((cat, catIdx) => (
+        {LAB_CATEGORIES.map((cat, catIdx) => (
           <SectorCarousel 
             key={cat}
             category={cat}
             catIdx={catIdx}
             experiments={labExperiments.filter(exp => exp.group === cat)}
-            iconMap={iconMap}
+            iconMap={LAB_ICON_MAP}
             recruiterMode={recruiterMode}
           />
         ))}
       </div>
     </section>
   );
-};
+});
 
 export default Lab;

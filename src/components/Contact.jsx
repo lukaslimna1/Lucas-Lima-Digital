@@ -1,18 +1,18 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 import { Mail } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import styles from './Contact.module.css';
 
-const Contact = () => {
-  const contactChannels = [
-    { id: 'whatsapp', name: 'WhatsApp', desc: 'Respostas rápidas via chat.', icon: faWhatsapp, link: 'https://wa.me/5514988025296', className: styles.whatsapp },
-    { id: 'linkedin', name: 'LinkedIn', desc: 'Conexão profissional.', icon: faLinkedin, link: 'https://linkedin.com/in/lucaslimna/', className: styles.linkedin },
-    { id: 'github', name: 'GitHub', desc: 'Arquiteturas e repositórios.', icon: faGithub, link: 'https://github.com/lukaslimna1', className: styles.github },
-    { id: 'email', name: 'Email', desc: 'Parcerias e propostas.', icon: null, link: 'mailto:lucasmslima1@gmail.com', className: styles.email }
-  ];
+const contactChannels = [
+  { id: 'whatsapp', name: 'WhatsApp', desc: 'Respostas rápidas via chat.', icon: faWhatsapp, link: 'https://wa.me/5514988025296', className: styles.whatsapp },
+  { id: 'linkedin', name: 'LinkedIn', desc: 'Conexão profissional.', icon: faLinkedin, link: 'https://linkedin.com/in/lucaslimna/', className: styles.linkedin },
+  { id: 'github', name: 'GitHub', desc: 'Arquiteturas e repositórios.', icon: faGithub, link: 'https://github.com/lukaslimna1', className: styles.github },
+  { id: 'email', name: 'Email', desc: 'Parcerias e propostas.', icon: null, link: 'mailto:lucasmslima1@gmail.com', className: styles.email }
+];
 
+const Contact = () => {
   return (
     <section id="contact" className="section">
       <div className={styles.contactContainer}>
@@ -106,4 +106,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default memo(Contact);

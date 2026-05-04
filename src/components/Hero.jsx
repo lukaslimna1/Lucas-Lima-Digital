@@ -4,6 +4,13 @@ import { Briefcase, Mail, Terminal } from 'lucide-react';
 import styles from './Hero.module.css';
 import { useMousePosition } from '../utils/useMousePosition';
 
+const HERO_STATS = [
+  { label: 'Experiência', value: '+5 anos criando', span: 'square' },
+  { label: 'Projetos & Estudos', value: '+10 construções experimentais', span: 'tall' },
+  { label: 'Pipeline Atual', value: '2 projetos em desenvolvimento', span: 'tall' },
+  { label: 'Aplicação Real', value: '1 sistema em uso', span: 'square' },
+];
+
 const Hero = memo(() => {
   const { handleMouseMove } = useMousePosition();
   return (
@@ -62,12 +69,7 @@ const Hero = memo(() => {
         <div className={styles.heroRightCol}>
           {/* Métricas Reais em Mini Cards Hi-Tech - Agora com Assimetria Visual */}
           <div className={styles.heroStatsGrid}>
-            {[
-              { label: 'Experiência', value: '+5 anos criando', span: 'square' },
-              { label: 'Projetos & Estudos', value: '+10 construções experimentais', span: 'tall' },
-              { label: 'Pipeline Atual', value: '2 projetos em desenvolvimento', span: 'tall' },
-              { label: 'Aplicação Real', value: '1 sistema em uso', span: 'square' },
-            ].map((stat, i) => {
+            {HERO_STATS.map((stat, i) => {
               const isBlue = i % 2 === 0;
               const color = isBlue ? 'var(--hitech-blue)' : 'var(--accent-green)';
               
@@ -117,5 +119,6 @@ const Hero = memo(() => {
     </motion.section>
   );
 });
+
 
 export default Hero;

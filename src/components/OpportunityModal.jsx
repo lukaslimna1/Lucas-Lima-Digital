@@ -13,7 +13,9 @@ const OpportunityModal = ({ project, onClose }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      onClick={onClose}
+      onClick={(e) => {
+        if (e.target === e.currentTarget) onClose();
+      }}
     >
       <motion.div 
         className={styles.modalContent}
@@ -115,6 +117,7 @@ const OpportunityModal = ({ project, onClose }) => {
                     target="_blank" 
                     rel="noopener noreferrer"
                     className={`btn-primary ${styles.actionBtn}`}
+                    onClick={(e) => e.stopPropagation()}
                   >
                     <ChevronRight size={16} />
                     <span>{project.customLink || 'Vamos conversar'}</span>

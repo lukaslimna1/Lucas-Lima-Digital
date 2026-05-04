@@ -1,8 +1,9 @@
+import { memo } from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
 import styles from './Diferencial.module.css';
 
-const Diferencial = () => {
+const Diferencial = memo(() => {
   return (
     <motion.section 
       id="diferencial"
@@ -53,6 +54,6 @@ const Diferencial = () => {
       </div>
     </motion.section>
   );
-};
+});
 
 export default Diferencial;

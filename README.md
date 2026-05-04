@@ -1,7 +1,7 @@
 ![Lucas Lima Portfolio Banner](public/assets/banner.png)
 
 # 🏛️ LUCAS LIMA | DIGITAL SYSTEMS & PRODUCTS ENGINEER
-### `INDUSTRIAL STANDARD V6.0.7` • `DYNAMIC CASE ARCHITECTURE`
+### `INDUSTRIAL STANDARD V6.7.0` • `DYNAMIC CASE ARCHITECTURE`
 
 > **"Sistemas não começam no código. Começam no entendimento do negócio."**
 > A engenharia digital de alta performance é a arte de transformar caos operacional em estrutura, controle e resultado mensurável.
@@ -14,13 +14,13 @@ Este não é apenas um portfólio. É um **Dashboard de Engenharia** projetado p
 | CATEGORIA | TECNOLOGIA | PROPÓSITO INDUSTRIAL |
 | :--- | :--- | :--- |
 | **ENGINE** | `React 19 + Vite` | Ciclo de renderização otimizado e build-time ultra-reduzido. |
+| **TOUCH UX** | `Swipe Engine (Framer)` | Navegação por gestos (swipe) no carrossel de projetos para fluidez mobile. |
 | **STORAGE** | `Supabase Storage` | Gestão de assets com resolução dinâmica de buckets (`bucket:path`). |
 | **CASE ARCH** | `Dynamic Section System` | Cada projeto possui narrativa única via array modular de `sections`. |
 | **INTELLIGENCE** | `Gemini AI + Custom Hook` | Processamento semântico e suporte à decisão em tempo real. |
-| **TYPOGRAPHY** | `Fluid CSS (clamp)` | Escaneabilidade perfeita e ausência de cortes de texto em qualquer device. |
+| **COMPATIBILITY** | `WebKit Prefixes` | Fidelidade visual absoluta em Safari, iOS e navegadores mobile modernos. |
 | **PREMIUM UX** | `Fluid Carousel (12s/2.5s)` | Transição estendida para leitura técnica profunda de cases complexos. |
-| **THEME ENGINE** | `Light/Dark 2.0` | Sistema de contraste adaptativo com degradês premium e acessibilidade auditada. |
-| **ICONOGRAPHY** | `PillIcon Dynamic System` | Abstração de ícones com mapeamento semântico por categoria. |
+| **ICONOGRAPHY** | `Resilient Icon System` | Cascata de fallbacks (FA -> Lucide -> Generic) para garantia de UI. |
 
 ---
 
@@ -59,13 +59,23 @@ O sistema visual evoluiu para suportar múltiplos contextos de leitura sem perde
 
 *   **[ 🎯 ] Recruiter Mode (Absolute Neutralization)**: Trava global que suprime 100% de transformações, filtros, letter-spacing e animações do logo, garantindo uma interface estática de alta densidade informativa.
 *   **[ 🔄 ] High-Retention Carousel**: Pausa de 12 segundos e transição fluida de 2.5 segundos, projetada para permitir que o usuário processe as métricas e o impacto de cada case.
+*   **[ 🖐️ ] Touch-First Navigation**: Implementação de `dragMomentum` e `swipeThreshold` para navegação intuitiva em dispositivos touch.
 *   **[ 🧩 ] Modular Case Narratives**: O sistema de `sections` (Texto, Pilares, Roadmap, Galeria, Links) permite que cada projeto conte sua história de forma personalizada e tecnicamente densa.
 *   **[ 🌊 ] Fluid Layouts & Typography**: Uso extensivo de `clamp()` para garantir que títulos monumentais de 5.5rem se ajustem perfeitamente a telas mobile sem clipping.
 *   **[ 🖼️ ] Intelligent Asset Resolution**: O utilitário `resolveImagePath` agora suporta prefixos de bucket (ex: `divinosapore:file.png`), permitindo gestão multi-projeto escalável.
 
 ---
 
-## 📈 EVOLUÇÃO E ROADMAP (V6.0.0 - HYBRID ENGINE & THEME OVERHAUL)
+## 📈 EVOLUÇÃO E ROADMAP (V6.7.0 - MOBILE UX & RESILIENCE)
+
+### 📅 CHANGELOG TÉCNICO
+
+*   **v6.7.0 (Mobile UX & Resilience Overhaul)**:
+    *   `TOUCH_SWIPE_CAROUSEL`: Implementação de gestos (swipe) no carrossel de projetos usando `framer-motion` drag API.
+    *   `MOBILE_INTERACTION_FIX`: Resolução de conflitos de clique em modais (backdrop vs links) via `target check` e `e.stopPropagation()`.
+    *   `WEBKIT_COMPATIBILITY`: Padronização de prefixos `-webkit-` para máscaras, filtros de vidro e gradientes em Safari/iOS.
+    *   `RESILLIENT_ICON_FALLBACK`: Sistema de renderização em cascata (FontAwesome -> Lucide -> Generic) para garantir UI inquebrável.
+*   **v6.6.0 (Design System Standardization)**:INE & THEME OVERHAUL)
 
 ### 📅 CHANGELOG TÉCNICO
 

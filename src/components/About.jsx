@@ -1,31 +1,32 @@
+import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 import { Target, Zap, TrendingUp, User } from 'lucide-react';
 import styles from './About.module.css';
 import { useMousePosition } from '../utils/useMousePosition';
 
+const qualities = [
+  {
+    title: 'VISÃO DE PRODUTO',
+    desc: 'Não começo pela tela. Começo pelo problema, pelo usuário e pelo impacto real no negócio.',
+    icon: <Target size={24} />,
+    color: '#3B82F6' // Azul - Estratégia
+  },
+  {
+    title: 'EXECUÇÃO TÉCNICA',
+    desc: 'Transformo ideias em sistemas funcionais, com arquitetura sólida, performance e organização.',
+    icon: <Zap size={24} />,
+    color: '#22D3EE' // Ciano - Técnica
+  },
+  {
+    title: 'MENTALIDADE ESTRATÉGICA',
+    desc: 'Experiência prática em operação me permite enxergar gargalos, tomar decisões e construir com visão de longo prazo.',
+    icon: <TrendingUp size={24} />,
+    color: '#34D399' // Verde - Resultados/Operação
+  }
+];
+
 const About = () => {
   const { handleMouseMove } = useMousePosition();
-
-  const qualities = [
-    {
-      title: 'VISÃO DE PRODUTO',
-      desc: 'Não começo pela tela. Começo pelo problema, pelo usuário e pelo impacto real no negócio.',
-      icon: <Target size={24} />,
-      color: '#3B82F6' // Azul - Estratégia
-    },
-    {
-      title: 'EXECUÇÃO TÉCNICA',
-      desc: 'Transformo ideias em sistemas funcionais, com arquitetura sólida, performance e organização.',
-      icon: <Zap size={24} />,
-      color: '#22D3EE' // Ciano - Técnica
-    },
-    {
-      title: 'MENTALIDADE ESTRATÉGICA',
-      desc: 'Experiência prática em operação me permite enxergar gargalos, tomar decisões e construir com visão de longo prazo.',
-      icon: <TrendingUp size={24} />,
-      color: '#34D399' // Verde - Resultados/Operação
-    }
-  ];
 
   return (
     <section id="about" className={`section hitech ${styles.aboutSection}`}>
@@ -82,7 +83,7 @@ const About = () => {
                 </div>
                 <div className={styles.textColumn}>
                   <p className={styles.aboutParagraph}>
-                    Atuei diretamente no dia a dia de empresa — financeiro, atendimento, processos e gestão — entendendo na prática onde as coisas quebram. <strong>Hoje, eu junto tudo isso.</strong>
+                    Atuava diretamente no dia a dia de empresa — financeiro, atendimento, processos e gestão — entendendo na prática onde as coisas quebram. <strong>Hoje, eu junto tudo isso.</strong>
                   </p>
                   <p className={styles.aboutParagraph}>
                     Não trabalho só com código ou interface. Penso em como o produto funciona de verdade: do usuário até a operação, da ideia até a execução. Meu foco é construir soluções que fazem sentido na vida real.
@@ -173,4 +174,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default memo(About);

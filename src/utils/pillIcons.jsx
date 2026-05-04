@@ -185,29 +185,45 @@ export const genericFallbacks = {
 /**
  * Componente PillIcon
  * Tenta renderizar o ícone em cascata baseada no nome da Pill.
+ * Adicionado suporte a fallback real caso o primeiro ícone falhe ou não seja ideal para mobile.
  */
 export const PillIcon = ({ name, color }) => {
   const providers = iconMap[name] || [genericFallbacks.code];
+  
+  // Função auxiliar para renderizar um ícone específico
+  const renderIcon = (provider, isFallback = false) => {
+    if (!provider) return null;
 
-  // Tenta o primeiro provider, se falhar ou não existir, o React apenas não renderiza
-  // Aqui estamos definindo a prioridade na iconMap acima.
-  const primary = providers[0];
+    if (provider.type === 'fa') {
+      try {
+        return (
+          <FontAwesomeIcon 
+            icon={provider.icon} 
+            style={{ 
+              color: color || provider.color || 'inherit', 
+              fontSize: isFallback ? '0.85em' : '0.9em',
+              opacity: isFallback ? 0.8 : 1
+            }} 
+          />
+        );
+      } catch (e) {
+        return null;
+      }
+    }
 
-  if (primary.type === 'fa') {
+    const LucideIcon = provider.icon;
     return (
-      <FontAwesomeIcon 
-        icon={primary.icon} 
-        style={{ color: color || primary.color || 'inherit', fontSize: '0.9em' }} 
+      <LucideIcon 
+        size={isFallback ? 12 : 14} 
+        strokeWidth={2.5} 
+        color={color || provider.color || 'currentColor'} 
       />
     );
-  }
+  };
 
-  const LucideIcon = primary.icon;
-  return (
-    <LucideIcon 
-      size={14} 
-      strokeWidth={2.5} 
-      color={color || primary.color || 'currentColor'} 
-    />
-  );
+  // Tenta renderizar o primeiro, se não houver ou for nulo, tenta o segundo
+  const primaryIcon = renderIcon(providers[0]);
+  if (primaryIcon) return primaryIcon;
+  
+  return renderIcon(providers[1], true) || renderIcon(genericFallbacks.code, true);
 };
