@@ -1,7 +1,7 @@
 ![Lucas Lima Portfolio Banner](public/assets/banner.png)
 
 # 🏛️ LUCAS LIMA | DIGITAL SYSTEMS ENGINEER
-### `INDUSTRIAL STANDARD V5.3.1` • `HIGH-FIDELITY ARCHITECTURE`
+### `INDUSTRIAL STANDARD V5.5.0` • `HIGH-FIDELITY ARCHITECTURE`
 
 > **"Sistemas não começam no código. Começam no entendimento do negócio."**
 > A engenharia digital de alta performance é a arte de transformar caos operacional em estrutura, controle e resultado mensurável.
@@ -17,10 +17,21 @@ Este não é apenas um portfólio. É um **Dashboard de Engenharia** projetado p
 | :--- | :--- | :--- |
 | **ENGINE** | `React 19 + Vite` | Ciclo de renderização otimizado e build-time ultra-reduzido. |
 | **DESIGN SYSTEM** | `Vanilla CSS + Modules` | Zero overhead de bibliotecas; controle total de cada pixel. |
-| **INTELLIGENCE** | `Gemini 1.5 Flash` | Processamento semântico para análise de contextos de negócio. |
+| **IDENTITY** | `Adaptive Portal System` | Evolução visual dinâmica (Portal ➔ Monograma ➔ Completo). |
 | **ARCHITECTURE** | `Modular Data-Driven` | Separação total entre a camada de dados (`data.js`) e visual. |
 | **ANIMATION** | `Framer Motion` | Micro-interações que reforçam a percepção de fluidez e luxo. |
-| **ICONOGRAPHY** | `FontAwesome Brands` | Integração robusta de ícones sociais de alta fidelidade. |
+| **TYPOGRAPHY** | `Exo 2 + Sora` | Estética geométrica de alta tecnologia e legibilidade. |
+
+---
+
+## 📜 HISTÓRICO DE EVOLUÇÃO (CHANGELOG)
+
+### [v5.5.0] - O Portal e a Operação
+- **Identidade Visual**: Implementação do sistema de logo evolutivo (Adaptive Logo Variations).
+- **Branding**: Integração da fonte Exo 2 e esquema de cores Cyan/Blue Glow.
+- **Hero Update**: Nova mensagem focada em "Sistemas & Produtos Digitais" e conexão entre tecnologia e operação.
+- **Terminal**: Refatoração do script de entrada para refletir o "Abertura do Portal".
+- **Sidebar**: Reestruturação vertical do branding com subtítulo fixo.
 
 ---
 

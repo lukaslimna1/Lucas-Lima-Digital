@@ -18,18 +18,23 @@ const Hero = () => {
           {/* Badge de status no estilo Sistema / Terminal */}
           <div className={`badge hitech ${styles.heroBadge}`}>
             <span className="dot-pulse"></span>
-            <span className={styles.badgeText}>SYSTEM_ONLINE // CORE: ACTIVE</span>
+            <span className={styles.badgeText}>PORTAL_ONLINE // CORE: ACTIVE</span>
           </div>
 
           {/* Título de impacto */}
           <h1 className={styles.heroTitle}>
-            Construção de <span className="text-gradient">Sistemas Digitais</span> <br />
+            Construção de <span className="text-gradient">Sistemas & Produtos Digitais</span> <br />
             <span className={styles.heroTitleSub}>com foco em impacto real</span>
           </h1>
           
           {/* Posicionamento profissional */}
           <p className={styles.heroSubtitle}>
-            Eu não apenas desenvolvo interfaces. Eu entendo o problema, aprendo o que for necessário e construo soluções completas — da ideia à execução.
+            Eu não apenas desenvolvo interfaces. Eu entendo o problema, conecto tecnologia, design e operação, e construo soluções digitais que funcionam na vida real.
+          </p>
+
+          {/* Frase de apoio */}
+          <p className={styles.heroSupportPhrase}>
+            Do portal ao produto. Da ideia ao sistema. Do sistema ao impacto.
           </p>
 
           {/* Caixa de terminal destacando o objetivo */}
@@ -47,11 +52,10 @@ const Hero = () => {
             </div>
             <div style={{ position: 'relative', zIndex: 1 }}>
               <div className={styles.terminalHeader}>
-                {">"} ./exec_lucas_lima.sh
+                {">"} ./abrir_portal_lucas_lima
               </div>
               <p className={styles.terminalText}>
-                <span className={styles.terminalSuccess}>SUCCESS:</span> Adaptive builder loaded. <br />
-                <span style={{ opacity: 0.9 }}>Transformando complexidade em produtos funcionais, com foco em usabilidade, performance e resultado.</span>
+                <span className={styles.terminalSuccess}>SUCCESS:</span> Sistema de identidade carregado.
               </p>
             </div>
           </motion.div>

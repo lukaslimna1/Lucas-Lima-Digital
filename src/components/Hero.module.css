@@ -198,11 +198,23 @@
 }
 
 .heroSubtitle {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--text-secondary);
   line-height: 1.6;
-  max-width: 650px;
   margin-bottom: 24px;
+  max-width: 600px;
+}
+
+.heroSupportPhrase {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--accent-cyan);
+  margin-bottom: 32px;
+  letter-spacing: 1px;
+  opacity: 0.9;
+  font-weight: 500;
+  border-left: 2px solid var(--accent-cyan);
+  padding-left: 16px;
 }
 
 .wide {

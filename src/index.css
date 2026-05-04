@@ -19,9 +19,10 @@
   --hitech-green: var(--accent-green);
   --hitech-purple: var(--accent-cyan); /* Redirecionando antigo roxo para Ciano */
 
-  --accent-blue-glow: rgba(59, 130, 246, 0.4);
-  --accent-cyan-glow: rgba(34, 211, 238, 0.4);
+  --accent-blue-glow: rgba(0, 102, 255, 0.4);
+  --accent-cyan-glow: rgba(0, 242, 255, 0.4);
   --accent-green-glow: rgba(52, 211, 153, 0.4);
+  --portal-border: 2px;
 
   --font-heading: 'Sora', sans-serif;
   --font-body: 'Inter', sans-serif;

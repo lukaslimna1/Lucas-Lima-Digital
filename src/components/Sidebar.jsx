@@ -1,8 +1,13 @@
+import { useState, useEffect, useRef } from 'react';
 import { Hexagon, Briefcase, Lightbulb, Code, Mail, X, Terminal, User, Award, Sparkles, Brain } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Sidebar.module.css';
 
 const Sidebar = ({ isMobileOpen, setIsMobileOpen, recruiterMode, setRecruiterMode }) => {
+  const [logoState, setLogoState] = useState('portal'); // portal, monogram, complete
+  const [hasScrolled, setHasScrolled] = useState(false);
+  const [isHeroVisible, setIsHeroVisible] = useState(true);
+
   const menuItems = [
     { name: 'INÍCIO', icon: <Hexagon size={18} />, href: '#home' },
     { name: 'PROJETOS', icon: <Briefcase size={18} />, href: '#projects' },
@@ -15,68 +20,94 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, recruiterMode, setRecruiterMod
     { name: 'CONTATO', icon: <Mail size={18} />, href: '#contact' },
   ];
 
+  // Sequência de Evolução Inicial
+  useEffect(() => {
+    const sequence = async () => {
+      setLogoState('portal');
+      await new Promise(r => setTimeout(r, 1000));
+      setLogoState('monogram');
+      await new Promise(r => setTimeout(r, 1000));
+      setLogoState('complete');
+      await new Promise(r => setTimeout(r, 3000));
+      
+      // Só volta para monograma se não estiver no topo/hero
+      if (hasScrolled || !isHeroVisible) {
+        setLogoState('monogram');
+      }
+    };
+    sequence();
+  }, []);
+
+  // Monitorar Scroll e Visibilidade do Hero
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsHeroVisible(entry.isIntersecting);
+        // Só transiciona se a sequência inicial já terminou
+        if (entry.isIntersecting) {
+          setLogoState('complete');
+        } else {
+          setLogoState('monogram');
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const heroElement = document.querySelector('#home');
+    if (heroElement) observer.observe(heroElement);
+
+    return () => {
+      if (heroElement) observer.unobserve(heroElement);
+    };
+  }, [isHeroVisible, hasScrolled, logoState]);
+
   return (
     <>
       {/* Sidebar Principal - Contém logotipo e navegação principal */}
       <div className={`${styles.sidebar} ${isMobileOpen ? styles.open : ''}`}>
         <div className={styles.sidebarHeader}>
-          <div className={styles.brandContainer}>
-            <motion.div 
-              className={styles.logoPortal}
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              <motion.div 
-                className={`${styles.portalCorner} ${styles.tl}`}
-                initial={{ x: 10, y: 10 }}
-                animate={{ x: 0, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.5 }}
-              ></motion.div>
-              <motion.div 
-                className={`${styles.portalCorner} ${styles.tr}`}
-                initial={{ x: -10, y: 10 }}
-                animate={{ x: 0, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.5 }}
-              ></motion.div>
-              <motion.div 
-                className={`${styles.portalCorner} ${styles.bl}`}
-                initial={{ x: 10, y: -10 }}
-                animate={{ x: 0, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.5 }}
-              ></motion.div>
-              <motion.div 
-                className={`${styles.portalCorner} ${styles.br}`}
-                initial={{ x: -10, y: -10 }}
-                animate={{ x: 0, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.5 }}
-              ></motion.div>
+          <div className={`${styles.brandContainer} ${styles['state' + logoState.charAt(0).toUpperCase() + logoState.slice(1)]}`}>
+            <div className={styles.logoPortal}>
+              <div className={`${styles.portalCorner} ${styles.tl}`}></div>
+              <div className={`${styles.portalCorner} ${styles.tr}`}></div>
+              <div className={`${styles.portalCorner} ${styles.bl}`}></div>
+              <div className={`${styles.portalCorner} ${styles.br}`}></div>
               
-              <motion.div 
-                className={styles.monogram}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1, duration: 0.5 }}
-              >
-                <span className={styles.letterL}>L</span>
-                <span className={styles.letterL}>L</span>
-              </motion.div>
-            </motion.div>
+              <AnimatePresence>
+                {(logoState === 'monogram' || logoState === 'complete') && (
+                  <motion.div 
+                    className={styles.monogram}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <span className={styles.letterL}>L</span>
+                    <span className={styles.letterL}>L</span>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
 
-            <motion.div 
-              className={styles.brandText}
-              initial={{ opacity: 0, x: -10 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.4, duration: 0.5 }}
-            >
-              <h1 className={styles.logoName}>
-                <span className={styles.letterL}>L</span>ucas <span className={styles.letterL}>L</span>ima
-              </h1>
+            <div className={styles.brandText} style={{ textAlign: 'center' }}>
+              <AnimatePresence>
+                {logoState === 'complete' && (
+                  <motion.h1 
+                    className={styles.logoName}
+                    initial={{ opacity: 0, height: 0, y: -10 }}
+                    animate={{ opacity: 1, height: 'auto', y: 0 }}
+                    exit={{ opacity: 0, height: 0, y: -10 }}
+                    transition={{ duration: 0.4 }}
+                  >
+                    <span className={styles.letterL}>L</span>ucas <span className={styles.letterL}>L</span>ima
+                  </motion.h1>
+                )}
+              </AnimatePresence>
               <p className={styles.logoSubtitle}>
                 <span className="dot-pulse"></span>
-                SISTEMAS DIGITAIS
+                SISTEMAS & PRODUTOS DIGITAIS
               </p>
-            </motion.div>
+            </div>
           </div>
           <button 
             className={styles.mobileClose}
