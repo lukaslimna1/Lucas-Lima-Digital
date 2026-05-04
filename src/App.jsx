@@ -6,7 +6,6 @@ import Sidebar from './components/Sidebar';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
 import Logo from './components/Logo';
-import CustomCursor from './components/CustomCursor';
 import SectionSkeleton from './components/SectionSkeleton';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
@@ -43,7 +42,6 @@ function App() {
   return (
     <MotionConfig reducedMotion={recruiterMode ? "always" : "user"}>
       <div className={`app-container ${recruiterMode ? 'recruiter-mode' : ''} ${lightMode ? 'light-mode' : ''}`}>
-        <CustomCursor />
         <div className="bg-noise" />
         
         <Sidebar 
