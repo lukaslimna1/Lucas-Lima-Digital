@@ -13,12 +13,13 @@ const Projects = ({ recruiterMode }) => {
   const { handleMouseMove } = useMousePosition();
   const [activeProject, setActiveProject] = useState(null);
   const [zoomImage, setZoomImage] = useState(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const projects = projectsData;
+  const [displayProjects, setDisplayProjects] = useState([...projects, ...projects, ...projects]);
+  const [currentIndex, setCurrentIndex] = useState(projects.length);
   const [itemsPerView, setItemsPerView] = useState(2);
   const [isManual, setIsManual] = useState(false);
   const [isResetting, setIsResetting] = useState(false);
   const [lastInteraction, setLastInteraction] = useState(0);
-  const projects = projectsData;
 
   // Responsividade do carrossel
   useEffect(() => {
@@ -32,13 +33,12 @@ const Projects = ({ recruiterMode }) => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Lógica de Carrossel Infinito
-  const [displayProjects, setDisplayProjects] = useState([]);
-  
+  // Lógica de Carrossel Infinito - Sincronização
   useEffect(() => {
-    // Triplicamos a lista para o loop infinito
     setDisplayProjects([...projects, ...projects, ...projects]);
-    setCurrentIndex(projects.length);
+    if (currentIndex < projects.length || currentIndex >= projects.length * 2) {
+      setCurrentIndex(projects.length);
+    }
   }, [projects]);
 
   const nextSlide = (manual = false) => {

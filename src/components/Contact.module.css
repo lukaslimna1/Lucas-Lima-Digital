@@ -210,3 +210,41 @@
   .rightCol { margin-top: 0; }
   .title { font-size: 3.5rem; }
 }
+
+@media (max-width: 768px) {
+  .contactLayout {
+    padding-top: 4rem;
+    gap: 2.5rem;
+  }
+  .title {
+    font-size: 2.8rem;
+  }
+  .fullWidthTerminal {
+    padding: 2rem;
+  }
+  .terminalPhrase {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2.2rem;
+  }
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+  .statCard {
+    padding: 1.5rem;
+  }
+  .cardLabel {
+    font-size: 1.2rem;
+  }
+  .fullWidthTerminal {
+    padding: 1.5rem;
+    border-radius: 16px 4px 16px 4px;
+  }
+  .terminalPhrase {
+    font-size: 1.2rem;
+  }
+}

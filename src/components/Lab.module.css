@@ -334,13 +334,35 @@
 }
 
 @media (max-width: 480px) {
+  .labHorizontalLayout {
+    margin-top: 30px;
+    gap: 40px;
+  }
   .sectorId {
     font-size: 0.9rem;
   }
+  .carouselContainer {
+    height: 420px;
+  }
   .hitechCardContent {
-    padding: 24px;
+    padding: 20px;
+  }
+  .capCategory {
+    margin-bottom: 20px;
+    font-size: 0.7rem;
+  }
+  .capIcon {
+    width: 44px;
+    height: 44px;
   }
   .capTitle {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+  }
+  .capDesc {
+    font-size: 0.9rem;
+  }
+  .cardFooter {
+    margin-top: 20px;
+    padding-top: 15px;
   }
 }

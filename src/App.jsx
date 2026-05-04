@@ -6,6 +6,8 @@ import Sidebar from './components/Sidebar';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
 import Logo from './components/Logo';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 // --- COMPONENTES NÃO-CRÍTICOS (Lazy Loading para Otimização) ---
 const About = lazy(() => import('./components/About'));
@@ -90,6 +92,9 @@ function App() {
             </div>
           </footer>
         </main>
+        
+        <Analytics />
+        <SpeedInsights />
       </div>
     </MotionConfig>
   );

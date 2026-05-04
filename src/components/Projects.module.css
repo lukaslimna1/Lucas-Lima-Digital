@@ -345,8 +345,8 @@
 .modalBackdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(4px);
+  background: rgba(3, 4, 7, 0.95);
+  backdrop-filter: blur(15px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -358,18 +358,17 @@
   width: 100%;
   max-width: 1000px;
   max-height: 90vh;
-  background: #05050a;
-  border: 1px solid rgba(34, 211, 238, 0.2);
-  border-radius: 12px;
+  background: #0a0c10;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 40px 8px 40px 8px;
   position: relative;
   overflow-y: auto;
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5), 0 0 20px rgba(34, 211, 238, 0.05);
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent-cyan) transparent;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+  scrollbar-width: none;
 }
 
 .modalContent::-webkit-scrollbar {
-  width: 6px;
+  display: none;
 }
 .modalClosure {
   margin-top: 4rem;
@@ -446,13 +445,14 @@
 .hitechModalHeader {
   position: sticky;
   top: 0;
-  background: rgba(5, 5, 10, 0.95);
-  padding: 1.5rem 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  left: 0;
+  right: 0;
   z-index: 10;
+  padding: 20px 40px;
+  background: linear-gradient(to bottom, #0a0c10 70%, transparent);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .modalClose {
@@ -781,16 +781,43 @@
 }
 
 @media (max-width: 768px) {
+  .projectsHeader {
+    padding-left: 0;
+    text-align: center;
+    align-items: center;
+  }
+  .projectsCarouselContainer {
+    margin-top: 2rem;
+  }
+  .carouselTrackWrapper {
+    padding: 0 10px;
+  }
+  .carouselTrack {
+    gap: 0;
+  }
+  
+  /* Modal Mobile */
+  .modalBackdrop {
+    padding: 0;
+  }
+  .modalContent {
+    max-height: 100vh;
+    height: 100vh;
+    border-radius: 0;
+    border: none;
+  }
   .modalBodyContent {
-    padding: 3rem 1.5rem;
+    padding: 20px;
+    padding-top: 0;
+  }
+  .hitechModalHeader {
+    padding: 15px 20px;
   }
   .modalTitle {
-    font-size: clamp(2rem, 10vw, 3.5rem);
+    font-size: 2.2rem;
   }
   .modalSubtitle {
-    font-size: 0.9rem;
-    letter-spacing: 0.15em;
-    margin-bottom: 2rem;
+    font-size: 1rem;
   }
   .modalManifesto {
     padding: 1.5rem;
@@ -800,24 +827,50 @@
   .modalSections {
     gap: 3rem;
   }
+  .pillarsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .galleryGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
   .techTags {
-    gap: 6px;
+    gap: 8px;
+    margin-bottom: 2rem;
   }
   .techTag {
     padding: 6px 12px;
     font-size: 0.65rem;
   }
-  .cardHeader, .cardMain, .cardFooter {
-    padding-left: 20px;
-    padding-right: 20px;
+  .modalSectionTitle {
+    font-size: 0.8rem;
+  }
+  .modalSectionDesc {
+    font-size: 0.95rem;
   }
   .modalActions {
     flex-direction: column;
     gap: 12px;
-    align-items: center;
+    padding-bottom: 3rem;
   }
   .actionBtn {
     width: 100%;
     min-width: 0;
+    justify-content: center;
   }
 }
+
+@media (max-width: 480px) {
+  .modalTitle {
+    font-size: 1.8rem;
+  }
+  .modalManifesto p {
+    font-size: 1rem;
+  }
+  .cardHeader, .cardMain, .cardFooter {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+

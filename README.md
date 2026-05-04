@@ -69,7 +69,13 @@ O sistema visual evoluiu para suportar múltiplos contextos de leitura sem perde
 
 ### 📅 CHANGELOG TÉCNICO
 
-*   **v6.2.0 (ATUAL)**:
+*   **v6.3.0 (Estabilização Mobile & Social)**:
+    *   `SOCIAL_SEO_PORTUGUESE`: Localização de metadados OG/Twitter e caminhos absolutos para imagens.
+    *   `CAROUSEL_PERFORMANCE`: Inicialização de estado otimizada no `Projects.jsx` para renderização instantânea.
+    *   `MOBILE_UX_STABILIZATION`: Modais full-screen, ajustes de grid no Contato e Lab para iPhone SE.
+    *   `MONITORING_INTEGRATION`: Implementação de **Vercel Analytics** e **Speed Insights** para monitoramento de performance e tráfego.
+    *   `TECHNICAL_UI_POLISH`: Remoção de scrollbars nativas nos modais para estética limpa.
+*   **v6.2.0**:
     *   `PREMIUM_UI_POLISH`: Refinamento de espaçamentos (Pills & Sections) nos Modais de Case.
     *   `SPACING_UTILITIES`: Implementação de classes de margem dinâmica (`mbLarge`, `mbMedium`) para ritmo visual.
     *   `UX_STABILIZATION`: Ajuste de gap em tech-tags para leitura premium.
