@@ -9,18 +9,17 @@ export default defineConfig({
     allowedHosts: true
   },
   build: {
-    minify: 'terser',
+    minify: 'esbuild',
     cssMinify: true,
     rollupOptions: {
       output: {
         manualChunks: {
-          'react-vendor': ['react', 'react-dom'],
-          'framer-motion': ['framer-motion'],
-          'icons': ['lucide-react', '@fortawesome/react-fontawesome', '@fortawesome/free-solid-svg-icons']
+          'vendor': ['react', 'react-dom', 'framer-motion'],
+          'icons': ['lucide-react', '@fortawesome/react-fontawesome']
         }
       }
     },
-    chunkSizeWarningLimit: 1000
+    chunkSizeWarningLimit: 1200
   }
 })
 
