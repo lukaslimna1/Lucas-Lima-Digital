@@ -2,11 +2,22 @@ import { useState, useEffect, useRef } from 'react';
 import { Hexagon, Briefcase, Lightbulb, Code, Mail, X, Terminal, User, Award, Sparkles, Brain, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Sidebar.module.css';
+import { getLogoUrl } from '../lib/supabase';
 
 const Sidebar = ({ isMobileOpen, setIsMobileOpen, recruiterMode, setRecruiterMode, lightMode, setLightMode }) => {
   const [logoState, setLogoState] = useState('portal'); // portal, monogram, complete
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isHeroVisible, setIsHeroVisible] = useState(true);
+
+  // URLs dos Logos
+  const logoUrls = {
+    monogram: lightMode 
+      ? getLogoUrl('Monograma-Oficial-ColorLigth.svg') 
+      : getLogoUrl('Monograma-Oficial-ColorDark.svg'),
+    complete: lightMode 
+      ? getLogoUrl('Logo-Oficial-ColorLight.svg') 
+      : getLogoUrl('Logo-Oficial-ColorDark.svg')
+  };
 
   const menuItems = [
     { name: 'INÍCIO', icon: <Hexagon size={18} />, href: '#home' },
@@ -67,34 +78,52 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, recruiterMode, setRecruiterMod
       <div className={`${styles.sidebar} ${isMobileOpen ? styles.open : ''}`}>
         <div className={styles.sidebarHeader}>
           <div className={styles.brandWrapper}>
-            <div className={`${styles.brandContainer} ${styles['state' + logoState.charAt(0).toUpperCase() + logoState.slice(1)]}`}>
+            <div 
+              className={`${styles.brandContainer} ${styles['state' + logoState.charAt(0).toUpperCase() + logoState.slice(1)]}`}
+              onClick={() => setLogoState(logoState === 'complete' ? 'monogram' : 'complete')}
+            >
               <div className={styles.logoPortal}>
                 <div className={`${styles.portalCorner} ${styles.tl}`}></div>
                 <div className={`${styles.portalCorner} ${styles.tr}`}></div>
                 <div className={`${styles.portalCorner} ${styles.bl}`}></div>
                 <div className={`${styles.portalCorner} ${styles.br}`}></div>
                 
-                <AnimatePresence>
-                  {(logoState === 'monogram' || logoState === 'complete') && (
-                    <motion.div 
-                      className={styles.monogram}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.8 }}
+                <AnimatePresence mode="wait">
+                  {(logoState === 'monogram' || logoState === 'portal') ? (
+                    <motion.img 
+                      key="monogram"
+                      src={logoUrls.monogram}
+                      className={styles.monogramImg}
+                      initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
+                      animate={{ opacity: 1, scale: 1, rotate: 0 }}
+                      exit={{ opacity: 0, scale: 0.5, rotate: 10 }}
+                      transition={{ duration: 0.5, ease: "easeOut" }}
+                    />
+                  ) : (
+                    <motion.img 
+                      key="complete"
+                      src={logoUrls.complete}
+                      className={styles.completeLogoImg}
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -10 }}
                       transition={{ duration: 0.5 }}
-                    >
-                      <span className={styles.letterL}>L</span>
-                      <span className={styles.letterL}>L</span>
-                    </motion.div>
+                    />
                   )}
                 </AnimatePresence>
               </div>
 
-              <div className={styles.brandText}>
-                <h1 className={styles.logoName}>
-                  <span className={styles.letterL}>L</span>ucas <span className={styles.letterL}>L</span>ima
-                </h1>
-              </div>
+              {logoState === 'monogram' && (
+                <div className={styles.brandText}>
+                  <motion.h1 
+                    className={styles.logoName}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                  >
+                    Lucas Lima
+                  </motion.h1>
+                </div>
+              )}
             </div>
 
             <AnimatePresence>

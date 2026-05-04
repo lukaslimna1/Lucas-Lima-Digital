@@ -1037,3 +1037,8 @@ section {
 .light-mode .footer p {
   color: #64748B !important;
 }
+.mobile-logo-img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
