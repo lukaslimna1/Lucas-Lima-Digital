@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
-import { Hexagon, Briefcase, Lightbulb, Code, Mail, X, Terminal, User, Award, Sparkles, Brain } from 'lucide-react';
+import { Hexagon, Briefcase, Lightbulb, Code, Mail, X, Terminal, User, Award, Sparkles, Brain, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Sidebar.module.css';
 
-const Sidebar = ({ isMobileOpen, setIsMobileOpen, recruiterMode, setRecruiterMode }) => {
+const Sidebar = ({ isMobileOpen, setIsMobileOpen, recruiterMode, setRecruiterMode, lightMode, setLightMode }) => {
   const [logoState, setLogoState] = useState('portal'); // portal, monogram, complete
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isHeroVisible, setIsHeroVisible] = useState(true);
@@ -66,48 +66,51 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, recruiterMode, setRecruiterMod
       {/* Sidebar Principal - Contém logotipo e navegação principal */}
       <div className={`${styles.sidebar} ${isMobileOpen ? styles.open : ''}`}>
         <div className={styles.sidebarHeader}>
-          <div className={`${styles.brandContainer} ${styles['state' + logoState.charAt(0).toUpperCase() + logoState.slice(1)]}`}>
-            <div className={styles.logoPortal}>
-              <div className={`${styles.portalCorner} ${styles.tl}`}></div>
-              <div className={`${styles.portalCorner} ${styles.tr}`}></div>
-              <div className={`${styles.portalCorner} ${styles.bl}`}></div>
-              <div className={`${styles.portalCorner} ${styles.br}`}></div>
-              
-              <AnimatePresence>
-                {(logoState === 'monogram' || logoState === 'complete') && (
-                  <motion.div 
-                    className={styles.monogram}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.8 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <span className={styles.letterL}>L</span>
-                    <span className={styles.letterL}>L</span>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+          <div className={styles.brandWrapper}>
+            <div className={`${styles.brandContainer} ${styles['state' + logoState.charAt(0).toUpperCase() + logoState.slice(1)]}`}>
+              <div className={styles.logoPortal}>
+                <div className={`${styles.portalCorner} ${styles.tl}`}></div>
+                <div className={`${styles.portalCorner} ${styles.tr}`}></div>
+                <div className={`${styles.portalCorner} ${styles.bl}`}></div>
+                <div className={`${styles.portalCorner} ${styles.br}`}></div>
+                
+                <AnimatePresence>
+                  {(logoState === 'monogram' || logoState === 'complete') && (
+                    <motion.div 
+                      className={styles.monogram}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.8 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <span className={styles.letterL}>L</span>
+                      <span className={styles.letterL}>L</span>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              <div className={styles.brandText}>
+                <h1 className={styles.logoName}>
+                  <span className={styles.letterL}>L</span>ucas <span className={styles.letterL}>L</span>ima
+                </h1>
+              </div>
             </div>
 
-            <div className={styles.brandText} style={{ textAlign: 'center' }}>
-              <AnimatePresence>
-                {logoState === 'complete' && (
-                  <motion.h1 
-                    className={styles.logoName}
-                    initial={{ opacity: 0, height: 0, y: -10 }}
-                    animate={{ opacity: 1, height: 'auto', y: 0 }}
-                    exit={{ opacity: 0, height: 0, y: -10 }}
-                    transition={{ duration: 0.4 }}
-                  >
-                    <span className={styles.letterL}>L</span>ucas <span className={styles.letterL}>L</span>ima
-                  </motion.h1>
-                )}
-              </AnimatePresence>
-              <p className={styles.logoSubtitle}>
-                <span className="dot-pulse"></span>
-                SISTEMAS & PRODUTOS DIGITAIS
-              </p>
-            </div>
+            <AnimatePresence>
+              {logoState === 'complete' && (
+                <motion.p 
+                  className={styles.logoSubtitle}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                  <span className="dot-pulse"></span>
+                  Sistemas & Produtos Digitais
+                </motion.p>
+              )}
+            </AnimatePresence>
           </div>
           <button 
             className={styles.mobileClose}
@@ -136,18 +139,30 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, recruiterMode, setRecruiterMod
           </ul>
         </nav>
 
-        {/* Rodapé com controle do Modo Recrutador */}
         <div className={styles.sidebarFooter}>
-          <button 
-            onClick={() => setRecruiterMode(!recruiterMode)}
-            className={`${styles.recruiterBtn} ${recruiterMode ? styles.active : ''}`}
-          >
-            <div className="hitech-border-glow"></div>
-            <Terminal size={18} className={styles.footerIcon} />
-            <span className={styles.footerText}>Modo Recrutador</span>
-          </button>
+          <div className={styles.footerControls}>
+            <button 
+              onClick={() => setRecruiterMode(!recruiterMode)}
+              className={`${styles.footerBtn} ${recruiterMode ? styles.active : ''}`}
+              title="Modo Recrutador"
+            >
+              <div className="hitech-border-glow"></div>
+              <Terminal size={18} />
+              <span className={styles.btnLabel}>Recrutador</span>
+            </button>
+
+            <button 
+              onClick={() => setLightMode(!lightMode)}
+              className={`${styles.footerBtn} ${lightMode ? styles.active : ''}`}
+              title="Alternar Tema"
+            >
+              <div className="hitech-border-glow"></div>
+              {lightMode ? <Moon size={18} /> : <Sun size={18} />}
+              <span className={styles.btnLabel}>{lightMode ? 'Escuro' : 'Claro'}</span>
+            </button>
+          </div>
           <p className={styles.recruiterDesc}>
-            {recruiterMode ? 'Visual simplificado' : 'Experiência imersiva'}
+            {recruiterMode ? 'Modo Leitura: Ativo' : (lightMode ? 'Portal: Modo Claro' : 'Portal: Modo Escuro')}
           </p>
         </div>
       </div>

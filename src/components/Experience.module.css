@@ -36,7 +36,7 @@
   font-weight: 950;
   color: var(--step-color);
   opacity: 0.03;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   pointer-events: none;
   line-height: 1;
 }
@@ -65,7 +65,7 @@
 }
 
 .cellLabel {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 0.55rem;
   font-weight: 800;
   color: var(--text-secondary);

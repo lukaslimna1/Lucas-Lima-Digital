@@ -27,7 +27,7 @@ const Contact = () => {
           >
             <div className={styles.badge}>
               <span className={styles.badgeDot}></span>
-              SYSTEM_ACCESS // CONTACT_LAYER
+              OPEN_PORTAL // CONTACT_LAYER
             </div>
 
             <h2 className={styles.title}>
@@ -49,7 +49,7 @@ const Contact = () => {
             transition={{ delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h3 className={styles.interfaceTitle}>INTERFACE DE CONEXÃO</h3>
+            <h3 className={styles.interfaceTitle}>PORTAL DE CONEXÃO</h3>
 
             <div className={styles.statsGrid}>
               {contactChannels.map((channel) => (
@@ -91,7 +91,7 @@ const Contact = () => {
             transition={{ delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <span className={styles.terminalLabel}>&gt; ./EXEC_LUCAS_LIMA.SH</span>
+            <span className={styles.terminalLabel}>&gt; ./OPEN_LUCAS_LIMA_PORTAL</span>
             <div className={styles.terminalPhrase}>
               <span>SUCCESS: Adaptive builder loaded.</span>
               "Construir sem entender é execução. <br />

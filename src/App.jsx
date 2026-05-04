@@ -1,5 +1,6 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
 import { Menu } from 'lucide-react';
+import { MotionConfig } from 'framer-motion';
 import './index.css';
 
 // --- COMPONENTES CRÍTICOS (Carregamento Imediato) ---
@@ -26,6 +27,7 @@ const SectionLoader = () => (
 function App() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [recruiterMode, setRecruiterMode] = useState(false);
+  const [lightMode, setLightMode] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -43,48 +45,52 @@ function App() {
   }, [scrolled]);
 
   return (
-    <div className={`app-container ${recruiterMode ? 'recruiter-mode' : ''}`}>
-      <div className="bg-noise" />
-      
-      <Sidebar 
-        isMobileOpen={isMobileOpen} 
-        setIsMobileOpen={setIsMobileOpen} 
-        recruiterMode={recruiterMode}
-        setRecruiterMode={setRecruiterMode}
-      />
-      
-      <div className={`mobile-header ${scrolled ? 'scrolled' : ''}`}>
-        <div className="mobile-logo-wrapper">
-          <span className="mobile-logo">LUCAS LIMA</span>
-          <span className="mobile-tagline">Construtor de Sistemas e Produtos Digitais</span>
-        </div>
-        <button onClick={() => setIsMobileOpen(true)} className="mobile-menu-btn">
-          <Menu size={24} />
-        </button>
-      </div>
-
-      <main className="main-content">
-        <Hero />
-        <Projects />
+    <MotionConfig reducedMotion={recruiterMode ? "always" : "user"}>
+      <div className={`app-container ${recruiterMode ? 'recruiter-mode' : ''} ${lightMode ? 'light-mode' : ''}`}>
+        <div className="bg-noise" />
         
-        <Suspense fallback={<SectionLoader />}>
-          <Creation />
-          <Framework />
-          <Lab />
-          <About />
-          <Experience />
-          <Diferencial />
-          <Contact />
-        </Suspense>
+        <Sidebar 
+          isMobileOpen={isMobileOpen} 
+          setIsMobileOpen={setIsMobileOpen} 
+          recruiterMode={recruiterMode}
+          setRecruiterMode={setRecruiterMode}
+          lightMode={lightMode}
+          setLightMode={setLightMode}
+        />
         
-        <footer className="footer">
-          <div className="footer-content">
-            <div className="footer-line"></div>
-            <p>© {new Date().getFullYear()} Lucas Lima. Otimizado para alta performance e experiência imersiva.</p>
+        <div className={`mobile-header ${scrolled ? 'scrolled' : ''}`}>
+          <div className="mobile-logo-wrapper">
+            <span className="mobile-logo">LUCAS LIMA</span>
+            <span className="mobile-tagline">Construtor de Sistemas e Produtos Digitais</span>
           </div>
-        </footer>
-      </main>
-    </div>
+          <button onClick={() => setIsMobileOpen(true)} className="mobile-menu-btn">
+            <Menu size={24} />
+          </button>
+        </div>
+  
+        <main className="main-content">
+          <Hero />
+          <Projects recruiterMode={recruiterMode} lightMode={lightMode} />
+          
+          <Suspense fallback={<SectionLoader />}>
+            <Creation />
+            <Framework />
+            <Lab recruiterMode={recruiterMode} />
+            <About />
+            <Experience />
+            <Diferencial />
+            <Contact />
+          </Suspense>
+          
+          <footer className="footer">
+            <div className="footer-content">
+              <div className="footer-line"></div>
+              <p>© {new Date().getFullYear()} Lucas Lima. Otimizado para alta performance e experiência imersiva.</p>
+            </div>
+          </footer>
+        </main>
+      </div>
+    </MotionConfig>
   );
 }
 

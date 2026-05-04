@@ -5,7 +5,7 @@ import { labExperiments } from '../data/labExperiments';
 import styles from './Lab.module.css';
 import { useMousePosition } from '../utils/useMousePosition';
 
-const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
+const SectorCarousel = ({ experiments, category, catIdx, iconMap, recruiterMode }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(1);
   const intervalRef = useRef(null);
@@ -26,10 +26,10 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
   }, [nextSlide]);
 
   useEffect(() => {
-    if (experiments.length <= 1) return;
+    if (experiments.length <= 1 || recruiterMode) return;
     startTimer();
     return () => clearInterval(intervalRef.current);
-  }, [experiments.length, startTimer]);
+  }, [experiments.length, startTimer, recruiterMode]);
 
   const handleCardClick = () => {
     if (experiments.length <= 1) return;
@@ -50,7 +50,7 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
     <div className={`${styles.labSector} ${activeColorClass}`}>
       <div className={styles.sectorHeader}>
         <div className={styles.sectorMainTitle}>
-          <div className={styles.sectorId}>AREA_0{catIdx + 1}</div>
+          <div className={styles.sectorId}>PORTAL_0{catIdx + 1}</div>
           <div className={styles.sectorName}>// {category}</div>
         </div>
         <div className={styles.sectorIndicator}>
@@ -72,7 +72,7 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
             initial="enter"
             animate="center"
             exit="exit"
-            transition={{ x: { type: "spring", stiffness: 300, damping: 30 }, opacity: { duration: 0.3 } }}
+            transition={recruiterMode ? { duration: 0 } : { x: { type: "spring", stiffness: 300, damping: 30 }, opacity: { duration: 0.3 } }}
             className={styles.carouselSlide}
             onClick={handleCardClick}
           >
@@ -95,7 +95,7 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
                 <div className="corner-decor bottom-right"></div>
                 <div className={styles.capCategory}>
                   <span className={styles.categoryDot}></span>
-                  EXP_ID_{exp.id.toString().padStart(3, '0')}
+                  PORTAL_ID_{exp.id.toString().padStart(3, '0')}
                   <span className={`${styles.statusLabel} ${styles[exp.status?.toLowerCase()]}`}>
                     [ {exp.statusLabel.toUpperCase()} ]
                   </span>
@@ -153,7 +153,7 @@ const SectorCarousel = ({ experiments, category, catIdx, iconMap }) => {
   );
 };
 
-const Lab = () => {
+const Lab = ({ recruiterMode }) => {
   const iconMap = {
     BrainCircuit, Sparkles, MousePointer2, Cpu, TrendingUp, Layout, Zap
   };
@@ -172,8 +172,8 @@ const Lab = () => {
         >
           LABORATÓRIO DE <span className="text-gradient">SISTEMAS & IA</span>
         </motion.h2>
-        <p className="section-subtitle">
-          Onde ideias viram testes, testes viram sistemas e sistemas evoluem em produção.
+        <p className={`section-subtitle ${styles.labSubtitle}`}>
+          Onde hipóteses viram testes, testes viram sistemas e sistemas evoluem em produto.
         </p>
       </div>
 
@@ -185,6 +185,7 @@ const Lab = () => {
             catIdx={catIdx}
             experiments={labExperiments.filter(exp => exp.group === cat)}
             iconMap={iconMap}
+            recruiterMode={recruiterMode}
           />
         ))}
       </div>

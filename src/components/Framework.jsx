@@ -140,7 +140,7 @@ const Framework = () => {
                   <div className={styles.capCategory}>
                     <div className={styles.telemetryRow}>
                       <span className={styles.categoryDot}></span>
-                      <span className={styles.telemetryLabel}>SYSTEM_PHASE:</span>
+                      <span className={styles.telemetryLabel}>PORTAL_PHASE:</span>
                       <span className={styles.telemetryValue}>{step.label.replace('[', '').replace(']', '')}</span>
                     </div>
                     <div className={styles.telemetryRow}>

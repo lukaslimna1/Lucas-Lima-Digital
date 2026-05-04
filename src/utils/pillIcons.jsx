@@ -65,6 +65,10 @@ export const iconMap = {
     { type: 'fa', icon: faFigma, color: '#31A8FF' },
     { type: 'lucide', icon: Layers }
   ],
+  'UI/UX Design': [
+    { type: 'lucide', icon: Layout, color: '#F472B6' },
+    { type: 'fa', icon: faCube }
+  ],
   'UI/UX': [
     { type: 'lucide', icon: Layout },
     { type: 'fa', icon: faCube }
@@ -72,6 +76,10 @@ export const iconMap = {
   'Design': [
     { type: 'lucide', icon: PenTool },
     { type: 'fa', icon: faFigma }
+  ],
+  'React & Node': [
+    { type: 'fa', icon: faReact, color: '#61DAFB' },
+    { type: 'fa', icon: faNodeJs }
   ],
 
   // --- BACKEND & INFRA ---
@@ -122,6 +130,34 @@ export const iconMap = {
   'Stripe': [
     { type: 'lucide', icon: Zap, color: '#635BFF' },
     { type: 'lucide', icon: Globe }
+  ],
+  'Plataforma AI': [
+    { type: 'fa', icon: faBrain, color: '#FFD700' },
+    { type: 'lucide', icon: Cpu }
+  ],
+  'IA Assistiva': [
+    { type: 'fa', icon: faBrain, color: '#FCD34D' },
+    { type: 'lucide', icon: Cpu }
+  ],
+  'MVP Concluído': [
+    { type: 'lucide', icon: ShieldCheck, color: '#34D399' },
+    { type: 'fa', icon: faRocket }
+  ],
+  'Gestão B2B': [
+    { type: 'lucide', icon: Briefcase, color: '#60A5FA' },
+    { type: 'lucide', icon: Globe }
+  ],
+  'Escalável': [
+    { type: 'fa', icon: faRocket, color: '#F87171' },
+    { type: 'lucide', icon: Wind }
+  ],
+  'Branding': [
+    { type: 'lucide', icon: PenTool, color: '#F472B6' },
+    { type: 'fa', icon: faFigma }
+  ],
+  'Recrutamento': [
+    { type: 'lucide', icon: Search, color: '#818CF8' },
+    { type: 'lucide', icon: Briefcase }
   ],
   'B2B/B2C': [
     { type: 'lucide', icon: Layers },

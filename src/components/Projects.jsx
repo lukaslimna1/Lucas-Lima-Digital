@@ -9,45 +9,94 @@ import { useMousePosition } from '../utils/useMousePosition';
 import CaseStudyModal from './CaseStudyModal';
 import OpportunityModal from './OpportunityModal';
 
-const Projects = () => {
+const Projects = ({ recruiterMode }) => {
   const { handleMouseMove } = useMousePosition();
   const [activeProject, setActiveProject] = useState(null);
   const [zoomImage, setZoomImage] = useState(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [itemsPerView, setItemsPerView] = useState(3);
+  const [itemsPerView, setItemsPerView] = useState(2);
+  const [isManual, setIsManual] = useState(false);
+  const [isResetting, setIsResetting] = useState(false);
+  const [lastInteraction, setLastInteraction] = useState(0);
   const projects = projectsData;
+
+  // Responsividade do carrossel
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) setItemsPerView(1.2); 
+      else if (window.innerWidth < 1024) setItemsPerView(1.5); 
+      else setItemsPerView(2); 
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Lógica de Carrossel Infinito
   const [displayProjects, setDisplayProjects] = useState([]);
   
   useEffect(() => {
-    // Triplicamos a lista para garantir um scroll infinito suave em ambas as direções
+    // Triplicamos a lista para o loop infinito
     setDisplayProjects([...projects, ...projects, ...projects]);
-    // Começamos no meio para poder ir para trás também
     setCurrentIndex(projects.length);
   }, [projects]);
 
-  const nextSlide = () => {
+  const nextSlide = (manual = false) => {
+    if (manual) setLastInteraction(Date.now());
+    setIsManual(manual);
+    setIsResetting(false);
     setCurrentIndex(prev => prev + 1);
   };
 
-  const prevSlide = () => {
+  const prevSlide = (manual = false) => {
+    if (manual) setLastInteraction(Date.now());
+    setIsManual(manual);
+    setIsResetting(false);
     setCurrentIndex(prev => prev - 1);
   };
 
-  // Reseta a posição sem animação quando chega nas extremidades para criar a ilusão de infinito
+  // Reset sutil sem animação brusca
   useEffect(() => {
     const total = projects.length;
-    if (currentIndex >= total * 2) {
-      setTimeout(() => {
-        setCurrentIndex(total);
-      }, 300); // Espera a animação terminar
-    } else if (currentIndex < total) {
-      setTimeout(() => {
-        setCurrentIndex(total * 2 - 1);
-      }, 300);
+    if (currentIndex >= total * 2 || currentIndex <= 0) {
+      // Tempo para a animação atual (lenta ou rápida) terminar
+      const timeout = isManual ? 1200 : 20000; 
+      
+      const timer = setTimeout(() => {
+        setIsResetting(true); 
+        if (currentIndex >= total * 2) setCurrentIndex(total);
+        else if (currentIndex <= 0) setCurrentIndex(total);
+      }, timeout);
+      
+      return () => clearTimeout(timer);
     }
-  }, [currentIndex, projects.length]);
+  }, [currentIndex, projects.length, isManual]);
+
+  // Retomar Auto-play após 10 segundos de inatividade
+  useEffect(() => {
+    if (!isManual) return;
+    
+    const checkInactivity = setInterval(() => {
+      if (!isManual || activeProject || recruiterMode) return;
+      
+      if (Date.now() - lastInteraction > 10000) { // 10 segundos
+        setIsManual(false);
+      }
+    }, 1000);
+
+    return () => clearInterval(checkInactivity);
+  }, [isManual, lastInteraction, activeProject, recruiterMode]);
+
+  // Auto-play Contínuo e Lento
+  useEffect(() => {
+    if (activeProject || isManual || recruiterMode) return;
+    
+    const interval = setInterval(() => {
+      nextSlide(false);
+    }, 20000); 
+
+    return () => clearInterval(interval);
+  }, [activeProject, isManual, recruiterMode]);
 
   return (
     <motion.section 
@@ -77,7 +126,10 @@ const Projects = () => {
           <motion.div 
             className={styles.carouselTrack}
             animate={{ x: `-${currentIndex * (100 / itemsPerView)}%` }}
-            transition={{ type: "spring", stiffness: 200, damping: 25 }}
+            transition={{ 
+              duration: isResetting || recruiterMode ? 0 : (isManual ? 0.5 : 20), 
+              ease: isResetting || recruiterMode ? "linear" : (isManual ? "easeOut" : "linear")
+            }}
           >
             {displayProjects.map((project, idx) => (
               <div 
@@ -86,7 +138,7 @@ const Projects = () => {
                 style={{ flex: `0 0 ${100 / itemsPerView}%`, padding: '0 12px' }}
               >
                 <motion.div 
-                  className="hitech-card-wrapper"
+                  className={`hitech-card-wrapper ${styles.projectsCardWrapper}`}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -94,7 +146,7 @@ const Projects = () => {
                   onMouseMove={handleMouseMove}
                   onClick={() => setActiveProject(project)}
                 >
-                  <div className="hitech-card glass-panel" style={{ height: '100%', display: 'flex', flexDirection: 'column', cursor: 'pointer' }}>
+                  <div className={`hitech-card glass-panel ${styles.projectsCardContent}`} style={{ cursor: 'pointer' }}>
                     <div className="hitech-asymmetric-aura"></div>
                     <div className="hitech-artistic-fusion"></div>
                     <div className="hitech-artistic-grain"></div>
@@ -119,7 +171,7 @@ const Projects = () => {
                     
                     <div className={styles.cardFooter}>
                       <div className={styles.techTags}>
-                        {project.tech.slice(0,3).map(t => (
+                        {project.tech.slice(0, 3).map(t => (
                           <span key={t} className={`hitech ${styles.techTag}`}>
                             <PillIcon name={t} />
                             <span>{t}</span>
@@ -147,7 +199,7 @@ const Projects = () => {
         </div>
 
         <div className={styles.carouselControls}>
-          <button className={`carousel-btn hitech ${styles.carouselBtn}`} onClick={prevSlide}>
+          <button className={`carousel-btn hitech ${styles.carouselBtn}`} onClick={() => prevSlide(true)}>
             <div className="hitech-border-glow"></div>
             <ChevronLeft size={24} style={{ position: 'relative', zIndex: 1 }} />
           </button>
@@ -156,12 +208,12 @@ const Projects = () => {
             {projects.map((_, idx) => (
               <div 
                 key={idx} 
-                className={`${styles.indicator} ${idx === 0 ? styles.active : ''}`}
+                className={`${styles.indicator} ${(currentIndex % projects.length) === idx ? styles.active : ''}`}
               ></div>
             ))}
           </div>
 
-          <button className={`carousel-btn hitech ${styles.carouselBtn}`} onClick={nextSlide}>
+          <button className={`carousel-btn hitech ${styles.carouselBtn}`} onClick={() => nextSlide(true)}>
             <div className="hitech-border-glow"></div>
             <ChevronRight size={24} style={{ position: 'relative', zIndex: 1 }} />
           </button>

@@ -3,7 +3,7 @@ export const trampoFacil = {
   title: 'Trampo Fácil — Plataforma de Recrutamento Inteligente',
   category: 'Produto Digital & Plataforma de Recrutamento',
   short: 'Projeto próprio focado em reduzir fricção no processo de contratação, com uso de automação e IA para melhorar a experiência de candidatos e empresas.',
-  tech: ['React 19', 'Supabase', 'Gemini AI', 'Stripe', 'Vite'],
+  tech: ['React 19', 'Recrutamento', 'IA Assistiva', 'Supabase', 'Stripe'],
   
   manifesto: 'O objetivo do Trampo Fácil é ir além de listas de vagas. A proposta é criar um sistema mais simples, direto e inteligente, onde a tecnologia ajuda na tomada de decisão — em vez de dificultar o processo.',
   

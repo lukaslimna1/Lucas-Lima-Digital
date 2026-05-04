@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { X, ChevronRight, ShieldCheck, Briefcase, Pill as PillIcon } from 'lucide-react';
+import { X, ChevronRight, ShieldCheck, Briefcase } from 'lucide-react';
+import { PillIcon } from '../utils/pillIcons';
 import styles from './Projects.module.css';
 
 const CaseStudyModal = ({ project, onClose, onZoomImage }) => {

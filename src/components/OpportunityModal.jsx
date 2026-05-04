@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { X, ChevronRight, ShieldCheck, Pill as PillIcon } from 'lucide-react';
+import { X, ChevronRight, ShieldCheck } from 'lucide-react';
+import { PillIcon } from '../utils/pillIcons';
 import styles from './Projects.module.css';
 
 const OpportunityModal = ({ project, onClose }) => {

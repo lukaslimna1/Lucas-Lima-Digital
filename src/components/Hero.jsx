@@ -23,18 +23,14 @@ const Hero = () => {
 
           {/* Título de impacto */}
           <h1 className={styles.heroTitle}>
-            Construção de <span className="text-gradient">Sistemas & Produtos Digitais</span> <br />
+            Construção de <br />
+            <span className="text-gradient">Sistemas & Produtos Digitais</span> <br />
             <span className={styles.heroTitleSub}>com foco em impacto real</span>
           </h1>
           
           {/* Posicionamento profissional */}
           <p className={styles.heroSubtitle}>
-            Eu não apenas desenvolvo interfaces. Eu entendo o problema, conecto tecnologia, design e operação, e construo soluções digitais que funcionam na vida real.
-          </p>
-
-          {/* Frase de apoio */}
-          <p className={styles.heroSupportPhrase}>
-            Do portal ao produto. Da ideia ao sistema. Do sistema ao impacto.
+            Eu não apenas desenvolvo interfaces. Entendo o problema, conecto tecnologia, design e operação, e projeto soluções digitais robustas que funcionam na vida real.
           </p>
 
           {/* Caixa de terminal destacando o objetivo */}
@@ -55,7 +51,8 @@ const Hero = () => {
                 {">"} ./abrir_portal_lucas_lima
               </div>
               <p className={styles.terminalText}>
-                <span className={styles.terminalSuccess}>SUCCESS:</span> Sistema de identidade carregado.
+                <span className={styles.terminalSuccess}>SUCCESS:</span> Sistema de identidade carregado. <br />
+                <span style={{ opacity: 0.9 }}>Do portal ao produto. Da ideia ao sistema. Do sistema ao impacto.</span>
               </p>
             </div>
           </motion.div>

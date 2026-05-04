@@ -23,13 +23,17 @@
   padding: 0 10px;
 }
 
-.brandContainer {
+.brandWrapper {
   display: flex;
   flex-direction: column;
+  gap: 12px;
+}
+
+.brandContainer {
+  display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
   cursor: pointer;
-  width: 100%;
 }
 
 .logoPortal {
@@ -101,16 +105,14 @@
 .brandText {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 8px;
+  gap: 2px;
   overflow: hidden;
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  text-align: center;
 }
 
 .logoName {
   font-family: var(--font-logo);
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: white;
   margin: 0;
@@ -121,7 +123,7 @@
 
 .logoSubtitle {
   font-family: var(--font-mono);
-  font-size: 0.6rem;
+  font-size: 0.62rem;
   font-weight: 600;
   color: var(--text-dim);
   margin: 0;
@@ -129,8 +131,9 @@
   text-transform: uppercase;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   white-space: nowrap;
+  opacity: 0.8;
 }
 
 .mobileClose {
@@ -168,15 +171,21 @@
   padding: 12px 18px;
   color: var(--text-secondary);
   text-decoration: none;
-  border-radius: 12px;
+  border-radius: 4px 12px 4px 12px;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  border: 1px solid transparent;
 }
 
 .navItem:hover {
   color: white;
   background: rgba(59, 130, 246, 0.05);
+  border-color: rgba(59, 130, 246, 0.1);
+}
+
+.navItem:hover :global(.hitech-border-glow) {
+  opacity: 0.4; /* Mais sutil que nos cards */
 }
 
 .navIcon {
@@ -198,28 +207,53 @@
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.recruiterBtn {
+.footerControls {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footerBtn {
   width: 100%;
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 20px;
+  padding: 10px 16px;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
+  border-radius: 4px 12px 4px 12px;
   color: var(--text-secondary);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
-.recruiterBtn.active {
+.footerBtn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+}
+
+.footerBtn.active {
   background: rgba(59, 130, 246, 0.1);
   border-color: var(--hitech-blue);
-  color: white;
+  color: var(--text-main);
+}
+
+.footerBtn :global(.hitech-border-glow) {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.footerBtn:hover :global(.hitech-border-glow) {
+  opacity: 0.2;
+}
+
+.btnLabel {
+  flex: 1;
+  text-align: left;
 }
 
 .recruiterDesc {
@@ -228,15 +262,6 @@
   text-align: center;
   margin-top: 10px;
   opacity: 0.6;
-}
-
-.footerIcon, .footerText {
-  position: relative;
-  z-index: 1;
-}
-
-.footerIcon {
-  color: var(--hitech-blue);
 }
 
 .mobileOverlay {

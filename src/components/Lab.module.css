@@ -3,6 +3,17 @@
   overflow: hidden;
 }
 
+.labSubtitle {
+  max-width: 1100px !important; /* Override global 700px */
+  white-space: nowrap;
+}
+
+@media (max-width: 1024px) {
+  .labSubtitle {
+    white-space: normal;
+  }
+}
+
 /* Temas de Cores Dinâmicas Oficiais */
 .colorBlue { 
   --sector-color: #3b82f6; 
@@ -73,7 +84,7 @@
 }
 
 .sectorName {
-  font-family: var(--font-primary);
+  font-family: var(--font-heading);
   font-size: 0.85rem;
   font-weight: 800;
   color: white;

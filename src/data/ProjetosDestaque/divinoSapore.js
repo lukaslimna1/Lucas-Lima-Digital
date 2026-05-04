@@ -3,7 +3,7 @@ export const divinoSapore = {
   title: 'Divino Sapore — Presença & Comunicação Visual',
   category: 'UX/UI & Experiência Digital',
   short: 'Reestruturação completa da identidade visual e comunicação digital do negócio.',
-  tech: ['Identity Design', 'Social Strategy', 'Visual Arts', 'Digital Presence'],
+  tech: ['UI/UX Design', 'Branding', 'Social Strategy', 'Visual Arts'],
   manifesto: 'A gastronomia divina merece uma interface à altura. Redefinimos a jornada do paladar, do primeiro clique à entrega final.',
   problem: 'A marca precisava transpor a qualidade artesanal do produto para o ambiente digital, criando uma conexão visual imediata e profissional.',
   solution: 'Do redesign da marca à criação de conteúdos e experiências visuais aplicadas no dia a dia real.',

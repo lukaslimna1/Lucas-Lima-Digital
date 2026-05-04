@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;600;800&family=JetBrains+Mono:wght@400;500&family=Exo+2:wght@600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Exo+2:wght@400;600;700;800&display=swap');
 
 :root {
   /* --- DESIGN TOKENS (HIGH FIDELITY) --- */
@@ -24,7 +24,7 @@
   --accent-green-glow: rgba(52, 211, 153, 0.4);
   --portal-border: 2px;
 
-  --font-heading: 'Sora', sans-serif;
+  --font-heading: 'Exo 2', sans-serif;
   --font-body: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   --font-logo: 'Exo 2', sans-serif;
@@ -594,4 +594,393 @@ section {
     font-size: 0.65rem;
     line-height: 1.6;
   }
+}
+/* --- RECRUITER MODE (MODO LEITURA TOTAL) --- */
+.recruiter-mode {
+  --bg-deep: #0a0a0f;
+  --bg-surface: #12121a;
+  --accent-blue-glow: transparent;
+  --accent-cyan-glow: transparent;
+  --accent-green-glow: transparent;
+}
+
+/* Compatibilidade com Modo Claro */
+.light-mode.recruiter-mode {
+  --bg-deep: #F1F5F9;
+  --bg-surface: #FFFFFF;
+}
+
+.recruiter-mode *,
+.recruiter-mode *::before,
+.recruiter-mode *::after {
+  animation: none !important;
+  transition: none !important;
+  box-shadow: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+}
+
+.recruiter-mode .app-container::after,
+.recruiter-mode [class*="artistic-fusion"],
+.recruiter-mode [class*="artistic-grain"],
+.recruiter-mode .bg-noise,
+.recruiter-mode [class*="border-glow"],
+.recruiter-mode [class*="corner-decor"],
+.recruiter-mode [class*="grid-overlay"],
+.recruiter-mode .dot-pulse {
+  display: none !important;
+}
+
+.recruiter-mode [class*="CardWrapper"] {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--border-color) !important;
+  transform: none !important;
+}
+
+.recruiter-mode [class*="CardWrapper"]:hover {
+  border-color: var(--accent-blue) !important;
+  background: var(--bg-surface) !important;
+}
+
+.recruiter-mode .text-gradient,
+.recruiter-mode .text-gradient-success {
+  background: none !important;
+  -webkit-text-fill-color: var(--accent-cyan) !important;
+  color: var(--accent-cyan) !important;
+}
+
+.recruiter-mode [class*="btn-primary"],
+.recruiter-mode [class*="btn-outline"],
+.recruiter-mode [class*="projectLink"] {
+  background: var(--bg-surface) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-main) !important;
+}
+
+/* --- LIGHT MODE (TEMA CLARO PREMIUM) --- */
+.light-mode {
+  --bg-deep: #F1F5F9;
+  --bg-surface: #FFFFFF;
+  --border-color: rgba(0, 0, 0, 0.12);
+  --border-highlight: rgba(0, 0, 0, 0.25);
+  --text-main: #0F172A;
+  --text-secondary: #475569;
+  
+  --accent-blue: #3B82F6;
+  --accent-cyan: #22D3EE;
+  --accent-green: #34D399;
+  
+  --accent-blue-glow: rgba(59, 130, 246, 0.15);
+  --accent-cyan-glow: rgba(34, 211, 238, 0.15);
+  --accent-green-glow: rgba(52, 211, 153, 0.15);
+
+  --hitech-blue: var(--accent-blue);
+  --hitech-cyan: var(--accent-cyan);
+  --hitech-green: var(--accent-green);
+}
+
+.light-mode .app-container::after {
+  background: 
+    radial-gradient(circle at 15% 15%, rgba(37, 99, 235, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(8, 145, 178, 0.05) 0%, transparent 40%);
+}
+
+.light-mode .bg-noise { opacity: 0.04; }
+
+.light-mode .glass-panel {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08) !important;
+}
+
+.light-mode .hitech-card-wrapper {
+  background: white !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03) !important;
+}
+
+/* Overrides Globais de Tipografia e Elementos */
+.light-mode h1, .light-mode h2, .light-mode h3, .light-mode h4, .light-mode h5, .light-mode h6 { color: #0F172A !important; }
+.light-mode p { color: #334155 !important; }
+/* Manter spans e divs herdando cores ou usando a principal apenas se não tiverem cor específica */
+.light-mode span, .light-mode div, .light-mode li, .light-mode label { color: inherit; }
+.light-mode .app-container { color: #334155 !important; }
+.light-mode a { color: var(--accent-blue) !important; }
+
+/* Forçar cores em botões e elementos interativos */
+.light-mode [class*="btn"], 
+.light-mode button,
+.light-mode [class*="button"] {
+  color: #0F172A !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-mode [class*="btn-primary"],
+.light-mode [class*="buttonPrimary"] {
+  background: rgba(37, 99, 235, 0.1) !important;
+  color: #1E40AF !important;
+  border-color: rgba(37, 99, 235, 0.2) !important;
+}
+
+/* Sidebar Light Mode */
+.light-mode [class*="sidebar"] {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-right: 1px solid rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.02) !important;
+}
+
+.light-mode [class*="navItem"] { color: #475569 !important; }
+.light-mode [class*="navItem"]:hover,
+.light-mode [class*="navItem"][class*="active"] {
+  background: rgba(37, 99, 235, 0.05) !important;
+  color: #2563EB !important;
+}
+
+.light-mode [class*="footerBtn"] {
+  background: rgba(0, 0, 0, 0.03) !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+  color: #475569 !important;
+}
+
+.light-mode [class*="footerBtn"][class*="active"] {
+  background: rgba(37, 99, 235, 0.1) !important;
+  color: #2563EB !important;
+  border-color: rgba(37, 99, 235, 0.2) !important;
+}
+
+/* Hero Section Light Mode */
+.light-mode [class*="heroTerminal"] {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-mode [class*="terminalText"] { color: #334155 !important; }
+.light-mode [class*="terminalHeader"] { color: var(--hitech-cyan) !important; opacity: 1 !important; }
+.light-mode [class*="terminalSuccess"] { color: var(--accent-green) !important; font-weight: 800 !important; }
+.light-mode [class*="badgeText"] { color: var(--hitech-blue) !important; font-weight: 700 !important; }
+
+.light-mode [class*="miniCard"] {
+  background: white !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.light-mode [class*="miniCardValue"] { color: #0F172A !important; }
+.light-mode [class*="miniCardLabel"] { color: #64748B !important; }
+
+/* Lab & Projects Light Mode */
+.light-mode [class*="hitechCardContent"] {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.light-mode [class*="capTitle"],
+.light-mode [class*="projectTitle"],
+.light-mode [class*="sectorName"],
+.light-mode [class*="cardTitle"] {
+  color: #0F172A !important;
+  opacity: 1 !important;
+}
+
+.light-mode [class*="techTelemetry"] span,
+.light-mode [class*="telemetryLabel"],
+.light-mode [class*="telemetryValue"] {
+  color: #64748B !important; /* Escala de cinza base */
+}
+
+.light-mode [class*="telemetryValue"] {
+  color: #0F172A !important; /* Valor em cinza escuro/preto */
+  font-weight: 700 !important;
+}
+
+.light-mode [class*="isCompleted"] [class*="techTelemetry"] span {
+  color: #334155 !important;
+}
+
+.light-mode [class*="capCategory"],
+.light-mode [class*="telemetryRow"] {
+  opacity: 1 !important;
+  color: #475569 !important;
+}
+
+.light-mode [class*="techTag"] {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: rgba(59, 130, 246, 0.2) !important;
+  color: #1E40AF !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+.light-mode [class*="projectLink"] {
+  background: white !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  color: #0F172A !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Carousel Controls Light Mode */
+.light-mode [class*="carouselBtn"] {
+  background: white !important;
+  color: #0F172A !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+.light-mode [class*="carouselBtn"]:hover {
+  background: #F1F5F9 !important;
+  color: var(--accent-blue) !important;
+}
+
+.light-mode [class*="indicator"] {
+  background: rgba(0, 0, 0, 0.1) !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.light-mode [class*="indicator"][class*="active"] {
+  background: var(--accent-cyan) !important;
+}
+
+/* Modais e Detalhes */
+.light-mode [class*="modalOverlay"] {
+  background: rgba(15, 23, 42, 0.4) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.light-mode [class*="modalContent"] {
+  background: #FFFFFF !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15) !important;
+  color: #0F172A !important;
+}
+
+.light-mode [class*="modalTitle"] {
+  background: linear-gradient(135deg, #1E40AF 0%, #0891B2 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+.light-mode [class*="modalSubtitle"],
+.light-mode [class*="modalSubHeadline"],
+.light-mode [class*="modalMeta"] {
+  color: #475569 !important;
+}
+
+.light-mode [class*="modalSectionTitle"] {
+  background: linear-gradient(135deg, #1E3A8A 0%, #0369A1 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  border-left: 3px solid rgba(59, 130, 246, 0.5) !important;
+  padding-left: 12px !important;
+}
+
+.light-mode [class*="modalSectionDesc"],
+.light-mode [class*="pillarDesc"],
+.light-mode [class*="roadmapItem"],
+.light-mode [class*="resultBox"] p,
+.light-mode [class*="infoBox"] p,
+.light-mode [class*="modalManifesto"] p {
+  color: #334155 !important;
+}
+
+.light-mode [class*="pillarTitle"] {
+  background: linear-gradient(135deg, #1E40AF 0%, #0891B2 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  font-weight: 700 !important;
+}
+
+.light-mode [class*="modalManifesto"],
+.light-mode [class*="resultBox"],
+.light-mode [class*="infoBox"] {
+  background: #F8FAFC !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  color: #334155 !important;
+}
+
+.light-mode [class*="roadmapItem"] {
+  background: #F1F5F9 !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
+  color: #334155 !important;
+}
+
+.light-mode [class*="modalClose"] {
+  color: #64748B !important;
+}
+
+.light-mode [class*="modalClose"]:hover {
+  color: var(--accent-blue) !important;
+  background: #F1F5F9 !important;
+}
+
+.light-mode [class*="hitechModalHeader"] {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-bottom-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.light-mode [class*="projectCategory"] {
+  color: #475569 !important;
+}
+
+.light-mode [class*="problemBox"] {
+  background: #FFF1F2 !important; /* Suave avermelhado para problema */
+  border-color: #FECDD3 !important;
+}
+
+.light-mode [class*="impactBox"] {
+  background: #F0FDF4 !important; /* Suave esverdeado para impacto */
+  border-color: #DCFCE7 !important;
+}
+
+.light-mode [class*="insightBox"] {
+  background: #F0F9FF !important; /* Suave azulado para insight */
+  border-color: #E0F2FE !important;
+}
+
+.light-mode [class*="contactCard"],
+.light-mode [class*="statCard"] {
+  background: white !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05) !important;
+}
+
+.light-mode [class*="badge"] {
+  background: rgba(255, 0, 0, 0.05) !important;
+  border-color: rgba(255, 0, 0, 0.15) !important;
+}
+
+.light-mode [class*="fullWidthTerminal"] {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.light-mode [class*="terminalPhrase"] {
+  color: #0F172A !important;
+}
+
+.light-mode [class*="github"] {
+  color: #0F172A !important;
+}
+
+.light-mode [class*="iconBox"] {
+  background: rgba(0, 0, 0, 0.05) !important;
+}
+
+.light-mode [class*="cardIcon"],
+.light-mode [class*="cardLabel"] {
+  color: #0F172A !important;
+}
+
+/* Manter as cores de marca nos outros ícones */
+.light-mode [class*="whatsapp"] { color: #16A34A !important; }
+.light-mode [class*="linkedin"] { color: #0284C7 !important; }
+.light-mode [class*="email"] { color: #DC2626 !important; }
+
+.light-mode .footer {
+  background: #F1F5F9 !important;
+  border-top-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.light-mode .footer p {
+  color: #64748B !important;
 }

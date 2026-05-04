@@ -1,7 +1,7 @@
 ![Lucas Lima Portfolio Banner](public/assets/banner.png)
 
-# 🏛️ LUCAS LIMA | DIGITAL SYSTEMS ENGINEER
-### `INDUSTRIAL STANDARD V5.5.0` • `HIGH-FIDELITY ARCHITECTURE`
+# 🏛️ LUCAS LIMA | DIGITAL SYSTEMS & PRODUCTS ENGINEER
+### `INDUSTRIAL STANDARD V6.0.0` • `HYBRID EXPERIENCE ARCHITECTURE`
 
 > **"Sistemas não começam no código. Começam no entendimento do negócio."**
 > A engenharia digital de alta performance é a arte de transformar caos operacional em estrutura, controle e resultado mensurável.
@@ -17,21 +17,10 @@ Este não é apenas um portfólio. É um **Dashboard de Engenharia** projetado p
 | :--- | :--- | :--- |
 | **ENGINE** | `React 19 + Vite` | Ciclo de renderização otimizado e build-time ultra-reduzido. |
 | **DESIGN SYSTEM** | `Vanilla CSS + Modules` | Zero overhead de bibliotecas; controle total de cada pixel. |
-| **IDENTITY** | `Adaptive Portal System` | Evolução visual dinâmica (Portal ➔ Monograma ➔ Completo). |
-| **ARCHITECTURE** | `Modular Data-Driven` | Separação total entre a camada de dados (`data.js`) e visual. |
-| **ANIMATION** | `Framer Motion` | Micro-interações que reforçam a percepção de fluidez e luxo. |
-| **TYPOGRAPHY** | `Exo 2 + Sora` | Estética geométrica de alta tecnologia e legibilidade. |
-
----
-
-## 📜 HISTÓRICO DE EVOLUÇÃO (CHANGELOG)
-
-### [v5.5.0] - O Portal e a Operação
-- **Identidade Visual**: Implementação do sistema de logo evolutivo (Adaptive Logo Variations).
-- **Branding**: Integração da fonte Exo 2 e esquema de cores Cyan/Blue Glow.
-- **Hero Update**: Nova mensagem focada em "Sistemas & Produtos Digitais" e conexão entre tecnologia e operação.
-- **Terminal**: Refatoração do script de entrada para refletir o "Abertura do Portal".
-- **Sidebar**: Reestruturação vertical do branding com subtítulo fixo.
+| **INTELLIGENCE** | `Gemini AI + Custom Hook` | Processamento semântico e suporte à decisão em tempo real. |
+| **HYBRID CAROUSEL** | `Framer Motion + Adaptive Logic` | Navegação contínua/infinita com transição suave entre modos Manual e Auto. |
+| **THEME ENGINE** | `Light/Dark 2.0` | Sistema de contraste adaptativo com degradês premium e acessibilidade auditada. |
+| **ICONOGRAPHY** | `PillIcon Dynamic System` | Abstração de ícones (Lucide + FontAwesome) com mapeamento semântico por categoria. |
 
 ---
 
@@ -43,59 +32,53 @@ Abaixo, o fluxo de dados que garante a integridade e a escalabilidade do sistema
 graph TD
     A[CORE APP - React 19] --> B[VISUAL MODULES]
     A --> C[DATA LAYER ARCHITECTURE]
+    A --> E[THEME & MODE CONTROLLER]
     
     subgraph B [Visual Command Center]
-        B1[CREATION - Mindset]
-        B2[FRAMEWORK - Workflow]
+        B1[HERO - High Impact]
+        B2[LAB - Experimental]
         B3[EXPERIENCE - War Dashboard]
-        B4[PROJECTS - Case Studies]
-        B5[SYSTEM ACCESS - Final Portal]
+        B4[PROJECTS - Hybrid Carousel]
     end
     
-    subgraph C [Intelligence Layer]
-        C1[Business Context Analysis]
-        C2[Problem/Action/Impact Mapping]
-        C3[Technical Insights]
+    subgraph E [Global State]
+        E1[Light/Dark Mode]
+        E2[Recruiter Mode - Zero Animation]
     end
     
     B --> D[GLOBAL DESIGN SYSTEM]
-    D --> D1[Glassmorphism Layers]
-    D --> D2[Asymmetric Aura Glow]
-    D --> D3[Uppercase Authority]
-    D --> D4[Corner Indicators & Terminals]
+    D --> D1[3-Category Pill System]
+    D --> D2[Premium Gradient Typography]
+    D --> D3[Contrast-Optimized Modals]
 ```
 
 ---
 
-## 🎨 FILOSOFIA DE DESIGN: "DASHBOARD DE GUERRA"
-O sistema visual foi construído para transmitir **Autoridade e Estabilidade**. Não usamos cores genéricas; usamos tokens de design que reforçam a legibilidade técnica.
+## 🎨 FILOSOFIA DE DESIGN: "DASHBOARD DE GUERRA 2.0"
+O sistema visual evoluiu para suportar múltiplos contextos de leitura sem perder a **Autoridade**.
 
-*   **[ 🧊 ] Glassmorphism 2.0**: Camadas translúcidas com `backdrop-filter` para profundidade imersiva.
-*   **[ ⚡ ] Dynamic Auras**: Cada experiência possui sua própria identidade cromática (Matrix Green, Cobalt Blue, Tech Pink).
-*   **[ 🏛️ ] Uppercase Authority**: Tipografia em maiúsculas para eliminar ruído e focar na informação bruta.
-*   **[ 📟 ] Closing Terminal**: Um terminal panorâmico que encerra a jornada do usuário com rigor técnico e visão.
+*   **[ 🔄 ] Hybrid Infinite Carousel**: Rolagem fluida de 15-25s que respeita a interação do usuário, pausando sob demanda e retomando de forma inteligente.
+*   **[ 🎯 ] Recruiter Mode (Zero Friction)**: Uma trava de segurança global que congela todas as animações e transições, transformando o dashboard em um documento estático de alta legibilidade.
+*   **[ 💡 ] Light Mode 2.0**: Reestruturação total de contraste. Títulos em degradê (Deep Blue to Cyan) e boxes semânticos (`Problem`, `Impact`, `Insight`) adaptados para fundos claros.
+*   **[ 🏷️ ] 3-Category Pills**: Cada projeto agora é classificado em 3 eixos: **Stack Técnica**, **Domínio de Negócio** e **Status/Valor**, facilitando a leitura rápida por recrutadores.
 
 ---
 
-## 📈 EVOLUÇÃO E ROADMAP (V5.3.1 - POLISH & UI REFINEMENT)
-
-O projeto atingiu sua maturidade visual e funcional com a finalização do portal de acesso e refinamentos de interface:
+## 📈 EVOLUÇÃO E ROADMAP (V6.0.0 - HYBRID ENGINE & THEME OVERHAUL)
 
 ### 📅 CHANGELOG TÉCNICO
 
-*   **v5.3.1 (ATUAL)**: 
-    *   `BADGE_PULSE_ANIMATION`: Implementação de indicador pulsante (Red Pulse) no badge de acesso ao sistema, reforçando o status de "Live" da seção de contato.
-    *   `PREMIUM_FOOTER`: Alinhamento centralizado e estilização técnica (font-mono + letter-spacing) da mensagem final de direitos e performance.
-    *   `CSS_OPTIMIZATION`: Limpeza e estruturação de seletores globais para o rodapé no `index.css`.
-*   **v5.3.0**: 
-    *   `SYSTEM_ACCESS // CONTACT_PORTAL`: Implementação da interface final com grid 2x2 de cards assimétricos.
-    *   `CREATION_STYLE`: Adaptação dos botões de contato para o design de cards de projeto.
-    *   `PANORAMIC_TERMINAL`: Integração do bloco de comando final `EXEC_LUCAS_LIMA.SH`.
-*   **v5.2.0**: 
-    *   `EXPERIENCE OVERHAUL`: Implementação do grid 2x2 simétrico e modais de alta fidelidade.
-    *   `UI HIGHLIGHTS`: Criação das caixas reflexivas `ProblemBox`, `ImpactBox` e `InsightBox`.
-*   **v3.0.0**: Migração para React 19 e implementação de animações de entrada orquestradas.
-*   **v1.0.0**: Nascimento da estrutura modular e design focado em "Authority".
+*   **v6.0.0 (ATUAL)**:
+    *   `HYBRID_CAROUSEL_ENGINE`: Implementação de scroll infinito com transição suave e "resume timer" de 10 segundos.
+    *   `GLOBAL_RECRUITER_FREEZE`: Sistema de trava absoluta para todas as animações via state drilling para `Projects` e `Lab`.
+    *   `LIGHT_MODE_CONTRAST_REVISION`: Overhaul visual de todos os modais para suporte total ao modo claro com acessibilidade auditada.
+    *   `DYNAMIC_PILL_SYSTEM`: Criação do `PillIcon` utility para mapeamento automático de ícones e categorização tríplice (Stack, Contexto, Status).
+    *   `PREMIUM_GRADIENTS`: Introdução de tipografia em degradê (Blue-Cyan) para títulos de modal em Light Mode.
+*   **v5.3.1**: Badge de acesso com Red Pulse e otimizações de footer.
+*   **v5.3.0**: Implementação do `SYSTEM_ACCESS` com grid assimétrico e Panoramic Terminal.
+*   **v5.2.0**: Overhaul da seção de Experiência com modais `Problem/Action/Impact`.
+*   **v3.0.0**: Migração para React 19 e orquestração de animações.
+*   **v1.0.0**: Lançamento da estrutura modular original.
 
 ---
 
