@@ -1,7 +1,7 @@
 ![Lucas Lima Portfolio Banner](public/assets/banner.png)
 
 # 🏛️ LUCAS LIMA | DIGITAL SYSTEMS & PRODUCTS ENGINEER
-### `INDUSTRIAL STANDARD V6.0.5` • `MOBILE ARCHITECTURE OPTIMIZED`
+### `INDUSTRIAL STANDARD V6.0.7` • `DYNAMIC CASE ARCHITECTURE`
 
 > **"Sistemas não começam no código. Começam no entendimento do negócio."**
 > A engenharia digital de alta performance é a arte de transformar caos operacional em estrutura, controle e resultado mensurável.
@@ -14,13 +14,13 @@ Este não é apenas um portfólio. É um **Dashboard de Engenharia** projetado p
 | CATEGORIA | TECNOLOGIA | PROPÓSITO INDUSTRIAL |
 | :--- | :--- | :--- |
 | **ENGINE** | `React 19 + Vite` | Ciclo de renderização otimizado e build-time ultra-reduzido. |
-| **STORAGE** | `Supabase Storage` | Gestão centralizada de assets com carregamento dinâmico e seguro. |
-| **BRANDING** | `SVG Dynamic Sync` | Logos e monogramas oficiais (v6.0.4) sincronizados via bucket dedicado. |
+| **STORAGE** | `Supabase Storage` | Gestão de assets com resolução dinâmica de buckets (`bucket:path`). |
+| **CASE ARCH** | `Dynamic Section System` | Cada projeto possui narrativa única via array modular de `sections`. |
 | **INTELLIGENCE** | `Gemini AI + Custom Hook` | Processamento semântico e suporte à decisão em tempo real. |
 | **TYPOGRAPHY** | `Fluid CSS (clamp)` | Escaneabilidade perfeita e ausência de cortes de texto em qualquer device. |
-| **HYBRID CAROUSEL** | `Framer Motion + Discrete Logic` | Transição controlada (8s idle / 1.5s slide) para legibilidade máxima de cases. |
+| **PREMIUM UX** | `Fluid Carousel (12s/2.5s)` | Transição estendida para leitura técnica profunda de cases complexos. |
 | **THEME ENGINE** | `Light/Dark 2.0` | Sistema de contraste adaptativo com degradês premium e acessibilidade auditada. |
-| **ICONOGRAPHY** | `PillIcon Dynamic System` | Abstração de ícones (Lucide + FontAwesome) com mapeamento semântico por categoria. |
+| **ICONOGRAPHY** | `PillIcon Dynamic System` | Abstração de ícones com mapeamento semântico por categoria. |
 
 ---
 
@@ -38,18 +38,18 @@ graph TD
         B1[HERO - High Impact]
         B2[LAB - Experimental]
         B3[EXPERIENCE - War Dashboard]
-        B4[PROJECTS - Discrete Carousel]
+        B4[PROJECTS - Dynamic Section Modal]
     end
     
     subgraph E [Global State]
         E1[Light/Dark Mode]
-        E2[Recruiter Mode - Total Lockdown]
+        E2[Recruiter Mode - Absolute Interaction Lockdown]
     end
     
     B --> D[GLOBAL DESIGN SYSTEM]
     D --> D1[3-Category Pill System]
-    D --> D2[Fluid Gradient Typography]
-    D --> D3[Scrollable Gallery Captions]
+    D --> D2[Dynamic resolveImagePath]
+    D --> D3[Modular Section Rendering]
 ```
 
 ---
@@ -57,12 +57,11 @@ graph TD
 ## 🎨 FILOSOFIA DE DESIGN: "DASHBOARD DE GUERRA 2.0"
 O sistema visual evoluiu para suportar múltiplos contextos de leitura sem perder a **Autoridade**.
 
-*   **[ 🎯 ] Recruiter Mode (Zero Friction)**: Uma trava de segurança global que congela 100% das animações, hover effects e transições do logo, transformando o dashboard em um documento estático de legibilidade absoluta.
-*   **[ 🔄 ] Discrete Projects Carousel**: Transições calculadas (8s de pausa / 1.5s de slide) para garantir que o conteúdo técnico de cada projeto seja absorvido sem pressa.
-*   **[ 🏰 ] Official Branding v6.0.4**: Integração de logos SVG com neutralização de interação em modos de foco (Recruiter Mode).
+*   **[ 🎯 ] Recruiter Mode (Absolute Neutralization)**: Trava global que suprime 100% de transformações, filtros, letter-spacing e animações do logo, garantindo uma interface estática de alta densidade informativa.
+*   **[ 🔄 ] High-Retention Carousel**: Pausa de 12 segundos e transição fluida de 2.5 segundos, projetada para permitir que o usuário processe as métricas e o impacto de cada case.
+*   **[ 🧩 ] Modular Case Narratives**: O sistema de `sections` (Texto, Pilares, Roadmap, Galeria, Links) permite que cada projeto conte sua história de forma personalizada e tecnicamente densa.
 *   **[ 🌊 ] Fluid Layouts & Typography**: Uso extensivo de `clamp()` para garantir que títulos monumentais de 5.5rem se ajustem perfeitamente a telas mobile sem clipping.
-*   **[ 🖼️ ] Dynamic Asset Resolution**: Utilização de `resolveImagePath` para sincronizar caminhos do banco de dados com URLs públicas do Supabase em tempo real.
-*   **[ 🏷️ ] 3-Category Pills**: Cada projeto agora é classificado em 3 eixos: **Stack Técnica**, **Domínio de Negócio** e **Status/Valor**, facilitando a leitura rápida por recrutadores.
+*   **[ 🖼️ ] Intelligent Asset Resolution**: O utilitário `resolveImagePath` agora suporta prefixos de bucket (ex: `divinosapore:file.png`), permitindo gestão multi-projeto escalável.
 
 ---
 
@@ -70,24 +69,20 @@ O sistema visual evoluiu para suportar múltiplos contextos de leitura sem perde
 
 ### 📅 CHANGELOG TÉCNICO
 
-*   **v6.0.5 (ATUAL)**:
-    *   `MOBILE_ARCH_OPTIMIZATION`: Re-arquitetura total de grids para mobile (Experience & Lab), garantindo empilhamento vertical perfeito.
-    *   `FLUID_TYPOGRAPHY_STABILIZATION`: Refinamento global de `clamp()` em títulos de seções para evitar cortes em viewports < 390px.
-    *   `UI_OVERFLOW_RESOLUTION`: Supressão absoluta de scroll horizontal via enforcing de `width: 100vw` e `overflow-x: hidden`.
-    *   `BRAND_MOBILE_SYNC`: Otimização do brand header mobile para leitura clara em dispositivos ultra-estreitos.
+*   **v6.0.7 (ATUAL)**:
+    *   `DYNAMIC_CASE_ARCHITECTURE`: Migração de todos os cases para o sistema de `sections` modulares.
+    *   `CAROUSEL_UX_REFINEMENT`: Ajuste fino de timings (12s pause / 2.5s transition) para leitura premium.
+    *   `RECRUITER_MODE_V3`: Neutralização absoluta de hover effects e cursor pointer no brand logo.
+    *   `MULTI_BUCKET_SUPPORT`: Upgrade no resolvedor de imagens para suportar sintaxe `bucket:path`.
+    *   `DEPLOY_CI_CD_FIX`: Resolução de conflitos de dependência ESLint para compatibilidade total com Vercel Build.
+*   **v6.0.6**:
+    *   `MOBILE_ARCH_OPTIMIZATION`: Re-arquitetura total de grids para mobile (Experience & Lab).
+    *   `FLUID_TYPOGRAPHY_STABILIZATION`: Refinamento global de `clamp()` em títulos de seções.
+    *   `UI_OVERFLOW_RESOLUTION`: Supressão absoluta de scroll horizontal.
 *   **v6.0.4**:
-    *   `RECRUITER_MODE_LOCKDOWN`: Implementação de estado estático absoluto para a logo (zero animações de desenho, fade ou rotação).
-    *   `CAROUSEL_FLOW_ADJUSTMENT`: Transição de movimento contínuo para slides discretos com 8 segundos de "stop-time" para leitura.
-    *   `UI_STABILITY_FIXES`: Resolução de artefatos visuais (hamburger icon) no desktop e correção de encodings CSS que afetavam o build.
-    *   `HOVER_NEUTRALIZATION`: Neutralização completa de transformações e cursor pointer no logo em modo recrutador.
-*   **v6.0.3**:
-    *   `OFFICIAL_BRAND_SVG`: Substituição de logos textuais por ativos SVG oficiais carregados via Supabase.
-    *   `DYNAMIC_THEME_SYNC`: Sincronização automática entre variantes de logo e tema atual (Light/Dark).
-*   **v6.0.2**: 
-    *   `SUPABASE_ASSET_SYNC`: Integração completa com o utilitário `resolveImagePath`.
-    *   `FLUID_TYPOGRAPHY_SYSTEM`: Implementação de `clamp()` em todos os títulos monumentais.
-*   **v6.0.0**: Lançamento do Motor Híbrido de Carrossel e revisão de contraste Light Mode 2.0.
-*   **v5.3.0**: Implementação do `SYSTEM_ACCESS` com grid assimétrico e Panoramic Terminal.
+    *   `RECRUITER_MODE_LOCKDOWN`: Implementação de estado estático absoluto para a logo.
+    *   `OFFICIAL_BRAND_SVG`: Sincronização automática entre variantes de logo e tema atual.
+*   **v5.3.0**: Implementação do `SYSTEM_ACCESS` com Panoramic Terminal.
 *   **v3.0.0**: Migração para React 19 e orquestração de animações.
 
 ---
