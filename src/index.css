@@ -22,6 +22,11 @@
   --accent-blue-glow: rgba(0, 102, 255, 0.4);
   --accent-cyan-glow: rgba(0, 242, 255, 0.4);
   --accent-green-glow: rgba(52, 211, 153, 0.4);
+  
+  --category-estrategia: #3B82F6;
+  --category-tecnica: #22D3EE;
+  --category-futuro: #34D399;
+
   --portal-border: 2px;
 
   --font-heading: 'Exo 2', sans-serif;
@@ -29,8 +34,8 @@
   --font-mono: 'JetBrains Mono', monospace;
   --font-logo: 'Exo 2', sans-serif;
 
-  --radius-hitech-card: 4px 24px 4px 24px;
-  --radius-hitech-btn: 2px 12px 2px 12px;
+  --radius-hitech-card: 40px 8px 40px 8px;
+  --radius-hitech-btn: 4px 12px 4px 12px;
   --radius-hitech-badge: 50px;
 }
 
@@ -524,7 +529,7 @@ h1, h2, h3, h4, h5, h6 {
   flex-direction: column;
 }
 
-/* ARGB Animated Border Glow - New Palette */
+/* ARGB Animated Border Glow - Moving Fluid Palette */
 .hitech-border-glow {
   position: absolute;
   inset: 0;
@@ -544,6 +549,18 @@ h1, h2, h3, h4, h5, h6 {
   transition: opacity 0.4s ease;
   pointer-events: none;
   z-index: 5;
+  animation: argb-slide 4s linear infinite; /* Permanent animation when visible */
+}
+
+/* Moving Text Gradient Utility */
+.text-gradient {
+  background: linear-gradient(90deg, #3B82F6, #22D3EE, #34D399, #3B82F6);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: argb-slide 5s linear infinite;
+  display: inline-block;
 }
 
 .hitech-card-wrapper:hover .hitech-border-glow {
@@ -944,6 +961,7 @@ section {
 
 .recruiter-mode [class*="btn-primary"],
 .recruiter-mode [class*="btn-outline"],
+.recruiter-mode .hitech-btn,
 .recruiter-mode [class*="projectLink"] {
   background: var(--bg-surface) !important;
   border-color: var(--border-color) !important;
@@ -971,20 +989,24 @@ section {
 
 /* --- LIGHT MODE (TEMA CLARO PREMIUM) --- */
 .light-mode {
-  --bg-deep: #F1F5F9;
+  --bg-deep: #F8FAFC; /* Softer light blue-gray */
   --bg-surface: #FFFFFF;
-  --border-color: rgba(0, 0, 0, 0.12);
-  --border-highlight: rgba(0, 0, 0, 0.25);
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-highlight: rgba(0, 0, 0, 0.15);
   --text-main: #0F172A;
-  --text-secondary: #475569;
+  --text-secondary: #64748B;
   
-  --accent-blue: #3B82F6;
-  --accent-cyan: #22D3EE;
-  --accent-green: #34D399;
+  --accent-blue: #2563EB; /* Slightly more vibrant for light mode */
+  --accent-cyan: #0891B2;
+  --accent-green: #059669;
   
-  --accent-blue-glow: rgba(59, 130, 246, 0.15);
-  --accent-cyan-glow: rgba(34, 211, 238, 0.15);
-  --accent-green-glow: rgba(52, 211, 153, 0.15);
+  --accent-blue-glow: rgba(37, 99, 235, 0.1);
+  --accent-cyan-glow: rgba(8, 145, 178, 0.1);
+  --accent-green-glow: rgba(5, 150, 105, 0.1);
+
+  --category-estrategia: #2563EB;
+  --category-tecnica: #0891B2;
+  --category-futuro: #059669;
 
   --hitech-blue: var(--accent-blue);
   --hitech-cyan: var(--accent-cyan);
@@ -1006,8 +1028,38 @@ section {
 }
 
 .light-mode .hitech-card-wrapper {
+  background: rgba(255, 255, 255, 0.7) !important;
+  border-color: rgba(0, 0, 0, 0.05) !important;
+  box-shadow: 
+    0 10px 30px -10px rgba(0, 0, 0, 0.05),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.8) !important;
+}
+
+.light-mode .hitech-card-wrapper:hover {
   background: white !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03) !important;
+  border-color: var(--border-highlight) !important;
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Faithful Decorative Layers for Light Mode */
+.light-mode .hitech-artistic-fusion::before {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.015' numOctaves='2' stitchTiles='stitch'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='40'/%3E%3C/filter%3E%3Cstyle%3E .line %7B stroke: rgba(0, 0, 0, 0.05); stroke-width: 0.6; fill: none; %7D %3C/style%3E%3Cg filter='url(%23noise)'%3E%3Ccircle class='line' cx='250' cy='250' r='100'/%3E%3Ccircle class='line' cx='250' cy='250' r='150'/%3E%3Ccircle class='line' cx='250' cy='250' r='200'/%3E%3Ccircle class='line' cx='250' cy='250' r='250'/%3E%3Ccircle class='line' cx='250' cy='250' r='300'/%3E%3C/g%3E%3C/svg%3E") !important;
+  opacity: 0.2;
+}
+
+.light-mode .hitech-artistic-fusion::after {
+  background: 
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0, 0, 0, 0.02) 4px, transparent 5px),
+    linear-gradient(90deg, transparent 49%, rgba(0, 0, 0, 0.01) 50%, transparent 51%) !important;
+}
+
+.light-mode .hitech-artistic-grain {
+  opacity: 0.03 !important;
+  mix-blend-mode: multiply !important;
+}
+
+.light-mode .hitech-border-glow {
+  opacity: 0.3 !important; /* Brilho mais sutil no modo claro */
 }
 
 /* Overrides Globais de Tipografia e Elementos */
@@ -1019,6 +1071,12 @@ section {
 .light-mode a { color: var(--accent-blue) !important; }
 
 /* Forçar cores em botões e elementos interativos */
+.light-mode .hitech-btn {
+  background: rgba(0, 0, 0, 0.03) !important;
+  color: #0F172A !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
 .light-mode [class*="btn"], 
 .light-mode button,
 .light-mode [class*="button"] {
@@ -1040,11 +1098,16 @@ section {
   box-shadow: 10px 0 30px rgba(0, 0, 0, 0.02) !important;
 }
 
-.light-mode [class*="navItem"] { color: #475569 !important; }
+.light-mode [class*="navItem"] { 
+  color: #475569 !important; 
+  background: transparent !important;
+}
+
 .light-mode [class*="navItem"]:hover,
 .light-mode [class*="navItem"][class*="active"] {
-  background: rgba(37, 99, 235, 0.05) !important;
+  background: rgba(37, 99, 235, 0.08) !important;
   color: #2563EB !important;
+  border-color: rgba(37, 99, 235, 0.2) !important;
 }
 
 .light-mode [class*="footerBtn"] {
@@ -1385,5 +1448,115 @@ section {
   .mobile-brand-status {
     letter-spacing: 0.5px;
   }
+}
+
+/* ==========================================================================
+   HITECH GLOBAL UI SYSTEM (RESTORED)
+   ========================================================================== */
+
+/* Animation for Fluid Gradient (Logo-like) */
+@keyframes argb-glow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* Global Hitech Border Glow */
+.hitech-border-glow {
+  position: absolute;
+  inset: 0;
+  padding: 1.5px; /* Border thickness */
+  border-radius: inherit;
+  background: transparent;
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) content-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 5;
+}
+
+/* Card Hover Logic */
+.hitech-card-wrapper:hover .hitech-border-glow {
+  opacity: 1;
+  background: linear-gradient(90deg, 
+    var(--accent-blue), var(--accent-cyan), var(--accent-green), var(--accent-blue)
+  );
+  background-size: 200% 100%;
+  animation: argb-glow 3s linear infinite;
+}
+
+/* Button Hover Logic */
+.btn-primary.hitech:hover .hitech-border-glow, 
+.btn-outline.hitech:hover .hitech-border-glow,
+.hitech-btn:hover .hitech-border-glow {
+  opacity: 1 !important;
+  background: linear-gradient(90deg, 
+    var(--accent-blue), var(--accent-cyan), var(--accent-green), var(--accent-blue)
+  ) !important;
+  background-size: 200% 100% !important;
+  animation: argb-glow 2s linear infinite !important;
+}
+
+/* --- PREMIUM BUTTON SYSTEM (HITECH VARIANT) --- */
+.btn-primary.hitech, 
+.btn-outline.hitech,
+.hitech-btn {
+  position: relative;
+  overflow: hidden;
+  display: flex; /* Changed from inline-flex for better container behavior */
+  align-items: center;
+  justify-content: flex-start; /* Standardized to left-alignment as per user request */
+  gap: 12px;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(5, 5, 10, 0.9);
+  color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.btn-primary.hitech:hover, 
+.btn-outline.hitech:hover,
+.hitech-btn:hover {
+  background: #1a5f7a; /* Cyan/Blue Glow similar to Hero */
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  border-color: rgba(34, 211, 238, 0.2);
+}
+
+/* Corner Decor (Brackets) for Cards & Sections */
+.corner-decor {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border: 1.5px solid var(--accent-cyan);
+  opacity: 0.3;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.corner-decor.top-left { top: 12px; left: 12px; border-right: 0; border-bottom: 0; }
+.corner-decor.top-right { top: 12px; right: 12px; border-left: 0; border-bottom: 0; }
+.corner-decor.bottom-left { bottom: 12px; left: 12px; border-right: 0; border-top: 0; }
+.corner-decor.bottom-right { bottom: 12px; right: 12px; border-left: 0; border-top: 0; }
+
+.hitech-card-wrapper:hover .corner-decor {
+  opacity: 1;
+  width: 20px;
+  height: 20px;
+  border-color: var(--accent-green);
+  box-shadow: 0 0 10px var(--accent-green-glow);
 }
 

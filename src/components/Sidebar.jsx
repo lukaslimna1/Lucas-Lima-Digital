@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Hexagon, Briefcase, Lightbulb, Code, Mail, X, Terminal, User, Award, Sparkles, Brain, Sun, Moon } from 'lucide-react';
+import { Hexagon, Briefcase, Lightbulb, Code, Mail, X, Terminal, User, Award, Sparkles, Brain, Sun, Moon, Cpu } from 'lucide-react';
 import styles from './Sidebar.module.css';
 import Logo from './Logo';
 
@@ -57,7 +57,7 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, recruiterMode, setRecruiterMod
                 <a 
                   href={item.href}
                   onClick={() => setIsMobileOpen(false)}
-                  className={styles.navItem}
+                  className={`${styles.navItem} hitech-btn`}
                 >
                   <div className="hitech-border-glow"></div>
                   <span className={styles.navIcon}>{item.icon}</span>
@@ -72,7 +72,7 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, recruiterMode, setRecruiterMod
           <div className={styles.footerControls}>
             <button 
               onClick={() => setRecruiterMode(!recruiterMode)}
-              className={`${styles.footerBtn} ${recruiterMode ? styles.active : ''}`}
+              className={`${styles.footerBtn} ${recruiterMode ? styles.active : ''} hitech-btn`}
               title="Modo Recrutador"
               aria-label="Alternar Modo Recrutador"
             >
@@ -83,7 +83,7 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, recruiterMode, setRecruiterMod
 
             <button 
               onClick={() => setLightMode(!lightMode)}
-              className={`${styles.footerBtn} ${lightMode ? styles.active : ''}`}
+              className={`${styles.footerBtn} ${lightMode ? styles.active : ''} hitech-btn`}
               title="Alternar Tema"
               aria-label="Alternar Tema Claro/Escuro"
             >

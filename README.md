@@ -69,6 +69,10 @@ O sistema visual evoluiu para suportar múltiplos contextos de leitura sem perde
 
 ### 📅 CHANGELOG TÉCNICO
 
+*   **v6.6.0 (Design System Standardization)**:
+    *   `LIGHT_MODE_2.0`: Paridade visual absoluta entre temas com tokens semânticos e glassmorphism otimizado.
+    *   `SEMANTIC_CATEGORIES`: Implementação de cores categóricas dinâmicas (Estratégia, Técnica, Futuro) no módulo de Stack.
+    *   `SIDEBAR_UX_FIX`: Estabilização de alinhamento e remoção de "dark leaks" em botões interativos no modo claro.
 *   **v6.5.3 (Expansão de Conteúdo)**:
     *   `STACK_TOOLS_MODULE`: Nova seção dedicada a especificações técnicas, arquitetura de frontend/backend e ferramentas de design.
 *   **v6.5.2 (Resiliência & Fault Tolerance)**:

@@ -7,15 +7,15 @@ export const stackData = [
       { name: "HTML", iconType: "brand", icon: "html5" },
       { name: "CSS", iconType: "brand", icon: "css3-alt" },
       { name: "JavaScript", iconType: "brand", icon: "js" },
-      { name: "TypeScript", iconType: "brand", icon: "code" }, // Fallback to code
+      { name: "TypeScript", iconType: "brand", icon: "typescript" }, 
       { name: "React", iconType: "brand", icon: "react" },
       { name: "Node.js", iconType: "brand", icon: "node-js" },
       { name: "Git", iconType: "brand", icon: "git-alt" },
       { name: "GitHub", iconType: "brand", icon: "github" },
-      { name: "VS Code", iconType: "custom", icon: "terminal" },
-      { name: "Supabase", iconType: "custom", icon: "database" },
-      { name: "Vercel", iconType: "custom", icon: "triangle" },
-      { name: "MongoDB", iconType: "custom", icon: "server" }
+      { name: "VS Code", iconType: "brand", icon: "vscode" },
+      { name: "Supabase", iconType: "brand", icon: "supabase" },
+      { name: "Vercel", iconType: "brand", icon: "vercel" },
+      { name: "MongoDB", iconType: "brand", icon: "mongodb" }
     ]
   },
   {
@@ -24,9 +24,9 @@ export const stackData = [
     type: "estrategia", // Azul
     tools: [
       { name: "Figma", iconType: "brand", icon: "figma" },
-      { name: "Adobe XD", iconType: "custom", icon: "layout" },
-      { name: "Illustrator", iconType: "custom", icon: "pen-tool" },
-      { name: "Photoshop", iconType: "custom", icon: "image" },
+      { name: "Adobe XD", iconType: "brand", icon: "adobexd" },
+      { name: "Illustrator", iconType: "brand", icon: "illustrator" },
+      { name: "Photoshop", iconType: "brand", icon: "photoshop" },
       { name: "Prototipação", iconType: "custom", icon: "mouse-pointer" },
       { name: "Design System", iconType: "custom", icon: "layers" },
       { name: "Branding", iconType: "custom", icon: "award" }
@@ -37,8 +37,8 @@ export const stackData = [
     area: "Dados & BI",
     type: "futuro", // Verde
     tools: [
-      { name: "Power BI", iconType: "custom", icon: "bar-chart-3" },
-      { name: "Excel", iconType: "custom", icon: "table" },
+      { name: "Power BI", iconType: "brand", icon: "powerbi" },
+      { name: "Excel", iconType: "brand", icon: "excel" },
       { name: "Dashboards", iconType: "custom", icon: "pie-chart" },
       { name: "Análise de Dados", iconType: "custom", icon: "search" },
       { name: "Indicadores", iconType: "custom", icon: "trending-up" }

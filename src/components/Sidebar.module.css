@@ -58,8 +58,10 @@
 }
 
 .navItem {
-  display: flex;
+  display: flex !important;
+  width: 100% !important;
   align-items: center;
+  justify-content: flex-start !important;
   gap: 12px;
   padding: 12px 18px;
   color: var(--text-secondary);
@@ -87,6 +89,7 @@
   justify-content: center;
   color: var(--hitech-blue);
   opacity: 0.8;
+  width: 24px; /* Fix icon width for better alignment */
 }
 
 .navText {
@@ -107,9 +110,10 @@
 }
 
 .footerBtn {
-  width: 100%;
-  display: flex;
+  width: 100% !important;
+  display: flex !important;
   align-items: center;
+  justify-content: flex-start !important;
   gap: 10px;
   padding: 10px 16px;
   background: rgba(255, 255, 255, 0.02);
