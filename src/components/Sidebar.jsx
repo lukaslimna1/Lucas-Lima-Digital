@@ -1,4 +1,5 @@
 import { Hexagon, Briefcase, Lightbulb, Code, Mail, X, Terminal, User, Award, Sparkles, Brain } from 'lucide-react';
+import { motion } from 'framer-motion';
 import styles from './Sidebar.module.css';
 
 const Sidebar = ({ isMobileOpen, setIsMobileOpen, recruiterMode, setRecruiterMode }) => {
@@ -19,12 +20,63 @@ const Sidebar = ({ isMobileOpen, setIsMobileOpen, recruiterMode, setRecruiterMod
       {/* Sidebar Principal - Contém logotipo e navegação principal */}
       <div className={`${styles.sidebar} ${isMobileOpen ? styles.open : ''}`}>
         <div className={styles.sidebarHeader}>
-          <div>
-            <h1 className={styles.logoName}>Lucas Lima</h1>
-            <p className={styles.logoSubtitle}>
-              <span className="dot-pulse"></span>
-              Construtor de Sistemas e Produtos Digitais
-            </p>
+          <div className={styles.brandContainer}>
+            <motion.div 
+              className={styles.logoPortal}
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              <motion.div 
+                className={`${styles.portalCorner} ${styles.tl}`}
+                initial={{ x: 10, y: 10 }}
+                animate={{ x: 0, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+              ></motion.div>
+              <motion.div 
+                className={`${styles.portalCorner} ${styles.tr}`}
+                initial={{ x: -10, y: 10 }}
+                animate={{ x: 0, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+              ></motion.div>
+              <motion.div 
+                className={`${styles.portalCorner} ${styles.bl}`}
+                initial={{ x: 10, y: -10 }}
+                animate={{ x: 0, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+              ></motion.div>
+              <motion.div 
+                className={`${styles.portalCorner} ${styles.br}`}
+                initial={{ x: -10, y: -10 }}
+                animate={{ x: 0, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+              ></motion.div>
+              
+              <motion.div 
+                className={styles.monogram}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1, duration: 0.5 }}
+              >
+                <span className={styles.letterL}>L</span>
+                <span className={styles.letterL}>L</span>
+              </motion.div>
+            </motion.div>
+
+            <motion.div 
+              className={styles.brandText}
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 1.4, duration: 0.5 }}
+            >
+              <h1 className={styles.logoName}>
+                <span className={styles.letterL}>L</span>ucas <span className={styles.letterL}>L</span>ima
+              </h1>
+              <p className={styles.logoSubtitle}>
+                <span className="dot-pulse"></span>
+                SISTEMAS DIGITAIS
+              </p>
+            </motion.div>
           </div>
           <button 
             className={styles.mobileClose}
