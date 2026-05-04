@@ -69,13 +69,13 @@ O sistema visual evoluiu para suportar múltiplos contextos de leitura sem perde
 
 ### 📅 CHANGELOG TÉCNICO
 
-*   **v6.0.9 (ATUAL)**:
-    *   `BUILD_PIPELINE_OPTIMIZATION`: Switched from `terser` to `esbuild` for faster and more reliable minification.
-    *   `CHUNK_STRATEGY_FIX`: Refactored `manualChunks` to eliminate circular dependency warnings and optimize bundle size.
-    *   `STABILITY_OVERHAUL`: Resolved final build-time blockers for Vercel production deployment.
-*   **v6.0.8**:
-    *   `DEPENDENCY_STABILIZATION`: Downgraded ESLint plugins to stable v8 versions.
-    *   `CI_CD_OPTIMIZATION`: Implemented `.npmrc` with `legacy-peer-deps=true`.
+*   **v6.2.0 (ATUAL)**:
+    *   `PREMIUM_UI_POLISH`: Refinamento de espaçamentos (Pills & Sections) nos Modais de Case.
+    *   `SPACING_UTILITIES`: Implementação de classes de margem dinâmica (`mbLarge`, `mbMedium`) para ritmo visual.
+    *   `UX_STABILIZATION`: Ajuste de gap em tech-tags para leitura premium.
+*   **v6.0.9**:
+    *   `BUILD_PIPELINE_OPTIMIZATION`: Migração para `esbuild` e otimização de chunks.
+    *   `STABILITY_OVERHAUL`: Resolução definitiva de erros de build no Vercel.
     *   `RECRUITER_MODE_V3`: Neutralização absoluta de hover effects no brand logo.
 *   **v6.0.6**:
     *   `MOBILE_ARCH_OPTIMIZATION`: Re-arquitetura total de grids para mobile (Experience & Lab).

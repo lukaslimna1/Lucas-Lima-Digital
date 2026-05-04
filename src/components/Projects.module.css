@@ -155,11 +155,19 @@
 
 .techTags {
   display: flex;
-  flex-wrap: wrap; /* Permite quebrar linha para não esticar o card na largura */
-  gap: 8px;
+  flex-wrap: wrap;
+  gap: 12px; /* Aumentado de 8px para respiro premium */
   justify-content: center;
   width: 100%;
   margin-top: 8px;
+}
+
+.mbMedium {
+  margin-bottom: 2rem !important;
+}
+
+.mbLarge {
+  margin-bottom: 4rem !important;
 }
 
 .techTag {
