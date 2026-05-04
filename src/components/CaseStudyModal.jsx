@@ -61,135 +61,172 @@ const CaseStudyModal = ({ project, onClose, onZoomImage }) => {
           )}
 
           <div className={styles.modalSections}>
-            <div className={styles.modalSection}>
-              <h4 className={styles.modalSectionTitle}>
-                <span className={`${styles.bullet} ${styles.blue}`}></span> 
-                <span className={styles.sectionIndex}>[01]</span> ANÁLISE DO PROBLEMA
-              </h4>
-              <p className={styles.modalSectionDesc}>{project.problem}</p>
-            </div>
-            
-            <div className={styles.modalSection}>
-              <h4 className={styles.modalSectionTitle}>
-                <span className={`${styles.bullet} ${styles.cyan}`}></span> 
-                <span className={styles.sectionIndex}>[02]</span> ENGENHARIA DA SOLUÇÃO
-              </h4>
-              <p className={styles.modalSectionDesc}>{project.solution}</p>
-            </div>
+            {project.sections ? (
+              project.sections.map((section, idx) => (
+                <div key={idx} className={styles.modalSection} style={section.fullWidth ? { maxWidth: '100%' } : {}}>
+                  <h4 className={styles.modalSectionTitle}>
+                    <span className={`${styles.bullet} ${styles[section.bulletColor || 'blue']}`}></span> 
+                    <span className={styles.sectionIndex}>[{section.index || (idx + 1).toString().padStart(2, '0')}]</span> {section.title}
+                  </h4>
+                  
+                  {section.type === 'text' && (
+                    <p className={styles.modalSectionDesc}>{section.content}</p>
+                  )}
 
-            <div className={styles.modalSection}>
-              <h4 className={styles.modalSectionTitle}>
-                <span className={`${styles.bullet} ${styles.green}`}></span> 
-                <span className={styles.sectionIndex}>[03]</span> MÉTRICAS E RESULTADOS
-              </h4>
-              <div className={styles.resultBox}>
-                <p>{project.results}</p>
-              </div>
-            </div>
-
-            {project.pillars && (
-              <div className={styles.modalSection}>
-                <h4 className={`${styles.modalSectionTitle} ${styles.mbMedium}`}>
-                  <span className={`${styles.bullet} ${styles.cyan}`}></span>
-                  <span className={styles.sectionIndex}>[04]</span> DIFERENCIAIS DO PRODUTO
-                </h4>
-                <div className={styles.pillarsGrid}>
-                  {project.pillars.map((pillar, idx) => (
-                    <div key={idx} className={styles.pillarItem}>
-                      <div className={styles.pillarTitle}>{pillar.title}</div>
-                      <div className={styles.pillarDesc}>{pillar.desc}</div>
+                  {section.type === 'results' && (
+                    <div className={styles.resultBox}>
+                      <p>{section.content}</p>
                     </div>
-                  ))}
-                </div>
-              </div>
-            )}
+                  )}
 
-            {project.architecture && (
-              <div className={styles.modalSection}>
-                <h4 className={`${styles.modalSectionTitle} ${styles.mbMedium}`}>
-                  <span className={`${styles.bullet} ${styles.blue}`}></span>
-                  <span className={styles.sectionIndex}>[05]</span> ARQUITETURA TÉCNICA
-                </h4>
-                <div className={styles.pillarsGrid}>
-                  {project.architecture.map((arch, idx) => (
-                    <div key={idx} className={styles.pillarItem}>
-                      <div className={styles.pillarTitle}>{arch.title}</div>
-                      <div className={styles.pillarDesc}>{arch.desc}</div>
+                  {(section.type === 'pillars' || section.type === 'architecture' || section.type === 'grid') && (
+                    <div className={styles.pillarsGrid}>
+                      {section.items.map((item, i) => (
+                        <div key={i} className={styles.pillarItem}>
+                          <div className={styles.pillarTitle}>{item.title}</div>
+                          <div className={styles.pillarDesc}>{item.desc}</div>
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  )}
+
+                  {section.type === 'roadmap' && (
+                    <div className={styles.roadmapGrid}>
+                      {section.items.map((item, i) => (
+                        <div key={i} className={styles.roadmapItem}>{item}</div>
+                      ))}
+                    </div>
+                  )}
+
+                  {section.type === 'images' && (
+                    <div className={styles.galleryGrid}>
+                      {section.items.map((img, i) => (
+                        <div key={i} className={styles.galleryItem} onClick={() => onZoomImage(resolveImagePath(img.src))}>
+                          <img src={resolveImagePath(img.src)} alt={img.alt || 'Project Image'} className={styles.galleryImg} />
+                          {img.title && (
+                            <div className={styles.galleryCaption}>
+                              <div className={styles.captionTitle}>{img.title}</div>
+                              {img.desc && <div className={styles.captionDesc}>{img.desc}</div>}
+                            </div>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
+                  {section.type === 'links' && (
+                    <div className={styles.centeredContent}>
+                      {section.footerNote && (
+                        <div className={`hitech ${styles.infoBox}`}>
+                          <ShieldCheck size={20} className={styles.infoIcon} />
+                          <p>{section.footerNote}</p>
+                        </div>
+                      )}
+                      <div className={styles.modalActions}>
+                        {section.items.map((link, i) => (
+                          <a 
+                            key={i}
+                            href={link.url === '#' ? undefined : link.url} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className={`${i === 0 ? 'btn-primary' : 'btn-outline'} ${styles.actionBtn} ${link.url === '#' ? styles.disabled : ''}`}
+                          >
+                            <ChevronRight size={16} />
+                            <span>{link.label} {link.url === '#' ? '(Em breve)' : ''}</span>
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
-              </div>
+              ))
+            ) : (
+              // Fallback para projetos que ainda usam a estrutura antiga
+              <>
+                <div className={styles.modalSection}>
+                  <h4 className={styles.modalSectionTitle}>
+                    <span className={`${styles.bullet} ${styles.blue}`}></span> 
+                    <span className={styles.sectionIndex}>[01]</span> ANÁLISE DO PROBLEMA
+                  </h4>
+                  <p className={styles.modalSectionDesc}>{project.problem}</p>
+                </div>
+                
+                <div className={styles.modalSection}>
+                  <h4 className={styles.modalSectionTitle}>
+                    <span className={`${styles.bullet} ${styles.cyan}`}></span> 
+                    <span className={styles.sectionIndex}>[02]</span> ENGENHARIA DA SOLUÇÃO
+                  </h4>
+                  <p className={styles.modalSectionDesc}>{project.solution}</p>
+                </div>
+
+                <div className={styles.modalSection}>
+                  <h4 className={styles.modalSectionTitle}>
+                    <span className={`${styles.bullet} ${styles.green}`}></span> 
+                    <span className={styles.sectionIndex}>[03]</span> MÉTRICAS E RESULTADOS
+                  </h4>
+                  <div className={styles.resultBox}>
+                    <p>{project.results}</p>
+                  </div>
+                </div>
+
+                {project.pillars && (
+                  <div className={styles.modalSection}>
+                    <h4 className={`${styles.modalSectionTitle} ${styles.mbMedium}`}>
+                      <span className={`${styles.bullet} ${styles.cyan}`}></span>
+                      <span className={styles.sectionIndex}>[04]</span> DIFERENCIAIS DO PRODUTO
+                    </h4>
+                    <div className={styles.pillarsGrid}>
+                      {project.pillars.map((pillar, idx) => (
+                        <div key={idx} className={styles.pillarItem}>
+                          <div className={styles.pillarTitle}>{pillar.title}</div>
+                          <div className={styles.pillarDesc}>{pillar.desc}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </>
             )}
           </div>
 
-          {project.roadmap && (
-            <div className={`${styles.modalSection} ${styles.mbLarge}`} style={{ marginTop: '4rem' }}>
-              <h4 className={styles.modalSectionTitle}>
-                <span className={`${styles.bullet} ${styles.green}`}></span> 
-                <span className={styles.sectionIndex}>[06]</span> PRÓXIMOS PASSOS (ROADMAP)
-              </h4>
-              <div className={styles.roadmapGrid}>
-                {project.roadmap.map(item => (
-                  <div key={item} className={styles.roadmapItem}>
-                    {item}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {project.images && project.images.length > 0 && (
-            <div className={styles.modalGallery}>
-              <h4 className={`${styles.modalSectionTitle} ${styles.mbMedium}`}>
-                <span className={`${styles.bullet} ${styles.cyan}`}></span>
-                <span className={styles.sectionIndex}>[07]</span> SHOWCASE DO PRODUTO
-              </h4>
-              <div className={styles.galleryGrid}>
-                {project.images.map((img, idx) => (
-                  <div key={idx} className={styles.galleryItem} onClick={() => onZoomImage(resolveImagePath(img.src))}>
-                    <img src={resolveImagePath(img.src)} alt={`Preview ${idx}`} className={styles.galleryImg} />
-                    {img.title && (
-                      <div className={styles.galleryCaption}>
-                        <div className={styles.captionTitle}>{img.title}</div>
-                        {img.desc && <div className={styles.captionDesc}>{img.desc}</div>}
+          {/* O Showcase e Links antigos só aparecem se NÃO houver a nova estrutura de sections */}
+          {!project.sections && (
+            <>
+              {project.images && project.images.length > 0 && (
+                <div className={styles.modalGallery}>
+                  <h4 className={`${styles.modalSectionTitle} ${styles.mbMedium}`}>
+                    <span className={`${styles.bullet} ${styles.cyan}`}></span>
+                    <span className={styles.sectionIndex}>[07]</span> SHOWCASE DO PRODUTO
+                  </h4>
+                  <div className={styles.galleryGrid}>
+                    {project.images.map((img, idx) => (
+                      <div key={idx} className={styles.galleryItem} onClick={() => onZoomImage(resolveImagePath(img.src))}>
+                        <img src={resolveImagePath(img.src)} alt={`Preview ${idx}`} className={styles.galleryImg} />
+                        {img.title && (
+                          <div className={styles.galleryCaption}>
+                            <div className={styles.captionTitle}>{img.title}</div>
+                            {img.desc && <div className={styles.captionDesc}>{img.desc}</div>}
+                          </div>
+                        )}
                       </div>
-                    )}
+                    ))}
                   </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          <div className={`${styles.modalSection} ${styles.modalClosure}`} style={{ marginTop: '5rem' }}>
-            <h4 className={styles.modalSectionTitle}>
-              <span className={`${styles.bullet} ${styles.blue}`}></span> 
-              <span className={styles.sectionIndex}>[08]</span> ACESSO & REPOSITÓRIO
-            </h4>
-            
-            <div className={styles.centeredContent}>
-              {project.footerNote && (
-                <div className={`hitech ${styles.infoBox}`}>
-                  <ShieldCheck size={20} className={styles.infoIcon} />
-                  <p>{project.footerNote}</p>
                 </div>
               )}
 
-              <div className={styles.modalActions}>
-                {project.links ? (
-                  project.links.map((link, idx) => (
-                    <a 
-                      key={idx}
-                      href={link.url === '#' ? undefined : link.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className={`${idx === 0 ? 'btn-primary' : 'btn-outline'} ${styles.actionBtn} ${link.url === '#' ? styles.disabled : ''}`}
-                    >
-                      <ChevronRight size={16} />
-                      <span>{link.label} {link.url === '#' ? '(Em breve)' : ''}</span>
-                    </a>
-                  ))
-                ) : (
-                  <>
+              <div className={`${styles.modalSection} ${styles.modalClosure}`} style={{ marginTop: '5rem' }}>
+                <h4 className={styles.modalSectionTitle}>
+                  <span className={`${styles.bullet} ${styles.blue}`}></span> 
+                  <span className={styles.sectionIndex}>[08]</span> ACESSO & REPOSITÓRIO
+                </h4>
+                <div className={styles.centeredContent}>
+                  {project.footerNote && (
+                    <div className={`hitech ${styles.infoBox}`}>
+                      <ShieldCheck size={20} className={styles.infoIcon} />
+                      <p>{project.footerNote}</p>
+                    </div>
+                  )}
+                  <div className={styles.modalActions}>
                     <a 
                       href={project.demo === '#' ? undefined : project.demo} 
                       target="_blank" 
@@ -199,7 +236,6 @@ const CaseStudyModal = ({ project, onClose, onZoomImage }) => {
                       <ChevronRight size={16} />
                       <span>{project.demo === '#' ? 'Demo (Em breve)' : 'Visualizar Demo'}</span>
                     </a>
-                    
                     {project.repo && (
                       <a 
                         href={project.repo} 
@@ -211,11 +247,11 @@ const CaseStudyModal = ({ project, onClose, onZoomImage }) => {
                         <span>Ver no GitHub</span>
                       </a>
                     )}
-                  </>
-                )}
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
+            </>
+          )}
         </div>
       </motion.div>
     </motion.div>

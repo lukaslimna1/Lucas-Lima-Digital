@@ -23,16 +23,33 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey)
  * // Retorna o caminho local original
  * resolveImagePath('/src/assets/local.png')
  */
-export const resolveImagePath = (path, bucket = 'trampoFacil') => {
+export const resolveImagePath = (path, defaultBucket = 'trampoFacil') => {
   if (!path) return ''
   
-  // 1. Bypass para URLs externas, caminhos locais do Vite ou Base64
-  if (path.startsWith('http') || path.startsWith('/src') || path.startsWith('data:')) {
+  // 1. Bypass para URLs externas, caminhos locais (public ou src) ou Base64
+  if (
+    path.startsWith('http') || 
+    path.startsWith('/src') || 
+    path.startsWith('/projects') || 
+    path.startsWith('/assets') || 
+    path.startsWith('/logos') ||
+    path.startsWith('data:')
+  ) {
     return path
   }
   
-  // 2. Resolução via Supabase Storage
-  const { data } = supabase.storage.from(bucket).getPublicUrl(path)
+  // 2. Suporte para sintaxe "bucket:path"
+  let finalBucket = defaultBucket
+  let finalPath = path
+  
+  if (path.includes(':') && !path.startsWith('http')) {
+    const [b, ...p] = path.split(':')
+    finalBucket = b
+    finalPath = p.join(':')
+  }
+  
+  // 3. Resolução via Supabase Storage
+  const { data } = supabase.storage.from(finalBucket).getPublicUrl(finalPath)
   return data.publicUrl
 }
 

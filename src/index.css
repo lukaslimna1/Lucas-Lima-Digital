@@ -216,16 +216,29 @@ h1, h2, h3, h4, h5, h6 {
 /* Neutralizar hover no modo recrutador */
 .logo-lockup.is-recruiter:hover {
   transform: none !important;
-  cursor: default;
+  cursor: default !important;
 }
 
 .logo-lockup.is-recruiter:hover .logo-svg {
   filter: none !important;
+  animation: none !important;
 }
 
 .logo-lockup.is-recruiter:hover .logo-text-main {
   letter-spacing: normal !important;
   color: inherit !important;
+  transform: none !important;
+}
+
+.logo-lockup.is-recruiter:hover .logo-text-sub {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.logo-lockup.is-recruiter:hover .base-outline-group,
+.logo-lockup.is-recruiter:hover .base-bracket {
+  opacity: 1 !important;
+  stroke-width: 1.5px !important;
 }
 
 .logo-lockup:hover .logo-svg {
@@ -415,9 +428,6 @@ h1, h2, h3, h4, h5, h6 {
   transition: opacity 0.5s ease;
 }
 
-.logo-lockup.is-recruiter:hover .base-outline-group {
-  opacity: 1 !important;
-}
 
 .base-bracket {
   transition: all 0.5s ease;
@@ -428,10 +438,6 @@ h1, h2, h3, h4, h5, h6 {
   opacity: 0.2;
 }
 
-.logo-lockup.is-recruiter:hover .base-bracket {
-  stroke-width: 1.5px !important;
-  opacity: 1 !important;
-}
 
 
 /* Idle State: Flutuação Suave */
