@@ -2,6 +2,7 @@ export const divinoSapore = {
   id: 3,
   title: 'DIVINO SAPORE — Identidade, Experiência e Presença de Marca',
   category: 'UX/UI & Branding',
+  filterTags: ['Branding'],
   short: 'A tradução de uma tradição culinária para um ecossistema digital premium e consistente.',
   tech: ['Branding', 'Visual Identity', 'Social Strategy', 'Art Direction'],
   manifesto: '“Uma marca construída sobre tradição não precisa ser reinventada. Ela precisa ser compreendida — e traduzida com respeito, consistência e visão.”',

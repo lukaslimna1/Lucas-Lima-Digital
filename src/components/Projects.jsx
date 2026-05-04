@@ -13,9 +13,18 @@ const Projects = ({ recruiterMode }) => {
   const { handleMouseMove } = useMousePosition();
   const [activeProject, setActiveProject] = useState(null);
   const [zoomImage, setZoomImage] = useState(null);
-  const projects = projectsData;
-  const [displayProjects, setDisplayProjects] = useState([...projects, ...projects, ...projects]);
-  const [currentIndex, setCurrentIndex] = useState(projects.length);
+  const [filter, setFilter] = useState('All');
+  
+  // Extrair tags únicas para os filtros
+  const allTags = ['All', ...new Set(projectsData.flatMap(p => p.filterTags || []))];
+  
+  // Filtrar projetos baseados na tag selecionada
+  const filteredProjects = filter === 'All' 
+    ? projectsData 
+    : projectsData.filter(p => p.filterTags?.includes(filter));
+
+  const [displayProjects, setDisplayProjects] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(2);
   const [isManual, setIsManual] = useState(false);
   const [isResetting, setIsResetting] = useState(false);
@@ -35,11 +44,22 @@ const Projects = ({ recruiterMode }) => {
 
   // Lógica de Carrossel Infinito - Sincronização
   useEffect(() => {
-    setDisplayProjects([...projects, ...projects, ...projects]);
-    if (currentIndex < projects.length || currentIndex >= projects.length * 2) {
-      setCurrentIndex(projects.length);
+    // Se tivermos poucos itens, não triplicamos para não quebrar a lógica de scroll
+    const multiplier = filteredProjects.length > 2 ? 3 : 1;
+    const newDisplay = [];
+    for(let i = 0; i < multiplier; i++) newDisplay.push(...filteredProjects);
+    
+    setDisplayProjects(newDisplay);
+    
+    // Resetar índice ao trocar filtro
+    if (multiplier > 1) {
+      setCurrentIndex(filteredProjects.length);
+    } else {
+      setCurrentIndex(0);
     }
-  }, [projects]);
+    setIsResetting(true);
+    setTimeout(() => setIsResetting(false), 50);
+  }, [filteredProjects, filter]);
 
   const nextSlide = (manual = false) => {
     if (manual) setLastInteraction(Date.now());
@@ -57,7 +77,9 @@ const Projects = ({ recruiterMode }) => {
 
   // Reset sutil sem animação brusca
   useEffect(() => {
-    const total = projects.length;
+    const total = filteredProjects.length;
+    if (total === 0) return;
+    
     if (currentIndex >= total * 2 || currentIndex <= 0) {
       // Tempo para a animação atual (lenta ou rápida) terminar
       const timeout = isManual ? 1200 : 20000; 
@@ -70,7 +92,7 @@ const Projects = ({ recruiterMode }) => {
       
       return () => clearTimeout(timer);
     }
-  }, [currentIndex, projects.length, isManual]);
+  }, [currentIndex, filteredProjects.length, isManual]);
 
   // Retomar Auto-play após 10 segundos de inatividade
   useEffect(() => {
@@ -119,6 +141,26 @@ const Projects = ({ recruiterMode }) => {
         <p className="section-subtitle">
           Sistemas, ideias e experiências que estou construindo na prática — conectando tecnologia, design e visão de produto.
         </p>
+
+        {/* Filtro Semântico */}
+        <div className={styles.filterContainer}>
+          {allTags.map(tag => (
+            <button
+              key={tag}
+              onClick={() => setFilter(tag)}
+              className={`${styles.filterBtn} ${filter === tag ? styles.activeFilter : ''}`}
+            >
+              {filter === tag && (
+                <motion.div 
+                  layoutId="activeFilter"
+                  className={styles.activeFilterBg}
+                  transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
+                />
+              )}
+              <span className={styles.filterLabel}>{tag === 'All' ? 'Todos' : tag}</span>
+            </button>
+          ))}
+        </div>
       </div>
 
       <div className={styles.projectsCarouselContainer}>
@@ -138,6 +180,7 @@ const Projects = ({ recruiterMode }) => {
                 style={{ flex: `0 0 ${100 / itemsPerView}%`, padding: '0 12px' }}
               >
                 <motion.div 
+                  layout
                   className={`hitech-card-wrapper ${styles.projectsCardWrapper}`}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -209,10 +252,10 @@ const Projects = ({ recruiterMode }) => {
           </button>
           
           <div className={styles.carouselIndicators}>
-            {projects.map((_, idx) => (
+            {filteredProjects.map((_, idx) => (
               <div 
                 key={idx} 
-                className={`${styles.indicator} ${(currentIndex % projects.length) === idx ? styles.active : ''}`}
+                className={`${styles.indicator} ${(currentIndex % filteredProjects.length) === idx ? styles.active : ''}`}
               ></div>
             ))}
           </div>

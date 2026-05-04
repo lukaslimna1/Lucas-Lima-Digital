@@ -2,6 +2,7 @@ export const wolfPack = {
   id: 2,
   title: 'Wolf Pack — Management System',
   category: 'Fullstack & Architecture',
+  filterTags: ['Software'],
   short: 'Sistema de gestão estratégica focado em eficiência operacional.',
   tech: ['React & Node', 'Gestão B2B', 'Escalável', 'PostgreSQL', 'Tailwind'],
   sections: [

@@ -2,6 +2,7 @@ export const trampoFacil = {
   id: 1,
   title: 'Trampo Fácil — Plataforma de Recrutamento Inteligente',
   category: 'Produto Digital & Plataforma de Recrutamento',
+  filterTags: ['Software', 'IA'],
   short: 'Projeto próprio focado em reduzir fricção no processo de contratação, com uso de automação e IA para melhorar a experiência de candidatos e empresas.',
   tech: ['React 19', 'Recrutamento', 'IA Assistiva', 'Supabase', 'Stripe'],
   

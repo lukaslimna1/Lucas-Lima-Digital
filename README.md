@@ -69,6 +69,10 @@ O sistema visual evoluiu para suportar múltiplos contextos de leitura sem perde
 
 ### 📅 CHANGELOG TÉCNICO
 
+*   **v6.4.0 (Filtro Semântico & UX Tooling)**:
+    *   `SEMANTIC_FILTERING`: Sistema de categorização de projetos (Software, IA, Branding).
+    *   `FLUID_UI_TRANSITIONS`: Uso de `layoutId` e `layout` do Framer Motion para transições de estado sem quebra de fluxo.
+    *   `DYNAMIC_CAROUSEL_ADAPTATION`: Ajuste automático da lógica de loop infinito com base no volume de itens filtrados.
 *   **v6.3.0 (Estabilização Mobile & Social)**:
     *   `SOCIAL_SEO_PORTUGUESE`: Localização de metadados OG/Twitter e caminhos absolutos para imagens.
     *   `CAROUSEL_PERFORMANCE`: Inicialização de estado otimizada no `Projects.jsx` para renderização instantânea.

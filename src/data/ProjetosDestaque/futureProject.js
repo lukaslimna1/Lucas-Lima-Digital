@@ -2,6 +2,7 @@ export const seuProximoProjeto = {
   id: 'next-project',
   title: 'Oportunidade — Seu próximo projeto pode estar aqui',
   category: 'Oportunidade',
+  filterTags: ['Software', 'IA', 'Branding'],
   short: 'Nem todo projeto começa com código. Alguns começam com uma ideia, um problema ou até algo que ainda não está claro.',
   tech: ['Estratégia', 'Design', 'Engenharia'],
   
