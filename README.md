@@ -1,7 +1,7 @@
 ![Lucas Lima Portfolio Banner](public/assets/banner.png)
 
 # 🏛️ LUCAS LIMA | DIGITAL SYSTEMS & PRODUCTS ENGINEER
-### `INDUSTRIAL STANDARD V6.7.0` • `DYNAMIC CASE ARCHITECTURE`
+### `INDUSTRIAL STANDARD v6.9.0` • `DYNAMIC CASE ARCHITECTURE`
 
 > **"Sistemas não começam no código. Começam no entendimento do negócio."**
 > A engenharia digital de alta performance é a arte de transformar caos operacional em estrutura, controle e resultado mensurável.
@@ -13,14 +13,15 @@ Este não é apenas um portfólio. É um **Dashboard de Engenharia** projetado p
 
 | CATEGORIA | TECNOLOGIA | PROPÓSITO INDUSTRIAL |
 | :--- | :--- | :--- |
+| **META-ARCH** | `Portfolio Architecture` | Seção dedicada à engenharia interna do ecossistema Lucas Lima. |
 | **ENGINE** | `React 19 + Vite` | Ciclo de renderização otimizado e build-time ultra-reduzido. |
 | **TOUCH UX** | `Swipe Engine (Framer)` | Navegação por gestos (swipe) no carrossel de projetos para fluidez mobile. |
 | **STORAGE** | `Supabase Storage` | Gestão de assets com resolução dinâmica de buckets (`bucket:path`). |
-| **CASE ARCH** | `Dynamic Section System` | Cada projeto possui narrativa única via array modular de `sections`. |
+| **CASE ARCH** | `Dynamic Section System` | Cada projeto possui narrativa única via array modular de `sections` (10+ seções). |
+| **PRE-SYSTEM** | `Boot Preloader` | Sequência de boot industrial para carregamento camuflado de assets. |
+| **VISUAL STD** | `Uppercase Authority` | Padronização de títulos em caixa alta para máxima autoridade visual. |
+| **ERROR CTRL** | `NotFound System` | Página 404 customizada com estética de erro crítico de sistema. |
 | **INTELLIGENCE** | `Gemini AI + Custom Hook` | Processamento semântico e suporte à decisão em tempo real. |
-| **COMPATIBILITY** | `WebKit Prefixes` | Fidelidade visual absoluta em Safari, iOS e navegadores mobile modernos. |
-| **PREMIUM UX** | `Fluid Carousel (12s/2.5s)` | Transição estendida para leitura técnica profunda de cases complexos. |
-| **ICONOGRAPHY** | `Resilient Icon System` | Cascata de fallbacks (FA -> Lucide -> Generic) para garantia de UI. |
 
 ---
 
@@ -70,15 +71,20 @@ O sistema visual evoluiu para suportar múltiplos contextos de leitura sem perde
 
 ### 📅 CHANGELOG TÉCNICO
 
+*   **v6.9.0 (Wolf Pack Evolution & Meta-Arch)**:
+    *   `WOLF_PACK_REFACTOR`: Case study reconstruído com narrativa de "Sistema de Evolução" e 11 seções de alta densidade.
+    *   `META_PORTFOLIO_CASE`: Lançamento do case "The Architecture", documentando a stack técnica do próprio ecossistema.
+    *   `VISUAL_UPPERCASE_STD`: Padronização de todos os títulos de cards (Projects, Lab, Creation) para Uppercase.
+    *   `ROUTING_RESILIENCE`: Correção de navegação cross-page via caminhos absolutos na Sidebar e 404.
+*   **v6.8.0 (System Infrastructure & Resilience)**:
+    *   `META_PORTFOLIO_INIT`: Registro do projeto arquitetural no carrossel principal.
+    *   `SIDEBAR_ROUTING_FIX`: Implementação de caminhos absolutos para navegação resiliente a partir de sub-rotas.
+    *   `DATA_INTEGRITY`: Sincronização de stores (`data.js` e `data/index.js`) para eliminação de shadow data.
 *   **v6.7.0 (Mobile UX & Resilience Overhaul)**:
     *   `TOUCH_SWIPE_CAROUSEL`: Implementação de gestos (swipe) no carrossel de projetos usando `framer-motion` drag API.
     *   `MOBILE_INTERACTION_FIX`: Resolução de conflitos de clique em modais (backdrop vs links) via `target check` e `e.stopPropagation()`.
     *   `WEBKIT_COMPATIBILITY`: Padronização de prefixos `-webkit-` para máscaras, filtros de vidro e gradientes em Safari/iOS.
     *   `RESILLIENT_ICON_FALLBACK`: Sistema de renderização em cascata (FontAwesome -> Lucide -> Generic) para garantir UI inquebrável.
-*   **v6.6.0 (Design System Standardization)**:INE & THEME OVERHAUL)
-
-### 📅 CHANGELOG TÉCNICO
-
 *   **v6.6.0 (Design System Standardization)**:
     *   `LIGHT_MODE_2.0`: Paridade visual absoluta entre temas com tokens semânticos e glassmorphism otimizado.
     *   `SEMANTIC_CATEGORIES`: Implementação de cores categóricas dinâmicas (Estratégia, Técnica, Futuro) no módulo de Stack.

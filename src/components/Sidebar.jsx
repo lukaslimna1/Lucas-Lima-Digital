@@ -4,16 +4,16 @@ import styles from './Sidebar.module.css';
 import Logo from './Logo';
 
 const menuItems = [
-  { name: 'INÍCIO', icon: <Hexagon size={18} />, href: '#home' },
-  { name: 'PROJETOS', icon: <Briefcase size={18} />, href: '#projects' },
-  { name: 'CRIAÇÃO', icon: <Brain size={18} />, href: '#criacao' },
-  { name: 'FRAMEWORK', icon: <Lightbulb size={18} />, href: '#framework' },
-  { name: 'STACK', icon: <Cpu size={18} />, href: '#stack' },
-  { name: 'LAB', icon: <Code size={18} />, href: '#lab' },
-  { name: 'SOBRE', icon: <User size={18} />, href: '#about' },
-  { name: 'EXPERIÊNCIA', icon: <Award size={18} />, href: '#experience' },
-  { name: 'DIFERENCIAL', icon: <Sparkles size={18} />, href: '#diferencial' },
-  { name: 'CONTATO', icon: <Mail size={18} />, href: '#contact' },
+  { name: 'INÍCIO', icon: <Hexagon size={18} />, href: '/#home' },
+  { name: 'PROJETOS', icon: <Briefcase size={18} />, href: '/#projects' },
+  { name: 'CRIAÇÃO', icon: <Brain size={18} />, href: '/#criacao' },
+  { name: 'FRAMEWORK', icon: <Lightbulb size={18} />, href: '/#framework' },
+  { name: 'STACK', icon: <Cpu size={18} />, href: '/#stack' },
+  { name: 'LAB', icon: <Code size={18} />, href: '/#lab' },
+  { name: 'SOBRE', icon: <User size={18} />, href: '/#about' },
+  { name: 'EXPERIÊNCIA', icon: <Award size={18} />, href: '/#experience' },
+  { name: 'DIFERENCIAL', icon: <Sparkles size={18} />, href: '/#diferencial' },
+  { name: 'CONTATO', icon: <Mail size={18} />, href: '/#contact' },
 ];
 
 const Sidebar = ({ isMobileOpen, setIsMobileOpen, recruiterMode, setRecruiterMode, lightMode, setLightMode }) => {

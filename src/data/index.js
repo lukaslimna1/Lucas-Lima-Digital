@@ -1,9 +1,11 @@
+import { metaPortfolio } from './ProjetosDestaque/metaPortfolio';
 import { trampoFacil } from './ProjetosDestaque/trampoFacil';
 import { wolfPack } from './ProjetosDestaque/wolfPack';
 import { divinoSapore } from './ProjetosDestaque/divinoSapore';
 import { seuProximoProjeto } from './ProjetosDestaque/futureProject';
 
 export const projectsData = [
+  metaPortfolio,
   trampoFacil,
   wolfPack,
   divinoSapore,

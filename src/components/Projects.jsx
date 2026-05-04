@@ -1,4 +1,4 @@
-import { useState, useEffect, memo, useMemo } from 'react';
+import { useState, useEffect, memo, useMemo } from 'react'; // HMR Trigger
 import { motion, AnimatePresence } from 'framer-motion';
 import { Briefcase, ChevronRight, ChevronLeft, X, ShieldCheck } from 'lucide-react';
 import { resolveImagePath } from '../lib/supabase';
@@ -9,8 +9,6 @@ import { useMousePosition } from '../utils/useMousePosition';
 import CaseStudyModal from './CaseStudyModal';
 import OpportunityModal from './OpportunityModal';
 
-// Extrair tags únicas fora do componente para evitar re-cálculo
-const ALL_TAGS = ['All', ...new Set(projectsData.flatMap(p => p.filterTags || []))];
 
 const Projects = memo(({ recruiterMode }) => {
   const { handleMouseMove } = useMousePosition();
@@ -18,12 +16,17 @@ const Projects = memo(({ recruiterMode }) => {
   const [zoomImage, setZoomImage] = useState(null);
   const [filter, setFilter] = useState('All');
   
+  // Extrair tags únicas dinamicamente
+  const ALL_TAGS = useMemo(() => {
+    return ['All', ...new Set(projectsData.flatMap(p => p.filterTags || []))];
+  }, [projectsData]);
+
   // Filtrar projetos baseados na tag selecionada usando useMemo
   const filteredProjects = useMemo(() => {
     return filter === 'All' 
       ? projectsData 
       : projectsData.filter(p => p.filterTags?.includes(filter));
-  }, [filter]);
+  }, [filter, projectsData]);
 
   const [displayProjects, setDisplayProjects] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
