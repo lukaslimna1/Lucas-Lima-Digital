@@ -69,12 +69,14 @@ O sistema visual evoluiu para suportar múltiplos contextos de leitura sem perde
 
 ### 📅 CHANGELOG TÉCNICO
 
-*   **v6.0.7 (ATUAL)**:
+*   **v6.0.8 (ATUAL)**:
+    *   `DEPENDENCY_STABILIZATION`: Downgraded ESLint plugins to stable v8-compatible versions.
+    *   `CI_CD_OPTIMIZATION`: Implemented `.npmrc` with `legacy-peer-deps=true` for guaranteed Vercel builds.
+    *   `VERCEL_DEPLOY_FIX`: Resolved peer dependency conflicts between `eslint-plugin-react-refresh` and ESLint 8.
+*   **v6.0.7**:
     *   `DYNAMIC_CASE_ARCHITECTURE`: Migração de todos os cases para o sistema de `sections` modulares.
-    *   `CAROUSEL_UX_REFINEMENT`: Ajuste fino de timings (12s pause / 2.5s transition) para leitura premium.
-    *   `RECRUITER_MODE_V3`: Neutralização absoluta de hover effects e cursor pointer no brand logo.
-    *   `MULTI_BUCKET_SUPPORT`: Upgrade no resolvedor de imagens para suportar sintaxe `bucket:path`.
-    *   `DEPLOY_CI_CD_FIX`: Resolução de conflitos de dependência ESLint para compatibilidade total com Vercel Build.
+    *   `CAROUSEL_UX_REFINEMENT`: Ajuste fino de timings (12s pause / 2.5s transition).
+    *   `RECRUITER_MODE_V3`: Neutralização absoluta de hover effects no brand logo.
 *   **v6.0.6**:
     *   `MOBILE_ARCH_OPTIMIZATION`: Re-arquitetura total de grids para mobile (Experience & Lab).
     *   `FLUID_TYPOGRAPHY_STABILIZATION`: Refinamento global de `clamp()` em títulos de seções.
