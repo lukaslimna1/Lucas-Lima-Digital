@@ -16,6 +16,7 @@ import { SpeedInsights } from '@vercel/speed-insights/react';
 const About = lazy(() => import('./components/About'));
 const Creation = lazy(() => import('./components/Creation'));
 const Framework = lazy(() => import('./components/Framework'));
+const StackTools = lazy(() => import('./components/StackTools'));
 const Experience = lazy(() => import('./components/Experience'));
 const Lab = lazy(() => import('./components/Lab'));
 const Contact = lazy(() => import('./components/Contact'));
@@ -79,6 +80,7 @@ function App() {
             <Suspense fallback={<SectionSkeleton />}>
               <Creation />
               <Framework />
+              <StackTools />
               <Lab recruiterMode={recruiterMode} />
               <About />
               <Experience />

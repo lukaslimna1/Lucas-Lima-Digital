@@ -69,6 +69,8 @@ O sistema visual evoluiu para suportar múltiplos contextos de leitura sem perde
 
 ### 📅 CHANGELOG TÉCNICO
 
+*   **v6.5.3 (Expansão de Conteúdo)**:
+    *   `STACK_TOOLS_MODULE`: Nova seção dedicada a especificações técnicas, arquitetura de frontend/backend e ferramentas de design.
 *   **v6.5.2 (Resiliência & Fault Tolerance)**:
     *   `HITECH_ERROR_BOUNDARIES`: Implementação de sistema de contenção de falhas industriais para isolar erros de renderização em módulos específicos.
 *   **v6.5.1 (Performance & Asset Optimization)**:
