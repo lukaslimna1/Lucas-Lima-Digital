@@ -1,184 +1,183 @@
 .stackSection {
-  padding: 8rem 2rem;
+  padding: 10rem 2rem;
   background: var(--bg-dark);
   position: relative;
   overflow: hidden;
+  font-family: 'Inter', sans-serif;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
 }
 
+/* Header Styles */
 .header {
-  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-bottom: 6rem;
 }
 
 .headerLine {
-  width: 40px;
   height: 4px;
-  background: var(--accent);
-  margin-bottom: 1rem;
+  background: #22D3EE;
+  margin-bottom: 1.5rem;
 }
 
 .title {
   font-family: 'Exo 2', sans-serif;
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 900;
   color: white;
-  letter-spacing: -1px;
-  margin-bottom: 0.5rem;
+  letter-spacing: -2px;
+  margin-bottom: 1rem;
 }
 
 .subtitle {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.8rem;
-  color: var(--accent);
-  letter-spacing: 4px;
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
 }
 
+.description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+}
+
+/* Grid Layout */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
-.stackGroup {
+/* Card Styles */
+.stackCard {
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 2rem;
-  border-radius: 4px;
+  border-radius: 12px;
+  padding: 2.5rem;
   position: relative;
-  transition: all 0.3s ease;
-}
-
-.stackGroup:hover {
-  background: rgba(255, 255, 255, 0.04);
-  border-color: rgba(0, 243, 255, 0.2);
-}
-
-.groupHeader {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.iconBox {
-  color: var(--accent);
-}
-
-.groupTitle {
-  font-family: 'Exo 2', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: white;
-  text-transform: uppercase;
-}
-
-.toolsList {
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+}
+
+.stackCard:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 1rem;
+}
+
+.cardId {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.areaTitle {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Tools Grid inside Card */
+.toolsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  gap: 1.5rem 1rem;
 }
 
 .toolItem {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.toolIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
 }
 
 .toolName {
-  font-family: 'Inter', sans-serif;
-  font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.9);
-  font-weight: 500;
-}
-
-.levelIndicator {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
-.levelText {
-  font-family: 'JetBrains Mono', monospace;
   font-size: 0.65rem;
+  font-weight: 600;
   color: rgba(255, 255, 255, 0.4);
   text-transform: uppercase;
-  min-width: 80px;
+  text-align: center;
+  letter-spacing: 0.5px;
 }
 
-.barContainer {
-  flex-grow: 1;
-  height: 2px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 1px;
-  overflow: hidden;
+.toolItem:hover .toolIcon {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transform: scale(1.1);
 }
 
-.bar {
-  height: 100%;
-  background: var(--accent);
-  box-shadow: 0 0 10px var(--accent);
+.toolItem:hover .toolName {
+  color: white;
+}
+
+/* Color Logic */
+.typeAzul { border-top: 4px solid #3B82F6; }
+.typeAzul:hover { border-color: #3B82F6; box-shadow: 0 10px 40px rgba(59, 130, 246, 0.15); }
+.typeAzul .toolIcon { color: #3B82F6; }
+
+.typeCiano { border-top: 4px solid #22D3EE; }
+.typeCiano:hover { border-color: #22D3EE; box-shadow: 0 10px 40px rgba(34, 211, 238, 0.15); }
+.typeCiano .toolIcon { color: #22D3EE; }
+
+.typeVerde { border-top: 4px solid #34D399; }
+.typeVerde:hover { border-color: #34D399; box-shadow: 0 10px 40px rgba(52, 211, 153, 0.15); }
+.typeVerde .toolIcon { color: #34D399; }
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
-  .stackSection {
-    padding: 4rem 1.5rem;
-  }
-  
-  .title {
-    font-size: 2rem;
-  }
+  .stackSection { padding: 6rem 1.5rem; }
+  .grid { grid-template-columns: 1fr; }
+  .title { font-size: 2.2rem; }
+  .subtitle { font-size: 1.2rem; }
 }
 
-/* Light Mode Support */
-.light {
-  background: #f8fafc;
-}
+/* Light Mode */
+.light { background: #f8fafc; }
+.light .title { color: #0f172a; }
+.light .subtitle { color: #1e293b; }
+.light .description { color: #64748b; }
+.light .stackCard { background: white; border-color: rgba(0, 0, 0, 0.05); }
+.light .areaTitle { color: #0f172a; }
+.light .toolIcon { background: #f1f5f9; color: #64748b; }
+.light .toolName { color: #64748b; }
+.light .cardHeader { border-color: rgba(0, 0, 0, 0.05); }
 
-.light .title {
-  color: #0f172a;
-}
-
-.light .stackGroup {
-  background: white;
-  border-color: rgba(0, 0, 0, 0.05);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-}
-
-.light .groupTitle {
-  color: #1e293b;
-}
-
-.light .toolName {
-  color: #334155;
-}
-
-.light .levelText {
-  color: #64748b;
-}
-
-.light .barContainer {
-  background: rgba(0, 0, 0, 0.05);
-}
-
-/* Recruiter Mode Support (Simplified) */
-.recruiter .stackGroup {
-  border-radius: 0;
-  border-left: 3px solid var(--accent);
-}
-
-.recruiter .bar {
-  box-shadow: none;
-}
-
-.recruiter .stackGroup:hover {
-  transform: none;
-  background: rgba(255, 255, 255, 0.02);
-}
-
+/* Recruiter Mode */
+.recruiter .stackCard { border-radius: 0; box-shadow: none !important; }
+.recruiter .stackCard:hover { transform: none; }
