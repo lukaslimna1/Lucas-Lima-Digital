@@ -134,7 +134,11 @@ const CaseStudyModal = ({ project, onClose, onZoomImage }) => {
                             className={`${i === 0 ? 'btn-primary' : 'btn-outline'} ${styles.actionBtn} ${link.url === '#' ? styles.disabled : ''}`}
                             onClick={(e) => e.stopPropagation()}
                           >
-                            <ChevronRight size={16} />
+                            {link.icon ? (
+                              <PillIcon name={link.icon} color="inherit" />
+                            ) : (
+                              <ChevronRight size={16} />
+                            )}
                             <span>{link.label} {link.url === '#' ? '(Em breve)' : ''}</span>
                           </a>
                         ))}

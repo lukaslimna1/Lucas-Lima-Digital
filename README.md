@@ -1,7 +1,7 @@
 ![Lucas Lima Portfolio Banner](public/assets/banner.png)
 
 # 🏛️ LUCAS LIMA | DIGITAL SYSTEMS & PRODUCTS ENGINEER
-### `INDUSTRIAL STANDARD v6.9.6` • `DYNAMIC CASE ARCHITECTURE`
+### `INDUSTRIAL STANDARD v7.0.0` • `DYNAMIC CASE ARCHITECTURE`
 
 > **"Sistemas não começam no código. Começam no entendimento do negócio."**
 > A engenharia digital de alta performance é a arte de transformar caos operacional em estrutura, controle e resultado mensurável.
@@ -67,23 +67,29 @@ O sistema visual evoluiu para suportar múltiplos contextos de leitura sem perde
 
 ---
 
-## 📈 EVOLUÇÃO E ROADMAP (V6.9.5 - STABILITY & REFINEMENT)
+## 📈 EVOLUÇÃO E ROADMAP (V7.0.0 - BRANDING & SOCIAL)
 
 ### 📅 CHANGELOG TÉCNICO
 
-*   **v6.9.6 (Asset Refresh & Carousel Stability)**:
-    *   `META_ASSET_REFRESH`: Replaced legacy architecture diagram with a 3-part official showcase (`ecossistema.png`, `roadmap.png`, `showcasetecnico.png`).
-    *   `CAROUSEL_BUFFER_STABILIZATION`: Implemented a 5-set buffer and dynamic multiplier to prevent cards from vanishing on small project counts.
-    *   `CAROUSEL_RESET_FIX`: Optimized the boundary jump timing to align with animation duration, ensuring seamless infinite scrolling.
-    *   `AUTO_PLAY_PRESERVATION`: Fixed bug where auto-play would permanently disable after the first transition.
+*   **v7.0.0 (Integração Social & Branding)**:
+    *   `BEHANCE_CASE_INTEGRATION`: Integração do botão Behance no case Divino Sapore com suporte a ícones dinâmicos via `PillIcon`.
+    *   `SOCIAL_NETWORKS_SECTION`: Criação de uma seção dedicada para Redes Sociais no componente de Contato, separada dos canais diretos.
+    *   `UI_SOCIAL_CLEAN_STYLE`: Implementação de estilo "Light/Outline" para botões sociais com hover baseado na cor da marca e sem preenchimento.
+    *   `CONTACT_URLS_UPDATE`: Atualização global dos links de Behance, Instagram e Facebook para as novas URLs oficiais.
 
-*   **v6.9.5 (System Stability & Content Refinement)**:
-    *   `MOBILE_NAVBAR_STABILIZATION`: Re-engineered mobile header and sidebar footer to prevent line-wrapping and stabilize brand alignment.
-    *   `WOLF_PACK_CARDS_UI`: Refactored WOLF PACK project data into a modular card-based structure (Pillars/Grid) for enhanced strategic impact.
-    *   `META_ARCH_CLOUD_ASSET`: Integrated 'Arqueitetura.png' from the LUCASLIMADIGITAL cloud bucket into the Meta-Portfolio showcase.
-    *   `TECH_TAG_SCROLL`: Implemented horizontal scroll for technology tags on mobile to maintain layout density without jagged breaks.
-    *   `UI_NOWRAP_ENFORCEMENT`: Global enforcement of `nowrap` on section titles to preserve "Command Center" rigidity.
-    *   `ABOUT_GRID_OPTIMIZATION`: Refined text grid breakpoints to maximize horizontal space usage on tablets.
+*   **v6.9.6 (Atualização de Assets & Estabilidade do Carrossel)**:
+    *   `META_ASSET_REFRESH`: Substituição do diagrama de arquitetura legado por um showcase oficial em 3 partes (`ecossistema.png`, `roadmap.png`, `showcasetecnico.png`).
+    *   `CAROUSEL_BUFFER_STABILIZATION`: Implementação de buffer de 5 conjuntos e multiplicador dinâmico para evitar o desaparecimento de cards em carrosséis com poucos itens.
+    *   `CAROUSEL_RESET_FIX`: Otimização do timing de reset de borda para alinhar com a duração da animação, garantindo scroll infinito fluido.
+    *   `AUTO_PLAY_PRESERVATION`: Correção de bug onde o auto-play era desativado permanentemente após a primeira transição.
+
+*   **v6.9.5 (Estabilidade do Sistema & Refinamento de Conteúdo)**:
+    *   `MOBILE_NAVBAR_STABILIZATION`: Reengenharia do header mobile e rodapé da sidebar para evitar quebras de linha e estabilizar o alinhamento da marca.
+    *   `WOLF_PACK_CARDS_UI`: Refatoração dos dados do projeto WOLF PACK para estrutura modular baseada em cards (Pillars/Grid).
+    *   `META_ARCH_CLOUD_ASSET`: Integração da 'Arquitetura.png' do bucket cloud no showcase do Meta-Portfolio.
+    *   `TECH_TAG_SCROLL`: Implementação de scroll horizontal para tags de tecnologia no mobile para manter a densidade do layout sem quebras.
+    *   `UI_NOWRAP_ENFORCEMENT`: Aplicação global de `nowrap` em títulos de seções para preservar a rigidez visual do "Command Center".
+    *   `ABOUT_GRID_OPTIMIZATION`: Refinamento dos breakpoints do grid de texto para maximizar o uso de espaço horizontal em tablets.
 *   **v6.9.0 (Wolf Pack Evolution & Meta-Arch)**:
     *   `WOLF_PACK_REFACTOR`: Case study reconstruído com narrativa de "Sistema de Evolução" e 11 seções de alta densidade.
     *   `META_PORTFOLIO_CASE`: Lançamento do case "The Architecture", documentando a stack técnica do próprio ecossistema.

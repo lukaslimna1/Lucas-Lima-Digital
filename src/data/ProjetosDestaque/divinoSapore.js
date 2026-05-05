@@ -112,7 +112,8 @@ export const divinoSapore = {
       type: 'links', 
       footerNote: 'Brand Book e Mockups detalhados disponíveis para visualização.',
       items: [
-        { label: 'Ver Brand Book', url: 'https://cjmjasvqbtpuffvnwqky.supabase.co/storage/v1/object/public/divinosapore/BrandBook%20-%20Divino%20Sapore.pdf' },
+        { label: 'Brand Book (Behance)', url: 'https://www.behance.net/gallery/248770877/Divino-Sapore-Brand-Book-Identidade-Visual', icon: 'Behance' },
+        { label: 'Brand Book (PDF)', url: 'https://cjmjasvqbtpuffvnwqky.supabase.co/storage/v1/object/public/divinosapore/BrandBook%20-%20Divino%20Sapore.pdf' },
         { label: 'Ver Aplicações Reais', url: 'https://www.instagram.com/divinosaporebauru' }
       ],
       bulletColor: 'blue'

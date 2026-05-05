@@ -30,7 +30,8 @@ import {
   faAws, 
   faGithub, 
   faFigma,
-  faGoogle
+  faGoogle,
+  faBehance
 } from '@fortawesome/free-brands-svg-icons';
 
 import { 
@@ -171,6 +172,10 @@ export const iconMap = {
   'Engenharia': [
     { type: 'lucide', icon: Terminal },
     { type: 'fa', icon: faMicrochip }
+  ],
+  'Behance': [
+    { type: 'fa', icon: faBehance, color: '#1769ff' },
+    { type: 'lucide', icon: Globe }
   ]
 };
 

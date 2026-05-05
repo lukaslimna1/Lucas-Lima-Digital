@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { motion } from 'framer-motion';
 import { Mail } from 'lucide-react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faLinkedin, faWhatsapp, faInstagram, faFacebook, faBehance } from '@fortawesome/free-brands-svg-icons';
 import styles from './Contact.module.css';
 
 const contactChannels = [
@@ -10,6 +10,12 @@ const contactChannels = [
   { id: 'linkedin', name: 'LinkedIn', desc: 'Conexão profissional.', icon: faLinkedin, link: 'https://linkedin.com/in/lucaslimna/', className: styles.linkedin },
   { id: 'github', name: 'GitHub', desc: 'Arquiteturas e repositórios.', icon: faGithub, link: 'https://github.com/lukaslimna1', className: styles.github },
   { id: 'email', name: 'Email', desc: 'Parcerias e propostas.', icon: null, link: 'mailto:lucasmslima1@gmail.com', className: styles.email }
+];
+
+const socialLinks = [
+  { id: 'behance', name: 'Behance', icon: faBehance, link: 'https://www.behance.net/lucasmslima1', color: '#1769ff' },
+  { id: 'instagram', name: 'Instagram', icon: faInstagram, link: 'https://instagram.com/lukaslimna/', color: '#E4405F' },
+  { id: 'facebook', name: 'Facebook', icon: faFacebook, link: 'https://www.facebook.com/lucasmslima1', color: '#1877F2' }
 ];
 
 const Contact = () => {
@@ -81,6 +87,26 @@ const Contact = () => {
                   <p className={styles.cardDesc}>{channel.desc}</p>
                 </a>
               ))}
+            </div>
+
+            {/* NOVA SEÇÃO: REDES SOCIAIS */}
+            <div className={styles.socialSection}>
+              <h4 className={styles.interfaceTitle}>REDES SOCIAIS</h4>
+              <div className={styles.socialLinks}>
+                {socialLinks.map((social) => (
+                  <a 
+                    key={social.id}
+                    href={social.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.socialLink}
+                    style={{ '--social-color': social.color }}
+                  >
+                    <FontAwesomeIcon icon={social.icon} />
+                    <span>{social.name}</span>
+                  </a>
+                ))}
+              </div>
             </div>
           </motion.div>
 

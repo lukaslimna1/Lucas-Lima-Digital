@@ -205,6 +205,49 @@
 .github { color: #ffffff !important; }
 .email { color: #EA4335 !important; }
 
+/* --- REDES SOCIAIS --- */
+.socialSection {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.6rem 1.2rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.socialLink:hover {
+  color: var(--social-color);
+  border-color: var(--social-color);
+  background: transparent;
+  transform: translateY(-3px);
+}
+
+.socialLink svg {
+  font-size: 1rem;
+}
+
 @media (max-width: 1100px) {
   .contactLayout { grid-template-columns: 1fr; }
   .rightCol { margin-top: 0; }
