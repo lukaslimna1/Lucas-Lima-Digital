@@ -1,8 +1,5 @@
-import { createClient } from '@supabase/supabase-js';
-
 export default async function handler(req, res) {
   // 1. Verificar Authorization Header (Cron Secret)
-  // A Vercel Cron envia "Authorization: Bearer <CRON_SECRET>"
   const authHeader = req.headers.authorization;
   const cronSecret = process.env.CRON_SECRET;
 
@@ -12,22 +9,21 @@ export default async function handler(req, res) {
 
   try {
     const supabaseUrl = process.env.VITE_SUPABASE_URL;
-    const supabaseAnonKey = process.env.VITE_SUPABASE_ANON_KEY;
-
-    if (!supabaseUrl || !supabaseAnonKey) {
-      throw new Error('Missing Supabase environment variables');
+    if (!supabaseUrl) {
+      throw new Error('Missing VITE_SUPABASE_URL environment variable');
     }
 
-    // Usar anon key para uma consulta leve e segura
-    const supabase = createClient(supabaseUrl, supabaseAnonKey);
+    // 2. Chamada leve ao Supabase Storage (Asset Público)
+    // Usamos o asset público real e leve indicado para gerar atividade real no Storage
+    const assetPath = '/storage/v1/object/public/LucasLimaLogo/Logo-Oficial-ColorLight.svg';
+    const fullAssetUrl = `${supabaseUrl.replace(/\/$/, '')}${assetPath}`;
 
-    // 2. Chamada leve ao Supabase Storage para gerar atividade
-    // Lista 1 arquivo do bucket público 'LucasLimaLogo'
-    const { data, error } = await supabase.storage
-      .from('LucasLimaLogo')
-      .list('', { limit: 1 });
+    // Fazemos uma requisição HEAD (mais leve que GET) para validar a disponibilidade
+    const response = await fetch(fullAssetUrl, { method: 'HEAD' });
 
-    if (error) throw error;
+    if (!response.ok) {
+      throw new Error(`Supabase asset check failed with status: ${response.status}`);
+    }
 
     return res.status(200).json({ 
       ok: true, 
@@ -37,7 +33,7 @@ export default async function handler(req, res) {
   } catch (err) {
     console.error('Heartbeat failed:', err.message);
     
-    // Não retornar detalhes do erro para segurança
+    // Resposta de erro sem detalhes sensíveis
     return res.status(500).json({ 
       ok: false, 
       service: "portfolio-heartbeat", 
