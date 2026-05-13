@@ -35,13 +35,13 @@ const NotFound = () => {
 
         <div className={styles.terminalBox}>
           <div className={styles.terminalLine}>
-            <span className={styles.prompt}>></span> GET /requested_resource
+            <span className={styles.prompt}>&gt;</span> GET /requested_resource
           </div>
           <div className={styles.terminalLine}>
             <span className={styles.error}>ERROR:</span> 0x000404_NOT_FOUND
           </div>
           <div className={styles.terminalLine}>
-            <span className={styles.prompt}>></span> SUGGESTION: RETURN_TO_HOME
+            <span className={styles.prompt}>&gt;</span> SUGGESTION: RETURN_TO_HOME
           </div>
         </div>
 

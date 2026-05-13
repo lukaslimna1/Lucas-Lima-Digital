@@ -89,7 +89,7 @@ const Preloader = ({ onComplete }) => {
 
               <div className={styles.logContainer}>
                 <span className={styles.logText}>
-                  <span className={styles.prompt}>></span> {logs[currentLog]}
+                  <span className={styles.prompt}>&gt;</span> {logs[currentLog]}
                 </span>
                 <div className={styles.glitchBar}></div>
               </div>
