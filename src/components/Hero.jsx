@@ -7,14 +7,14 @@ import { useMousePosition } from '../utils/useMousePosition';
 const HERO_STATS = [
   { label: 'Experiência', value: '+5 anos criando', span: 'square' },
   { label: 'Projetos & Estudos', value: '+10 construções experimentais', span: 'tall' },
-  { label: 'Pipeline Atual', value: '2 projetos em desenvolvimento', span: 'tall' },
+  { label: 'Pipeline Atual', value: '3 projetos em desenvolvimento', span: 'tall' },
   { label: 'Aplicação Real', value: '1 sistema em uso', span: 'square' },
 ];
 
 const Hero = memo(() => {
   const { handleMouseMove } = useMousePosition();
   return (
-    <motion.section 
+    <motion.section
       id="home"
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
@@ -35,14 +35,14 @@ const Hero = memo(() => {
             <span className="text-gradient">Sistemas & Produtos Digitais</span> <br />
             <span className={styles.heroTitleSub}>com foco em impacto real</span>
           </h1>
-          
+
           {/* Posicionamento profissional */}
           <p className={styles.heroSubtitle}>
             Eu não apenas desenvolvo interfaces. Entendo o problema, conecto tecnologia, design e operação, e projeto soluções digitais robustas que funcionam na vida real.
           </p>
 
           {/* Caixa de terminal destacando o objetivo */}
-          <motion.div 
+          <motion.div
             animate={{ y: [0, -5, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             className={styles.heroTerminal}
@@ -72,10 +72,10 @@ const Hero = memo(() => {
             {HERO_STATS.map((stat, i) => {
               const isBlue = i % 2 === 0;
               const color = isBlue ? 'var(--hitech-blue)' : 'var(--accent-green)';
-              
+
               return (
-                <motion.div 
-                  key={i} 
+                <motion.div
+                  key={i}
                   className={`hitech-card-wrapper ${styles[stat.span]}`}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -94,9 +94,10 @@ const Hero = memo(() => {
                     <div className="hitech-border-glow"></div>
                     <div className="corner-decor top-right"></div>
                     <div className="corner-decor bottom-left"></div>
-                    
+
                     <span className={styles.miniCardLabel}>{stat.label}</span>
                     <span className={styles.miniCardValue}>{stat.value}</span>
+                    {stat.description && <span className={styles.miniCardDesc}>{stat.description}</span>}
                   </div>
                 </motion.div>
               );

@@ -138,6 +138,16 @@
   margin-top: 2px;
 }
 
+.miniCardDesc {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.4;
+  margin-top: 8px;
+  position: relative;
+  z-index: 2;
+  font-weight: 400;
+}
+
 .heroStatsGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
