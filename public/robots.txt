@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lucaslimadigital.com.br/sitemap.xml
+Sitemap: https://lucaslimadigital.vercel.app/sitemap.xml

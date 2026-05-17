@@ -4,51 +4,17 @@ const JSONLD = () => {
   const schemas = [
     {
       "@context": "https://schema.org",
-      "@type": "ProfessionalService",
+      "@type": "WebSite",
       "name": "Lucas Lima Digital",
-      "image": "https://lucaslimadigital.com.br/assets/banner.png",
-      "@id": "https://lucaslimadigital.com.br/#website",
-      "url": "https://lucaslimadigital.com.br",
-      "telephone": "+55-14-98802-5296",
-      "priceRange": "$$",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Bauru",
-        "addressLocality": "Bauru",
-        "addressRegion": "SP",
-        "postalCode": "17011-100",
-        "addressCountry": "BR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -22.3145,
-        "longitude": -49.0587
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "18:00"
-      },
-      "sameAs": [
-        "https://github.com/lukaslimna1",
-        "https://linkedin.com/in/lucaslimna/",
-        "https://wa.me/5514988025296"
-      ],
-      "description": "Criação de sites profissionais de alta performance, landing pages de alta conversão, design UX/UI, branding e consultoria digital em Bauru/SP."
+      "url": "https://lucaslimadigital.vercel.app/",
+      "description": "Criação de sites de alta performance, landing pages de alta conversão, design UX/UI, branding e consultoria digital em Bauru/SP."
     },
     {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Lucas Lima",
-      "url": "https://lucaslimadigital.com.br",
-      "image": "https://lucaslimadigital.com.br/assets/banner.png",
+      "url": "https://lucaslimadigital.vercel.app/",
+      "image": "https://lucaslimadigital.vercel.app/assets/banner.png",
       "sameAs": [
         "https://github.com/lukaslimna1",
         "https://linkedin.com/in/lucaslimna/",
@@ -57,20 +23,44 @@ const JSONLD = () => {
       "jobTitle": "Digital Product Builder",
       "worksFor": {
         "@type": "Organization",
-        "name": "Freelance / Self-Employed"
+        "name": "Lucas Lima Digital"
       },
-      "description": "Construção de Sistemas & Experiências Digitais — Focado em arquiteturas escaláveis, IA generativa e interfaces de alta performance.",
-      "knowsAbout": [
-        "Software Architecture",
-        "Product Management",
-        "Artificial Intelligence",
-        "React",
-        "Node.js",
-        "Cloud Engineering",
-        "User Experience Design",
-        "Web Design",
-        "SEO"
-      ]
+      "description": "Desenvolvedor Frontend, Designer e Engenheiro de Produto — Focado em construir interfaces de alta performance, UX/UI e experiências digitais modernas."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Lucas Lima Digital",
+      "url": "https://lucaslimadigital.vercel.app/",
+      "logo": "https://lucaslimadigital.vercel.app/assets/logo.png",
+      "founder": {
+        "@type": "Person",
+        "name": "Lucas Lima"
+      },
+      "sameAs": [
+        "https://github.com/lukaslimna1",
+        "https://linkedin.com/in/lucaslimna/",
+        "https://wa.me/5514988025296"
+      ],
+      "description": "Consultoria e desenvolvimento de soluções digitais de alto impacto: sites institucionais, landing pages, e-commerce, design UX/UI e branding."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Criação de Sites, UX/UI Design & Branding",
+      "serviceType": "Criação de Sites, Webdesign, Landing Pages, UX/UI Design, Branding, Consultoria Digital",
+      "provider": {
+        "@type": "Organization",
+        "name": "Lucas Lima Digital",
+        "url": "https://lucaslimadigital.vercel.app/"
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Bauru, São Paulo, Brasil"
+        }
+      ],
+      "description": "Criação de sites profissionais rápidos e otimizados para o Google, landing pages focadas em conversão, design de interfaces e posicionamento de marca."
     }
   ];
 
