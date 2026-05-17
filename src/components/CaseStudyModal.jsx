@@ -104,7 +104,7 @@ const CaseStudyModal = ({ project, onClose, onZoomImage }) => {
                     <div className={styles.galleryGrid}>
                       {section.items.map((img, i) => (
                         <div key={i} className={styles.galleryItem} onClick={() => onZoomImage(resolveImagePath(img.src))}>
-                          <img src={resolveImagePath(img.src)} alt={img.alt || 'Project Image'} className={styles.galleryImg} />
+                          <img src={resolveImagePath(img.src)} alt={img.alt || 'Project Image'} className={styles.galleryImg} loading="lazy" />
                           {img.title && (
                             <div className={styles.galleryCaption}>
                               <div className={styles.captionTitle}>{img.title}</div>
@@ -208,7 +208,7 @@ const CaseStudyModal = ({ project, onClose, onZoomImage }) => {
                   <div className={styles.galleryGrid}>
                     {project.images.map((img, idx) => (
                       <div key={idx} className={styles.galleryItem} onClick={() => onZoomImage(resolveImagePath(img.src))}>
-                        <img src={resolveImagePath(img.src)} alt={`Preview ${idx}`} className={styles.galleryImg} />
+                        <img src={resolveImagePath(img.src)} alt={`Preview ${idx}`} className={styles.galleryImg} loading="lazy" />
                         {img.title && (
                           <div className={styles.galleryCaption}>
                             <div className={styles.captionTitle}>{img.title}</div>
