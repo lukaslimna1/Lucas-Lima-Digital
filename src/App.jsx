@@ -41,6 +41,48 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrolled]);
 
+  useEffect(() => {
+    if (loading) return;
+
+    let activeInterval = null;
+
+    const handleHashScroll = () => {
+      if (activeInterval) clearInterval(activeInterval);
+
+      const hash = window.location.hash;
+      if (!hash) return;
+
+      const targetId = hash.replace('#', '');
+      if (!targetId) return;
+
+      let attempts = 0;
+      const maxAttempts = 50; // 5 segundos (50 * 100ms)
+      activeInterval = setInterval(() => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          clearInterval(activeInterval);
+          activeInterval = null;
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          attempts++;
+          if (attempts >= maxAttempts) {
+            clearInterval(activeInterval);
+            activeInterval = null;
+          }
+        }
+      }, 100);
+    };
+
+    // Executa ao carregar (quando loading vai para false)
+    handleHashScroll();
+
+    window.addEventListener('hashchange', handleHashScroll);
+    return () => {
+      if (activeInterval) clearInterval(activeInterval);
+      window.removeEventListener('hashchange', handleHashScroll);
+    };
+  }, [loading]);
+
   const PortfolioHome = () => (
     <>
       <JSONLD />

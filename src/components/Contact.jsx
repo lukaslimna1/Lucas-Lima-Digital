@@ -58,35 +58,53 @@ const Contact = () => {
             <h3 className={styles.interfaceTitle}>PORTAL DE CONEXÃO</h3>
 
             <div className={styles.statsGrid}>
-              {contactChannels.map((channel) => (
-                <a 
-                  key={channel.id}
-                  href={channel.link}
-                  target={channel.id !== 'email' ? "_blank" : undefined}
-                  rel="noopener noreferrer"
-                  className={`${styles.statCard} ${channel.className}`}
-                  aria-label={`Entrar em contato via ${channel.name}`}
-                >
-                  {/* INDICADORES DE CANTO */}
-                  <div className={`${styles.corner} ${styles.tl}`}></div>
-                  <div className={`${styles.corner} ${styles.tr}`}></div>
-                  <div className={`${styles.corner} ${styles.bl}`}></div>
-                  <div className={`${styles.corner} ${styles.br}`}></div>
+              {contactChannels.map((channel) => {
+                const isWhatsApp = channel.id === 'whatsapp';
+                const isEmail = channel.id === 'email';
+                
+                const adsProps = isWhatsApp ? {
+                  'data-ads-conversion': 'whatsapp_quote',
+                  'data-conversion-label': 'whatsapp',
+                  id: 'contact-channel-whatsapp'
+                } : isEmail ? {
+                  'data-ads-conversion': 'email_quote',
+                  'data-conversion-label': 'email',
+                  id: 'contact-channel-email'
+                } : {};
 
-                  <div className={styles.cardHeader}>
-                    <div className={styles.iconBox}>
-                      {channel.icon ? (
-                        <FontAwesomeIcon icon={channel.icon} className={styles.cardIcon} />
-                      ) : (
-                        <Mail className={styles.cardIcon} size={22} />
-                      )}
+                const trackingClass = isWhatsApp ? 'contact-link-whatsapp' : isEmail ? 'contact-link-email' : '';
+
+                return (
+                  <a 
+                    key={channel.id}
+                    href={channel.link}
+                    target={channel.id !== 'email' ? "_blank" : undefined}
+                    rel="noopener noreferrer"
+                    className={`${styles.statCard} ${channel.className} ${trackingClass}`}
+                    aria-label={`Entrar em contato via ${channel.name}`}
+                    {...adsProps}
+                  >
+                    {/* INDICADORES DE CANTO */}
+                    <div className={`${styles.corner} ${styles.tl}`}></div>
+                    <div className={`${styles.corner} ${styles.tr}`}></div>
+                    <div className={`${styles.corner} ${styles.bl}`}></div>
+                    <div className={`${styles.corner} ${styles.br}`}></div>
+
+                    <div className={styles.cardHeader}>
+                      <div className={styles.iconBox}>
+                        {channel.icon ? (
+                          <FontAwesomeIcon icon={channel.icon} className={styles.cardIcon} />
+                        ) : (
+                          <Mail className={styles.cardIcon} size={22} />
+                        )}
+                      </div>
+                      <span className={styles.cardLabel}>{channel.name}</span>
                     </div>
-                    <span className={styles.cardLabel}>{channel.name}</span>
-                  </div>
-                  
-                  <p className={styles.cardDesc}>{channel.desc}</p>
-                </a>
-              ))}
+                    
+                    <p className={styles.cardDesc}>{channel.desc}</p>
+                  </a>
+                );
+              })}
             </div>
 
             {/* NOVA SEÇÃO: REDES SOCIAIS */}

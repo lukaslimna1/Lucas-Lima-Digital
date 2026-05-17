@@ -110,7 +110,13 @@ const Hero = memo(() => {
               Explorar Projetos
               <Briefcase size={18} />
             </a>
-            <a href="#contact" className="btn-outline">
+            <a 
+              href="#contact" 
+              className="btn-outline contact-link-cta"
+              data-ads-conversion="contact_cta"
+              data-conversion-label="contact"
+              id="hero-cta-contact"
+            >
               Iniciar Projeto
               <Mail size={18} />
             </a>
