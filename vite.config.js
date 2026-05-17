@@ -8,6 +8,17 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
+      workbox: {
+        navigateFallbackDenylist: [
+          /^\/sitemap\.xml$/,
+          /^\/robots\.txt$/,
+          /^\/favicon\.svg$/,
+          /^\/icons\.svg$/,
+          /^\/assets\//,
+          /^\/logos\//,
+          /^\/api\//
+        ]
+      },
       includeAssets: ['favicon.svg'],
       manifest: {
         name: 'Lucas Lima | Digital Product Builder',
