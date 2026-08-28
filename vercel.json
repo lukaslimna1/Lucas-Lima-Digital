@@ -5,7 +5,15 @@
       "destination": "/api/$1"
     },
     {
-      "source": "/((?!api/|sitemap\\.xml|robots\\.txt|favicon\\.svg|icons\\.svg|assets/|logos/).*)",
+      "source": "/dante",
+      "destination": "/dante/index.html"
+    },
+    {
+      "source": "/dante/",
+      "destination": "/dante/index.html"
+    },
+    {
+      "source": "/((?!api/|dante/|dante$|sitemap\\.xml|robots\\.txt|favicon\\.svg|icons\\.svg|assets/|logos/).*)",
       "destination": "/index.html"
     }
   ],
